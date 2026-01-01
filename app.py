@@ -2,12 +2,9 @@ import os
 import json
 import uuid
 import random
-import pandas as pd
 import requests
 from flask import Flask, render_template, request, redirect, session, url_for, jsonify
 from datetime import timedelta, date, datetime
-from sklearn.preprocessing import LabelEncoder
-from sklearn.neighbors import NearestNeighbors
 from dotenv import load_dotenv
 
 # ==================================================
@@ -91,7 +88,7 @@ def signup():
         password = request.form["password"]
 
         if username in USERS:
-            return render_template("signup.html", error="Username exists")
+            return render_template("signup.html", error="Username already exists")
 
         USERS[username] = {"email": email, "password": password}
         session["username"] = username
@@ -137,7 +134,9 @@ def chat():
         "messages": [
             {"role": "system", "content": "You are Wellora, a caring AI self-care assistant."},
             {"role": "user", "content": message}
-        ]
+        ],
+        "temperature": 0.7,
+        "max_tokens": 400
     }
 
     headers = {
@@ -155,8 +154,9 @@ def chat():
         res.raise_for_status()
         reply = res.json()["choices"][0]["message"]["content"]
         return jsonify({"reply": reply})
-    except:
-        return jsonify({"reply": "AI unavailable"}), 500
+    except Exception as e:
+        print("AI Error:", e)
+        return jsonify({"reply": "AI temporarily unavailable"}), 500
 
 # ==================================================
 #                SKIN MODULE
@@ -179,20 +179,21 @@ def treatment():
     result = random.choice(SKIN_DATA)
     return render_template(
         "results.html",
-        problem_display_name=request.form.get("problem_url_safe"),
+        problem_display_name=PROBLEM_MAP.get(request.form.get("problem_url_safe")),
         problem_url_safe=request.form.get("problem_url_safe"),
         result=result
     )
 
 # ==================================================
-#                HAIR MODULE
+#                HAIR MODULE (FIXED)
 # ==================================================
 @app.route("/hairfall", methods=["GET", "POST"])
 def hairfall_form():
     if request.method == "POST":
         HAIRFALL_PROGRESS.append({
-            "date": datetime.now().strftime("%Y-%m-%d"),
-            "progress": random.randint(60, 90)
+            "analysis_date": datetime.now().strftime("%Y-%m-%d"),
+            "improvement_percent": random.randint(60, 90),
+            "problem_type": "hairfall"
         })
         return render_template("hairfall_result.html")
     return render_template("hairfall_form.html")
@@ -201,8 +202,9 @@ def hairfall_form():
 def dandruff_form():
     if request.method == "POST":
         DANDRUFF_PROGRESS.append({
-            "date": datetime.now().strftime("%Y-%m-%d"),
-            "progress": random.randint(50, 85)
+            "analysis_date": datetime.now().strftime("%Y-%m-%d"),
+            "improvement_percent": random.randint(50, 85),
+            "problem_type": "dandruff"
         })
         return render_template("dandruff_result.html")
     return render_template("dandruff_form.html")
@@ -211,8 +213,8 @@ def dandruff_form():
 def hair_dashboard():
     return render_template(
         "hair_dashboard.html",
-        hairfall_history=HAIRFALL_PROGRESS,
-        dandruff_history=DANDRUFF_PROGRESS
+        hairfall_history=HAIRFALL_PROGRESS or [],
+        dandruff_history=DANDRUFF_PROGRESS or []
     )
 
 # ==================================================
