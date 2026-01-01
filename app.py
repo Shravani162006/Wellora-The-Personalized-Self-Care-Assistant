@@ -10,6 +10,8 @@ from sklearn.preprocessing import LabelEncoder
 from sklearn.neighbors import NearestNeighbors
 from dotenv import load_dotenv
 
+
+
 # ---------------- Flask App Init ---------------- #
 app = Flask(__name__)
 app.secret_key = 'your-secret-key'
@@ -25,6 +27,7 @@ FEEDBACK_HISTORY = []
 STRESS_HISTORY = []
 HAIRFALL_PROGRESS = []
 DANDRUFF_PROGRESS = []
+
 
 # ---------------- Session Management ---------------- #
 @app.before_request
@@ -251,6 +254,49 @@ def hair_dashboard():
         hairfall_history=hairfall_history,
         dandruff_history=dandruff_history
     )
+@app.route("/dandruff", methods=["GET","POST"])
+def dandruff_form():
+    if request.method == "POST":
+        result = analyze_dandruff({
+            "Age": int(request.form.get("age")),
+            "Gender": request.form.get("gender"),
+            "Sleep_Hours": int(request.form.get("sleep_hours")),
+            "Water_Intake": request.form.get("water_intake"),
+            "Scalp_Type": request.form.get("scalp_type"),
+            "Oil_Scalp": request.form.get("oil_scalp"),
+            "Chemical_Treatment": request.form.get("chemical_treatment")
+        })
+
+        DANDRUFF_PROGRESS.append({
+            "user": session.get("username"),
+            "analysis_date": datetime.now().strftime("%Y-%m-%d"),
+            "improvement_percent": random.randint(50, 85)
+        })
+
+        return render_template("dandruff_result.html", result=result)
+
+    return render_template("dandruff_form.html")
+@app.route('/hair_dashboard')
+def hair_dashboard():
+    if 'username' not in session:
+        return redirect(url_for('login'))
+
+    user = session.get('username')
+
+    hairfall_history = [
+        h for h in HAIRFALL_PROGRESS if h.get("user") == user
+    ]
+
+    dandruff_history = [
+        d for d in DANDRUFF_PROGRESS if d.get("user") == user
+    ]
+
+    return render_template(
+        "hair_dashboard.html",
+        hairfall_history=hairfall_history,
+        dandruff_history=dandruff_history
+    )
+
 
 # ---------------- Stress Management ---------------- #
 @app.route('/stress')
@@ -292,4 +338,5 @@ def server_error(e):
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
     app.run(host="0.0.0.0", port=port)
+
 
