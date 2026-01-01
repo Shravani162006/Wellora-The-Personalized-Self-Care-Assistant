@@ -115,8 +115,12 @@ def make_session_permanent():
 
 
 # ---------------- Skincare Data Loading ---------------- #
-with open(r"C:\Users\Admin\Downloads\wellora\mini-project\updated_products.json", "r") as f:
-    SKIN_DATA = json.load(f)
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+json_path = os.path.join(BASE_DIR, "updated_products.json")
+
+with open(json_path, "r", encoding="utf-8") as f:
+    products = json.load(f)
+    
 
 # --- Problem Mapping for Display and DB Storage (User-Friendly Names) ---
 PROBLEM_MAP = {
@@ -1608,4 +1612,5 @@ def progress_dandruff():
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 10000))
     app.run(host="0.0.0.0", port=port)
+
 
