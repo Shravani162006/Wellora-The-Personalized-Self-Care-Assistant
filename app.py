@@ -620,8 +620,13 @@ def progress_history(problem_url_safe):
 
 # ----------------------------- Women's Health ----------------------------- #
 # Safely load women's data
-with open(r"C:\Users\Admin\Downloads\wellora\mini-project\women.json", "r") as f:
-    data = json.load(f)
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+WOMEN_JSON = os.path.join(BASE_DIR, "women.json")
+
+with open(WOMEN_JSON, "r", encoding="utf-8") as f:
+    women_data = json.load(f)
+
+    
 
 @app.route('/women')
 def women_home():
@@ -1613,6 +1618,7 @@ def progress_dandruff():
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 10000))
     app.run(host="0.0.0.0", port=port)
+
 
 
 
