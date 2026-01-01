@@ -228,6 +228,29 @@ def pregnancy_form():
 @app.route('/pregnancy_result', methods=['POST'])
 def pregnancy_result():
     return render_template("pregnancy_result.html", **request.form)
+    
+# ---------------- hair ---------------- #
+@app.route('/hair_dashboard')
+def hair_dashboard():
+    if 'username' not in session:
+        return redirect(url_for('login'))
+
+    # Filter progress for current user
+    user = session.get('username')
+
+    hairfall_history = [
+        h for h in HAIRFALL_PROGRESS if h.get("user") == user
+    ]
+
+    dandruff_history = [
+        d for d in DANDRUFF_PROGRESS if d.get("user") == user
+    ]
+
+    return render_template(
+        "hair_dashboard.html",
+        hairfall_history=hairfall_history,
+        dandruff_history=dandruff_history
+    )
 
 # ---------------- Stress Management ---------------- #
 @app.route('/stress')
@@ -269,3 +292,4 @@ def server_error(e):
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
     app.run(host="0.0.0.0", port=port)
+
