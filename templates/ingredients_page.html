@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ingredients for {{ product_name }}</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='skin.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Ingredients for {{ product_name }}</h2>
+
+        {% if ingredients %}
+            <p>The key ingredients are listed below:</p>
+            <ul class="ingredients-list-page">
+                {% for ingredient in ingredients %}
+                    <li>{{ ingredient }}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>Ingredients could not be found for this product, or the data is missing.</p>
+        {% endif %}
+
+        <a href="javascript:history.back()" class="back-button">← Back to Results</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hairfall Analysis Result</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* CSS Variables for Color Palette from the Original Dashboard */
+        :root {
+            --primary: #A87676; /* Muted Rose */
+            --primary-dark: #8C5E5E;
+            --primary-light: #CA8787;
+            --accent: #E1ACAC; /* Light Pink/Rose */
+            --accent-light: #F5D1D1;
+            --light: #FFD0D0;
+            --white: #ffffff;
+            --text: #5A4A4A; /* Dark Text */
+            --text-dark: #3A2A2A;
+            --text-light: #8A7A7A;
+            --background: #FFF9F9; /* Off-White Background */
+            --background-light: #FFFDFD; /* Added for footer consistency */
+            --foreground: #ffffff; /* Card Background */
+            --border: #F0E0E0;
+            --success: #8BC34A; /* Green for Buy Button */
+            --radius: 12px;
+            --radius-large: 18px;
+            --shadow: 0 8px 25px rgba(168, 118, 118, 0.12);
+            --shadow-hover: 0 15px 35px rgba(168, 118, 118, 0.2);
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        /* General Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.7;
+            color: var(--text);
+            background-color: var(--background);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+   
+
+        /* Footer - Copied from Dashboard */
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            color: var(--text-light);
+            border-top: 1px solid var(--border);
+            margin-top: auto; /* Push footer to bottom */
+            background: var(--background-light);
+        }
+       
+        /* Main Content Container */
+        .main-content {
+            flex-grow: 1; /* Allow content to grow and push footer down */
+            padding: 30px 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: var(--foreground);
+            padding: 40px;
+            border-radius: var(--radius-large);
+            box-shadow: var(--shadow);
+        }
+
+        /* Headings */
+        h2 {
+            color: var(--primary-dark);
+            font-size: 2em;
+            font-weight: 700;
+            border-bottom: 3px solid var(--accent);
+            padding-bottom: 12px;
+            margin-top: 30px;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+       
+        h2.main-title {
+            text-align: left;
+        }
+
+        h3 {
+            color: var(--text-dark);
+            font-size: 1.4em;
+            font-weight: 600;
+            margin-top: 30px;
+            margin-bottom: 18px;
+            padding-left: 0;
+            border-left: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Lists (Remedies & Precautions) */
+        ul {
+            padding-left: 0;
+            margin-bottom: 25px;
+            list-style: none;
+        }
+
+        li {
+            margin-bottom: 8px;
+            padding: 10px 15px;
+            border: 1px solid var(--border);
+            background: var(--background);
+            border-radius: var(--radius);
+            display: flex;
+            align-items: center;
+            transition: background 0.3s;
+        }
+       
+        li:hover {
+            background: var(--accent-light);
+        }
+
+        /* Styling for the list icon based on the section */
+        .remedy-list li i {
+            color: var(--primary-light);
+            margin-right: 12px;
+            font-size: 1.1em;
+        }
+       
+        .precaution-list li i {
+            color: var(--primary-dark);
+            margin-right: 12px;
+            font-size: 1.1em;
+        }
+
+        /* Routine Section */
+        .routine-section {
+            background: var(--background);
+            padding: 20px;
+            border-radius: var(--radius);
+            border-left: 5px solid var(--primary);
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin: 20px 0 40px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+        .routine-section p {
+            margin: 0;
+        }
+
+
+        /* Product Grid */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 25px;
+            margin: 25px 0 40px;
+        }
+
+        .product-card {
+            border: none;
+            padding: 20px;
+            text-align: center;
+            border-radius: var(--radius);
+            background: var(--white);
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+            border-top: 4px solid var(--primary);
+        }
+
+        .product-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: var(--radius);
+            margin-bottom: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-card h4 {
+            color: var(--text-dark);
+            margin: 0 0 15px;
+        }
+
+        /* Buttons */
+        .view-btn {
+            margin-top: auto;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            border: none;
+            padding: 12px 20px;
+            border-radius: var(--radius);
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: var(--transition);
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .view-btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(168, 118, 118, 0.4);
+        }
+
+        .feedback-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, var(--success) 0%, #6da437 100%);
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: var(--radius);
+            margin: 20px 0;
+            transition: var(--transition);
+            font-weight: 600;
+        }
+
+        .feedback-btn:hover {
+            background: #6da437;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(139, 195, 74, 0.4);
+        }
+
+        /* Back Link */
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-light);
+            text-decoration: none;
+            padding: 10px 18px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            transition: var(--transition);
+            font-weight: 500;
+        }
+
+        .back-link:hover {
+            color: var(--primary);
+            background: var(--accent-light);
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        /* Modal (Styling retained from previous version) */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(168, 118, 118, 0.4);
+            backdrop-filter: blur(5px);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background: var(--foreground);
+            padding: 30px;
+            border-radius: var(--radius-large);
+            width: 90%;
+            max-width: 550px;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            animation: fadeIn 0.4s ease;
+            box-shadow: var(--shadow-hover);
+        }
+
+        .modal-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: var(--radius);
+            margin-bottom: 20px;
+        }
+
+        .close-btn {
+            position: absolute;
+            right: 15px;
+            top: 15px;
+            font-size: 30px;
+            cursor: pointer;
+            color: var(--text-light);
+            transition: color 0.3s;
+            background: none;
+            border: none;
+        }
+
+        .close-btn:hover {
+            color: var(--primary);
+        }
+
+        .buy-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: var(--radius);
+            margin-top: 20px;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            width: 100%;
+        }
+
+        .buy-btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(168, 118, 118, 0.4);
+        }
+
+        #modalTitle {
+            color: var(--primary-dark);
+            margin-bottom: 15px;
+            font-size: 1.8em;
+            text-align: center;
+        }
+
+        .modal-content p {
+            margin-bottom: 12px;
+            line-height: 1.6;
+            color: var(--text);
+        }
+
+        .modal-content strong {
+            color: var(--text-dark);
+            margin-right: 5px;
+            font-weight: 600;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.9) translateY(20px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
+        }
+       /* Navigation Bar */
+/* FULL REBUILD OF NAVBAR — EXACT MATCH TO FILE 2 */
+
+.nav-wellora {
+  background: var(--white);
+  padding: 1rem 2rem;
+  box-shadow: var(--shadow);
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  position: sticky;
+  top: 0;
+}
+
+.nav-wellora-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.nav-wellora-logo i {
+  color: var(--accent);
+  font-size: 1.8rem;
+}
+
+.nav-wellora-links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-wellora-links a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 500;
+  transition: var(--transition);
+  position: relative;
+}
+
+.nav-wellora-links a:hover {
+  color: var(--primary);
+}
+
+.nav-wellora-links a.active {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.nav-wellora-links a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--primary);
+}
+
+.nav-wellora-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary);
+  transition: var(--transition);
+}
+/* Remove unwanted boxes around navbar links */
+.nav-wellora-links li,
+.nav-wellora-links a {
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+/* PHONE VIEW MATCHES FILE 2 */
+@media (max-width: 768px) {
+  .nav-wellora {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  .nav-wellora-links {
+    gap: 1rem;
+  }
+}
+
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .nav-links {
+        gap: 1rem;
+    }
+}
+
+
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .container {
+                padding: 25px;
+            }
+            .product-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            h2 {
+                font-size: 1.8em;
+            }
+            h3 {
+                font-size: 1.2em;
+            }
+            .modal-content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+<nav class="nav-wellora">
+  <a href="/dashboard" class="nav-wellora-logo">
+    <i class="fas fa-heartbeat"></i> Wellora
+  </a>
+
+  <ul class="nav-wellora-links">
+    <li><a href="/dashboard">Home</a></li>
+    <li><a href="/about">About Us</a></li>
+    <li><a href="/contact">Contact Us</a></li>
+    <li><a href="/logout">Logout</a></li>
+  </ul>
+</nav>
+
+
+<div class="main-content">
+    <div class="container">
+        <div style="text-align: center; margin-bottom: 30px;">
+            <i class="fas fa-spa" style="font-size: 2.5rem; color: var(--primary);"></i>
+            <h2 class="main-title" style="border-bottom: none; display: inline-block; margin-left: 10px; font-size: 2.5rem;">Your Hairfall Report</h2>
+        </div>
+       
+        <hr style="border: 0; border-top: 1px solid var(--border); margin: 30px 0;">
+
+        <h3><i class="fas fa-seedling" style="color: var(--success);"></i>Recommended Remedies</h3>
+        <ul class="remedy-list">
+            {% for remedy in result.Remedies %}
+              <li><i class="fas fa-check-circle"></i> {{ remedy }}</li>
+            {% endfor %}
+        </ul>
+       
+        <hr style="border: 0; border-top: 1px solid var(--border); margin: 30px 0;">
+
+        <h3><i class="fas fa-shopping-bag" style="color: var(--primary);"></i> Recommended Products</h3>
+        <div class="product-grid">
+            {% for key, p in result.AmazonProducts.items() %}
+              <div class="product-card">
+                <img src="{{ url_for('static', filename='productimages/' ~ p.image) }}"
+              alt="{{ p.name }}" class="product-img">
+                <h4 style="margin: 10px 0; color: var(--text-dark); font-size: 1.1em;">{{ p.name }}</h4>
+
+                <button class="view-btn"
+                onclick="openProductModal('{{ p.name | safe }}', '{{ p.benefits | safe }}', '{{ p.how_to_use | safe }}', '{{ p.ingredient | safe }}', '{{ url_for('static', filename='productimages/' ~ p.image) }}', '{{ p.buy_now_link | safe }}')">
+              <i class="fas fa-eye"></i> View Details
+            </button>
+
+              </div>
+            {% endfor %}
+        </div>
+
+        <h3><i class="fas fa-calendar-check" style="color: var(--primary-light);"></i> Recommended Daily Routine</h3>
+        <div class="routine-section">
+            <p>{{ result.Routine }}</p>
+        </div>
+
+        <h3><i class="fas fa-exclamation-triangle" style="color: var(--primary-dark);"></i> Important Precautions</h3>
+        <ul class="precaution-list">
+          <li><i class="fas fa-times-circle"></i> Avoid over-styling or heating tools frequently</li>
+          <li><i class="fas fa-times-circle"></i> Do not comb wet hair aggressively</li>
+          <li><i class="fas fa-times-circle"></i> Trim split ends regularly</li>
+          <li><i class="fas fa-times-circle"></i> Reduce stress through yoga or meditation</li>
+        </ul>
+
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 40px; flex-wrap: wrap; gap: 15px;">
+            <a href="{{ url_for('feedback_hairfall') }}" class="feedback-btn">
+                <i class="fas fa-comment-dots"></i> Give Feedback
+            </a>
+
+            <a href="{{ url_for('hair_dashboard') }}" class="back-link">
+                <i class="fas fa-arrow-left"></i> Go Back to Dashboard
+            </a>
+        </div>
+
+    </div>
+</div>
+
+<footer>
+    <p>© 2025 Wellora | Your Trusted Health Companion</p>
+</footer>
+
+<div id="productModal" class="modal-overlay">
+    <div class="modal-content">
+        <button class="close-btn" onclick="closeProductModal()">&times;</button>
+        <img id="modalImage" src="" alt="Product Image" class="modal-img">
+        <h2 id="modalTitle"></h2>
+        <p><strong>Benefits:</strong> <span id="modalBenefits"></span></p>
+        <p><strong>How to Use:</strong> <span id="modalUse"></span></p>
+        <p><strong>Ingredients:</strong> <span id="modalIngredients"></span></p>
+        <a id="modalBuyLink" href="#" target="_blank" class="buy-btn">
+            <i class="fas fa-shopping-cart"></i> Buy Now on Amazon
+        </a>
+    </div>
+</div>
+
+<script>
+    function openProductModal(name, benefits, use, ingredients, image, link) {
+        // Function to safely set HTML content
+        const setHtml = (elementId, content) => {
+            const element = document.getElementById(elementId);
+            if (element) {
+                // Formatting pipes into clean list points
+                let formattedContent = content.replace(/\|/g, '<br>&bull; ');
+                if (formattedContent.startsWith('<br>&bull; ')) {
+                    formattedContent = formattedContent.substring(11);
+                }
+                element.innerHTML = formattedContent;
+            }
+        };
+
+        document.getElementById('modalTitle').textContent = name;
+        document.getElementById('modalImage').src = image;
+        document.getElementById('modalBuyLink').href = link;
+       
+        setHtml('modalBenefits', benefits);
+        setHtml('modalUse', use);
+        setHtml('modalIngredients', ingredients);
+
+        document.getElementById('productModal').style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeProductModal() {
+        document.getElementById('productModal').style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+
+    window.onclick = function(event) {
+        const modal = document.getElementById('productModal');
+        if (event.target === modal) {
+            closeProductModal();
+        }
+    }
+   
+    // Set Active Link in Navbar (Home is active since we are returning to dashboard)
+    document.addEventListener('DOMContentLoaded', function() {
+        const navLinks = document.querySelectorAll('.nav-links a');
+        navLinks.forEach(link => {
+            if (link.getAttribute('href') === '/dashboard') {
+                link.classList.add('active');
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

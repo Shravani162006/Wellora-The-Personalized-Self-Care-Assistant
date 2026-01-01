@@ -1,0 +1,685 @@
+[
+  {
+  "Age": "22",
+  "Gender": "Female",
+  "Sleep_Hours": "7",
+  "Water_Intake": "Medium",
+  "Oil_Scalp": "No",
+  "Chem_Treatments": "Yes",
+  "Remedies": "1. Aloe vera gel: Soothe scalp. 2. Argan oil: Shine and strength. 3. Rice water: Conditioning rinse. 4. Rosemary oil: Stimulate growth. 5. Yogurt mask: Nourish scalp. 6. Silk pillowcase: Reduce breakage. 7. Apple cider vinegar rinse: Clarify.",
+  "Routine": "1. Use heat protectant. 2. Deep condition weekly. 3. Eat biotin-rich foods. 4. Sleep 7 hours. 5. Limit tight hairstyles. 6. Stay hydrated. 7. Use sulfate-free shampoo.",
+  "AmazonProducts": {
+    "Shampoo": {
+      "name": "WOW Skin Science Moroccan Argan Oil Shampoo 500 ml",
+      "image": "argan_shampoo.jpg",
+      "benefits": "Color-safe, repairs damage from chemical treatments, sulfate-free.",
+      "how_to_use": "Apply to wet hair, gently massage, rinse thoroughly.",
+      "ingredient": "Argan Oil, Vitamin E, Keratin",
+      "buy_now_link": "https://www.amazon.in/WOW-Science-Moroccan-Shampoo-Blocker/dp/B07V4FD3RP"
+    },
+    "Conditioner": {
+      "name": "St.Botanica Biotin & Collagen Hair Conditioner 300 ml",
+      "image": "biotin_conditioner.jpg",
+      "benefits": "Adds volume and strength, complements biotin-rich diet.",
+      "how_to_use": "Apply after shampoo, focusing on mid-lengths and ends. Rinse well.",
+      "ingredient": "Biotin, Hydrolyzed Collagen, Bamboo Extract",
+      "buy_now_link": "https://www.amazon.in/StBotanica-Biotin-Collagen-Conditioner-300ml/dp/B07GNH6RSF"
+    },
+    "Oil": {
+  "name": "Mamaearth Onion Hair Oil (250 ml)",
+  "image": "mamaearth_onion_oil.jpg",
+  "benefits": "Formulated to reduce hair fall & strengthen hair with onion oil + Redensyl; suitable for chemically-treated hair too. :contentReference[oaicite:1]{index=1}",
+  "how_to_use": "Apply to scalp and hair, massage gently, leave on for 1–2 hours (or overnight if possible), then shampoo as usual.",
+  "ingredient": "Onion Oil, Redensyl, Amla Oil, Hibiscus Oil, Sunflower Oil",
+  "buy_now_link": "https://www.amazon.in/Mamaearth-Onion-growth-Redensyl-Control/dp/B085RMP876"
+},
+    "Serum": {
+  "name": "L'Oréal Paris Extraordinary Oil Hair Serum 100 ml",
+  "image": "heat_serum.jpg",
+  "benefits": "Essential for routine, protects against heat styling and controls frizz.",
+  "how_to_use": "Apply 1-2 pumps evenly on damp hair before any heat application.",
+  "ingredient": "Cyclopentasiloxane, Argan Oil, UV Filter",
+  "buy_now_link": "https://www.amazon.in/LOreal-Paris-Extraordinary-Oil-Serum-100ml/dp/B0DB8C8QK5"
+},
+    "Mask": {
+  "name": "WishCare Fermented Rice Water Hair Mask – Strength & Growth Formula 200 ml",
+  "image": "rice_mask.jpg",
+  "benefits": "Intense conditioning and strength, supports the ‘Rice Water’ remedy.",
+  "how_to_use": "Apply weekly after shampooing, leave for 10-15 minutes, then rinse.",
+  "ingredient": "Fermented Rice Water, Hydrolyzed Keratin, Aloe Vera",
+  "buy_now_link": "https://www.amazon.in/WishCare-Fermented-Rice-Water-Hair-Mask-Strength-Growth-Formula/dp/B0B9R6JBX7"
+}
+  }
+},
+  {
+  "Age": "35",
+  "Gender": "Male",
+  "Sleep_Hours": "6",
+  "Water_Intake": "Low",
+  "Oil_Scalp": "Yes",
+  "Chem_Treatments": "No",
+  "Remedies": "1. Coconut oil: Massage to nourish hair. 2. Onion juice: Stimulate hair growth. 3. Hibiscus powder paste: Strengthen roots. 4. Aloe vera gel: Soothe scalp irritation. 5. Castor oil: Promote thickness. 6. Green tea rinse: Reduce dandruff. 7. Neem oil: Control scalp infection.",
+  "Routine": "1. Avoid daily shampooing. 2. Oil scalp weekly. 3. Eat leafy greens. 4. Sleep at least 6 hours. 5. Gentle combing to prevent breakage. 6. Stay hydrated. 7. Limit stress.",
+  "AmazonProducts": {
+    "Shampoo": {
+  "name": "WOW Skin Science Onion Black Seed Hair Oil Shampoo 250 ml",
+  "image": "onion_shampoo.jpg",
+  "benefits": "Strengthens hair roots, reduces hair fall, and promotes healthy growth.",
+  "how_to_use": "Apply to wet hair, massage gently into scalp, and rinse thoroughly. Use 2-3 times a week.",
+  "ingredient": "Onion Extract, Black Seed Oil, Keratin Protein",
+  "buy_now_link": "https://www.amazon.in/WOW-Skin-Science-Shampoo-Pro-Vitamin/dp/B07YNHHH5N"
+}
+,
+    "Conditioner": {
+      "name": "Khadi Natural Herbal Hair Conditioner with Hibiscus & Aloe Vera 200 ml",
+      "image": "herbal_conditioner.jpg",
+      "benefits": "Nourishes without heavy buildup for frequent oiling.",
+      "how_to_use": "Use only on hair ends after shampooing.",
+      "ingredient": "Hibiscus Extract, Aloe Vera, Jojoba Oil",
+      "buy_now_link": "https://www.amazon.in/KHADI-NATURAL-Hibiscus-Aloe-Conditioner/dp/B09RZGYPBQ"
+    },
+    "Oil": {
+      "name": "Mamaearth Onion Hair Oil for Hair Growth & Hair Fall Control 250 ml",
+      "image": "mamaearth_onion_oil.jpg",
+      "benefits": "Intensifies 'Onion Juice' remedy, promotes thickness and growth.",
+      "how_to_use": "Apply to scalp before washing (weekly oiling routine).",
+      "ingredient": "Onion Seed Oil, Castor Oil, Coconut Oil",
+      "buy_now_link": "https://www.amazon.in/Mamaearth-Onion-growth-Redensyl-Control/dp/B085RMP876"
+    },
+    "Serum": {
+  "name": "WishCare Hair Growth Serum Concentrate",
+  "image": "wishcare_serum.jpg",
+  "benefits": "Controls hair fall at the roots, promotes thickness and new growth.",
+  "how_to_use": "Apply a few drops to clean, dry scalp and massage gently. Leave on; no rinse required.",
+  "ingredient": "Redensyl, Anagain, Baicapil, Biotin, Rice Water",
+  "buy_now_link": "https://www.amazon.in/WishCare-Hair-Growth-Serum-Concentrate/dp/B0B573QW21"
+}
+,
+ "Mask": {
+  "name": "Nykaa Naturals Onion & Fenugreek Hair Growth Paraben and Sulphate Free Hair Mask, 200 ml",
+  "image": "onion_fenugreek_mask1.jpg",
+  "benefits": "Strengthens hair roots, minimizes hair fall, and deeply conditions strands for smooth, healthy growth.",
+  "how_to_use": "Apply the mask evenly to shampooed, damp hair from roots to tips. Leave for 15–20 minutes, then rinse thoroughly with lukewarm water.",
+  "ingredient": "Onion Seed Oil, Fenugreek Extract, Shea Butter, Aloe Vera, Coconut Oil",
+  "buy_now_link": "https://www.amazon.in/Nykaa-Naturals-Fenugreek-Strengthen-Moisturises/dp/B09PKYT7MK"
+}
+  }
+},
+  {
+  "Age": "40",
+  "Gender": "Female",
+  "Sleep_Hours": "8",
+  "Water_Intake": "High",
+  "Oil_Scalp": "Yes",
+  "Chem_Treatments": "No",
+  "Remedies": "1. Aloe vera gel: Soothe and moisturize scalp. 2. Hibiscus oil: Combine with coconut oil for nourishment. 3. Coconut oil: Massage twice weekly. 4. Green tea rinse: Reduce scalp inflammation. 5. Fenugreek paste: Combat thinning and dandruff. 6. Onion juice: Stimulate growth. 7. Castor oil: Strengthen and thicken hair.",
+  "Routine": "1. Avoid heat styling. 2. Oil scalp weekly. 3. Eat healthy fats. 4. Sleep 7-8 hours. 5. Scalp massage twice a week. 6. Stay hydrated. 7. Include leafy greens and proteins.",
+  "AmazonProducts": {
+    "Shampoo": {
+      "name": "WOW Skin Science Onion Black Seed Oil Shampoo",
+      "image": "wow_onion_shampoo.jpg",
+      "benefits": "Targets hair fall, contains Biotin and Pro-Vitamin B5 for strength. Align with Onion/Growth remedies.",
+      "how_to_use": "Massage into wet scalp for 2-3 minutes to encourage circulation, then rinse.",
+      "ingredient": "Onion Extract, Black Seed Oil, Biotin, Pro-Vitamin B5",
+      "buy_now_link": "https://www.amazon.in/WOW-Skin-Science-Shampoo-Pro-Vitamin/dp/B0922KQQLT"
+    },
+    "Conditioner": {
+      "name": "Mamaearth Onion Conditioner for Hair Fall Control",
+      "image": "mamaearth_onion_conditioner.jpg",
+      "benefits": "Reduces breakage, strengthens roots, softens hair without weighing it down. Align with Onion/Coconut remedies.",
+      "how_to_use": "Apply from mid-lengths to ends after shampooing. Leave for 1-2 minutes and rinse.",
+      "ingredient": "Onion Extract, Coconut Oil, D-Panthenol",
+      "buy_now_link": "https://www.amazon.in/Mamaearth-Conditioner-Growth-Control-Coconut/dp/B07WFH21BG"
+    },
+    "Oil": {
+      "name": "Indulekha Bringha Hair Oil",
+      "image": "indulekha_bringha_oil.jpg",
+      "benefits": "Highly popular traditional tonic for hair fall, promotes growth and density. Align with Castor/Growth/Tonic remedies.",
+      "how_to_use": "Warm slightly, apply thoroughly to scalp and hair for twice-weekly scalp massage 2 hours before washing.",
+      "ingredient": "Bhringraj, Coconut Oil, Amla",
+      "buy_now_link": "https://www.amazon.in/Indulekha-Bringha-Ayurvedic-Hair-Oil-100ml/dp/B00S850C5C"
+    },
+    "Serum": {
+  "name": "Minimalist Hair Growth Actives 18% Serum",
+  "image": "minimalist_growth_serum.jpg",
+  "benefits": "Powerful, non-oily treatment with clinical actives (Redensyl, Procapil, Anagain) for targeted thinning.",
+  "how_to_use": "Spray directly onto the scalp (especially thinning areas) and massage lightly every night before bed.",
+  "ingredient": "Redensyl, Procapil, Anagain, Caffeine",
+  "buy_now_link": "https://www.amazon.in/Minimalist-Actives-Procapil-Redensyl-Baicapil/dp/B093LMJFVH"
+}
+,
+    "Mask": {
+      "name": "Plum Ginseng & Fenugreek Hair Mask",
+      "image": "plum_fenugreek_mask.jpg",
+      "benefits": "Strengthens hair shaft, promotes volume and thickness. Aligns with Fenugreek remedy.",
+      "how_to_use": "Use weekly. Apply generously to hair from root to tip. Leave on for 15-20 minutes, then rinse thoroughly.",
+      "ingredient": "Fenugreek Extract, Ginseng, Plant Keratin",
+      "buy_now_link": "https://www.amazon.in/dp/B0DTSSFB5D"
+    }
+  }
+},
+
+
+  {
+    "Age": "30",
+    "Gender": "Male",
+    "Sleep_Hours": "7",
+    "Water_Intake": "Medium",
+    "Oil_Scalp": "No",
+    "Chem_Treatments": "Yes",
+    "Remedies": "1. Argan oil: Moisturize dry scalp. 2. Aloe vera gel: Soothe irritation. 3. Fenugreek paste: Strengthen hair roots. 4. Coconut milk: Nourish scalp. 5. Green tea rinse: Reduce dandruff. 6. Castor oil: Promote thickness. 7. Yogurt mask: Improve hair texture.",
+    "Routine": "1. Limit chemical treatments. 2. Avoid heat styling. 3. Eat balanced diet. 4. Sleep 7 hours. 5. Gentle scalp massage weekly. 6. Stay hydrated. 7. Use mild shampoo.",
+    "AmazonProducts": {
+      "Shampoo": {
+        "name": "L'Oréal Paris Fall Resist 3X Anti‑Hair Fall Shampoo",
+        "image": "LOréal_Paris_Shampoo.jpg",
+        "benefits": "Helps reduce hair-fall from breakage and strengthens strands.",
+        "how_to_use": "After wetting hair, apply to scalp & length, massage briefly, rinse.",
+        "ingredient": "Arginine essence + salicylic acid.",
+        "buy_now_link": "https://www.amazon.in/Paris-Anti-Hair-Reinforcing-Nourishing-Salicylic/dp/B008KH5U28"
+      },
+      "Conditioner": {
+        "name": "L'Oréal Paris Anti‑Hair Fall Conditioner",
+        "image": "L'Oréal_Paris_Conditioner.jpg",
+        "benefits": "Strengthens and nourishes weakened hair to resist hair fall.",
+        "how_to_use": "After shampooing, apply to wet hair from mid-length to ends, massage briefly and rinse thoroughly.",
+        "ingredient": "Arginine Essence + Salicylic Acid.",
+        "buy_now_link": "https://www.amazon.in/LOr%C3%A9al-Paris-Conditioner-Reinforcing-Nourishing/dp/B008KH5UDW"
+      },
+      "Oil": {
+        "name": "Mamaearth Rosemary Hair Growth Oil",
+        "image": "Mamaearth_Rosemary_Oil.jpg",
+        "benefits": "Helps reduce hair fall and promotes growth by strengthening follicles.",
+        "how_to_use": "Apply to scalp and hair, massage gently, leave for 30+ minutes (or overnight) and wash off.",
+        "ingredient": "Rosemary oil + other botanical extracts.",
+        "buy_now_link": "https://www.amazon.in/Mamaearth-Rosemary-Growth-Methi-Promoting/dp/B0CXXX2DTV"
+      },
+      "Serum": {
+        "name": "L’Oréal Paris Fall Resist Anti Hair Fall Serum",
+        "image": "LOréal_Paris_Serum.jpg",
+        "benefits": "Professional-grade formula to strengthen hair fibres & reduce loss for fuller hair in ~6 weeks. ",
+        "how_to_use": "Part hair, apply serum to scalp (spray or dropper), massage, leave overnight. ",
+        "ingredient": "Aminexil + strengthening complex. ",
+        "buy_now_link": "https://www.amazon.in/LOr%C3%A9al-Paris-Resist-Aminexil-visible/dp/B0CK85LKF5"
+      },
+      "Mask": {
+       "name": "Bare Anatomy Anti‑Hair Fall Mask",
+        "image": "Bare_Anatomy_Mask.jpg",
+        "benefits": "Reduces hair-fall up to 5× and strengthens roots.",
+        "how_to_use": "Apply on clean damp hair, leave ~5-10 mins, rinse.",
+        "ingredient": "AdenoGrow® technology (adenosine + peptides).",
+        "buy_now_link": "https://www.amazon.in/Bare-Anatomy-Anti-Hair-Provides-Adenosine/dp/B0BJ4SPH3K"
+      }
+    }
+  },
+  
+  {
+    "Age": "28",
+    "Gender": "Female",
+    "Sleep_Hours": "6",
+    "Water_Intake": "Low",
+    "Oil_Scalp": "Yes",
+    "Chem_Treatments": "No",
+    "Remedies": "1. Hibiscus oil: Strengthen hair roots. 2. Aloe vera gel: Moisturize and soothe scalp. 3. Coconut oil: Prevent dryness. 4. Onion juice: Stimulate growth. 5. Green tea rinse: Reduce inflammation. 6. Castor oil: Promote thickness. 7. Fenugreek paste: Combat dandruff.",
+    "Routine": "1. Oil scalp weekly. 2. Avoid heat styling. 3. Eat protein-rich foods. 4. Sleep 6-7 hours. 5. Scalp massage twice a week. 6. Stay hydrated. 7. Include leafy greens in diet.",
+    "AmazonProducts": {
+      "Shampoo": {
+        "name": "Mamaearth Onion Shampoo (Hair Growth & Hair Fall Control)",
+        "image": "Mamaearth_Onion_Shampoo.jpg",
+        "benefits": "Encourages hair-growth and controls hair-fall through natural actives.",
+        "how_to_use": "Use on wet hair, massage into scalp, leave 1-2 minutes, rinse.",
+        "ingredient": "Onion extract + plant keratin.",
+        "buy_now_link": "https://www.amazon.in/Mamaearth-Shampoo-Growth-Control-Keratin/dp/B0BG8GPD5F"
+      },
+      "Conditioner": {
+        "name": "Mamaearth 100% Natural Conditioner (Hair‑Fall Focus)",
+        "image": "mamaearth_onion_conditioner.jpg",
+        "benefits": "Benefit: Natural formulation to reduce hair-fall and add thickness.",
+        "how_to_use": "How to use: On damp hair post-wash, apply, leave for a short time, rinse.",
+        "ingredient": "Key ingredient: Neem + Plant Keratin (specifics vary).",
+        "buy_now_link": "https://www.amazon.in/Mamaearth-Conditioner-Growth-Control-Coconut/dp/B07WFH21BG"
+      },
+      "Oil": {
+        "name": "Mamaearth Onion Hair Oil for Hair Growth & Hair Fall Control 250 ml",
+      "image": "mamaearth_onion_oil.jpg",
+      "benefits": "Intensifies 'Onion Juice' remedy, promotes thickness and growth.",
+      "how_to_use": "Apply to scalp before washing (weekly oiling routine).",
+      "ingredient": "Onion Seed Oil, Castor Oil, Coconut Oil",
+      "buy_now_link": "https://www.amazon.in/Mamaearth-Onion-growth-Redensyl-Control/dp/B085RMP876"
+      },
+      "Serum": {
+        "name": "Minimalist Hair Growth Actives 18% Serum",
+        "image": "minimalist_growth_serum.jpg",
+        "benefits": "Powerful, non-oily treatment with clinical actives (Redensyl, Procapil, Anagain) for targeted thinning.",
+        "how_to_use": "Spray directly onto the scalp (especially thinning areas) and massage lightly every night before bed.",
+        "ingredient": "Redensyl, Procapil, Anagain, Caffeine",
+        "buy_now_link": "https://www.amazon.in/Minimalist-Actives-Procapil-Redensyl-Baicapil/dp/B093LMJFVH"
+
+      },
+      "Mask": {
+       "name": "Naturali Anti‑Hairfall Hair Mask",
+        "image": "Naturali_Mask.jpg",
+        "benefits": "Repairs weak follicles & cuts hair-fall claims, with botanicals",
+        "how_to_use": "After shampoo, apply mid-lengths to ends, leave 3-4 minutes, rinse.",
+        "ingredient": "Rosemary + Korean Ginseng + Biotin.",
+        "buy_now_link": "https://www.amazon.in/Naturali-Anti-Hairfall-Rosemary-Promotes-Follicle/dp/B0DRSTQ5SQ"
+      }
+    }
+  },
+  {
+    "Age": "20",
+    "Gender": "Female",
+    "Sleep_Hours": "8",
+    "Water_Intake": "High",
+    "Oil_Scalp": "No",
+    "Chem_Treatments": "Yes",
+    "Remedies": "1. Rice water: Daily spritz. 2. Argan oil: End sealing. 3. Coconut milk: Weekly mask. 4. Aloe vera: Soothing. 5. Rosewater: Refresh. 6. Biotin: Supplement. 7. Egg white: Clarifying.",
+    "Routine": "1. Air dry 80%. 2. Bond-repair products. 3. Protein and Vitamin C. 4. Sleep 8 hours. 5. Protect from pool chemicals. 6. Stay hydrated. 7. Low-sulfate products.",
+    "AmazonProducts": {
+      "Shampoo": {
+        "name": "WishCare Multi‑Peptide Anti Hairfall Shampoo",
+        "image": "WishCare_Shampoo.jpg",
+        "benefits": "Reduces hair-fall and boosts root strength using peptide technology.",
+        "how_to_use": "After shampooing hair, apply, massage, rinse thoroughly.",
+        "ingredient": "Multi-peptides + rosemary + caffeine.",
+        "buy_now_link": "https://www.amazon.in/WishCare-Multi-Peptide-Hairfall-Shampoo/dp/B0CTFHPC23"
+      },
+      "Conditioner": {
+        "name": "Bare Anatomy Anti‑Hair Fall Conditioner",
+        "image": "Bare_Anatomy_Conditioner.jpg",
+        "benefits": "Helps reduce hair thinning and breakage by fortifying strands.",
+        "how_to_use": "Use on freshly washed hair, leave for a minute or two then rinse.",
+        "ingredient": "Biotin + Adenosine + Peptides + Rice Water.",
+        "buy_now_link": "https://www.amazon.in/Bare-Anatomy-Anti-Hair-Conditioner-Strengthens/dp/B0FFHDQVK1"
+      },
+      "Oil": {
+        "name": "KESH King Ayurvedic Anti Hairfall Hair Oil",
+        "image": "KESH_King_Oil.jpg",
+        "benefits": "Helps reduce hair fall and strengthens hair via Ayurvedic ingredients.",
+        "how_to_use": "Apply generously to scalp and hair, massage, leave in for at least 30 minutes and then wash.",
+        "ingredient": "Ayurvedic herbs (specific names vary).",
+        "buy_now_link": "https://www.amazon.in/Kesh-King-Ayurvedic-Scalp-Hair/dp/B07K2JHVRY"
+      },
+      "Serum": {
+        "name": "WishCare Hair Growth Serum Concentrate",
+        "image": "wishcare_serum.jpg",
+        "benefits": "Controls hair fall at the roots, promotes thickness and new growth.",
+        "how_to_use": "Apply a few drops to clean, dry scalp and massage gently. Leave on; no rinse required.",
+        "ingredient": "Redensyl, Anagain, Baicapil, Biotin, Rice Water",
+        "buy_now_link": "https://www.amazon.in/WishCare-Hair-Growth-Serum-Concentrate/dp/B0B573QW21"
+      },
+      "Mask": {
+        "name": "Mamaearth Onion Hair Mask",
+        "image": "Mamaearth_Mask.jpg",
+        "benefits": "Strengthens hair, reduces breakage and hair-fall using onion keratin.",
+        "how_to_use": "Apply to wet hair post-shampoo, leave 5-7 minutes, rinse.",
+        "ingredient": "Onion extract + Plant Keratin.",
+        "buy_now_link": "https://www.amazon.in/Mamaearth-Onion-Hair-Women-200ml/dp/B07RXKVVRD/"
+      }
+    }
+  },
+  {
+    "Age": "49",
+    "Gender": "Male",
+    "Sleep_Hours": "5",
+    "Water_Intake": "High",
+    "Oil_Scalp": "Yes",
+    "Chem_Treatments": "No",
+    "Remedies": "1. Bhringraj oil: Tonic. 2. Neem oil: Anti-fungal. 3. Fenugreek: Volumizing. 4. Onion juice: Targeted. 5. Castor oil: Density. 6. Coconut oil: Scalp base. 7. Lemon juice: Clarifying.",
+    "Routine": "1. Oil scalp weekly. 2. Minimal washing. 3. Whole foods. 4. Focus on sleep. 5. Soft brush. 6. Stay hydrated. 7. Reduce stress.",
+    "AmazonProducts": {
+      "Shampoo": {
+        "name": "Naturali Anti‑Hairfall Shampoo",
+        "image": "Naturali_Shampoo.jpg",
+        "benefits": "Reduces hair-fall and boosts root strength using peptide technology.",
+        "how_to_use": "After shampooing hair, apply, massage, rinse thoroughly.",
+        "ingredient": "Multi-peptides + rosemary + caffeine.",
+        "buy_now_link": "https://www.amazon.in/Naturali-Anti-Hairfall-Rosemary-Hairfall-Sulphate/dp/B0DHVRD5T6"
+      },
+      "Conditioner": {
+        "name": "Tresemmé Hair Fall Defense Conditioner",
+        "image": "Tresemmé_Conditioner.jpg",
+        "benefits": "Helps defend against hair fall from breakage in everyday usage.",
+        "how_to_use": "After shampoo, apply on lengths, leave for a short while and rinse off.",
+        "ingredient": "Amino + Keratin Complex.",
+        "buy_now_link": "https://www.amazon.in/TRESemme-Hair-Fall-Defence-Conditioner/dp/B0757589NR"
+      },
+      "Oil": {
+        "name": "Himalaya Anti‑Hair Fall Hair Oil",
+        "image": "Himalaya_Oil.jpg",
+        "benefits": "Lowers hair fall and nourishes scalp using herbal actives.",
+        "how_to_use": "Apply on scalp and hair lengths before shampoo, leave for 30-60 minutes, then wash.",
+        "ingredient": "Bhringaraj + Amla and other herbs.",
+        "buy_now_link": "https://www.amazon.in/Himalaya-Hair-Oil-100ml-Bottle/dp/B014UWLDYU"
+      },
+      "Serum": {
+        "name": "Bare Anatomy Advanced Hair Growth Serum",
+        "image": "Bare_Anatomy_Serum.jpg",
+        "benefits": "Strengthens weak roots and reduces hair-breakage and fall.",
+        "how_to_use": "Apply on scalp & hair after washing, massage and leave on; no rinse required.",
+        "ingredient": "Redensyl + Anagain + Rosemary + Biotin.",
+        "buy_now_link": "https://www.amazon.in/Bare-Anatomy-Advanced-Redensyl-Baicapil/dp/B0CT5FKBR7"
+      },
+      "Mask": {
+       "name": "BBlunt Hair Fall Control Hair Mask",
+        "image": "BBlunt_Mask.jpg",
+        "benefits": "Reduces hair-fall & strengthens hair shafts for men & women.",
+        "how_to_use": "Use after shampoo, apply to lengths & scalp, leave 5 minutes, rinse.",
+        "ingredient": "Pea Protein + Caffeine.",
+        "buy_now_link": "https://www.amazon.in/BBLUNT-Caffeine-Stronger-Hair-250-Strengthens/dp/B0CSDMKCXJ"
+      }
+    }
+  },
+  {
+    "Age": "33",
+    "Gender": "Female",
+    "Sleep_Hours": "7",
+    "Water_Intake": "Low",
+    "Oil_Scalp": "No",
+    "Chem_Treatments": "No",
+    "Remedies": "1. Olive oil: Hot oil. 2. Rosemary oil: Growth. 3. Egg mask: Protein. 4. Shea butter: Leave-in. 5. Avocado: Moisture. 6. Biotin: Supplement. 7. Lavender oil: Calming.",
+    "Routine": "1. Deep condition weekly. 2. Protective styles. 3. Focus on Iron. 4. Sleep 7 hours. 5. Silk bonnet. 6. Increase water intake. 7. Avoid excessive towel drying.",
+    "AmazonProducts": {
+      "Shampoo": {
+        "name": "Bare Anatomy Anti‑Hair Fall Shampoo",
+        "image": "Bare_Anatomy_Shampoo.jpg",
+        "benefits": "Same core as above — root strength and hair-fall control via peptides.",
+        "how_to_use": "On wet hair post-shampoo, apply, massage, rinse.",
+        "ingredient": "Multi-peptides + botanical extracts.",
+        "buy_now_link": "https://www.amazon.in/Bare-Anatomy-Contains-Adenosine-Hyaluronic/dp/B0DP5118T6"
+      },
+      "Conditioner": {
+        "name": "Dove Hair Fall Rescue Conditioner",
+        "image": "Dove_Conditioner.jpg",
+        "benefits": "Reduces hair fall due to breakage while making hair soft and nourished.",
+        "how_to_use": "Apply after shampooing, concentrate on mid to ends, leave for 1-2 minutes then rinse.",
+        "ingredient": "Nutrilock Complex (Dove’s proprietary formula).",
+        "buy_now_link": "https://www.amazon.in/Dove-Hair-Rescue-Conditioner-180ml/dp/B00VK5UTLO"
+      },
+      "Oil": {
+        "name": "Brillare Rosemary Hair Oil",
+        "image": "Brillare_Oil.jpg",
+        "benefits": "Strengthens roots and helps reduce hair thinning with rosemary-based formula.",
+        "how_to_use": "Massage onto scalp and hair, leave for 30 minutes (or overnight), then rinse.",
+        "ingredient": "Rosemary oil + other supportive oils.",
+        "buy_now_link": "https://www.amazon.in/Brillare-Rosemary-Hair-Oil-100/dp/B0CX1VB52B"
+      },
+      "Serum": {
+        "name": "Be Bodywise Hair Growth Serum",
+        "image": "BeBodywise_Serum.jpg",
+        "benefits": "Controls hair-fall and stimulates follicle activity for both men & women.",
+        "how_to_use": "Use roll-on or dropper on scalp, massage gently, leave; rinse only if advised.",
+        "ingredient": "Rosemary + Redensyl + Anagain. ",
+        "buy_now_link": "https://www.amazon.in/Be-Bodywise-Rosemary-Stimulates-Follicles/dp/B0CPJB7WW7"
+      },
+      "Mask": {
+       "name": "BBlunt Hair Fall Control Hair Mask",
+        "image": "BBlunt_Mask.jpg",
+        "benefits": "Reduces hair-fall & strengthens hair shafts for men & women.",
+        "how_to_use": "Use after shampoo, apply to lengths & scalp, leave 5 minutes, rinse.",
+        "ingredient": "Pea Protein + Caffeine.",
+        "buy_now_link": "https://www.amazon.in/BBLUNT-Caffeine-Stronger-Hair-250-Strengthens/dp/B0CSDMKCXJ"
+      }
+    }
+  },
+  {
+    "Age": "36",
+    "Gender": "Female",
+    "Sleep_Hours": "6",
+    "Water_Intake": "High",
+    "Oil_Scalp": "Yes",
+    "Chem_Treatments": "No",
+    "Remedies": "1. Hibiscus oil: Color/shine. 2. Fenugreek: Reduce shedding. 3. Coconut oil: Twice weekly. 4. Aloe vera: Soothe. 5. Green tea: Anti-dandruff. 6. Castor oil: Thickness. 7. Amla oil: Strengthening.",
+    "Routine": "1. Oil scalp twice weekly. 2. Avoid direct sun. 3. Healthy fats. 4. Sleep 6 hours. 5. Scalp massage. 6. Stay hydrated. 7. Wide-tooth comb.",
+    "AmazonProducts": {
+      "Shampoo": {
+        "name": "Indulekha Bringha Ayurvedic Shampoo",
+        "image": "Indulekha_Shampoo.jpg",
+        "benefits": "Ayurvedic brand shampoo that targets hair-fall with traditional herbal ingredients.",
+        "how_to_use": "Apply to wet hair, massage scalp for 1-2 minutes, rinse.",
+        "ingredient": "Bringharaj (Bhringraj) + amla + Indian herbs.",
+        "buy_now_link": "https://www.amazon.in/Indulekha-Proprietary-Ayurvedic-Medicine-Synthetic/dp/B076PV19DW"
+      },
+      "Conditioner": {
+        "name": "WishCare Multi‑Peptide Anti Hairfall Conditioner",
+        "image": "WishCare_Conditioner.jpg",
+        "benefits": "Strengthens roots and reduces hair fall with multi-peptide actives.",
+        "how_to_use": "Use on wet hair post-shampoo, massage into scalp & hair, rinse.",
+        "ingredient": "Multi-peptides (Oligopeptide-2 & Biotinoyl Tripeptide-1) + Rosemary + Caffeine.",
+        "buy_now_link": "https://www.amazon.in/WishCare-Multi-Peptide-Hairfall-Conditioner/dp/B0D39YYBYJ"
+      },
+      "Oil": {
+        "name": "Indulekha Bringha Hair Oil",
+      "image": "indulekha_bringha_oil.jpg",
+      "benefits": "Highly popular traditional tonic for hair fall, promotes growth and density. Align with Castor/Growth/Tonic remedies.",
+      "how_to_use": "Warm slightly, apply thoroughly to scalp and hair for twice-weekly scalp massage 2 hours before washing.",
+      "ingredient": "Bhringraj, Coconut Oil, Amla",
+      "buy_now_link": "https://www.amazon.in/Indulekha-Bringha-Ayurvedic-Hair-Oil-100ml/dp/B00S850C5C"
+      },
+      "Serum": {
+        "name": "Pilgrim Advanced Hair Growth Serum",
+        "image": "Pilgrim_Serum.jpg",
+        "benefits": "Reduces hair-thinning and supports new growth in roots.",
+        "how_to_use": "Apply to scalp section-wise after wash or on dry scalp, massage and let it absorb.",
+        "ingredient": "Korean Black Rice + Redensyl 3% + Anagain 4%.",
+        "buy_now_link": "https://www.amazon.in/Pilgrim-Redensyl-Advanced-Ingredients-Stimulates/dp/B0CRTQZ4HG"
+      },
+      "Mask": {
+       "name": "BBlunt Hair Fall Control Hair Mask",
+        "image": "BBlunt_Mask.jpg",
+        "benefits": "Reduces hair-fall & strengthens hair shafts for men & women.",
+        "how_to_use": "Use after shampoo, apply to lengths & scalp, leave 5 minutes, rinse.",
+        "ingredient": "Pea Protein + Caffeine.",
+        "buy_now_link": "https://www.amazon.in/BBLUNT-Caffeine-Stronger-Hair-250-Strengthens/dp/B0CSDMKCXJ"
+      }
+    }
+  },
+  {
+    "Age": "50",
+    "Gender": "Male",
+    "Sleep_Hours": "7",
+    "Water_Intake": "Low",
+    "Oil_Scalp": "Yes",
+    "Chem_Treatments": "No",
+    "Remedies": "1. Amla oil: Graying. 2. Bhringraj oil: Tonic. 3. Onion juice: Growth. 4. Fenugreek: Strengthen. 5. Coconut oil: Overnight. 6. Neem oil: Anti-fungal. 7. Castor oil: Density.",
+    "Routine": "1. Oil scalp weekly. 2. Gentle combing. 3. Focus on B vitamins. 4. Sleep 7 hours. 5. Natural bristle brush. 6. Increase water intake. 7. Avoid harsh soaps.",
+    "AmazonProducts": {
+      "Shampoo": {
+        "name": "Sebamed Anti‑Hairloss Shampoo",
+        "image": "Sebamed_Shampoo.jpg",
+        "benefits": "pH-balanced shampoo supporting hair-loss reduction and scalp health.",
+        "how_to_use": "On wet hair, apply, massage scalp, rinse.",
+        "ingredient": "Amino Acid Complex + Caffeine & Ginkgo Biloba.",
+        "buy_now_link": "https://www.amazon.in/Sebamed-Anti-Hair-Shampoo-200ml/dp/B0DL5TCYPH"
+      },
+      "Conditioner": {
+        "name": "Naturali Anti‑Hairfall Conditioner",
+        "image": "Naturali_Conditioner.jpg",
+        "benefits": "Reduces hair fall and detangles hair while giving healthier-looking hair. ",
+        "how_to_use": "Apply on clean damp hair, comb through gently, leave 1-2 minutes then rinse.",
+        "ingredient": "Red Onion + Bhringraj.",
+        "buy_now_link": "https://www.amazon.in/Naturali-Anti-Hairfall-Conditioner-Rosemary-Reduction/dp/B0FPRH154G"
+      },
+      "Oil": {
+        "name": "Vedix Hair Growth Oil",
+        "image": "Vedix_Oil.jpg",
+        "benefits": "Personalized oil blend to reduce hair fall and support growth based on hair profile.",
+        "how_to_use": "Use on scalp and lengths, massage, leave recommended time, then wash.",
+        "ingredient": "Customized herbal/oil blend depending on hair type.",
+        "buy_now_link": "https://www.amazon.in/Vedix-Niryath-Stimulating-Ayurvedic-Licorice/dp/B094CXJGCZ/"
+      },
+      "Serum": {
+        "name": "Minimalist 18% Hair Growth Actives Hair Serum",
+        "image": "Minimalist_Serum.jpg",
+        "benefits": "High-strength actives to combat hair-fall and thinning hair.",
+        "how_to_use": "On clean scalp apply recommended drops, massage gently, don’t rinse.",
+        "ingredient": "18% Hair growth actives mixture (likely Redensyl, Baicapil etc).",
+        "buy_now_link": "https://www.amazon.in/Minimalist-Actives-Procapil-Redensyl-Baicapil/dp/B093LMJFVH"
+      },
+      "Mask": {
+       "name": "Khadi Natural Amla & Bhringraj Hair Mask",
+        "image": "Khadi_Natural_Mask.jpg",
+        "benefits": "Herbal mask to curtail hair-fall and nourish hair deeply.",
+        "how_to_use": "Apply on damp hair covering scalp and lengths, leave ~10 minutes, rinse.",
+        "ingredient": "Amla + Bhringraj + Neem & Turmeric.",
+        "buy_now_link": "https://www.amazon.in/NATURAL-Bhringraj-Hair-POWERED-BOTANICS/dp/B09RP3848C"
+      }
+    }
+  },
+  {
+    "Age": "25",
+    "Gender": "Female",
+    "Sleep_Hours": "7",
+    "Water_Intake": "Medium",
+    "Oil_Scalp": "No",
+    "Chem_Treatments": "Yes",
+    "Remedies": "1. Aloe vera gel: Soothe scalp irritation and adds moisture. 2. Argan oil: Apply twice weekly for shine and strength. 3. Green tea rinse: Reduce scalp inflammation. 4. Fenugreek mask: Strengthens hair roots. 5. Coconut oil: Prevents dryness and breakage. 6. Rosehip oil: Adds hydration and softens hair. 7. Yogurt mask: Nourishes scalp and improves hair texture.",
+    "Routine": "1. Avoid excessive heat styling. 2. Limit chemical treatments. 3. Eat protein-rich foods. 4. Sleep 7 hours. 5. Gentle scalp massage weekly. 6. Stay hydrated. 7. Use mild shampoo.",
+    "AmazonProducts": {
+      "Shampoo": {
+        "name": "BBlunt Hair Fall Control Shampoo",
+        "image": "BBlunt_Shampoo.jpg",
+        "benefits": "Helps reduce hair-fall and strengthen hair shafts (salon brand).",
+        "how_to_use": "Apply after wetting hair, massage, leave short time, rinse.",
+        "ingredient": "Pea Protein + Caffeine.",
+        "buy_now_link": "https://www.amazon.in/BBLUNT-Control-Conditioner-Caffeine-Stronger/dp/B0BS6QMVWN"
+      },
+      "Conditioner": {
+        "name": "WOW Skin Science Hair Loss Control Therapy Conditioner",
+        "image": "WOW_Science_Conditioner.jpg",
+        "benefits": "Targets hair-loss and thinning hair to improve thickness.",
+        "how_to_use": "Use on wet hair after shampoo, massage into lengths, rinse.",
+        "ingredient": "Redensyl + Biotin (as per brand claims).",
+        "buy_now_link": "https://www.amazon.in/WOW-Science-Shampoo-Extract-Pro-Vitamin/dp/B08RNQ3MMQ"
+      },
+      "Oil": {
+        "name": "Vedix Hair Growth Oil",
+        "image": "Vedix_Oil.jpg",
+        "benefits": "Personalized oil blend to reduce hair fall and support growth based on hair profile.",
+        "how_to_use": "Use on scalp and lengths, massage, leave recommended time, then wash.",
+        "ingredient": "Customized herbal/oil blend depending on hair type.",
+        "buy_now_link": "https://www.amazon.in/Vedix-Niryath-Stimulating-Ayurvedic-Licorice/dp/B094CXJGCZ/"
+      },
+      "Serum": {
+        "name": "Minimalist 18% Hair Growth Actives Hair Serum",
+        "image": "Minimalist_Serum.jpg",
+        "benefits": "High-strength actives to combat hair-fall and thinning hair.",
+        "how_to_use": "On clean scalp apply recommended drops, massage gently, don’t rinse.",
+        "ingredient": "18% Hair growth actives mixture (likely Redensyl, Baicapil etc).",
+        "buy_now_link": "https://www.amazon.in/Minimalist-Actives-Procapil-Redensyl-Baicapil/dp/B093LMJFVH"
+      },
+      "Mask": {
+       "name": "Khadi Natural Amla & Bhringraj Hair Mask",
+        "image": "Khadi_Natural_Mask.jpg",
+        "benefits": "Herbal mask to curtail hair-fall and nourish hair deeply.",
+        "how_to_use": "Apply on damp hair covering scalp and lengths, leave ~10 minutes, rinse.",
+        "ingredient": "Amla + Bhringraj + Neem & Turmeric.",
+        "buy_now_link": "https://www.amazon.in/NATURAL-Bhringraj-Hair-POWERED-BOTANICS/dp/B09RP3848C"
+      }
+    }
+  },
+  {
+    "Age": "44",
+    "Gender": "Male",
+    "Sleep_Hours": "8",
+    "Water_Intake": "High",
+    "Oil_Scalp": "Yes",
+    "Chem_Treatments": "No",
+    "Remedies": "1. Olive oil: Conditioning. 2. Neem oil: Anti-fungal. 3. Castor oil: Density. 4. Green tea: Anti-dandruff rinse. 5. Onion juice: Booster. 6. Coconut oil: All-purpose. 7. Lemon juice: Clarifying.",
+    "Routine": "1. Oil scalp twice weekly. 2. Avoid heavy gels. 3. Balanced diet. 4. Sleep 8 hours. 5. Mild soap. 6. Stay hydrated. 7. Gentle towel drying.",
+    "AmazonProducts": {
+      "Shampoo": {
+        "name": "Himalaya Anti‑Hair Fall Shampoo",
+        "image": "Himalaya_Shampoo.jpg",
+        "benefits": "Herbal budget option to reduce hair-fall and nourish scalp",
+        "how_to_use": "Wet hair, apply shampoo generously, leave 1-2 minutes, rinse.",
+        "ingredient": "Bhringaraj + Amla + Other herbs.",
+        "buy_now_link": "https://www.amazon.in/Himalaya-Anti-Hair-Fall-Shampoo/dp/B07J2MQZLB"
+      },
+      "Conditioner": {
+        "name": "Himalaya Anti Hair Fall Bhringaraj Conditioner",
+        "image": "Himalaya_Conditioner.jpg",
+        "benefits": "Helps control hair fall naturally and conditions hair using herbal formula.",
+        "how_to_use": "After shampooing, apply conditioner thoroughly on hair, leave for a minute or two, then rinse.",
+        "ingredient": "Bhringaraj (and typically Amla & other herbs).",
+        "buy_now_link": "https://www.amazon.in/Himalaya-Anti-Bhringaraja-Conditioner-180Ml/dp/B0DYP8F8BT"
+      },
+      "Oil": {
+        "name": "Brillare Rosemary Hair Oil",
+        "image": "Brillare_Oil.jpg",
+        "benefits": "Strengthens roots and helps reduce hair thinning with rosemary-based formula.",
+        "how_to_use": "Massage onto scalp and hair, leave for 30 minutes (or overnight), then rinse.",
+        "ingredient": "Rosemary oil + other supportive oils.",
+        "buy_now_link": "https://www.amazon.in/Brillare-Rosemary-Hair-Oil-100/dp/B0CX1VB52B"
+      },
+      "Serum": {
+        "name": "Pilgrim Advanced Hair Growth Serum",
+        "image": "Pilgrim_Serum.jpg",
+        "benefits": "Reduces hair-thinning and supports new growth in roots.",
+        "how_to_use": "Apply to scalp section-wise after wash or on dry scalp, massage and let it absorb.",
+        "ingredient": "Korean Black Rice + Redensyl 3% + Anagain 4%.",
+        "buy_now_link": "https://www.amazon.in/Pilgrim-Redensyl-Advanced-Ingredients-Stimulates/dp/B0CRTQZ4HG"
+      },
+      "Mask": {
+       "name": "BBlunt Hair Fall Control Hair Mask",
+        "image": "BBlunt_Mask.jpg",
+        "benefits": "Reduces hair-fall & strengthens hair shafts for men & women.",
+        "how_to_use": "Use after shampoo, apply to lengths & scalp, leave 5 minutes, rinse.",
+        "ingredient": "Pea Protein + Caffeine.",
+        "buy_now_link": "https://www.amazon.in/BBLUNT-Caffeine-Stronger-Hair-250-Strengthens/dp/B0CSDMKCXJ"
+      }
+    }
+  },
+  {
+    "Age": "29",
+    "Gender": "Female",
+    "Sleep_Hours": "6",
+    "Water_Intake": "Medium",
+    "Oil_Scalp": "No",
+    "Chem_Treatments": "Yes",
+    "Remedies": "1. Argan oil: UV protection. 2. Rosehip oil: Shine. 3. Rice water: Strength. 4. Aloe vera: Leave-in. 5. Coconut oil: Pre-poo. 6. Green tea: Scalp refresh. 7. Keratin mask: Repair.",
+    "Routine": "1. Limit chemical exposure. 2. Use color-safe products. 3. Eat healthy fats. 4. Sleep 6 hours. 5. Use cold water. 6. Stay hydrated. 7. Gentle combing.",
+    "AmazonProducts": {
+      "Shampoo": {
+        "name": "Mamaearth Rosemary Anti‑Hair Fall Shampoo",
+        "image": "Mamaearth_Rosemary_Shampoo.jpg",
+        "benefits": "Reduces hair fall and breakage, strengthens hair.",
+        "how_to_use": "Use on wet hair, massage scalp, rinse.",
+        "ingredient": "Rosemary + Methi (Fenugreek) Dana.",
+        "buy_now_link": "https://www.amazon.in/Mamaearth-Rosemary-Anti-Hair-Reducing-Breakage/dp/B0D5YGGCVQ"
+      },
+      "Conditioner": {
+        "name": "Mamaearth Rosemary Anti‑Hair Fall Conditioner",
+        "image": "Mamaearth_Rosemary_Conditioner.jpg",
+        "benefits": "Reduces hair fall and gives smoother, stronger hair with natural actives.",
+        "how_to_use": "Apply on damp hair after shampoo, leave for 1-2 minutes then rinse out.",
+        "ingredient": "Rosemary + Methi Dana (Fenugreek seed).",
+        "buy_now_link": "https://www.amazon.in/Mamaearth-Rosemary-Conditioner-Reducing-Breakage/dp/B0C6M3C4P8"
+      },
+      "Oil": {
+        "name": "Indulekha Bringha Hair Oil",
+      "image": "indulekha_bringha_oil.jpg",
+      "benefits": "Highly popular traditional tonic for hair fall, promotes growth and density. Align with Castor/Growth/Tonic remedies.",
+      "how_to_use": "Warm slightly, apply thoroughly to scalp and hair for twice-weekly scalp massage 2 hours before washing.",
+      "ingredient": "Bhringraj, Coconut Oil, Amla",
+      "buy_now_link": "https://www.amazon.in/Indulekha-Bringha-Ayurvedic-Hair-Oil-100ml/dp/B00S850C5C"
+      },
+      "Serum": {
+        "name": "Indulekha Bringha Hair Growth Treatment Scalp Serum",
+        "image": "Indulekha_Serum.jpg",
+        "benefits": "Ayurvedic formula to reduce hair-fall, nourish scalp and promote baby-hair growth. ",
+        "how_to_use": "Apply 6-10 drops onto scalp, massage gently; leave in, no rinse.",
+        "ingredient": "Bringharaj + Brahmi + Rosemary + Amla.",
+        "buy_now_link": "https://www.amazon.in/Indulekha-Bringha-Growth-Treatment-Ayurvedic/dp/B0F4KSKH5B"
+      },
+      "Mask": {
+       "name": "Mamaearth Onion Hair Mask",
+        "image": "Mamaearth_Mask.jpg",
+        "benefits": "Strengthens hair, reduces breakage and hair-fall using onion keratin.",
+        "how_to_use": "Apply to wet hair post-shampoo, leave 5-7 minutes, rinse.",
+        "ingredient": "Onion extract + Plant Keratin.",
+        "buy_now_link": "https://www.amazon.in/Mamaearth-Onion-Hair-Women-200ml/dp/B07RXKVVRD/"
+      }
+    }
+  }
+]

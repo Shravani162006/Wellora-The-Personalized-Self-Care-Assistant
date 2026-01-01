@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stress Management Hub</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/stress_style.css') }}">
+    {% block extra_css %}{% endblock %}
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="logo">🌿 StressFree</h1>
+            <div class="nav-links">
+                {% if request.path.startswith('/stress') and request.path != '/stress' %}
+    <a href="/stress" class="nav-link">Home</a>
+{% else %}
+    <a href="/dashboard" class="nav-link">Home</a>
+{% endif %}
+
+
+                <a href="/stress/music" class="nav-link">Relaxing Music</a>
+
+            </div>
+        </div>
+    </nav>
+    
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 Stress Management Hub. All rights reserved.</p>
+    </footer>
+    
+    
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    {% block extra_js %}{% endblock %}
+</body>
+</html>

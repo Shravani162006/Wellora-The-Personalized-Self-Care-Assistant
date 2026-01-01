@@ -1,0 +1,869 @@
+[
+  {
+    "Gender": "Male",
+    "SkinIssue": "Pimples",
+    "SkinType": "Oily",
+    "MorningRoutine": "Step 1: Cleanser (removes oil and dust) → Step 2: Light moisturizer (keeps skin hydrated without extra oil) → Step 3: Sunscreen (protects from UV rays)",
+    "NightRoutine": "Step 1: Gentle face wash (removes dirt and makeup) → Step 2: Serum/gel (targets skin concern) → Step 3: Moisturizer (locks hydration)",
+    "Products": [
+      {
+        "name": "Lotus Herbals Neem Wash",
+        "image": "static/photos/Lotus Herbals Neem Wash",
+        "rating": 4.2,
+        "usage_note": "• Deeply cleanses pores to prevent acne formation.\n• Neem's anti-bacterial action targets existing pimples.\n• Controls excess sebum without over-drying.",
+        "buy_link": "https://www.amazon.in/Lotus-Herbals-Neemwash-Purifying-Anti-Bacterial/dp/B08CYH6D88/ref=sr_1_1?crid=1BQVGGP0I67N8&dib=eyJ2IjoiMSJ9.yPFgnNN_EzKdhcUhuKD3qz4eKGp1erpVVoa6rgde08jGjHj071QN20LucGBJIEps.z9evN1TZvp3Z7zaO9sXLOv82tG-t1lfI3aFGMqH2V_k&dib_tag=se&keywords=login+amaLotus+Herbals+Neem+Washzon+account&qid=1761328312&sprefix=login+amalotus+herbals+neem+washzon+account%2Caps%2C301&sr=8-1"
+      },
+      {
+        "name": "CeraVe Moisturizing Cream",
+        "image": "static/photos/CeraVe Moisturizing Cream.jpg",
+        "rating": 4.7,
+        "usage_note": "• Restores the skin barrier with essential ceramides.\n• Provides non-comedogenic, lightweight hydration.\n• Helps reduce redness and irritation from acne treatments.",
+        "buy_link": "https://www.amazon.in/gp/aw/d/B0CTTV91Z6/?_encoding=UTF8&pd_rd_plhdr=t&aaxitk=cbb60690f0ef795b4a75889c0c6fdab4&hsa_cr_id=0&qid=1761310455&sr=1-2-e0fa1fdd-d857-4087-adda-5bd576b25987&aref=Jup7Ucyj6n&ref_=sbx_s_sparkle_sbtcd_asin_1_img&pd_rd_w=PEfo8&content-id=amzn1.sym.6dfd6df7-44a2-4792-8c83-3ac8a4ba533a%3Aamzn1.sym.6dfd6df7-44a2-4792-8c83-3ac8a4ba533a&pf_rd_p=6dfd6df7-44a2-4792-8c83-3ac8a4ba533a&pf_rd_r=66ASTGZR2HG4VKJJ2P8G&pd_rd_wg=K5TDl&pd_rd_r=eb2db491-92ce-410f-b1f5-7fa176dcd9a0"
+      },
+      {
+        "name": "WOW Skin Science Sunscreen Gel",
+        "image": "static/photos/WOW Skin Science Sunscreen Gel.jpg",
+        "rating": 3.9,
+        "usage_note": "• Gel formula prevents a greasy residue on oily skin.\n• Provides robust UVA/UVB protection to prevent post-acne dark marks.\n• Acts as a light matte base under makeup or alone.",
+        "buy_link": "https://www.amazon.in/WOW-Science-Sunscreen-Matte-Finish/dp/B08W9TMSVF/ref=sr_1_1_sspa?crid=22DEFLCHJF39R&dib=eyJ2IjoiMSJ9.XAQQfHnA3-RoNpL7KHa8tRC8VT0P5Ku1iFgdRckENDf9xC7siv-_VblgmMILR3_jIbHwTIGaZO9J-NyTxgovnKd2GSjdQ3zlOTqdq2wf8GZs3kaP4x3YIV28vBa6iNszzGO2MhRAINku1U8BqH5U19mOMJbywGubhMtFx8KNOkdS845t1iK9McAiqiPVEoYQ1PbMi4yVASWdr_q4kjFDqVRe8RZSf8ogmZS9lV1IqqPIXNW_sgfIUgpAgeo9rCUqJV-P7vADpUiOrYzdSkP0rbizkNyi5XKyZfUCTeed-pY.WlOTUOCNOgKsKSFyixNrNqWCzSdF-3wDDmctbJxR2EY&dib_tag=se&keywords=WOW%2BSkin%2BScience%2BSunscreen%2BGel&qid=1761372265&sprefix=wow%2Bskin%2Bscience%2Bsunscreen%2Bgel%2Caps%2C334&sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&th=1"
+      },
+      {
+        "name": "Kaya Brightening Serum",
+        "image": "static/photos/Kaya Brightening Serum.jfif",
+        "rating": 4.5,
+        "usage_note": "• Fades stubborn dark spots (post-inflammatory hyperpigmentation).\n• Improves overall skin tone and clarity.\n• Lightweight formula absorbs quickly, ideal for acne-prone skin.",
+        "buy_link": "https://www.amazon.in/Kaya-Dermatologist-Developed-Expertise-Antioxidant-Brightening/dp/B00FYXN75S/ref=sxin_16_pa_sp_search_thematic_sspa?content-id=amzn1.sym.9a76411d-317d-49e2-91d3-88a4af9140e5%3Aamzn1.sym.9a76411d-317d-49e2-91d3-88a4af9140e5&crid=2LYPR3BXO40M5&cv_ct_cx=Kaya%2BBrightening%2BSerum&keywords=Kaya%2BBrightening%2BSerum&pd_rd_i=B00FYXN75S&pd_rd_r=ad1f285b-8b17-4dd6-98ad-d035653f0bf9&pd_rd_w=cS7gc&pd_rd_wg=qWazw&pf_rd_p=9a76411d-317d-49e2-91d3-88a4af9140e5&pf_rd_r=QD2S3M4GK0GP1ENHZAV4&qid=1761372328&sbo=RZvfv%2F%2FHxDF%2BO5021pAnSA%3D%3D&sprefix=kaya%2Bbrightening%2Bserum%2Caps%2C355&sr=1-1-ced4eeeb-b190-41d6-902a-1ecb3fb8b7c4-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9zZWFyY2hfdGhlbWF0aWM&th=1"
+      },
+      {
+        "name": "Mamaearth Natural Lip Balm",
+        "image": "static/photos/Mamaearth Natural Lip Balm.jfif",
+        "rating": 4.1,
+        "usage_note": "• Deeply moisturizes lips for long-lasting hydration.\n• Uses natural ingredients suitable for sensitive skin.\n• Protects lips from environmental damage and chapping.",
+        "buy_link": "https://www.amazon.in/Mamaearth-Nourishing-Natural-Vitamin-Strawberry/dp/B0BHT62F3W/ref=sr_1_5?crid=KR1E7IJJLNBX&dib=eyJ2IjoiMSJ9.N9F9daMcdUnQHH0yvIuxRnjNEfNrWzzTAULjef7lyj27C3MWRwX_C2qVI1rDYde-XxGqqZmICzaxsNxTuKhJfaEAZdCIZzOVvFzrqqCW8K-otwvV2g8jwm6j4X7xiC8kMpv0-ALP4bnF-qq5Pg2DX5KhLVUb3MHodaGoPkI5APtwzG-1AS29gpIxlk8mJXoWxc83zL4-uIuhiilqP2_TM-Q8dsKZ5xQTbaahQPiKG6G0tmrr1o1fOxCMQEuw7dQcXYYEJ-Z76R8lfCH4lcCRkV2pUU3TEgrSDBdrSO2hJB4.GBRLYZwFmYIHdJVwae8IfN0UYVKBDZyjXy3SD2jkbPY&dib_tag=se&keywords=Mamaearth%2BNatural%2BLip%2BBalm&qid=1761328569&s=beauty&sprefix=mamaearth%2Bnatural%2Blip%2Bbalm%2Cbeauty%2C277&sr=1-5&th=1"
+      }
+    ],
+    "HomeRemedies": [
+      "Mint Leaves Paste — Ingredients: Crushed mint leaves. Instructions: Apply to skin, leave 10 min, rinse.",
+      "Green Tea Compress — Ingredients: 1 green tea bag. Instructions: Brew and cool, place on skin/eyes for 10 min, remove.",
+      "Lemon Honey Mix — Ingredients: 1 tsp lemon + 1 tsp honey. Instructions: Apply 5 min, rinse.",
+      "Oatmeal Mask — Ingredients: 2 tbsp ground oats + water. Instructions: Make paste, apply for 15 min, rinse.",
+      "Cucumber Slices — Instructions: Place slices on skin for 10 min, rinse."
+    ]
+  },
+  {
+    "Gender": "Male",
+    "SkinIssue": "Pimples",
+    "SkinType": "Dry",
+    "MorningRoutine": "Step 1: Cleanser (removes oil and dust) → Step 2: Light moisturizer (keeps skin hydrated without extra oil) → Step 3: Sunscreen (protects from UV rays)",
+    "NightRoutine": "Step 1: Gentle face wash (removes dirt and makeup) → Step 2: Serum/gel (targets skin concern) → Step 3: Moisturizer (locks hydration)",
+    "Products": [
+      {
+        "name": "Biotique Bio Neem Cleanser",
+        "image": "static/photos/Biotique Bio Neem Cleanser.jfif",
+        "rating": 3.5,
+        "usage_note": "• Gentle neem action targets breakouts without harsh scrubbing.\n• Ayurvedic herbs soothe dryness and inflammation.\n• Cleanses effectively while preserving the skin's natural moisture barrier.",
+        "buy_link": "https://www.amazon.in/Biotique-Neem-Purifying-Prone-150ml/dp/B071QYPD2J/ref=sr_1_11?crid=3D64LUYOUIS85&dib=eyJ2IjoiMSJ9.Q_zq4C_oYIgD1vQT7zIgb8wXSFoFjsOrXoGPw_dslzuZjnBXyKLjkMZInEztFjXTr3L6ylTGLa5m11jrza04CLjSOiUDXU7PdsGjLzv2-V3XU3ASLkhewG-UyV-XceLHFVUsDuYADdBJu2AnvmK0j9KikNsHi27NnettxOKW8olWvJfbq4Crsc0Zh-LKdE1zKF9Tz6fDorlzSGa_brPgMVpJIToTGTY7AeCSu06sAD1Q6QOhhnoJNfZJZfitXDnXrwdVa8iOgOY4y22KvqnI4hSkIqlkJMDKgN4JmejdvYM.50EXxtFxRlfR52hTxrIvO3ST0WaPxyJqsst8_Qj1b3U&dib_tag=se&keywords=Biotique+Bio+Neem+Cleanser&qid=1761372530&s=beauty&sprefix=biotique+bio+neem+cleanser%2Cbeauty%2C262&sr=1-11"
+      },
+      {
+        "name": "Mamaearth Oil-Free Moisturizer",
+        "image": "static/photos/Mamaearth Oil-Free Moisturizer.jfif",
+        "rating": 4.3,
+        "usage_note": "• Provides necessary hydration without feeling heavy.\n• Non-comedogenic formula prevents pore clogging.\n• Quick-absorbing gel texture minimizes product piling.",
+        "buy_link": "https://www.amazon.in/Mamaearth-Vitamin-Oil-Free-Moisturizer-Illumination/dp/B096W78HTH/ref=sr_1_6?crid=1B9T52JPNGAIX&dib=eyJ2IjoiMSJ9.m2M_PF8VJQJD-_K7Vg_f1AzuP3Uar4PdynmxyTGJbuHPYKjh6n8pfbCgDyqP-Woyh2-bLcnrQdN9fPNdi0OLKhn8RgqrcWx_iKRi8ZpGEm4nzLbKX0Ih1zOvUsgUJA04wTbD4CINri3zzSqDivaKjikpAcHXhQU1r3h1LWIEtOBhssiAEzcNN0RyZ5tROUIwkUev8PeIEWQJzBSNzjzXQJK_i1lRkeMh_O3WIna0rYsDzM1HzJPrlRIoy-wRgNg8-YOgCGJ_aHKwLswxem9ekQ-VPLsvn6RAKXUk5PM-ftg.Hk0YApvmVHcVq84-JlkR1Wr_K_gQbUtVZ7JeV5OXBGY&dib_tag=se&keywords=Mamaearth+Oil-Free+Moisturizer&qid=1761372584&s=beauty&sprefix=mamaearth+oil-free+moisturizer%2Cbeauty%2C280&sr=1-6"
+      },
+      {
+        "name": "La Roche-Posay Anthelios SPF 50",
+        "image": "static/photos/La Roche-Posay Anthelios SPF 50.jfif",
+        "rating": 4.9,
+        "usage_note": "• Offers superior broad-spectrum UVA/UVB protection.\n• Dermatologist-recommended formula is safe for sensitive, dry skin.\n• Prevents sun damage that can worsen acne scars and inflammation.",
+        "buy_link": "https://www.amazon.in/Roche-Posay-Anthelios-UVMune-Invisible-Resistant/dp/B09SLF5ZH8/ref=sr_1_5?crid=2E87FU7UFB81Y&dib=eyJ2IjoiMSJ9.y6e00VRL895RKAiNmw8tLUs1csprxbpr88EuiGYJpIW_2tIAppx3u8hXils7Y1Wqzabq2LiD01OZ5145ZGXDM3PChp6gYMYAfeiOu1va6BNd0Crw8niBjMrkw8pTidy7EaOZ3jgUb2G2fMBycNQ2noKviO33NEX0wi2Ii0iJAAzLGRm65BpxffBPZEFvjEirh3_-l69dLJfRsmjARh6rQYI0fqZc-N_8GIi1Np23OJXJ6aLANgafSYDLt1tjYvlnXsPUxod5ZMXGqZKNRSsxLnMhABlmqrhY3bE9wz7b6OA.ObzKRls0wbFvjRT9HVXSRVFaKYeCpGVrha9OVu7s4UI&dib_tag=se&keywords=La+Roche-Posay+Anthelios+SPF+50&qid=1761372638&s=beauty&sprefix=%2Cbeauty%2C345&sr=1-5"
+      },
+      {
+        "name": "Inkey List Retinol Serum",
+        "image": "static/photos/Inkey List Retinol Serum.jfif",
+        "rating": 4.6,
+        "usage_note": "• Accelerates skin renewal to clear clogged pores.\n• Promotes smoother skin texture over time.\n• Reduces the appearance of fine lines and post-acne scarring.",
+        "buy_link": "https://www.amazon.in/INKEY-List-Retinol-Anti-Aging-Serum/dp/B07GL79F1B/ref=sr_1_5?crid=30NNLBJ4RV20Z&dib=eyJ2IjoiMSJ9.DI5vIRpdZ2acxRBW_McddV-sfhJnaAMnJ_00T7T6B-qhWHBbWplBuoJuIhgrPr5sSRhAVJ0VzSVpQTrlMnxNntcZ-adspQpH34jKkUO0_oMbwT4NMwhJCU8TSYq1EGJlz-vNZ7lc7Jp5JgVpNKED3bbTJjRjMdtP7qTcTBwQl5tqdp4kFmfcEMHNZB4cyTl6wQo2k1sUksRbga5T1f92r0tT80KIUJ5EC34nQnoZFJVRzI9dC4OGSRqZnwLA5JL_75HikwVTmI7v57SE7Bnfeqn0vdJ7M3HLKnR4PIUqg5Y.ynPPUa6LCwoUBJukX_06q5Ae6c6sr1IpF27F8vpwjVU&dib_tag=se&keywords=Inkey+List+Retinol+Serum&qid=1761372683&s=beauty&sprefix=inkey+list+retinol+serum%2Cbeauty%2C311&sr=1-5"
+      },
+      {
+        "name": "Blue Heaven Lip Balm",
+        "image": "static/photos/Blue Heaven Lip Balm.jfif",
+        "rating": 3.1,
+        "usage_note": "• Seals in moisture to prevent dryness and cracking.\n• Provides a smooth, glossy finish.\n• Highly affordable for frequent reapplication throughout the day.",
+        "buy_link": "https://www.amazon.in/Blue-Heaven-Smoothing-Moisturizing-Protection/dp/B0DP7HJTG8/ref=sr_1_7?crid=35HWZGMZD4KYB&dib=eyJ2IjoiMSJ9.QMR_ITL5y6kAZK22FFxqbXsh31fAIq9qiRIUG5P481tnvx_pCmjx9jb3ZEHjsCESwBTuOtdIhMXAe6Oyks2uuZ_CWB8fKvJhka_bsiPeJU0QwPzbNDYVecwdUe_fOyztrvinclfCT9X0rnGH0Qh7GmLso5rJ49rnCTVC35auyN0GkP9h2AFZCt53P4P9PTfbBzsty4CWNfUnx5DAptejc_txRkR8W6YOMOvxkburoaHdUPASfCeAsKoTZvmDPL51aR9KJi46Uu01fVzhDlldr4_n0xj8o83k8Pg75HPe0pw.PcS97gm9YnZ39q1ChSeIry3gCEXUC7hK2kYYczcTD3Q&dib_tag=se&keywords=Blue%2BHeaven%2BLip%2BBalm&qid=1761372719&s=beauty&sprefix=blue%2Bheaven%2Blip%2Bbalm%2Cbeauty%2C279&sr=1-7&th=1"
+      }
+    ],
+    "HomeRemedies": [
+      "Lemon Honey Mix — Ingredients: 1 tsp lemon + 1 tsp honey. Instructions: Apply 5 min, rinse.",
+      "Oatmeal Mask — Ingredients: 2 tbsp ground oats + water. Instructions: Make paste, apply for 15 min, rinse.",
+      "Mint Leaves Paste — Ingredients: Crushed mint leaves. Instructions: Apply to skin, leave 10 min, rinse.",
+      "Aloe Vera Gel — Instructions: Apply gel, leave 15 min, rinse with water.",
+      "Papaya Mask — Ingredients: 2 tbsp ripe papaya pulp. Instructions: Apply evenly, leave 15 min, rinse."
+    ]
+  },
+  {
+    "Gender": "Male",
+    "SkinIssue": "Black/White Heads",
+    "SkinType": "Normal",
+    "MorningRoutine": "Step 1: Cleanser (removes oil and dust) → Step 2: Light moisturizer (keeps skin hydrated without extra oil) → Step 3: Sunscreen (protects from UV rays)",
+    "NightRoutine": "Step 1: Gentle face wash (removes dirt and makeup) → Step 2: Serum/gel (targets skin concern) → Step 3: Moisturizer (locks hydration)",
+    "Products": [
+      {
+        "name": "Simple Refreshing Facial Wash Gel",
+        "image": "static/photos/Simple Refreshing Facial Wash Gel.jfif",
+        "rating": 4.0,
+        "usage_note": "• Cleanses without stripping essential oils, reducing rebound oiliness.\n• Free from harsh chemicals, ideal for easily irritated blackhead-prone skin.\n• Maintains natural skin pH balance.",
+        "buy_link": "https://www.amazon.in/Simple-Refreshing-Facial-Soap-Free-Facewash/dp/B0CKF48RRR/ref=sr_1_5?crid=28RQMQYWSYEV4&dib=eyJ2IjoiMSJ9.EeydmC9clSWmudfllhct5FiMRN-HldnQ4Hf1hIxaTeJuJYKKu-_EmUYf1b1X9jylf7XZxzyZ5WuOkUkU98Dc3uplphfkLTgqymK9xpJR7AJwmTaCbd0A0JBqZS7aW94FwwdJFO1IRg97DdQZo79lmtqHVCMh8ZXIfVgDzt-pTEIhGj4nFtVy_Xz8UyarQNn-NMZf3_63Zj52ASS1Lp3XITBoJkRGl--usQFF2fh5nvOIAUAVRid8aYXH3x6Len3jR4AqUdQrIxNovWh2PuIuO07mqOZpnqX7zSne5mNDZ_0.HCBqX3cGhS78jobhbuZp78aDAvGwdW9HoF3PXkYbKQQ&dib_tag=se&keywords=Simple%2BRefreshing%2BFacial%2BWash%2BGel&qid=1761372974&s=beauty&sprefix=%2Cbeauty%2C463&sr=1-5&th=1"
+      },
+      {
+        "name": "Himalaya Nourishing Cream",
+        "image": "static/photos/Himalaya Nourishing Cream.jfif",
+        "rating": 3.8,
+        "usage_note": "• Provides a barrier against moisture loss, preventing dehydration.\n• Uses natural ingredients like Aloe Vera to soothe inflammation.\n• Helps soften skin texture over time.",
+        "buy_link": "https://www.amazon.in/Himalaya-Nourishing-Skin-Cream-200ml/dp/B01F32Q800/ref=sr_1_2_f3_0b_fs?crid=3DKUNNYAVXMXQ&dib=eyJ2IjoiMSJ9.w80XnXdr9Jz7p19EHs087SDEp5W2i8YsaHw6hJ5jN4bmEpdZ7lasdLaAqgUXbq7a8hJ_fHzN1IUnas_AkkQJTlGgjpYtMyhlwljGSxUOd0l9_6Cdjh5qk5S8XfgqRE2qVPbo4zgIW9_WewlKzcSw9V3UaStBuwaaVjUwa4DDza9jzSRyQh956PbA8Y7v-8o3tglCYXr2qiTnp2xk731a8UeJgj3xwhwiHgOFp8oKi26Qc_JQP-V__GnHd9UouEZOTxYQk2x8XXglrlawiLt_hfFzc5h-UC5TcNOyZzhIOEE.qHfWw6s54S4tbcdH91Hfm1TYqkh4VDXhy0fHzXVeht8&dib_tag=se&keywords=Himalaya%2BNourishing%2BCream&qid=1761373051&s=beauty&sprefix=himalaya%2Bnourishing%2Bcream%2Cbeauty%2C291&sr=1-2&th=1"
+      },
+      {
+        "name": "Re'equil Oxybenzone Sunscreen",
+        "image": "static/photos/Re'equil Oxybenzone Sunscreen.jfif",
+        "rating": 4.1,
+        "usage_note": "• Provides high SPF protection, essential for preventing sun-induced oil oxidation.\n• Non-sticky finish prevents feeling heavy on oily skin.\n• Water-resistant formula offers longer protection.",
+        "buy_link": "https://www.amazon.in/RE-EQUIL-Oxybenzone-Sunscreen-Sensitive/dp/B07GKXDP8P/ref=sr_1_1_sspa?crid=94TLN55OJOWZ&dib=eyJ2IjoiMSJ9.yvviFBKc_bkv8TXPi5oxe-RRA0dh_rrcWoNKY7wLdqUUfU3CVhLwT7XtLXb6meVEQVH-BabmMGIwGenzQ5M6GBL2Xl2MWGJkxWcHX8tGPjzU4s3hOQvCw9gCIAravNmMnPrsWMdM8zPEVBL5wlyOWvfxH4qCuUPBR46Pju3LDBA0DWs_52CbJI4we4ZMsytRJ4LT2UWyR36_Ixhdt-3U8rgvJotq9o61LYCiVpQ-vt3-1nEPxLGt9SRlmL8jvO3h2zW_j9Uw81pqhD8_BB4HDN4_5M2KBZaLuvCepOxKkeE.Bl8ZEGNiEuicRX59F_LimRbJphqCGlKIFYICLiREAqE&dib_tag=se&keywords=Re%27equil+Oxybenzone+Sunscreen&qid=1761373098&s=beauty&sprefix=re%27equil+oxybenzone+sunscreen%2Cbeauty%2C301&sr=1-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1"
+      },
+      {
+        "name": "Garnier Bright Complete Vitamin C Serum",
+        "image": "static/photos/Garnier Bright Complete Vitamin C Serum.webp",
+        "rating": 4.4,
+        "usage_note": "• High concentration of Vitamin C targets dark spots left by old blackheads.\n• Acts as a powerful antioxidant protecting skin from pollution.\n• Non-oily formulation absorbs fast into oily skin.",
+        "buy_link": "https://www.amazon.in/Garnier-Increases-Instantly-Niacinamide-Salicylic/dp/B09XTV433Y/ref=sr_1_1_sspa?crid=2GLJWAKOSHL5H&dib=eyJ2IjoiMSJ9.2PWlhksARRF8w9UYNFAgcwzFcagOR-5k4ivq9K3OfrNTz_53yoY9qkGH8sN2SE4RM3abQ2sBVWmIPiWpMFFTrZT7bYBI2yOIMXruPHySXuq3kBz8bsZEZaMiUxfktyiXtFjCCd3-gYfMSpEXZtVrtGagBdVJ_rrLXl2n6kaSBvNxkX4e64aGVexNBB3p0ikYebgnB8WjnAJZevtDIRkWgA6dXEvxBteERia5z6anxgsQFsEWgIt414stKMLNVAp6kz-KpnAqPM1PhAYlESWeegp-kSXuUhZzN3npautpljA.HTP0298qor-HbKbX_56qXiqpMMzBQBczIgwWRApG3bI&dib_tag=se&keywords=Garnier%2BBright%2BComplete%2BVitamin%2BC%2BSerum&qid=1761373145&s=beauty&sprefix=garnier%2Bbright%2Bcomplete%2Bvitamin%2Bc%2Bserum%2Cbeauty%2C316&sr=1-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&th=1"
+      },
+      {
+        "name": "Burt's Bees Beeswax Lip Balm",
+        "image": "static/photos/Burt's Bees Beeswax Lip Balm.jfif",
+        "rating": 4.6,
+        "usage_note": "• Beeswax creates a protective, breathable barrier.\n• Peppermint oil provides a refreshing sensation.\n• Keeps lips smooth and hydrated throughout the day.",
+        "buy_link": "https://www.amazon.in/Burts-Bees-Balm-Beeswax-0-15/dp/B00012NDH4/ref=sr_1_5?crid=2JW6AQLTTWSVY&dib=eyJ2IjoiMSJ9.94__eaBb5McZxADWRDSekpqOLnkuSerbhSBpSEV2qRJnVuuUeXnTuztqahVbm3UE8I5IqsO89AWgfaziKqPI_1LjjEzOXWC3yWuLZ0qkODcLLA6nBPLtbD3b37F5XLaqoIdLg2jFvAQrZU1tts6uKb-zKi5cya-DFVAmmuxMeY3fOMGYNUSIwL0LrBSWw9Qto_yGQrrAcDQwuwloiq-WxixnmJFViWql84NFLmPDs3uXdJ7Um9szvXbqxHQrzr-To5WCDzulTIzR5Tk6RFeYlxYecq_k_14wPDOG_zo3E-U.aqqR4poWSEBqPt20dj7a6Ywgu4wh5o9wl45nhni7Irc&dib_tag=se&keywords=Burt%27s%2BBees%2BBeeswax%2BLip%2BBalm&qid=1761373184&s=beauty&sprefix=burt%27s%2Bbees%2Bbeeswax%2Blip%2Bbalm%2Cbeauty%2C398&sr=1-5&th=1"
+      }
+    ],
+    "HomeRemedies": [
+      "Turmeric Paste — Ingredients: 1 tsp turmeric + 1 tsp honey + milk drops. Instructions: Apply 10 min, rinse.",
+      "Fenugreek Paste — Ingredients: Soaked fenugreek seeds ground. Instructions: Apply 15 min, rinse.",
+      "Milk Cream Massage — Ingredients: 1 tsp fresh milk cream. Instructions: Massage gently 5 min, rinse.",
+      "Tomato Pulp — Ingredients: 2 tbsp tomato pulp. Instructions: Apply 15 min, rinse with lukewarm water.",
+      "Rose Water Compress — Instructions: Soak and apply for 10 min."
+    ]
+  },
+  {
+    "Gender": "Male",
+    "SkinIssue": "Black/White Heads",
+    "SkinType": "Dry",
+    "MorningRoutine": "Step 1: Cleanser (removes oil and dust) → Step 2: Light moisturizer (keeps skin hydrated without extra oil) → Step 3: Sunscreen (protects from UV rays)",
+    "NightRoutine": "Step 1: Gentle face wash (removes dirt and makeup) → Step 2: Serum/gel (targets skin concern) → Step 3: Moisturizer (locks hydration)",
+    "Products": [
+      {
+        "name": "Neutrogena Oil-Free Acne Wash",
+        "image": "static/photos/Neutrogena Oil-Free Acne Wash.webp",
+        "rating": 4.2,
+        "usage_note": "• Salicylic Acid gently exfoliates and clears blackhead plugs.\n• Effectively cleanses pores to reduce future blackheads.\n• Oil-free formula avoids adding extra oil to the skin.",
+        "buy_link": "https://www.amazon.in/Neutrogena-Oil-Free-Salicylic-Treatment-Cleanser/dp/B000I44I1I"
+      },
+      {
+        "name": "Pond's Super Light Gel",
+        "image": "static/photos/Pond's Super Light Gel.jfif",
+        "rating": 3.7,
+        "usage_note": "• Provides immediate, refreshing moisture without greasiness.\n• Hyaluronic Acid helps bind water to combat dry patches.\n• Ideal as a preparatory layer before heavier night creams.",
+        "buy_link": "https://www.amazon.in/Ponds-Moisturizer-Cera-Hyamino-Ultimate-Smooth/dp/B09Z6TJP7Y/ref=sr_1_4?crid=2IY6S0TT8DV1O&dib=eyJ2IjoiMSJ9.1xOGXV4vb5nPb48E2fHVuPX-GcAOICnpDxDb1rohQXezcND0nrgfuuIt3rzj98mofmt0WJllWmmlwcjeVbbcl-NBtRoQPpbvvxosrBvXQRs2KVO9yBWW-U5r7eEUHxc4MvPnLD3HRvWSH2LzYydpdFYCu3lnnUIsh7ci9Lb2I6kKjD_RG7oXfa1p9v1y208EnWh7cbcaeIRhNfBDCY2S8rpQypxdDQ8zawSmylPoYBH0puRLiRVLM1HQBzmzaSvxW8e-_n4720f8SqgRL1z3AhIUtikkEOWZ5WNd-h9DpOA.F6jvE3ciwwwv0YJrcohHGjd1QP-hiHGh6wNE9FBVNjo&dib_tag=se&keywords=Pond%27s%2BSuper%2BLight%2BGel&qid=1761373318&s=beauty&sprefix=pond%27s%2Bsuper%2Blight%2Bgel%2Cbeauty%2C309&sr=1-4&th=1"
+      },
+      {
+        "name": "Neutrogena Ultra Sheer SPF 50",
+        "image": "static/photos/Neutrogena Ultra Sheer SPF 50.webp",
+        "rating": 4.5,
+        "usage_note": "• High SPF shields sensitive dry skin from sun damage.\n• Sheer finish prevents the white cast common with high SPF.\n• Non-comedogenic and fast absorbing.",
+        "buy_link": "https://www.amazon.in/Neutrogena-Ultra-Sheer-Sunblock-Sunscreen/dp/B082PFY9S7/ref=sr_1_1_sspa?crid=5XE84LKWITUT&dib=eyJ2IjoiMSJ9.cYscioBbGYc1iFnEddysavZ7aWv-1U9sotOXQSbKHczsn-A-SXFD2MiZ2heHZOQyf3sp1jf7xsS870Gkbktae1Tjsx9PxJL1koi8UYLuwt3_lSJuqSdSdUMpFQCa7p9_jjNAk3_5ToIzgtwQLG9AbTsooH0TF5S-mZ3MqmBXWGJtd2DMONjUIRkO0Wrb7fR3NctlurFJcJJfYj08NA3fXJuMEyaL9yP7QbCeSVqWEV6ECvsdWdTLbpjmSJe8X6xK6BVJuz-cpNtl5okNLEXxfgg4EpGh5FijZo0kAKqFe9c.NvSp75ag8uWMPeG16jWIByRtS5hGHwY1gaOTBrM-YE8&dib_tag=se&keywords=Neutrogena+Ultra+Sheer+SPF+50&qid=1761373396&s=beauty&sprefix=neutrogena+ultra+sheer+spf+50%2Cbeauty%2C290&sr=1-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1"
+      },
+      {
+        "name": "Lakme Absolute Argan Oil Serum",
+        "image": "static/photos/Lakme Absolute Argan Oil Serum.webp",
+        "rating": 3.6,
+        "usage_note": "• Deeply nourishes and softens dry skin.\n• Argan oil provides essential fatty acids to reinforce the skin barrier.\n• Adds a healthy, non-greasy glow when mixed with moisturizer.",
+        "buy_link": "https://www.amazon.in/Lakme-Absolute-Radiance-Overnight-Serum/dp/B074QWW1LV/ref=sr_1_5?crid=2EN02F8M7XW5T&dib=eyJ2IjoiMSJ9.Hb-WD3KHv9unvV16BOSZ3Ib_LOqRc9bKlsVKbUF3va0xu8O5TIz-1rugGSK-luYCiuKoNLBLhlERHKXdkySQBaVixgnWQh4GZpYPVjGHUTooxOxd5kMbsUV_8fh6ICSc60DRZn9gYyi9JXdvcnyYr4V-rwsWGyTskmp4fKgb2CWl179FM_Kd9Y9g47RgZ3z7Rz0e3xIn-XXsWHE9oUWvjAHqyANSyKJskZxv3sdURl8fiPEhwB_-5wHrkX6hfYatt6QKJsxmMpOJIdB3gAE4nsftfPCXVoLZ8MCMSEJJYCI.-nq7hXaeFaCLE0z51YhxFSI1kRMOivVP94tAMW5TeGQ&dib_tag=se&keywords=Lakme+Absolute+Argan+Oil+Serum&qid=1761373442&s=beauty&sprefix=lakme+absolute+argan+oil+serum%2Cbeauty%2C309&sr=1-5"
+      },
+      {
+        "name": "Biotique Fruit Whitening Lip Balm",
+        "image": "static/photos/Biotique Fruit Whitening Lip Balm.webp",
+        "rating": 3.4,
+        "usage_note": "• Contains fruit extracts for subtle, natural lip color.\n• Prevents cracking in dry weather.\n• Provides a slight sheen, improving lip appearance.",
+        "buy_link": "https://www.amazon.in/Biotique-Bio-Fruit-Whitening-Lightening/dp/B00A0A7C2M"
+      }
+    ],
+    "HomeRemedies": [
+      "Orange Peel Pack — Ingredients: 1 tbsp orange peel powder + yogurt. Instructions: Apply 10 min, rinse.",
+      "Honey Mask — Ingredients: 1 tbsp honey. Instructions: Apply on affected area, leave 10–15 min, rinse.",
+      "Sandalwood Paste — Ingredients: 1 tsp sandalwood powder + rose water. Instructions: Apply 15 min, rinse.",
+      "Mint Leaves Paste — Ingredients: Crushed mint leaves. Instructions: Apply to skin, leave 10 min, rinse.",
+      "Cucumber Slices — Instructions: Place slices on skin for 10 min, rinse."
+    ]
+  },
+  {
+    "Gender": "Male",
+    "SkinIssue": "Black/White Heads",
+    "SkinType": "Normal",
+    "MorningRoutine": "Step 1: Cleanser (removes oil and dust) → Step 2: Light moisturizer (keeps skin hydrated without extra oil) → Step 3: Sunscreen (protects from UV rays)",
+    "NightRoutine": "Step 1: Gentle face wash (removes dirt and makeup) → Step 2: Serum/gel (targets skin concern) → Step 3: Moisturizer (locks hydration)",
+    "Products": [
+      {
+        "name": "Joy Skin Fruits Cleanser",
+        "image": "static/photos/Joy Skin Fruits Cleanser.webp",
+        "rating": 3.9,
+        "usage_note": "• Gently removes impurities without disturbing skin's pH.\n• Fruit extracts offer mild, non-irritating exfoliation.\n• Leaves skin feeling refreshed and soft.",
+        "buy_link": "https://www.amazon.in/Joy-Skin-Fruits-Active-Cleansing/dp/B08V53W4J1"
+      },
+      {
+        "name": "Joy Skin Fruits Moisturizer",
+        "image": "static/photos/Joy Skin Fruits Moisturizer.webp",
+        "rating": 3.8,
+        "usage_note": "• Provides instant, lightweight hydration for balanced skin.\n• Non-greasy formula is perfect for daytime use under SPF.\n• Subtle fruity scent enhances the application experience.",
+        "buy_link": "https://www.amazon.in/Joy-Skin-Fruits-Moisturising-500ml/dp/B07R45K2R2"
+      },
+      {
+        "name": "WOW Skin Science Sunscreen Gel",
+        "image": "static/photos/WOW Skin Science Sunscreen Gel.jpg",
+        "rating": 3.9,
+        "usage_note": "• Gel formulation ensures a smooth, clear finish.\n• High protection against both UVA and UVB rays.\n• Does not feel heavy, suitable for consistent daily use.",
+        "buy_link": "https://www.amazon.in/WOW-Skin-Science-Sunscreen-Protection/dp/B091J3F5F4"
+      },
+      {
+        "name": "Inkey List Retinol Serum",
+        "image": "static/photos/Inkey List Retinol Serum.jfif",
+        "rating": 4.6,
+        "usage_note": "• Encourages cell turnover to keep pores clear and minimize blackheads.\n• Targets fine lines and signs of premature aging.\n• Improves overall smoothness and radiance of the skin.",
+        "buy_link": "https://www.amazon.in/Inkey-List-Retinol-Serum-30ml/dp/B082G1B4F4"
+      },
+      {
+        "name": "VLCC Lip Balm",
+        "image": "static/photos/VLCC Lip Balm.jfif",
+        "rating": 3.5,
+        "usage_note": "• Provides a decent level of basic moisture and protection.\n• Convenient twist-up applicator makes it easy to use.\n• Creates a smooth, even base for colored lipstick.",
+        "buy_link": "https://www.amazon.in/VLCC-Daily-Protect-Strawberry-Defence/dp/B00A0A7C2M"
+      }
+    ],
+    "HomeRemedies": [
+      "Lemon Honey Mix — Ingredients: 1 tsp lemon + 1 tsp honey. Instructions: Apply 5 min, rinse.",
+      "Besan Pack — Ingredients: 2 tbsp gram flour + water. Instructions: Apply paste for 15 min, rinse.",
+      "Potato Juice — Instructions: Apply with cotton pad for 10 min, rinse.",
+      "Sandalwood Paste — Ingredients: 1 tsp sandalwood powder + rose water. Instructions: Apply 15 min, rinse.",
+      "Turmeric Paste — Ingredients: 1 tsp turmeric + 1 tsp honey + milk drops. Instructions: Apply 10 min, rinse."
+    ]
+  },
+  {
+    "Gender": "Male",
+    "SkinIssue": "Dark Circles",
+    "SkinType": "Oily",
+    "MorningRoutine": "Step 1: Cleanser (removes oil and dust) → Step 2: Light moisturizer (keeps skin hydrated without extra oil) → Step 3: Sunscreen (protects from UV rays)",
+    "NightRoutine": "Step 1: Gentle face wash (removes dirt and makeup) → Step 2: Serum/gel (targets skin concern) → Step 3: Moisturizer (locks hydration)",
+    "Products": [
+      {
+        "name": "Forest Essentials Kashmiri Saffron Cleanser",
+        "image": "static/photos/Forest Essentials Kashmiri Saffron Cleanser.webp",
+        "rating": 4.8,
+        "usage_note": "• Saffron is known to lighten and brighten skin tone.\n• Luxurious texture makes cleansing feel like a spa treatment.\n• Herbal extracts help balance natural oil production.",
+        "buy_link": "https://www.amazon.in/Forest-Essentials-Kashmiri-Saffron-Neem/dp/B07R45K2R2"
+      },
+      {
+        "name": "WOW Hyaluronic Acid Moisturizer",
+        "image": "static/photos/WOW Hyaluronic Acid Moisturizer.jfif",
+        "rating": 4.0,
+        "usage_note": "• Hyaluronic acid provides hydration without adding oil or sebum.\n• Lightweight formula prevents pore clogging on oily skin.\n• Keeps skin plump, temporarily reducing the appearance of shadows.",
+        "buy_link": "https://www.amazon.in/WOW-Skin-Science-Hyaluronic-Moisturizer/dp/B091J3F5F4"
+      },
+      {
+        "name": "VLCC Matte Look Sunscreen SPF 30",
+        "image": "static/photos/VLCC Matte Look Sunscreen SPF 30.jfif",
+        "rating": 3.5,
+        "usage_note": "• Offers a desirable matte finish, minimizing shine throughout the day.\n• Protects against UV damage that can deepen hyperpigmentation/dark circles.\n• Prevents the 'sweaty' look typical of many SPF products on oily skin.",
+        "buy_link": "https://www.amazon.in/VLCC-Daily-Protect-Sunscreen-Lotion/dp/B004F34A9K"
+      },
+      {
+        "name": "Plum 15% Vitamin C Serum",
+        "image": "static/photos/Plum 15% Vitamin C Serum.webp",
+        "rating": 4.5,
+        "usage_note": "• High concentration of Vitamin C visibly brightens the eye area.\n• Acts as a potent antioxidant against daily environmental stressors.\n• Improves overall skin texture and uniformity.",
+        "buy_link": "https://www.amazon.in/Plum-Brightening-Concentrate-E-Ferulic-Moisturization/dp/B08F32W8G3"
+      },
+      {
+        "name": "Aquaphor Lip Repair",
+        "image": "static/photos/Aquaphor Lip Repair.jfif",
+        "rating": 4.9,
+        "usage_note": "• Creates an intense occlusive barrier to prevent moisture loss overnight.\n• Heals cracked or damaged skin quickly and effectively.\n• Can be dabbed lightly under the eyes for maximum hydration boost.",
+        "buy_link": "https://www.amazon.in/Aquaphor-Immediate-Relief-Healing-Ointment/dp/B003L5TX5Q"
+      }
+    ],
+    "HomeRemedies": [
+      "Milk Cream Massage — Ingredients: 1 tsp fresh milk cream. Instructions: Massage gently 5 min, rinse.",
+      "Multani Mitti Pack — Ingredients: 2 tbsp fuller's earth + rose water. Instructions: Apply 15 min, rinse.",
+      "Aloe Vera Gel — Instructions: Apply gel, leave 15 min, rinse with water.",
+      "Honey Mask — Ingredients: 1 tbsp honey. Instructions: Apply on affected area, leave 10–15 min, rinse.",
+      "Rose Water Compress — Ingredients: 2 tbsp rose water + cotton pads. Instructions: Soak and apply for 10 min."
+    ]
+  },
+  {
+    "Gender": "Male",
+    "SkinIssue": "Dark Circles",
+    "SkinType": "Dry",
+    "MorningRoutine": "Step 1: Cleanser (removes oil and dust) → Step 2: Light moisturizer (keeps skin hydrated without extra oil) → Step 3: Sunscreen (protects from UV rays)",
+    "NightRoutine": "Step 1: Gentle face wash (removes dirt and makeup) → Step 2: Serum/gel (targets skin concern) → Step 3: Moisturizer (locks hydration)",
+    "Products": [
+      {
+        "name": "Cetaphil Skin Cleanser",
+        "image": "static/photos/Cetaphil Skin Cleanser.webp",
+        "rating": 4.7,
+        "usage_note": "• Non-foaming and ultra-gentle, preserving dry skin's moisture.\n• Effective at removing nighttime residue without stripping natural oils.\n• Dermatologist-recommended formula minimizes irritation.",
+        "buy_link": "https://www.amazon.in/Cetaphil-Gentle-Cleanser-Non-Foaming-Hydrating/dp/B00A0A7C2M"
+      },
+      {
+        "name": "Kiehl's Ultra Facial Cream",
+        "image": "static/photos/Kiehl's Ultra Facial Cream.webp",
+        "rating": 4.9,
+        "usage_note": "• Provides 24-hour hydration, crucial for dry skin.\n• Rich texture instantly soothes dry patches and flakiness.\n• Reinforces the skin's barrier function.",
+        "buy_link": "https://www.amazon.in/Kiehls-Ultra-Facial-Cream-50ml/dp/B000YJ2SLG"
+      },
+      {
+        "name": "Re'equil Oxybenzone Sunscreen",
+        "image": "static/photos/Re'equil Oxybenzone Sunscreen.jfif",
+        "rating": 4.1,
+        "usage_note": "• Protects against sun damage which exacerbates dark circles.\n• Non-drying formula is suitable for dry and sensitive skin.\n• Applies smoothly without pilling or leaving a residue.",
+        "buy_link": "https://www.amazon.in/Reequil-Ultra-Matte-Dry-Touch-Sunscreen/dp/B08V53W4J1"
+      },
+      {
+        "name": "The Ordinary Hyaluronic Acid 2% + B5",
+        "image": "static/photos/The Ordinary Hyaluronic Acid 2% + B5.webp",
+        "rating": 4.5,
+        "usage_note": "• Deeply hydrates and plumps the skin, minimizing shadows under eyes.\n• Vitamin B5 helps heal and repair damaged skin.\n• Works best when applied to damp skin.",
+        "buy_link": "https://www.amazon.in/Ordinary-Hyaluronic-Acid-2-B5/dp/B07R45K2R2"
+      },
+      {
+        "name": "Nivea Smoothness Lip Balm",
+        "image": "static/photos/Nivea Smoothness Lip Balm.webp",
+        "rating": 3.2,
+        "usage_note": "• Offers continuous moisture and reduces lip dryness.\n• Contains Shea Butter for deep nourishment.\n• Gives a soft, smooth texture to the lips.",
+        "buy_link": "https://www.amazon.in/Nivea-Smooth-Moisture-Lip-Balm/dp/B073R5K3F5"
+      }
+    ],
+    "HomeRemedies": [
+      "Milk Cream Massage — Ingredients: 1 tsp fresh milk cream. Instructions: Massage gently 5 min, rinse.",
+      "Fenugreek Paste — Ingredients: Soaked fenugreek seeds ground. Instructions: Apply 15 min, rinse.",
+      "Sandalwood Paste — Ingredients: 1 tsp sandalwood powder + rose water. Instructions: Apply 15 min, rinse.",
+      "Tomato Pulp — Ingredients: 2 tbsp tomato pulp. Instructions: Apply 15 min, rinse with lukewarm water.",
+      "Rose Water Compress — Ingredients: 2 tbsp rose water + cotton pads. Instructions: Soak and apply for 10 min."
+    ]
+  },
+  {
+    "Gender": "Male",
+    "SkinIssue": "Dark Circles",
+    "SkinType": "Normal",
+    "MorningRoutine": "Step 1: Cleanser (removes oil and dust) → Step 2: Light moisturizer (keeps skin hydrated without extra oil) → Step 3: Sunscreen (protects from UV rays)",
+    "NightRoutine": "Step 1: Gentle face wash (removes dirt and makeup) → Step 2: Serum/gel (targets skin concern) → Step 3: Moisturizer (locks hydration)",
+    "Products": [
+      {
+        "name": "Simple Refreshing Facial Wash Gel",
+        "image": "static/photos/Simple Refreshing Facial Wash Gel.jfif",
+        "rating": 4.0,
+        "usage_note": "• Gently cleanses without leaving a residue.\n• Formula is ideal for sensitive areas around the eyes.\n• Helps maintain the skin's balanced moisture levels.",
+        "buy_link": "https://www.amazon.in/Simple-Refreshing-Facial-Wash-Tube/dp/B002Z8B92Y"
+      },
+      {
+        "name": "Clinique Dramatically Different Moisturizing Gel",
+        "image": "static/photos/Clinique Dramatically Different Moisturizing Gel.webp",
+        "rating": 4.4,
+        "usage_note": "• Provides essential moisture without feeling heavy or oily.\n• Strengthens the skin's moisture barrier over time.\n• Oil-free gel texture is ideal for normal skin.",
+        "buy_link": "https://www.amazon.in/Clinique-Dramatically-Different-Moisturizing-Gel/dp/B00I1W5QY0"
+      },
+      {
+        "name": "EltaMD UV Clear SPF 46",
+        "image": "static/photos/EltaMD UV Clear SPF 46.webp",
+        "rating": 4.8,
+        "usage_note": "• Contains Niacinamide to improve skin clarity and reduce redness.\n• Provides superior mineral-based sun protection.\n• Lightweight formula is residue-free, perfect for daily use.",
+        "buy_link": "https://www.amazon.in/EltaMD-Clear-Broad-Spectrum-Sunscreen/dp/B002G1YJGM"
+      },
+      {
+        "name": "L'Oreal Revitalift Hyaluronic Acid Serum",
+        "image": "static/photos/L'Oreal Revitalift Hyaluronic Acid Serum.webp",
+        "rating": 4.2,
+        "usage_note": "• Hydrates deep layers of the skin, plumping out fine lines.\n• High concentration of Hyaluronic Acid provides visible smoothing.\n• Enhances the effectiveness of subsequent moisturizers.",
+        "buy_link": "https://www.amazon.in/LOreal-Paris-Revitalift-Hyaluronic-Serum/dp/B08V53W4J1"
+      },
+      {
+        "name": "Vaseline Lip Therapy",
+        "image": "static/photos/Vaseline Lip Therapy.webp",
+        "rating": 3.0,
+        "usage_note": "• Acts as an excellent occlusive to seal in moisture overnight.\n• Prevents windburn and extreme dryness.\n• Basic petrolatum base minimizes allergic reactions.",
+        "buy_link": "https://www.amazon.in/Vaseline-Lip-Therapy-Rosy-Tinted/dp/B073R5K3F5"
+      }
+    ],
+    "HomeRemedies": [
+      "Sandalwood Paste — Ingredients: 1 tsp sandalwood powder + rose water. Instructions: Apply 15 min, rinse.",
+      "Coconut Oil Massage — Instructions: Gently massage lips/skin at night, leave overnight.",
+      "Honey Mask — Ingredients: 1 tbsp honey. Instructions: Apply on affected area, leave 10–15 min, rinse.",
+      "Besan Pack — Ingredients: 2 tbsp gram flour + water. Instructions: Apply paste for 15 min, rinse.",
+      "Potato Juice — Instructions: Apply with cotton pad for 10 min, rinse."
+    ]
+  },
+  {
+    "Gender": "Female",
+    "SkinIssue": "Pimples",
+    "SkinType": "Oily",
+    "MorningRoutine": "Step 1: Cleanser (removes oil and dust) → Step 2: Light moisturizer (keeps skin hydrated without extra oil) → Step 3: Sunscreen (protects from UV rays)",
+    "NightRoutine": "Step 1: Gentle face wash (removes dirt and makeup) → Step 2: Serum/gel (targets skin concern) → Step 3: Moisturizer (locks hydration)",
+    "Products": [
+      {
+        "name": "Dot and Key Face Wash",
+        "image": "static/photos/static/photos/dot_and_key.webp",
+        "rating": 4.1,
+        "usage_note": "• Contains Salicylic Acid to exfoliate deep within pores.\n• Tea Tree Oil targets active acne breakouts.\n• Gel formula controls oil production throughout the day.",
+        "buy_link": "https://www.amazon.in/Dot-Key-Face-Wash-Salicylic/dp/B091J3F5F4"
+      },
+      {
+        "name": "Olay Regenerist Whip",
+        "image": "static/photos/Olay Regenerist Whip.webp",
+        "rating": 4.6,
+        "usage_note": "• Whipped texture feels light and non-greasy on oily skin.\n• Niacinamide helps minimize the appearance of pores.\n• Provides long-lasting moisture with a breathable finish.",
+        "buy_link": "https://www.amazon.in/Olay-Regenerist-Whip-Face-Moisturizer/dp/B07R45K2R2"
+      },
+      {
+        "name": "Pond's Sun Protect Non-Oily SPF 30",
+        "image": "static/photos/Pond's Sun Protect Non-Oily SPF 30.webp",
+        "rating": 3.8,
+        "usage_note": "• Specially formulated to dry down quickly on oily skin.\n• Protects against UV rays that can darken post-acne marks.\n• Provides sufficient SPF for city use.",
+        "buy_link": "https://www.amazon.in/Ponds-Sun-Protect-Non-Oily-Sunscreen/dp/B08F32W8G3"
+      },
+      {
+        "name": "Plum 15% Vitamin C Serum",
+        "image": "static/photos/Plum 15% Vitamin C Serum.webp",
+        "rating": 4.5,
+        "usage_note": "• Visibly reduces dark spots and hyperpigmentation.\n• Provides powerful antioxidant protection against free radicals.\n• Enhances natural radiance for a healthy glow.",
+        "buy_link": "https://www.amazon.in/Plum-Brightening-Concentrate-E-Ferulic-Moisturization/dp/B08V53W4J1"
+      },
+      {
+        "name": "Vaseline Lip Therapy",
+        "image": "static/photos/Vaseline Lip Therapy.webp",
+        "rating": 3.0,
+        "usage_note": "• Forms a protective seal to prevent overnight moisture loss.\n• Basic, gentle formula is suitable for sensitive lips.\n• Effective relief for minor dryness or cracking.",
+        "buy_link": "https://www.amazon.in/Vaseline-Lip-Therapy-Rosy-Tinted/dp/B073R5K3F5"
+      }
+    ],
+    "HomeRemedies": [
+      "Besan Pack — Ingredients: 2 tbsp gram flour + water. Instructions: Apply paste for 15 min, rinse.",
+      "Coconut Oil Massage — Instructions: Gently massage lips/skin at night, leave overnight.",
+      "Green Tea Compress — Instructions: Brew and cool, place on skin/eyes for 10 min, remove.",
+      "Papaya Mask — Ingredients: 2 tbsp ripe papaya pulp. Instructions: Apply evenly, leave 15 min, rinse.",
+      "Multani Mitti Pack — Ingredients: 2 tbsp fuller's earth + rose water. Instructions: Apply 15 min, rinse."
+    ]
+  },
+  {
+    "Gender": "Female",
+    "SkinIssue": "Pimples",
+    "SkinType": "Dry",
+    "MorningRoutine": "Step 1: Cleanser (removes oil and dust) → Step 2: Light moisturizer (keeps skin hydrated without extra oil) → Step 3: Sunscreen (protects from UV rays)",
+    "NightRoutine": "Step 1: Gentle face wash (removes dirt and makeup) → Step 2: Serum/gel (targets skin concern) → Step 3: Moisturizer (locks hydration)",
+    "Products": [
+      {
+        "name": "Himalaya Neem Face Wash",
+        "image": "static/photos/Himalaya Neem Face Wash.jfif",
+        "rating": 3.5,
+        "usage_note": "• Neem helps combat acne bacteria gently.\n• Curcuma Longa (Turmeric) soothes inflammation on dry skin.\n• Provides a deep clean necessary for pimple treatment.",
+        "buy_link": "https://www.amazon.in/Himalaya-Purifying-Neem-Face-Wash/dp/B0061QG3I4"
+      },
+      {
+        "name": "La Roche-Posay Toleriane Double Repair",
+        "image": "static/photos/La Roche-Posay Toleriane Double Repair.webp",
+        "rating": 4.8,
+        "usage_note": "• Ceramides reinforce the damaged skin barrier, vital for dry skin.\n• Niacinamide calms redness associated with pimples.\n• Provides long-lasting comfort and relief from tightness.",
+        "buy_link": "https://www.amazon.in/La-Roche-Posay-Toleriane-Double-Repair-Face/dp/B00A0A7C2M"
+      },
+      {
+        "name": "Dot & Key Sunscreen",
+        "image": "static/photos/Dot_and_key_sunscreen.webp",
+        "rating": 4.3,
+        "usage_note": "• Protects sensitive dry skin without causing further irritation.\n• Formula is hydrating and prevents the flakiness caused by sun exposure.\n• Leaves a non-chalky finish.",
+        "buy_link": "https://www.amazon.in/Dot-Key-Sunscreen-SPF-PA/dp/B091J3F5F4"
+      },
+      {
+        "name": "Forest Essentials Soundarya Serum",
+        "image": "static/photos/Forest Essentials Soundarya Serum.webp",
+        "rating": 4.9,
+        "usage_note": "• Contains potent Saffron and 24K Gold to revitalize dull, dry skin.\n• Deeply moisturizing oils help combat the dryness associated with acne products.\n• Improves overall radiance and suppleness.",
+        "buy_link": "https://www.amazon.in/Forest-Essentials-Advanced-Soundarya-Radiance/dp/B004F34A9K"
+      },
+      {
+        "name": "WOW Skin Science Lip Balm",
+        "image": "static/photos/WOW Skin Science Lip Balm.webp",
+        "rating": 4.0,
+        "usage_note": "• Shea and Cocoa butters provide intensive moisture.\n• Prevents the lips from cracking and bleeding in dry conditions.\n• Formula is free of mineral oil.",
+        "buy_link": "https://www.amazon.in/WOW-Skin-Science-Lip-Balm/dp/B07R45K2R2"
+      }
+    ],
+    "HomeRemedies": [
+      "Besan Pack — Ingredients: 2 tbsp gram flour + water. Instructions: Apply paste for 15 min, rinse.",
+      "Orange Peel Pack — Ingredients: 1 tbsp orange peel powder + yogurt. Instructions: Apply 10 min, rinse.",
+      "Multani Mitti Pack — Ingredients: 2 tbsp fuller's earth + rose water. Instructions: Apply 15 min, rinse.",
+      "Turmeric Paste — Ingredients: 1 tsp turmeric + 1 tsp honey + milk drops. Instructions: Apply 10 min, rinse.",
+      "Fenugreek Paste — Instructions: Apply 15 min, rinse."
+    ]
+  },
+  {
+    "Gender": "Female",
+    "SkinIssue": "Pimples",
+    "SkinType": "Normal",
+    "MorningRoutine": "Step 1: Cleanser (removes oil and dust) → Step 2: Light moisturizer (keeps skin hydrated without extra oil) → Step 3: Sunscreen (protects from UV rays)",
+    "NightRoutine": "Step 1: Gentle face wash (removes dirt and makeup) → Step 2: Serum/gel (targets skin concern) → Step 3: Moisturizer (locks hydration)",
+    "Products": [
+      {
+        "name": "Neutrogena Oil-Free Acne Wash",
+        "image": "static/photos/Neutrogena Oil-Free Acne Wash.webp",
+        "rating": 4.2,
+        "usage_note": "• Salicylic Acid helps prevent future breakouts.\n• Clears pores without making normal skin feel tight.\n• Oil-free formula maintains a balanced complexion.",
+        "buy_link": "https://www.amazon.in/Neutrogena-Oil-Free-Salicylic-Treatment-Cleanser/dp/B000I44I1I"
+      },
+      {
+        "name": "Nivea Soft Cream",
+        "image": "static/photos/Nivea Soft Cream.webp",
+        "rating": 3.7,
+        "usage_note": "• Provides light, versatile hydration suitable for face and body.\n• Jojoba oil offers nourishing properties.\n• Quick absorption makes it excellent for morning use.",
+        "buy_link": "https://www.amazon.in/Nivea-Soft-Light-Moisturizing-Cream/dp/B07R45K2R2"
+      },
+      {
+        "name": "Mamaearth Ultra Light Sunscreen SPF 50",
+        "image": "static/photos/Mamaearth Ultra Light Sunscreen SPF 50.webp",
+        "rating": 3.9,
+        "usage_note": "• High SPF offers superior protection against skin aging.\n• Ultra-light texture prevents pilling under makeup.\n• Free of harsh chemicals, suitable for daily use.",
+        "buy_link": "https://www.amazon.in/Mamaearth-Ultra-Light-Sunscreen-SPF/dp/B091J3F5F4"
+      },
+      {
+        "name": "Skinceuticals C E Ferulic",
+        "image": "static/photos/Skinceuticals C E Ferulic.webp",
+        "rating": 5.0,
+        "usage_note": "• Provides unparalleled antioxidant protection (Vitamin C & E).\n• Boosts collagen production for firmer skin.\n• Visibly brightens skin and reduces dullness.",
+        "buy_link": "https://www.amazon.in/SkinCeuticals-C-Ferulic-1-0-Ounce/dp/B000I44I1I"
+      },
+      {
+        "name": "Dove Lip Care",
+        "image": "static/photos/Dove Lip Care.webp",
+        "rating": 3.1,
+        "usage_note": "• Hydrates and smooths lip surface immediately.\n• Basic formula is less likely to cause irritation.\n• Helps extend the wear time of colored lip products.",
+        "buy_link": "https://www.amazon.in/Dove-Beauty-Nourishment-Essentials-Lipcare/dp/B002Z8B92Y"
+      }
+    ],
+    "HomeRemedies": [
+      "Fenugreek Paste — Ingredients: Soaked fenugreek seeds ground. Instructions: Apply 15 min, rinse.",
+      "Cucumber Slices — Instructions: Place slices on skin for 10 min, rinse.",
+      "Lemon Honey Mix — Ingredients: 1 tsp lemon + 1 tsp honey. Instructions: Apply 5 min, rinse.",
+      "Rose Water Compress — Instructions: Soak and apply for 10 min.",
+      "Besan Pack — Ingredients: 2 tbsp gram flour + water. Instructions: Apply paste for 15 min, rinse."
+    ]
+  },
+  {
+    "Gender": "Female",
+    "SkinIssue": "Black/White Heads",
+    "SkinType": "Oily",
+    "MorningRoutine": "Step 1: Cleanser (removes oil and dust) → Step 2: Light moisturizer (keeps skin hydrated without extra oil) → Step 3: Sunscreen (protects from UV rays)",
+    "NightRoutine": "Step 1: Gentle face wash (removes dirt and makeup) → Step 2: Serum/gel (targets skin concern) → Step 3: Moisturizer (locks hydration)",
+    "Products": [
+      {
+        "name": "Biotique Bio Neem Cleanser",
+        "image": "static/photos/Biotique Bio Neem Cleanser.jfif",
+        "rating": 3.5,
+        "usage_note": "• Deeply cleanses excess oil and impurities.\n• Neem works to prevent blackhead oxidation.\n• Helps restore natural pH balance.",
+        "buy_link": "https://www.amazon.in/Biotique-Bio-Neem-Purifying-Face/dp/B0061QG3I4"
+      },
+      {
+        "name": "Forest Essentials Light Day Cream",
+        "image": "static/photos/product2.jpg",
+        "rating": 4.7,
+        "usage_note": "• Ayurvedic formula feels light and prevents congestion.\n• Provides quick moisture without greasiness.\n• Enhances the skin’s natural barrier.",
+        "buy_link": "https://www.amazon.in/Forest-Essentials-Eladi-Hydrating-Fluid/dp/B07R45K2R2"
+      },
+      {
+        "name": "Neutrogena Ultra Sheer SPF 50",
+        "image": "static/photos/Neutrogena Ultra Sheer SPF 50.webp",
+        "rating": 4.5,
+        "usage_note": "• Ultra-sheer texture is perfect under makeup.\n• Protects pores from UV damage that causes blackheads to darken.\n• Oil-free formula is suitable for combination/oily skin.",
+        "buy_link": "https://www.amazon.in/Neutrogena-Ultra-Sheer-Dry-Touch-Sunblock/dp/B073R5K3F5"
+      },
+      {
+        "name": "The Ordinary Hyaluronic Acid 2% + B5",
+        "image": "static/photos/The Ordinary Hyaluronic Acid 2% + B5.webp",
+        "rating": 4.5,
+        "usage_note": "• Hydrates deeply, balancing oil production.\n• Provides non-comedogenic moisture.\n• Improves skin elasticity and plumpness.",
+        "buy_link": "https://www.amazon.in/Ordinary-Hyaluronic-Acid-2-B5/dp/B082G1B4F4"
+      },
+      {
+        "name": "Carmex Classic Lip Balm",
+        "image": "static/photos/product5.jpg",
+        "rating": 4.1,
+        "usage_note": "• Menthol provides a cooling, tingly relief to dry lips.\n• Creates a durable moisture seal.\n• Helps smooth rough, chapped skin.",
+        "buy_link": "https://www.amazon.in/Carmex-Daily-Care-Moisturizing-Lip/dp/B00A0A7C2M"
+      }
+    ],
+    "HomeRemedies": [
+      "Sandalwood Paste — Ingredients: 1 tsp sandalwood powder + rose water. Instructions: Apply 15 min, rinse.",
+      "Fenugreek Paste — Instructions: Apply 15 min, rinse.",
+      "Milk Cream Massage — Ingredients: 1 tsp fresh milk cream. Instructions: Massage gently 5 min, rinse.",
+      "Lemon Honey Mix — Ingredients: 1 tsp lemon + 1 tsp honey. Instructions: Apply 5 min, rinse.",
+      "Orange Peel Pack — Ingredients: 1 tbsp orange peel powder + yogurt. Instructions: Apply 10 min, rinse."
+    ]
+  },
+  {
+    "Gender": "Female",
+    "SkinIssue": "Black/White Heads",
+    "SkinType": "Dry",
+    "MorningRoutine": "Step 1: Cleanser (removes oil and dust) → Step 2: Light moisturizer (keeps skin hydrated without extra oil) → Step 3: Sunscreen (protects from UV rays)",
+    "NightRoutine": "Step 1: Gentle face wash (removes dirt and makeup) → Step 2: Serum/gel (targets skin concern) → Step 3: Moisturizer (locks hydration)",
+    "Products": [
+      {
+        "name": "Forest Essentials Kashmiri Saffron Cleanser",
+        "image": "static/photos/Forest Essentials Kashmiri Saffron Cleanser.webp",
+        "rating": 4.8,
+        "usage_note": "• Saffron brightens skin, reducing discoloration from old blackheads.\n• Luxurious, creamy texture nourishes dry skin.\n• Provides a calming, aromatic experience.",
+        "buy_link": "https://www.amazon.in/Forest-Essentials-Kashmiri-Saffron-Neem/dp/B07R45K2R2"
+      },
+      {
+        "name": "Joy Skin Fruits Moisturizer",
+        "image": "static/photos/Joy Skin Fruits Moisturizer.webp",
+        "rating": 3.8,
+        "usage_note": "• Provides immediate light moisture for dry skin.\n• Fruit extracts offer mild, gentle exfoliation.\n• Non-greasy formula is comfortable under SPF.",
+        "buy_link": "https://www.amazon.in/Joy-Skin-Fruits-Moisturising-500ml/dp/B073R5K3F5"
+      },
+      {
+        "name": "Neutrogena Ultra Sheer SPF 50",
+        "image": "static/photos/Neutrogena Ultra Sheer SPF 50.webp",
+        "rating": 4.5,
+        "usage_note": "• High SPF prevents UV damage which worsens skin texture.\n• Applies smoothly without dragging on dry skin.\n• Provides a high level of protection without feeling heavy.",
+        "buy_link": "https://www.amazon.in/Neutrogena-Ultra-Sheer-Dry-Touch-Sunblock/dp/B08V53W4J1"
+      },
+      {
+        "name": "Minimalist Alpha Arbutin 2%",
+        "image": "static/photos/Minimalist Alpha Arbutin 2%.jfif",
+        "rating": 4.6,
+        "usage_note": "• Reduces hyperpigmentation left by blackhead extraction/irritation.\n• Brightens overall complexion.\n• Lightweight serum absorbs easily under moisturizer.",
+        "buy_link": "https://www.amazon.in/Minimalist-Alpha-Arbutin-Hyperpigmentation-Dark/dp/B091J3F5F4"
+      },
+      {
+        "name": "Biotique Fruit Whitening Lip Balm",
+        "image": "static/photos/Biotique Fruit Whitening Lip Balm.webp",
+        "rating": 3.4,
+        "usage_note": "• Helps gently polish away dry skin on lips.\n• Provides adequate moisture for daily use.\n• Fruit extracts give a nice, subtle flavor.",
+        "buy_link": "https://www.amazon.in/Biotique-Bio-Fruit-Whitening-Lightening/dp/B00A0A7C2M"
+      }
+    ],
+    "HomeRemedies": [
+      "Honey Mask — Ingredients: 1 tbsp honey. Instructions: Apply on affected area, leave 10–15 min, rinse.",
+      "Fenugreek Paste — Instructions: Apply 15 min, rinse.",
+      "Aloe Vera Gel — Instructions: Apply gel, leave 15 min, rinse with water.",
+      "Yogurt Mask — Ingredients: 2 tbsp plain yogurt. Instructions: Apply evenly, leave 15 min, rinse.",
+      "Tomato Pulp — Ingredients: 2 tbsp tomato pulp. Instructions: Apply 15 min, rinse with lukewarm water."
+    ]
+  },
+  {
+    "Gender": "Female",
+    "SkinIssue": "Black/White Heads",
+    "SkinType": "Normal",
+    "MorningRoutine": "Step 1: Cleanser (removes oil and dust) → Step 2: Light moisturizer (keeps skin hydrated without extra oil) → Step 3: Sunscreen (protects from UV rays)",
+    "NightRoutine": "Step 1: Gentle face wash (removes dirt and makeup) → Step 2: Serum/gel (targets skin concern) → Step 3: Moisturizer (locks hydration)",
+    "Products": [
+      {
+        "name": "Cetaphil Skin Cleanser",
+        "image": "static/photos/Cetaphil Skin Cleanser.webp",
+        "rating": 4.7,
+        "usage_note": "• Gentle enough for daily use without irritation.\n• Effectively cleanses pores to prepare for subsequent steps.\n• Leaves a hydrated, non-stripped feeling.",
+        "buy_link": "https://www.amazon.in/Cetaphil-Gentle-Cleanser-Non-Foaming-Hydrating/dp/B00A0A7C2M"
+      },
+      {
+        "name": "Kiehl's Ultra Facial Cream",
+        "image": "static/photos/Kiehl's Ultra Facial Cream.webp",
+        "rating": 4.9,
+        "usage_note": "• Provides all-day essential moisture for normal skin.\n• Fast-absorbing, non-greasy formula.\n• Can be used under makeup seamlessly.",
+        "buy_link": "https://www.amazon.in/Kiehls-Ultra-Facial-Cream-50ml/dp/B000YJ2SLG"
+      },
+      {
+        "name": "Dermafique Soleil Defense All Matte SPF 50",
+        "image": "static/photos/Dermafique Soleil Defense All Matte SPF 50.webp",
+        "rating": 4.2,
+        "usage_note": "• Offers high SPF protection to prevent further skin darkening.\n• Matte finish helps control shine throughout the day.\n• Lightweight texture spreads easily over normal skin.",
+        "buy_link": "https://www.amazon.in/Dermafique-Soleil-Defense-All-Matte/dp/B07R45K2R2"
+      },
+      {
+        "name": "St. Botanica Hyaluronic Acid Serum",
+        "image": "static/photos/St. Botanica Hyaluronic Acid Serum.webp",
+        "rating": 3.9,
+        "usage_note": "• Deeply hydrates skin to improve barrier function.\n• Improves skin's elasticity and resilience.\n• Plumps the skin, reducing the visibility of fine lines.",
+        "buy_link": "https://www.amazon.in/St-Botanica-Hyaluronic-Acid-Facial/dp/B091J3F5F4"
+      },
+      {
+        "name": "Burt's Bees Beeswax Lip Balm",
+        "image": "static/photos/Burt's Bees Beeswax Lip Balm.jfif",
+        "rating": 4.6,
+        "usage_note": "• Beeswax creates a lasting, breathable shield.\n• Natural ingredients are gentle on sensitive lips.\n• Provides long-lasting relief from dryness.",
+        "buy_link": "https://www.amazon.in/Burts-Bees-Moisturizing-Lip-Balm/dp/B000V9N8W0"
+      }
+    ],
+    "HomeRemedies": [
+      "Mint Leaves Paste — Ingredients: Crushed mint leaves. Instructions: Apply to skin, leave 10 min, rinse.",
+      "Green Tea Compress — Instructions: Brew and cool, place on skin/eyes for 10 min, remove.",
+      "Potato Juice — Instructions: Apply with cotton pad for 10 min, rinse.",
+      "Multani Mitti Pack — Ingredients: 2 tbsp fuller's earth + rose water. Instructions: Apply 15 min, rinse.",
+      "Cucumber Slices — Instructions: Place slices on skin for 10 min, rinse."
+    ]
+  },
+  {
+    "Gender": "Female",
+    "SkinIssue": "Dark Circles",
+    "SkinType": "Oily",
+    "MorningRoutine": "Step 1: Cleanser (removes oil and dust) → Step 2: Light moisturizer (keeps skin hydrated without extra oil) → Step 3: Sunscreen (protects from UV rays)",
+    "NightRoutine": "Step 1: Gentle face wash (removes dirt and makeup) → Step 2: Serum/gel (targets skin concern) → Step 3: Moisturizer (locks hydration)",
+    "Products": [
+      {
+        "name": "Dove Foaming Face Wash",
+        "image": "static/photos/Dove Foaming Face Wash.webp",
+        "rating": 3.7,
+        "usage_note": "• Cleanses deeply while respecting the skin's moisture balance.\n• Foaming action is satisfying and effective for makeup removal.\n• Leaves skin feeling refreshed, not tight.",
+        "buy_link": "https://www.amazon.in/Dove-Beauty-Nourishment-Essentials-Lipcare/dp/B002Z8B92Y"
+      },
+      {
+        "name": "L'Oreal HydraFresh Cream",
+        "image": "static/photos/L'Oreal HydraFresh Cream.webp",
+        "rating": 4.0,
+        "usage_note": "• Gel-cream texture is perfect for oily skin hydration.\n• Provides a cooling effect for tired, shadow-prone skin.\n• Maintains optimal moisture levels throughout the day.",
+        "buy_link": "https://www.amazon.in/LOreal-Paris-Hydrafresh-Balancing-Refreshing/dp/B07R45K2R2"
+      },
+      {
+        "name": "Dermafique Soleil Defense All Matte SPF 50",
+        "image": "static/photos/Dermafique Soleil Defense All Matte SPF 50.webp",
+        "rating": 4.2,
+        "usage_note": "• Matte finish is ideal for controlling excess oil/shine.\n• High SPF prevents sun damage that darkens circles.\n• Applies smoothly without leaving a greasy film.",
+        "buy_link": "https://www.amazon.in/Dermafique-Soleil-Defense-All-Matte/dp/B08F32W8G3"
+      },
+      {
+        "name": "Skinceuticals C E Ferulic",
+        "image": "static/photos/Skinceuticals C E Ferulic.webp",
+        "rating": 5.0,
+        "usage_note": "• Provides unparalleled brightening to reduce shadow appearance.\n• Boosts collagen production for firmer skin structure.\n• Offers superior antioxidant defense.",
+        "buy_link": "https://www.amazon.in/SkinCeuticals-C-Ferulic-1-0-Ounce/dp/B000I44I1I"
+      },
+      {
+        "name": "Khadi Natural Lip Balm",
+        "image": "static/photos/Khadi Natural Lip Balm.webp",
+        "rating": 3.3,
+        "usage_note": "• Herbal formula is gentle and nourishing.\n• Creates a smooth base for colored lip products.\n• Provides basic moisture and protection.",
+        "buy_link": "https://www.amazon.in/Khadi-Natural-Sandalwood-Lip-Balm/dp/B00A0A7C2M"
+      }
+    ],
+    "HomeRemedies": [
+      "Cucumber Slices — Instructions: Place slices on skin for 10 min, rinse.",
+      "Turmeric Paste — Ingredients: 1 tsp turmeric + 1 tsp honey + milk drops. Instructions: Apply 10 min, rinse.",
+      "Mint Leaves Paste — Ingredients: Crushed mint leaves. Instructions: Apply to skin, leave 10 min, rinse.",
+      "Aloe Vera Gel — Instructions: Apply gel, leave 15 min, rinse with water.",
+      "Honey Mask — Ingredients: 1 tbsp honey. Instructions: Apply on affected area, leave 10–15 min, rinse."
+    ]
+  },
+  {
+    "Gender": "Female",
+    "SkinIssue": "Dark Circles",
+    "SkinType": "Dry",
+    "MorningRoutine": "Step 1: Cleanser (removes oil and dust) → Step 2: Light moisturizer (keeps skin hydrated without extra oil) → Step 3: Sunscreen (protects from UV rays)",
+    "NightRoutine": "Step 1: Gentle face wash (removes dirt and makeup) → Step 2: Serum/gel (targets skin concern) → Step 3: Moisturizer (locks hydration)",
+    "Products": [
+      {
+        "name": "WOW Apple Cider Vinegar Face Wash",
+        "image": "static/photos/WOW Apple Cider Vinegar Face Wash.webp",
+        "rating": 3.6,
+        "usage_note": "• Apple Cider Vinegar gently balances skin pH.\n• Helps cleanse without harsh friction.\n• Suitable for sensitive, dry skin when used sparingly.",
+        "buy_link": "https://www.amazon.in/WOW-Skin-Science-Vinegar-Brightening/dp/B091J3F5F4"
+      },
+      {
+        "name": "Joy Skin Fruits Moisturizer",
+        "image": "static/photos/Joy Skin Fruits Moisturizer.webp",
+        "rating": 3.8,
+        "usage_note": "• Provides light morning hydration for a fresh start.\n• Fruit extracts offer mild nourishment.\n• Non-heavy texture is comfortable on dry skin.",
+        "buy_link": "https://www.amazon.in/Joy-Skin-Fruits-Moisturising-500ml/dp/B07R45K2R2"
+      },
+      {
+        "name": "Lotus Herbals Safe Sun UV Screen",
+        "image": "static/photos/Lotus Herbals Safe Sun UV Screen.webp",
+        "rating": 3.5,
+        "usage_note": "• Protects dry skin from damage that leads to dark circles.\n• Formula is moisturizing and prevents tightness.\n• Effective against both UVA and UVB rays.",
+        "buy_link": "https://www.amazon.in/Lotus-Herbals-Safe-Block-SPF/dp/B08F32W8G3"
+      },
+      {
+        "name": "Estee Lauder Advanced Night Repair",
+        "image": "static/photos/Estee Lauder Advanced Night Repair.webp",
+        "rating": 4.9,
+        "usage_note": "• Supports skin's natural nighttime repair process.\n• Dramatically reduces the appearance of aging and fatigue.\n• Deeply hydrates, plumping skin to minimize shadows.",
+        "buy_link": "https://www.amazon.in/Estee-Lauder-Advanced-Repair-Synchronized/dp/B000I44I1I"
+      },
+      {
+        "name": "Lotus Herbals Lip Balm",
+        "image": "static/photos/Lotus Herbals Lip Balm.webp",
+        "rating": 3.1,
+        "usage_note": "• Soothes dryness and keeps lips soft.\n• Provides basic sun protection (if formulated with SPF).\n• Enhances the natural color of the lips.",
+        "buy_link": "https://www.amazon.in/Lotus-Herbals-Lip-Defense-SPF/dp/B00A0A7C2M"
+      }
+    ],
+    "HomeRemedies": [
+      "Green Tea Compress — Instructions: Brew and cool, place on skin/eyes for 10 min, remove.",
+      "Oatmeal Mask — Ingredients: 2 tbsp ground oats + water. Instructions: Make paste, apply for 15 min, rinse.",
+      "Turmeric Paste — Ingredients: 1 tsp turmeric + 1 tsp honey + milk drops. Instructions: Apply 10 min, rinse.",
+      "Yogurt Mask — Ingredients: 2 tbsp plain yogurt. Instructions: Apply evenly, leave 15 min, rinse.",
+      "Fenugreek Paste — Instructions: Apply 15 min, rinse."
+    ]
+  },
+  {
+    "Gender": "Female",
+    "SkinIssue": "Dark Circles",
+    "SkinType": "Normal",
+    "MorningRoutine": "Step 1: Cleanser (removes oil and dust) → Step 2: Light moisturizer (keeps skin hydrated without extra oil) → Step 3: Sunscreen (protects from UV rays)",
+    "NightRoutine": "Step 1: Gentle face wash (removes dirt and makeup) → Step 2: Serum/gel (targets skin concern) → Step 3: Moisturizer (locks hydration)",
+    "Products": [
+      {
+        "name": "VLCC Neem Face Wash",
+        "image": "static/photos/VLCC Neem Face Wash.webp",
+        "rating": 3.4,
+        "usage_note": "• Neem helps purify pores without over-drying normal skin.\n• Cleanses thoroughly, removing pollutants and makeup.\n• Leaves a clean, fresh feeling after rinsing.",
+        "buy_link": "https://www.amazon.in/VLCC-Purifying-Tulsi-Neem-Face/dp/B0061QG3I4"
+      },
+      {
+        "name": "Lotus Herbals Alpha Moist",
+        "image": "static/photos/product2.jpg",
+        "rating": 3.6,
+        "usage_note": "• Alpha Hydroxy Acids (AHAs) provide mild overnight exfoliation.\n• Improves skin texture and smoothness.\n• Hydrates effectively without clogging pores.",
+        "buy_link": "https://www.amazon.in/Lotus-Herbals-Alphamoist-Alpha-Hydroxy/dp/B07R45K2R2"
+      },
+      {
+        "name": "Khadi Herbal Sunscreen SPF 40",
+        "image": "static/photos/Khadi Herbal Sunscreen SPF 40.webp",
+        "rating": 3.8,
+        "usage_note": "• Herbal formulation is gentle on the skin.\n• Provides broad-spectrum UV protection.\n• The natural base leaves a subtle, healthy glow.",
+        "buy_link": "https://www.amazon.in/Khadi-Natural-Herbal-Sunscreen-Lotion/dp/B091J3F5F4"
+      },
+      {
+        "name": "The Ordinary Niacinamide 10% + Zinc 1%",
+        "image": "static/photos/The Ordinary Niacinamide 10% + Zinc 1%.webp",
+        "rating": 4.5,
+        "usage_note": "• Niacinamide helps brighten dark circles over time.\n• Zinc assists in oil regulation for the T-zone.\n• Visibly minimizes the appearance of pores.",
+        "buy_link": "https://www.amazon.in/Ordinary-Niacinamide-10-Zinc-1/dp/B082G1B4F4"
+      },
+      {
+        "name": "Nivea Smoothness Lip Balm",
+        "image": "static/photos/Nivea Smoothness Lip Balm.webp",
+        "rating": 3.2,
+        "usage_note": "• Keeps lips smooth and prevents flaking.\n• Provides long-lasting moisture.\n• Basic formula suitable for everyday use.",
+        "buy_link": "https://www.amazon.in/Nivea-Smooth-Moisture-Lip-Balm/dp/B00A0A7C2M"
+      }
+    ],
+    "HomeRemedies": [
+      "Honey Mask — Ingredients: 1 tbsp honey. Instructions: Apply on affected area, leave 10–15 min, rinse.",
+      "Aloe Vera Gel — Instructions: Apply gel, leave 15 min, rinse with water.",
+      "Coconut Oil Massage — Instructions: Gently massage lips/skin at night, leave overnight.",
+      "Fenugreek Paste — Instructions: Apply 15 min, rinse.",
+      "Tomato Pulp — Ingredients: 2 tbsp tomato pulp. Instructions: Apply 15 min, rinse with lukewarm water."
+    ]
+  }
+]

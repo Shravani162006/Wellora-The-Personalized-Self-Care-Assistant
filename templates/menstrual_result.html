@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personalized Recommendations</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+  <style>
+    /* Wellora - Women's Health Recommendations Styling */
+    :root {
+      --primary: #A87676;
+      --primary-dark: #8C5E5E;
+      --primary-light: #CA8787;
+      --accent: #E1ACAC;
+      --accent-light: #F5D1D1;
+      --light: #FFD0D0;
+      --white: #ffffff;
+      --text: #5A4A4A;
+      --text-dark: #3A2A2A;
+      --text-light: #8A7A7A;
+      --background: #FFF9F9;
+      --background-light: #FFFDFD;
+      --foreground: #ffffff;
+      --border: #F0E0E0;
+      --radius: 16px;
+      --radius-large: 24px;
+      --shadow: 0 8px 25px rgba(168, 118, 118, 0.12);
+      --shadow-hover: 0 15px 35px rgba(168, 118, 118, 0.2);
+      --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--text);
+      background-color: var(--background);
+      line-height: 1.7;
+      overflow-x: hidden;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Navbar Styles */
+    .navbar {
+      background: var(--white);
+      padding: 1rem 2rem;
+      box-shadow: var(--shadow);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .logo i {
+      color: var(--accent);
+      font-size: 2rem;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 500;
+      transition: var(--transition);
+      position: relative;
+      padding: 0.5rem 0;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--primary);
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    /* Header Styles */
+    header {
+      background: linear-gradient(135deg, var(--light) 0%, var(--accent-light) 50%, var(--white) 100%);
+      padding: 3rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -10%;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent) 0%, transparent 70%);
+      opacity: 0.1;
+    }
+
+    .header-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: var(--text-dark);
+    }
+
+    .header-subtitle {
+      font-size: 1.2rem;
+      color: var(--text-light);
+    }
+
+    /* Main Content */
+    .main-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Container */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+      flex: 1;
+      width: 100%;
+    }
+
+    /* Summary Section */
+    .summary {
+      background: var(--white);
+      border-radius: var(--radius-large);
+      box-shadow: var(--shadow);
+      padding: 2rem;
+      margin-bottom: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .summary::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+    }
+
+    .summary h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      color: var(--text-dark);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .summary h2::before {
+      content: '';
+      display: block;
+      width: 8px;
+      height: 30px;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+      border-radius: 4px;
+    }
+
+    .summary ul {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+
+    .summary li {
+      padding: 0.75rem 1rem;
+      background: var(--background-light);
+      border-radius: var(--radius);
+      border-left: 4px solid var(--accent);
+    }
+
+    .summary strong {
+      color: var(--primary);
+    }
+
+    /* Recommendation Sections */
+    .recommendation-section {
+      background: var(--white);
+      border-radius: var(--radius-large);
+      box-shadow: var(--shadow);
+      padding: 2.5rem;
+      margin-bottom: 2rem;
+      position: relative;
+      overflow: hidden;
+      transition: var(--transition);
+    }
+
+    .recommendation-section:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .recommendation-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+    }
+
+    .section-icon {
+      width: 70px;
+      height: 70px;
+      background: var(--light);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      font-size: 1.8rem;
+      color: var(--primary);
+      transition: var(--transition);
+    }
+
+    .recommendation-section:hover .section-icon {
+      transform: scale(1.1);
+      background: linear-gradient(135deg, var(--light) 0%, var(--accent) 100%);
+    }
+
+    .recommendation-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      color: var(--text-dark);
+    }
+
+    .recommendation-list {
+      list-style: none;
+    }
+
+    .recommendation-list li {
+      padding: 1rem 1.5rem;
+      margin-bottom: 0.75rem;
+      background: var(--background-light);
+      border-radius: var(--radius);
+      border-left: 4px solid var(--accent);
+      transition: var(--transition);
+    }
+
+    .recommendation-list li:hover {
+      transform: translateX(5px);
+      background: var(--accent-light);
+    }
+
+    /* Media Gallery */
+    .media-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .media-item {
+      background: var(--background-light);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .media-item:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .media-item img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .media-caption {
+      padding: 1rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      flex: 1;
+    }
+
+    .watch-btn {
+      display: block;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      color: var(--white);
+      text-align: center;
+      padding: 0.75rem 1rem;
+      text-decoration: none;
+      font-weight: 600;
+      transition: var(--transition);
+      margin: 0 1rem 1rem;
+      border-radius: var(--radius);
+    }
+
+    .watch-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(168, 118, 118, 0.3);
+    }
+
+    .product-item {
+      cursor: pointer;
+    }
+
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-content {
+      background: var(--white);
+      border-radius: var(--radius-large);
+      padding: 2.5rem;
+      max-width: 500px;
+      width: 90%;
+      position: relative;
+      box-shadow: var(--shadow-hover);
+    }
+
+    .close {
+      position: absolute;
+      top: 1rem;
+      right: 1.5rem;
+      font-size: 2rem;
+      cursor: pointer;
+      color: var(--text-light);
+      transition: var(--transition);
+    }
+
+    .close:hover {
+      color: var(--primary);
+    }
+
+    .modal-image {
+      width: 100%;
+      max-height: 300px;
+      object-fit: cover;
+      border-radius: var(--radius);
+      margin-bottom: 1.5rem;
+    }
+
+    .modal-content h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: var(--text-dark);
+    }
+
+    .modal-content p {
+      margin-bottom: 1rem;
+    }
+
+    /* Navigation Links */
+    .navigation-links {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin: 2rem 0;
+      flex-wrap: wrap;
+    }
+
+    .nav-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      color: var(--white);
+      padding: 1rem 2rem;
+      border-radius: var(--radius);
+      text-decoration: none;
+      font-weight: 600;
+      transition: var(--transition);
+    }
+
+    .nav-button:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-hover);
+    }
+
+  footer {
+      text-align: center;
+      padding: 2rem 0;
+      color: var(--text-light);
+      border-top: 1px solid var(--border);
+      margin-top: 3rem;
+    }
+
+    footer p {
+      margin-bottom: 0;
+      font-size: 1.1rem;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .footer-links a {
+      color: var(--white);
+      text-decoration: none;
+      transition: var(--transition);
+      font-size: 1rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--accent-light);
+    }
+
+    /* Animation */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .fade-in {
+      animation: fadeIn 0.6s ease-out forwards;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+      }
+
+      .nav-links {
+        gap: 1rem;
+      }
+
+      header {
+        padding: 2rem 1rem;
+      }
+
+      header h1 {
+        font-size: 2rem;
+      }
+
+      .container {
+        padding: 1rem;
+      }
+
+      .summary, .recommendation-section {
+        padding: 1.5rem;
+      }
+
+      .summary ul {
+        grid-template-columns: 1fr;
+      }
+
+      .media-gallery {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      }
+
+      .navigation-links {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .nav-button {
+        width: 100%;
+        justify-content: center;
+      }
+      
+      .footer {
+        padding: 1.5rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .navbar {
+        padding: 0.75rem;
+      }
+      
+      .logo {
+        font-size: 1.5rem;
+      }
+      
+      .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      
+      .summary, .recommendation-section {
+        padding: 1.25rem;
+      }
+      
+      .media-gallery {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">
+      <i class="fas fa-heartbeat"></i> Wellora
+    </div>
+    <ul class="nav-links">
+      <li><a href="/dashboard">Home</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/contact">Contact Us</a></li>
+      <li><a href="/logout">Logout</a></li>
+    </ul>
+  </nav>
+
+  <!-- Header -->
+  <header>
+    <div class="header-content">
+      <h1>Personalized Recommendations</h1>
+      <p class="header-subtitle">Tailored to your specific needs and symptoms</p>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <div class="container">
+      <!-- User Details -->
+      <section class="summary fade-in">
+        <h2>Your Details</h2>
+        <ul>
+          <li><strong>Age:</strong> {{ age }}</li>
+          <li><strong>Cycle Length:</strong> {{ cycle_length }} days</li>
+          <li><strong>Pain Level:</strong> {{ pain_level }}</li>
+          <li><strong>Sleep Hours:</strong> {{ sleep_hours }} hours/night</li>
+          <li><strong>Exercise Frequency:</strong> {{ exercise_freq }}</li>
+          <li><strong>Symptoms:</strong> {{ ', '.join(symptoms) if symptoms else 'None' }}</li>
+        </ul>
+      </section>
+
+      <!-- Lifestyle & Diet -->
+      {% if lifestyle %}
+      <div class="recommendation-section fade-in">
+        <div class="section-icon"><i class="fas fa-heart"></i></div>
+        <h2>Lifestyle & Diet</h2>
+        <ul class="recommendation-list">
+          {% for item in lifestyle %}
+          {% if item %}
+          <li>{{ item }}</li>
+          {% endif %}
+          {% endfor %}
+        </ul>
+      </div>
+      {% endif %}
+
+      <!-- Precautions -->
+      {% if precautions %}
+      <div class="recommendation-section fade-in">
+        <div class="section-icon"><i class="fas fa-shield-alt"></i></div>
+        <h2>Precautions</h2>
+        <ul class="recommendation-list">
+          {% for item in precautions %}
+          {% if item %}
+          <li>{{ item }}</li>
+          {% endif %}
+          {% endfor %}
+        </ul>
+      </div>
+      {% endif %}
+
+      <!-- Exercise Recommendations -->
+      {% if exercises %}
+      <div class="recommendation-section fade-in">
+        <div class="section-icon"><i class="fas fa-dumbbell"></i></div>
+        <h2>Exercise Recommendations</h2>
+        <div class="media-gallery">
+          {% for ex in exercises %}
+          <div class="media-item">
+            <img src="{{ url_for('static', filename=ex.thumbnail) }}" alt="{{ ex.title }}">
+            <div class="media-caption">{{ ex.title }}</div>
+            <a href="{{ ex.url }}" target="_blank" class="watch-btn">▶ Watch Video</a>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      {% endif %}
+
+      <!-- Recommended Health Products -->
+      {% if products %}
+      <div class="recommendation-section fade-in">
+        <div class="section-icon"><i class="fas fa-leaf"></i></div>
+        <h2>Recommended Health Products</h2>
+        <div class="media-gallery">
+          {% for prod in products %}
+          <div class="media-item product-item" onclick="showProductDetails('{{ prod.name }}')">
+            <img src="{{ url_for('static', filename=prod.image) }}" alt="{{ prod.name }}" class="product-image">
+            <div class="media-caption">{{ prod.name }}</div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      {% endif %}
+
+      <!-- Product Modal -->
+      <div id="productModal" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal()">&times;</span>
+          <img id="modalImage" src="" alt="" class="modal-image">
+          <h3 id="modalName"></h3>
+          <p id="modalDescription"></p>
+          <p><strong>Benefits:</strong> <span id="modalBenefits"></span></p>
+          <a id="modalUrl" href="" target="_blank" class="watch-btn">Buy Now</a>
+        </div>
+      </div>
+
+      <!-- Navigation -->
+      <div class="navigation-links">
+      
+        <a href="/women_feedback" class="nav-button">
+          <i class="fas fa-pencil-alt"></i> Submit Feedback
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="fade-in delay-3">
+    <p>© 2025 Wellora | Your Trusted Health Companion</p>
+  </footer>
+  <script>
+    // Parse products JSON
+    const productsData = {{ products_json| safe }};
+    
+    function showProductDetails(name) {
+      // Find product by name
+      const prod = productsData.find(p => p.name === name);
+      if (!prod) return;
+
+      document.getElementById('modalName').innerText = prod.name;
+      document.getElementById('modalDescription').innerText = prod.description || "No description";
+      document.getElementById('modalBenefits').innerText = prod.benefits || "No benefits listed";
+      document.getElementById('modalImage').src = `/static/${prod.image}`;
+      document.getElementById('modalUrl').href = prod.url || "#";
+      document.getElementById('productModal').style.display = 'flex';
+    }
+
+    function closeModal() {
+      document.getElementById('productModal').style.display = 'none';
+    }
+
+    window.onclick = function (event) {
+      const modal = document.getElementById('productModal');
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
+</body>
+</html>

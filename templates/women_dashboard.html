@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Health Dashboard</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    /* CSS Variables for Color Palette */
+    :root {
+      --primary: #A87676;
+      --primary-dark: #8C5E5E;
+      --primary-light: #CA8787;
+      --accent: #E1ACAC;
+      --accent-light: #F5D1D1;
+      --light: #FFD0D0;
+      --white: #ffffff;
+      --text: #5A4A4A;
+      --text-dark: #3A2A2A;
+      --text-light: #8A7A7A;
+      --background: #FFF9F9;
+      --background-light: #FFFDFD;
+      --foreground: #ffffff;
+      --border: #F0E0E0;
+      --radius: 16px;
+      --radius-large: 24px;
+      --shadow: 0 8px 25px rgba(168, 118, 118, 0.12);
+      --shadow-hover: 0 15px 35px rgba(168, 118, 118, 0.2);
+      --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    body {
+      color: var(--text);
+      background-color: var(--background);
+      line-height: 1.7;
+      padding: 0;
+      margin: 0;
+    }
+
+    /* Navbar Styles */
+    .navbar {
+      background: var(--white);
+      padding: 1rem 2rem;
+      box-shadow: var(--shadow);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .logo i {
+      color: var(--accent);
+      font-size: 2rem;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 500;
+      transition: var(--transition);
+      position: relative;
+      padding: 0.5rem 0;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--primary);
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    /* Header Styles */
+    header {
+      background: linear-gradient(135deg, var(--light) 0%, var(--accent-light) 50%, var(--white) 100%);
+      padding: 3rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -10%;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent) 0%, transparent 70%);
+      opacity: 0.1;
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: var(--text-dark);
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: var(--text-light);
+    }
+
+    /* Container */
+    .container {
+      max-width: 1200px;
+      margin: 2rem auto;
+      background: var(--white);
+      border-radius: var(--radius-large);
+      padding: 2.5rem;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      color: var(--text-dark);
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+    }
+
+    h2::before {
+      content: '';
+      display: block;
+      width: 8px;
+      height: 30px;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+      border-radius: 4px;
+    }
+
+    /* Table Styling */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 2rem;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    th, td {
+      padding: 1rem 1.5rem;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+    }
+
+    th {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      color: var(--white);
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    td {
+      background: var(--background-light);
+      transition: var(--transition);
+    }
+
+    tr:hover td {
+      background: var(--accent-light);
+      transform: translateX(5px);
+    }
+
+    /* Chart Container */
+    .chart-container {
+      width: 100%;
+      height: 400px;
+      margin: 2rem 0;
+      position: relative;
+    }
+
+    /* Chart Navigation */
+    .chart-navigation {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+
+    .nav-btn {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      color: var(--white);
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: var(--radius);
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .nav-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .nav-btn:disabled {
+      background: var(--text-light);
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
+
+    /* Back Button */
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      color: var(--white);
+      padding: 1rem 2rem;
+      border-radius: var(--radius);
+      text-decoration: none;
+      font-weight: 600;
+      transition: var(--transition);
+      margin-top: 1rem;
+      text-align: center;
+    }
+
+    .back-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 2rem 0;
+      color: var(--text-light);
+      border-top: 1px solid var(--border);
+      margin-top: 3rem;
+    }
+
+    footer p {
+      margin-bottom: 0;
+      font-size: 1.1rem;
+    }
+
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .footer-links a {
+      color: var(--white);
+      text-decoration: none;
+      transition: var(--transition);
+      font-size: 1rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--accent-light);
+    }
+
+    /* Animation */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .fade-in {
+      animation: fadeIn 0.6s ease-out forwards;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+      }
+
+      .nav-links {
+        gap: 1rem;
+      }
+
+      header {
+        padding: 2rem 1rem;
+      }
+
+      header h1 {
+        font-size: 2rem;
+      }
+
+      .container {
+        padding: 1.5rem;
+        margin: 1rem;
+      }
+
+      table {
+        display: block;
+        overflow-x: auto;
+      }
+
+      th, td {
+        padding: 0.75rem 1rem;
+        font-size: 0.9rem;
+      }
+
+      .chart-container {
+        height: 300px;
+      }
+      
+      .footer {
+        padding: 1.5rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .navbar {
+        padding: 0.75rem;
+      }
+      
+      .logo {
+        font-size: 1.5rem;
+      }
+      
+      .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      
+      .container {
+        padding: 1.25rem;
+      }
+      
+      .chart-container {
+        height: 250px;
+      }
+      
+      .chart-navigation {
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+      
+      .nav-btn {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">
+      <i class="fas fa-heartbeat"></i> Wellora
+    </div>
+    <ul class="nav-links">
+      <li><a href="/dashboard">Home</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/contact">Contact Us</a></li>
+      <li><a href="/logout">Logout</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <h1>Your Wellness Dashboard</h1>
+    <p>Track your menstrual health and progress</p>
+  </header>
+
+  <div class="container">
+    <h2>Feedback History</h2>
+    <table>
+      <tr>
+        <th>Date</th>
+        <th>Cycle</th>
+        <th>Pain Level</th>
+        <th>Sleep Hours</th>
+        <th>Exercise</th>
+        <th>Score</th>
+      </tr>
+      {% for fb in feedback %}
+      <tr>
+        <td>{{ fb.date }}</td>
+        <td>{{ fb.cycle_length }}</td>
+        <td>{{ fb.pain_level }}</td>
+        <td>{{ fb.sleep_hours }}</td>
+        <td>{{ fb.exercise_freq }}</td>
+        <td>{{ fb.overall_score }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+
+    <h2>Progress Overview</h2>
+    <div class="chart-container">
+      <canvas id="progressChart"></canvas>
+    </div>
+
+    <div class="chart-navigation">
+      <button id="prevBtn" class="nav-btn">
+        <i class="fas fa-chevron-left"></i> Previous
+      </button>
+      <button id="nextBtn" class="nav-btn">
+        Next <i class="fas fa-chevron-right"></i>
+      </button>
+    </div>
+
+    <div style="text-align: center;">
+      <a href="/women" class="back-btn"><i class="fas fa-home"></i> Return to Women's Health</a>
+        <a href="/women_feedback" class="back-btn"><i class="fas fa-home"></i> Submit New Feedback</a>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="fade-in delay-3">
+    <p>© 2025 Wellora | Your Trusted Health Companion</p>
+  </footer>
+
+  <script>
+    const chartData = JSON.parse('{{ chart_data|safe }}');
+    const ctx = document.getElementById('progressChart').getContext('2d');
+
+    // Combine date and time
+    const labels = chartData.dates.map((date, i) => {
+      const time = chartData.times ? chartData.times[i] : '';
+      return time ? `${date} ${time}` : date;
+    });
+
+    // Pagination setup
+    let startIndex = 0;
+    const barsPerPage = 4;
+
+    function getChartSlice() {
+      const endIndex = startIndex + barsPerPage;
+      return {
+        labels: labels.slice(startIndex, endIndex),
+        sleep: chartData.sleep.slice(startIndex, endIndex),
+        pain: chartData.pain.slice(startIndex, endIndex).map(p => 10 - p),
+        exercise: chartData.exercise.slice(startIndex, endIndex)
+      };
+    }
+
+    let currentSlice = getChartSlice();
+
+    // Initialize stacked bar chart
+    let chart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: currentSlice.labels,
+        datasets: [
+          {
+            label: 'Sleep Hours',
+            data: currentSlice.sleep,
+            backgroundColor: 'rgba(168, 118, 118, 0.8)',
+            borderColor: '#A87676',
+            borderWidth: 1
+          },
+          {
+            label: 'Exercise Progress',
+            data: currentSlice.exercise,
+            backgroundColor: 'rgba(225, 172, 172, 0.8)',
+            borderColor: '#E1ACAC',
+            borderWidth: 1
+          },
+          {
+            label: 'Pain Level (Inverted)',
+            data: currentSlice.pain,
+            backgroundColor: 'rgba(255, 208, 208, 0.8)',
+            borderColor: '#FFD0D0',
+            borderWidth: 1
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { position: 'top' },
+          title: { display: true, text: 'Your Overall Health Progress (Stacked)' }
+        },
+        scales: {
+          x: {
+            stacked: true,
+            grid: { display: false },
+            title: { display: true, text: 'Date & Time' },
+            ticks: { autoSkip: false, maxRotation: 45, minRotation: 45 }
+          },
+          y: {
+            stacked: true,
+            beginAtZero: true,
+            suggestedMax: 30,
+            title: { display: true, text: 'Total Progress Composition' }
+          }
+        }
+      }
+    });
+
+    // Update navigation buttons
+    function updateNavigation() {
+      document.getElementById('prevBtn').disabled = startIndex === 0;
+      document.getElementById('nextBtn').disabled = startIndex + barsPerPage >= labels.length;
+    }
+
+    // Prev / Next Buttons
+    document.getElementById('nextBtn').addEventListener('click', () => {
+      if (startIndex + barsPerPage < labels.length) {
+        startIndex += barsPerPage;
+        updateChart();
+        updateNavigation();
+      }
+    });
+
+    document.getElementById('prevBtn').addEventListener('click', () => {
+      if (startIndex - barsPerPage >= 0) {
+        startIndex -= barsPerPage;
+        updateChart();
+        updateNavigation();
+      }
+    });
+
+    function updateChart() {
+      currentSlice = getChartSlice();
+      chart.data.labels = currentSlice.labels;
+      chart.data.datasets[0].data = currentSlice.sleep;
+      chart.data.datasets[1].data = currentSlice.exercise;
+      chart.data.datasets[2].data = currentSlice.pain;
+      chart.update();
+    }
+
+    // Initialize navigation buttons
+    updateNavigation();
+  </script>
+</body>
+</html>

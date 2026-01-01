@@ -1,0 +1,44 @@
+{
+  "music_videos": [
+    {
+      "title": "Calm Ocean Waves - Relaxing Music",
+      "embed_url": "https://www.youtube.com/embed/I3OJUwILelU?si=MdUU_Hy7-g4-uez5",
+      "description": "Gentle ocean sounds for deep relaxation"
+    },
+    {
+      "title": "Peaceful Piano Meditation", 
+      "embed_url":"https://www.youtube.com/embed/1kIFrf5OPxE?si=SgfPu7zNjF5nvZa5",
+      "description": "Soft piano music for stress relief"
+    },
+    {
+      "title": "Forest Sounds for Sleep",
+      "embed_url": "https://www.youtube.com/embed/V-s7M5zm99U?si=xPr39bJyABidFRb-",
+      "description": "Nature sounds for better sleep"
+    },
+    {
+      "title": "Healing Frequency 432Hz",
+      "embed_url": "https://www.youtube.com/embed/tF4z5kntXAA?si=-HUwTApDiN6v6_VZ" ,
+      "description": "Healing frequencies for anxiety relief"
+    },
+    {
+      "title": "Zen Meditation Music",
+      "embed_url": "https://www.youtube.com/embed/zBhCVmHn6Z0?si=7FOlddtidbz1ElCU",
+      "description": "Traditional zen music for mindfulness"
+    },
+    {
+      "title": "Deep Sleep Delta Waves",
+      "embed_url": "https://www.youtube.com/embed/2z2v1WRafqs?si=vBUkC4rkTFMTD-DA" ,
+      "description": "Delta waves for deep sleep and healing"
+    },
+    {
+      "title": "Morning Meditation Music",
+      "embed_url": "https://www.youtube.com/embed/eGI9JqmpExs?si=xMsOE39Zp1-1XH1t",
+      "description": "Uplifting music for morning meditation"
+    },
+    {
+      "title": "Stress Relief Binaural Beats",
+      "embed_url": "https://www.youtube.com/embed/PPoXySl0uK4?si=Ty_Dvt4Aa5SGV8_E",
+      "description": "Binaural beats for instant stress relief"
+    }
+  ]
+}

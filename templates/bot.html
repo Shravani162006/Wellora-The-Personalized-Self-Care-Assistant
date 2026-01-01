@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wellora: Personalized Self-Care Assistant</title>
+    <style>
+        :root {
+            /* Wellora Color Palette */
+            --primary: #A87676;
+            --primary-dark: #8C5E5E;
+            --primary-light: #CA8787;
+            --accent: #E1ACAC;
+            --accent-light: #F5D1D1;
+            --light: #FFD0D0;
+            --white: #ffffff;
+            --text: #5A4A4A;
+            --text-dark: #3A2A2A;
+            --text-light: #8A7A7A;
+            --background: #FFF9F9;
+            --background-light: #FFFDFD;
+            --border: #F0E0E0;
+            
+            /* Additional Colors for Status */
+            --success-color: #A8D5A2;
+            --warning-color: #E1ACAC;
+            --danger-color: #D4A5A5;
+            
+            /* Border Radius */
+            --radius-sm: 8px;
+            --radius: 16px;
+            --radius-lg: 24px;
+            
+            /* Shadows */
+            --shadow: 0 8px 25px rgba(168, 118, 118, 0.12);
+            --shadow-hover: 0 15px 35px rgba(168, 118, 118, 0.2);
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: var(--background);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .chat-container {
+            width: 100%;
+            max-width: 900px;
+            background-color: var(--white);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            height: 85vh;
+            border: 1px solid var(--border);
+        }
+
+        .chat-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            padding: 1.5rem 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .chat-header h1 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .chat-header p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            font-weight: 500;
+        }
+
+        .language-selector {
+            position: absolute;
+            top: 1.5rem;
+            right: 2rem;
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: var(--radius);
+            padding: 0.5rem 1rem;
+            color: var(--white);
+            font-size: 0.8rem;
+            cursor: pointer;
+            backdrop-filter: blur(10px);
+            transition: var(--transition);
+        }
+
+        .language-selector:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .language-selector option {
+            color: var(--text-dark);
+            background: var(--white);
+        }
+
+        .chat-body {
+            display: flex;
+            flex: 1;
+            overflow: hidden;
+        }
+
+        .categories-sidebar {
+            width: 220px;
+            background-color: var(--background-light);
+            padding: 1.5rem;
+            border-right: 1px solid var(--border);
+            overflow-y: auto;
+        }
+
+        .category {
+            padding: 1rem 1.25rem;
+            margin-bottom: 0.75rem;
+            border-radius: var(--radius);
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            border: 2px solid transparent;
+        }
+
+        .category i {
+            margin-right: 0.75rem;
+            font-size: 1.2rem;
+            width: 20px;
+            text-align: center;
+        }
+
+        .category.hair {
+            background-color: rgba(168, 118, 118, 0.1);
+            color: var(--primary);
+            border-left: 4px solid var(--primary);
+        }
+
+        .category.skin {
+            background-color: rgba(225, 172, 172, 0.1);
+            color: var(--accent);
+            border-left: 4px solid var(--accent);
+        }
+
+        .category.women {
+            background-color: rgba(255, 208, 208, 0.1);
+            color: var(--primary-light);
+            border-left: 4px solid var(--primary-light);
+        }
+
+        .category.stress {
+            background-color: rgba(245, 209, 209, 0.1);
+            color: var(--accent-light);
+            border-left: 4px solid var(--accent-light);
+        }
+
+        .category.active {
+            transform: translateX(5px);
+            box-shadow: var(--shadow);
+            border-color: var(--border);
+        }
+
+        .category:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .chat-main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chat-window {
+            flex: 1;
+            padding: 2rem;
+            overflow-y: auto;
+            background-color: var(--background);
+        }
+
+        .message {
+            margin-bottom: 1.25rem;
+            max-width: 80%;
+            padding: 1rem 1.25rem;
+            border-radius: var(--radius-lg);
+            line-height: 1.5;
+            position: relative;
+            animation: fadeIn 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .bot-message {
+            background-color: var(--white);
+            border-bottom-left-radius: var(--radius-sm);
+            align-self: flex-start;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            color: var(--text);
+        }
+
+        .user-message {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            border-bottom-right-radius: var(--radius-sm);
+            align-self: flex-end;
+            margin-left: auto;
+            box-shadow: var(--shadow);
+        }
+
+        .typing-indicator {
+            display: inline-block;
+            background-color: var(--white);
+            padding: 1rem 1.25rem;
+            border-radius: var(--radius-lg);
+            border-bottom-left-radius: var(--radius-sm);
+            font-style: italic;
+            color: var(--text-light);
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            margin-bottom: 1.25rem;
+        }
+
+        .typing-indicator::after {
+            content: '...';
+            animation: typing 1.5s infinite;
+        }
+
+        @keyframes typing {
+            0% { content: '.'; }
+            33% { content: '..'; }
+            66% { content: '...'; }
+        }
+
+        .quick-replies {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+        }
+
+        .quick-reply {
+            background-color: var(--white);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 0.75rem 1.25rem;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: var(--transition);
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        .quick-reply:hover {
+            background-color: var(--light);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+            border-color: var(--accent);
+        }
+
+        .chat-input-container {
+            padding: 1.5rem 2rem;
+            border-top: 1px solid var(--border);
+            background-color: var(--white);
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        .chat-input {
+            flex: 1;
+            padding: 1rem 1.5rem;
+            border: 2px solid var(--border);
+            border-radius: var(--radius);
+            outline: none;
+            font-size: 1rem;
+            transition: var(--transition);
+            background: var(--background-light);
+            color: var(--text);
+        }
+
+        .chat-input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(168, 118, 118, 0.1);
+        }
+
+        .send-button {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            border: none;
+            border-radius: var(--radius);
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: var(--transition);
+            font-size: 1.1rem;
+        }
+
+        .send-button:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .send-button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .welcome-message {
+            text-align: center;
+            padding: 2rem;
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+        }
+
+        .welcome-message h2 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .welcome-message p {
+            color: var(--text);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .feature-highlights {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .feature {
+            background-color: var(--background-light);
+            padding: 1.5rem;
+            border-radius: var(--radius);
+            width: 140px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            transition: var(--transition);
+        }
+
+        .feature:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .feature i {
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+            display: block;
+        }
+
+        .feature.hair i { color: var(--primary); }
+        .feature.skin i { color: var(--accent); }
+        .feature.women i { color: var(--primary-light); }
+        .feature.stress i { color: var(--accent-light); }
+
+        .feature span {
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .feature.hair span { color: var(--primary); }
+        .feature.skin span { color: var(--accent); }
+        .feature.women span { color: var(--primary-light); }
+        .feature.stress span { color: var(--accent-light); }
+
+        @media (max-width: 768px) {
+            .chat-body {
+                flex-direction: column;
+            }
+            
+            .categories-sidebar {
+                width: 100%;
+                display: flex;
+                overflow-x: auto;
+                padding: 1rem;
+                border-right: none;
+                border-bottom: 1px solid var(--border);
+            }
+            
+            .category {
+                flex: 0 0 auto;
+                margin-right: 0.75rem;
+                margin-bottom: 0;
+                white-space: nowrap;
+                min-width: 140px;
+            }
+            
+            .chat-container {
+                height: 95vh;
+            }
+            
+            .chat-header {
+                padding: 1.25rem;
+            }
+            
+            .chat-header h1 {
+                font-size: 1.5rem;
+            }
+            
+            .language-selector {
+                position: relative;
+                top: auto;
+                right: auto;
+                margin-top: 0.75rem;
+                width: 100%;
+                max-width: 200px;
+            }
+            
+            .feature-highlights {
+                gap: 0.75rem;
+            }
+            
+            .feature {
+                width: 120px;
+                padding: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+            
+            .chat-container {
+                height: 100vh;
+                border-radius: 0;
+            }
+            
+            .chat-window {
+                padding: 1.5rem;
+            }
+            
+            .message {
+                max-width: 90%;
+                font-size: 0.9rem;
+            }
+            
+            .welcome-message {
+                padding: 1.5rem;
+            }
+            
+            .feature {
+                width: calc(50% - 0.5rem);
+            }
+            
+            .chat-input-container {
+                padding: 1rem 1.5rem;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- ALL YOUR EXISTING HTML CONTENT REMAINS EXACTLY THE SAME -->
+    <div class="chat-container">
+        <div class="chat-header">
+            <h1 data-translate-key="title">Wellora: Personalized Self-Care Assistant</h1>
+            <p data-translate-key="poweredBy">Your AI companion for holistic wellness</p>
+            <select class="language-selector" id="language-selector">
+                <option value="en">English</option>
+                <option value="hi">हिन्दी</option>
+                <option value="mr">मराठी</option>
+            </select>
+        </div>
+        
+        <div class="chat-body">
+            <div class="categories-sidebar">
+                <div class="category hair active" data-category="hair">
+                    <i class="fas fa-spa"></i>
+                    <span data-translate-key="hairCare">Hair Care</span>
+                </div>
+                <div class="category skin" data-category="skin">
+                    <i class="fas fa-hand-sparkles"></i>
+                    <span data-translate-key="skinCare">Skin Care</span>
+                </div>
+                <div class="category women" data-category="women">
+                    <i class="fas fa-female"></i>
+                    <span data-translate-key="womensHealth">Women's Health</span>
+                </div>
+                <div class="category stress" data-category="stress">
+                    <i class="fas fa-brain"></i>
+                    <span data-translate-key="stressManagement">Stress Management</span>
+                </div>
+            </div>
+            
+            <div class="chat-main">
+                <div class="chat-window" id="chat-window">
+                    <div class="welcome-message">
+                        <h2 data-translate-key="welcomeTitle">Welcome to Wellora!</h2>
+                        <p data-translate-key="welcomeMessage">I'm your personalized self-care assistant. I can help you with hair care, skin care, women's health, and stress management. How can I assist you today?</p>
+                        <div class="feature-highlights">
+                            <div class="feature hair">
+                                <i class="fas fa-spa"></i>
+                                <span data-translate-key="hairCare">Hair Care</span>
+                            </div>
+                            <div class="feature skin">
+                                <i class="fas fa-hand-sparkles"></i>
+                                <span data-translate-key="skinCare">Skin Care</span>
+                            </div>
+                            <div class="feature women">
+                                <i class="fas fa-female"></i>
+                                <span data-translate-key="womensHealth">Women's Health</span>
+                            </div>
+                            <div class="feature stress">
+                                <i class="fas fa-brain"></i>
+                                <span data-translate-key="stressManagement">Stress Management</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <form class="chat-input-container" id="chat-form">
+                    <input type="text" class="chat-input" id="user-input" placeholder="Type your message..." data-translate-key="inputPlaceholder" autocomplete="off">
+                    <button type="submit" class="send-button" data-translate-key="sendButton">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- ALL YOUR EXISTING JAVASCRIPT CODE REMAINS EXACTLY THE SAME -->
+    <script>
+        // YOUR ENTIRE JAVASCRIPT CODE GOES HERE - UNCHANGED
+        document.addEventListener("DOMContentLoaded", () => {
+            const chatForm = document.getElementById("chat-form");
+            const userInput = document.getElementById("user-input");
+            const chatWindow = document.getElementById("chat-window");
+            const languageSelector = document.getElementById("language-selector");
+            const sendButton = document.querySelector('[data-translate-key="sendButton"]');
+            const categories = document.querySelectorAll('.category');
+
+            // --- Configuration ---
+            // 🚨🚨🚨 SECURITY WARNING 🚨🚨🚨
+            // Your API key is exposed! Anyone can use it.
+            // Please REVOKE this key and use a backend server to protect your new key.
+            const API_KEY = "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"; // Add your OpenRouter API key here
+            const API_URL = "https://openrouter.ai/api/v1/chat/completions";
+
+            const translations = {
+                en: {
+                    title: "Wellora: Personalized Self-Care Assistant",
+                    poweredBy: "Your AI companion for holistic wellness",
+                    welcomeTitle: "Welcome to Wellora!",
+                    welcomeMessage: "I'm your personalized self-care assistant. I can help you with hair care, skin care, women's health, and stress management. How can I assist you today?",
+                    hairCare: "Hair Care",
+                    skinCare: "Skin Care",
+                    womensHealth: "Women's Health",
+                    stressManagement: "Stress Management",
+                    inputPlaceholder: "Type your message...",
+                    sendButton: "Send",
+                    systemContent: "You are Wellora, a helpful and friendly AI assistant for a holistic self-care platform. Your goal is to answer user questions about hair care, skin care, women's health, and stress management. Be empathetic, informative, and practical. Provide personalized recommendations based on user inputs about their age, lifestyle, and concerns. Always suggest consulting healthcare professionals for medical issues. Keep responses concise but helpful.",
+                    typingIndicatorText: "Wellora is typing...",
+                    apiErrorText: "Sorry, I'm having trouble connecting. Please try again later.",
+                    quickReplies: [
+                        "Hair fall remedies",
+                        "Skincare routine for my skin type",
+                        "Managing period symptoms",
+                        "Stress relief techniques",
+                        "Home remedies for dandruff",
+                        "Best products for acne",
+                        "Hormonal balance tips",
+                        "Meditation for beginners"
+                    ]
+                },
+                hi: {
+                    title: "वेलोरा: व्यक्तिगत सेल्फ-केयर सहायक",
+                    poweredBy: "समग्र कल्याण के लिए आपका एआई साथी",
+                    welcomeTitle: "वेलोरा में आपका स्वागत है!",
+                    welcomeMessage: "मैं आपका व्यक्तिगत सेल्फ-केयर सहायक हूं। मैं आपकी बालों की देखभाल, त्वचा की देखभाल, महिलाओं के स्वास्थ्य और तनाव प्रबंधन में मदद कर सकता हूं। आज मैं आपकी कैसे सहायता कर सकता हूं?",
+                    hairCare: "बालों की देखभाल",
+                    skinCare: "त्वचा की देखभाल",
+                    womensHealth: "महिला स्वास्थ्य",
+                    stressManagement: "तनाव प्रबंधन",
+                    inputPlaceholder: "अपना संदेश लिखें...",
+                    sendButton: "भेजें",
+                    systemContent: "आप वेलोरा हैं, एक समग्र सेल्फ-केयर प्लेटफॉर्म के लिए एक सहायक और मैत्रीपूर्ण एआई सहायक। आपका लक्ष्य बालों की देखभाल, त्वचा की देखभाल, महिलाओं के स्वास्थ्य और तनाव प्रबंधन के बारे में उपयोगकर्ताओं के सवालों के जवाब देना है। सहानुभूतिपूर्ण, जानकारीपूर्ण और व्यावहारिक बनें। उनकी उम्र, जीवनशैली और चिंताओं के बारे में उपयोगकर्ता इनपुट के आधार पर व्यक्तिगत सिफारिशें प्रदान करें। चिकित्सा मुद्दों के लिए हमेशा स्वास्थ्य देखभाल पेशेवरों से परामर्श करने का सुझाव दें। प्रतिक्रियाओं को संक्षिप्त लेकिन मददगार रखें।",
+                    typingIndicatorText: "वेलोरा टाइप कर रहा है...",
+                    apiErrorText: "क्षमा करें, मुझे कनेक्ट होने में समस्या आ रही है। कृपया बाद में दोबारा प्रयास करें।",
+                    quickReplies: [
+                        "बाल झड़ने के उपाय",
+                        "मेरी त्वचा के प्रकार के लिए स्किनकेयर रूटीन",
+                        "पीरियड के लक्षणों का प्रबंधन",
+                        "तनाव मुक्ति तकनीक",
+                        "रूसी के लिए घरेलू उपचार",
+                        "मुंहासों के लिए सबसे अच्छे उत्पाद",
+                        "हार्मोनल संतुलन युक्तियाँ",
+                        "शुरुआती के लिए ध्यान"
+                    ]
+                },
+                mr: {
+                    title: "वेलोरा: वैयक्तिक स्व-काळजी सहाय्यक",
+                    poweredBy: "समग्र कल्याणासाठी तुमचे AI सहकारी",
+                    welcomeTitle: "वेलोरा मध्ये आपले स्वागत आहे!",
+                    welcomeMessage: "मी तुमचा वैयक्तिक स्व-काळजी सहाय्यक आहे. मी तुम्हाला केसांची काळजी, त्वचेची काळजी, महिलांचे आरोग्य आणि ताण व्यवस्थापन यामध्ये मदत करू शकतो. आज मी तुमची कशी मदत करू शकतो?",
+                    hairCare: "केसांची काळजी",
+                    skinCare: "त्वचेची काळजी",
+                    womensHealth: "महिला आरोग्य",
+                    stressManagement: "ताण व्यवस्थापन",
+                    inputPlaceholder: "तुमचा संदेश टाइप करा...",
+                    sendButton: "पाठवा",
+                    systemContent: "तुम्ही वेलोरा आहात, एक सर्वांगीण स्व-काळजी प्लॅटफॉर्मसाठी एक उपयुक्त आणि मैत्रीपूर्ण AI सहाय्यक. केसांची काळजी, त्वचेची काळजी, महिलांचे आरोग्य आणि ताण व्यवस्थापन याबद्दल वापरकर्त्यांच्या प्रश्नांची उत्तरे देणे हे तुमचे ध्येय आहे. सहानुभूतिपूर्ण, माहितीपूर्ण आणि व्यावहारिक रहा. वय, जीवनशैली आणि चिंता याबद्दलच्या वापरकर्ता इनपुटच्या आधारे वैयक्तिक शिफारसी प्रदान करा. वैद्यकीय समस्यांसाठी नेहमीच आरोग्यसेवा व्यावसायिकांचा सल्ला घेण्याचा सल्ला द्या. प्रतिसाद संक्षिप्त पण उपयुक्त ठेवा.",
+                    typingIndicatorText: "वेलोरा टाइप करत आहे...",
+                    apiErrorText: "क्षमस्व, मला कनेक्ट करण्यात समस्या येत आहे. कृपया नंतर पुन्हा प्रयत्न करा.",
+                    quickReplies: [
+                        "केस गळण्यावर उपाय",
+                        "माझ्या त्वचेच्या प्रकारासाठी स्किनकेअर रूटीन",
+                        "पाळीची लक्षणे व्यवस्थापित करणे",
+                        "ताणमुक्तीच्या तंत्रा",
+                        "कोंड्यासाठी घरगुती उपचार",
+                        "मुरुमांसाठी सर्वोत्तम उत्पादने",
+                        "हार्मोनल संतुलन टिप्स",
+                        "नवशिक्यांसाठी ध्यान"
+                    ]
+                }
+            };
+
+            let conversationHistory = [];
+            let currentLang = 'en';
+            let currentCategory = 'hair';
+
+            // Initialize categories with click events
+            categories.forEach(category => {
+                category.addEventListener('click', () => {
+                    // Remove active class from all categories
+                    categories.forEach(cat => cat.classList.remove('active'));
+                    // Add active class to clicked category
+                    category.classList.add('active');
+                    currentCategory = category.getAttribute('data-category');
+                    
+                    // Add a message about the category change
+                    const categoryNames = {
+                        en: {
+                            hair: "Hair Care",
+                            skin: "Skin Care",
+                            women: "Women's Health",
+                            stress: "Stress Management"
+                        },
+                        hi: {
+                            hair: "बालों की देखभाल",
+                            skin: "त्वचा की देखभाल",
+                            women: "महिला स्वास्थ्य",
+                            stress: "तनाव प्रबंधन"
+                        },
+                        mr: {
+                            hair: "केसांची काळजी",
+                            skin: "त्वचेची काळजी",
+                            women: "महिला आरोग्य",
+                            stress: "ताण व्यवस्थापन"
+                        }
+                    };
+                    
+                    const categoryMessage = `${translations[currentLang].welcomeTitle.split('!')[0]}! ${translations[currentLang].welcomeMessage.split('. ')[0]}. Now focusing on ${categoryNames[currentLang][currentCategory]}. How can I help you with ${categoryNames[currentLang][currentCategory].toLowerCase()}?`;
+                    addMessageToChat(categoryMessage, "bot");
+                });
+            });
+
+            function changeLanguage(lang) {
+                const langTranslations = translations[lang];
+                document.querySelector('[data-translate-key="title"]').textContent = langTranslations.title;
+                document.querySelector('[data-translate-key="poweredBy"]').textContent = langTranslations.poweredBy;
+                document.querySelector('[data-translate-key="welcomeTitle"]').textContent = langTranslations.welcomeTitle;
+                document.querySelector('[data-translate-key="welcomeMessage"]').textContent = langTranslations.welcomeMessage;
+                document.querySelector('[data-translate-key="hairCare"]').textContent = langTranslations.hairCare;
+                document.querySelector('[data-translate-key="skinCare"]').textContent = langTranslations.skinCare;
+                document.querySelector('[data-translate-key="womensHealth"]').textContent = langTranslations.womensHealth;
+                document.querySelector('[data-translate-key="stressManagement"]').textContent = langTranslations.stressManagement;
+                document.querySelector('[data-translate-key="inputPlaceholder"]').placeholder = langTranslations.inputPlaceholder;
+                sendButton.textContent = langTranslations.sendButton;
+                currentLang = lang;
+
+                // Reset conversation history with the new system prompt
+                const systemPrompt = {
+                    role: "system",
+                    content: langTranslations.systemContent
+                };
+                conversationHistory = [systemPrompt];
+                
+                // Clear chat and show welcome message again
+                chatWindow.innerHTML = '';
+                showWelcomeMessage();
+            }
+
+            function showWelcomeMessage() {
+                const welcomeDiv = document.createElement('div');
+                welcomeDiv.className = 'welcome-message';
+                welcomeDiv.innerHTML = `
+                    <h2 data-translate-key="welcomeTitle">${translations[currentLang].welcomeTitle}</h2>
+                    <p data-translate-key="welcomeMessage">${translations[currentLang].welcomeMessage}</p>
+                    <div class="feature-highlights">
+                        <div class="feature hair">
+                            <i class="fas fa-spa"></i>
+                            <span data-translate-key="hairCare">${translations[currentLang].hairCare}</span>
+                        </div>
+                        <div class="feature skin">
+                            <i class="fas fa-hand-sparkles"></i>
+                            <span data-translate-key="skinCare">${translations[currentLang].skinCare}</span>
+                        </div>
+                        <div class="feature women">
+                            <i class="fas fa-female"></i>
+                            <span data-translate-key="womensHealth">${translations[currentLang].womensHealth}</span>
+                        </div>
+                        <div class="feature stress">
+                            <i class="fas fa-brain"></i>
+                            <span data-translate-key="stressManagement">${translations[currentLang].stressManagement}</span>
+                        </div>
+                    </div>
+                `;
+                chatWindow.appendChild(welcomeDiv);
+                
+                // Add quick replies
+                showQuickReplies();
+            }
+
+            function showQuickReplies() {
+                const quickRepliesDiv = document.createElement('div');
+                quickRepliesDiv.className = 'quick-replies';
+                
+                translations[currentLang].quickReplies.forEach(reply => {
+                    const replyButton = document.createElement('div');
+                    replyButton.className = 'quick-reply';
+                    replyButton.textContent = reply;
+                    replyButton.addEventListener('click', () => {
+                        userInput.value = reply;
+                        chatForm.dispatchEvent(new Event('submit'));
+                    });
+                    quickRepliesDiv.appendChild(replyButton);
+                });
+                
+                chatWindow.appendChild(quickRepliesDiv);
+                chatWindow.scrollTop = chatWindow.scrollHeight;
+            }
+
+            // Set initial language and add event listener
+            changeLanguage(languageSelector.value);
+            languageSelector.addEventListener("change", (e) => changeLanguage(e.target.value));
+
+            chatForm.addEventListener("submit", async (e) => {
+                e.preventDefault();
+                const userMessage = userInput.value.trim();
+                if (!userMessage) return;
+
+                // Display user's message
+                addMessageToChat(userMessage, "user");
+                conversationHistory.push({ role: "user", content: userMessage });
+                userInput.value = "";
+                setFormDisabled(true);
+
+                // Show typing indicator
+                const typingIndicator = showTypingIndicator();
+
+                try {
+                    // Send message to the AI API
+                    const response = await fetch(API_URL, {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                            "Authorization": `Bearer ${API_KEY}`,
+                            "HTTP-Referer": window.location.href,
+                            "X-Title": "Wellora: Personalized Self-Care Assistant"
+                        },
+                        body: JSON.stringify({
+                            model: "openai/gpt-3.5-turbo",
+                            messages: conversationHistory
+                        })
+                    });
+
+                    if (!response.ok) {
+                        throw new Error(`API error: ${response.status} ${response.statusText}`);
+                    }
+
+                    const data = await response.json();
+                    const botMessage = data.choices[0].message.content;
+
+                    // Add bot's response to conversation history
+                    conversationHistory.push({ role: "assistant", content: botMessage });
+                    
+                    // Display bot's message
+                    addMessageToChat(botMessage, "bot");
+
+                } catch (error) {
+                    console.error("Error fetching AI response:", error);
+                    const errorMsg = translations[currentLang].apiErrorText;
+                    addMessageToChat(errorMsg, "bot");
+                } finally {
+                    // Clean up
+                    typingIndicator.remove();
+                    setFormDisabled(false);
+                    
+                    // Show quick replies again
+                    showQuickReplies();
+                }
+            });
+
+            function setFormDisabled(isDisabled) {
+                userInput.disabled = isDisabled;
+                sendButton.disabled = isDisabled;
+                if (!isDisabled) userInput.focus();
+            }
+
+            function addMessageToChat(message, sender) {
+                const messageElement = document.createElement("div");
+                messageElement.classList.add("message", `${sender}-message`);
+                messageElement.textContent = message;
+                chatWindow.appendChild(messageElement);
+                // Scroll to the latest message
+                chatWindow.scrollTop = chatWindow.scrollHeight;
+            }
+
+            function showTypingIndicator() {
+                const indicator = document.createElement("div");
+                indicator.classList.add("typing-indicator");
+                indicator.textContent = translations[currentLang].typingIndicatorText;
+                chatWindow.appendChild(indicator);
+                chatWindow.scrollTop = chatWindow.scrollHeight;
+                return indicator;
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,744 @@
+[
+    {
+  "Age": "25",
+  "Gender": "Male",
+  "Sleep_Hours": "8",
+  "Water_Intake": "Medium",
+  "Scalp_Type": "Oily",
+  "Oil_Scalp": "Yes",
+  "Chemical_Treatment": "No",
+  "Remedies": "1. Apple Cider Vinegar (ACV) rinse: Use diluted ACV after shampooing to control oil and balance pH. 2. Lemon juice: Mix with water and apply to scalp to absorb excess oil. 3. Tea tree oil: Add few drops to clarifying shampoo to fight fungus. 4. Clay mask: Apply once a week to detoxify scalp.",
+  "Routine": "1. Wash scalp 3-4 times a week using a clarifying or balancing shampoo. 2. Avoid heavy conditioners on the scalp. 3. Rinse thoroughly to prevent product buildup. 4. Avoid excessive touching of hair and scalp. 5. Maintain an active lifestyle to manage stress.",
+  "AmazonProducts": {
+    "Shampoo": {
+        "name": "Himalaya Anti‑Dandruff Shampoo",
+        "image": "Himalaya_Anti_Dandruff_Shampoo.jpg",
+        "benefits": "Helps remove up to 100% dandruff and soothes itchy, flaky scalp.",
+        "how_to_use": "Massage into wet scalp and hair, leave ~1-2 minutes, rinse.",
+        "ingredient": "Tea Tree Oil + Aloe Vera.",
+        "buy_now_link": "https://www.amazon.in/Himalaya-Herbals-Anti-Dandruff-Shampoo-Dandruff/dp/B002YOUJFG"
+      },
+      "Conditioner": {
+        "name": "Himalaya Anti‑Dandruff Tea‑Tree Conditioner",
+        "image": "Himalaya_Dandruff_Conditioner.jpg",
+        "benefits": "Herbal formula that helps fight dandruff and condition hair.",
+        "how_to_use": "Use after shampooing, apply to damp hair, leave ~1 minute, rinse.",
+        "ingredient": "Tea Tree Oil + other herbal extracts.",
+        "buy_now_link": "https://www.amazon.in/Himalaya-Anti-Dandruff-Conditioner-100ml/dp/B074M2LHN5"
+      },
+      "Oil": {
+        "name": "Himalaya Anti‑Dandruff Hair Oil",
+        "image": "Himalaya_Dandruff_Oil.jpg",
+        "benefits": "Helps combat scalp dandruff and soothes itchiness using herbal actives. ",
+        "how_to_use": "Apply to dry or damp scalp, massage thoroughly, leave 30-60 minutes then shampoo.",
+        "ingredient": "Tea Tree Oil + Rosemary + Neem.",
+        "buy_now_link": "https://www.amazon.in/Himalaya-Herbals-Anti-Dandruff-Hair-Oil/dp/B005EMV3FU"
+      },
+      "Serum": {
+        "name": "Deconstruct Anti‑Dandruff Scalp Serum",
+        "image": "Deconstruct_Dandruff_Serum.jpg",
+        "benefits": "Helps clear flaky, itchy scalp by combining fungal-control and exfoliating actives.",
+        "how_to_use": "Apply on clean scalp section-wise, leave in and style as usual (no rinse) or as pre-wash depending on instruction.",
+        "ingredient": "0.5% Piroctone Olamine + 2% Salicylic Acid + Prebiotic 1%.",
+        "buy_now_link": "https://www.amazon.in/Anti-Dandruff-Piroctone-Salicylic-Prebiotic-treatment/dp/B0BNC3SM1K"
+      },
+      "Mask": {
+        "name": "Himalaya Herbals Anti‑Dandruff Hair Cream",
+        "image": "Himalaya_Dandruff_Mask.jpg",
+        "benefits": "Herbal budget formula that combats dandruff and soothes scalp irritation. ",
+        "how_to_use": "On washed hair, apply cream/mask to scalp, leave ~5-10 minutes, rinse.",
+        "ingredient": "Tea Tree Oil + other herbal extracts.",
+        "buy_now_link": "https://www.amazon.in/Himalaya-Herbals-Anti-Dandruff-Hair-Cream/dp/B006G84KR4"
+      }
+  }
+},
+    {
+  "Age": "27",
+  "Gender": "Female",
+  "Sleep_Hours": "6",
+  "Water_Intake": "High",
+  "Scalp_Type": "Dry",
+  "Oil_Scalp": "Yes",
+  "Chemical_Treatment": "Yes",
+  "Remedies": "1. Aloe vera gel: Massage fresh aloe vera gel onto scalp daily to reduce itchiness. 2. Tea tree oil: Add few drops to shampoo to fight dandruff. 3. Coconut oil: Moisturize dry scalp. 4. Neem rinse: Natural antifungal treatment. 5. Curd mask: Balances scalp microbiome.",
+  "Routine": "1. Wash scalp twice a week using mild shampoos. 2. Avoid hot water to prevent dryness. 3. Gently massage scalp while shampooing. 4. Keep hair brushes clean. 5. Maintain hydration and balanced diet.",
+  "AmazonProducts": {
+    "Shampoo": {
+        "name": "Bare Anatomy Expert Anti‑Dandruff Shampoo",
+        "image": "Bare_Dandruff_Shampoo.jpg",
+        "benefits": "Strengthens hair while targeting flakes and dandruff for healthier scalp.",
+        "how_to_use": "Apply on wet hair, massage scalp & lengths, rinse thoroughly.",
+        "ingredient": "Salicylic Acid + Biotin + Derma-approved actives.",
+        "buy_now_link": "https://www.amazon.in/Bare-Anatomy-Anti-Dandruff-Shampoo-Targets/dp/B0BJZXKH12"
+      },
+      "Conditioner": {
+        "name": "Bare Anatomy Anti‑Dandruff Hair Conditioner",
+        "image": "Bare_Dandruff_Conditioner.jpg",
+        "benefits": "Helps remove flaky buildup and moisturises while reducing dandruff.",
+        "how_to_use": "After shampooing, apply on wet hair, leave ~1-2 minutes, then rinse.",
+        "ingredient": "Biotin + Rosemary.",
+        "buy_now_link": "https://www.amazon.in/Bare-Anatomy-Anti-Dandruff-Conditioner-Moisturizes/dp/B0FFHGXKW4"
+      },
+      "Oil": {
+        "name": "Soulflower Tea Tree Anti‑Dandruff Hair Oil",
+        "image": "Soulflower_Dandruff_Oil.jpg",
+        "benefits": "Targets flakes & oily scalp with tea tree goodness for clearer, calmer scalp.",
+        "how_to_use": "Massage into scalp before washing, leave for 20-30 minutes or overnight, then wash off.",
+        "ingredient": "Tea Tree Oil (and lemon/neem in some blends).",
+        "buy_now_link": "https://www.amazon.in/Soulflower-Tree-Scalp-Dandruff-225ml/dp/B06XFMPYWD"
+      },
+      "Serum": {
+        "name": "Soulflower Salicylic Acid Tea‑Tree Anti Dandruff Hair Serum",
+        "image": "Soulflower_Salicylic_Dandruff_Serum.jpg",
+        "benefits": "Provides natural-oil blend to reduce flakes, soothe itch and refresh scalp.",
+        "how_to_use": "Apply a few drops to scalp, massage gently, leave in; may rinse if instructed.",
+        "ingredient": "Tea Tree Oil + Salicylic Acid.",
+        "buy_now_link": "https://www.amazon.in/Soulflower-Dandruff-Rosemary-Salicylic-Essential/dp/B0D4VHLPTC"
+      },
+      "Mask": {
+       "name": "Lissymoco Anti‑Dandruff Hair Mask",
+        "image": "Lissymoco_Dandruff_Mask.jpg",
+        "benefits": "Balances scalp pH and helps prevent dandruff production while conditioning hair.",
+        "how_to_use": "After shampoo, apply mask on scalp + lengths, leave for ~5-7 minutes, rinse.",
+        "ingredient": "Scalp-balancing actives + conditioners.",
+        "buy_now_link": "https://www.amazon.in/LISSYMOCO-Anti-Dandruff-Dandruff-Production-Balances/dp/B0CYPT4WJ8"
+      }
+  }
+},
+  {
+    "Age": "30",
+    "Gender": "Female",
+    "Sleep_Hours": "6",
+    "Water_Intake": "High",
+    "Scalp_Type": "Dry",
+    "Oil_Scalp": "Yes",
+    "Chemical_Treatment": "Yes",
+    "Remedies": "1. Aloe vera gel: Massage fresh aloe vera gel onto scalp daily to reduce itchiness. 2. Tea tree oil: Add few drops to shampoo to fight dandruff. 3. Coconut oil: Moisturize dry scalp. 4. Neem rinse: Natural antifungal treatment. 5. Curd mask: Balances scalp microbiome.",
+    "Routine": "1. Wash scalp twice a week using mild shampoos. 2. Avoid hot water to prevent dryness. 3. Gently massage scalp while shampooing. 4. Keep hair brushes clean. 5. Maintain hydration and balanced diet.",
+    "AmazonProducts": {
+      "Shampoo": {
+        "name": "Sebamed Anti‑Dandruff Shampoo",
+        "image": "Sebamed_Dandruff_Shampoo.jpg",
+        "benefits": "pH 5.5 formula reduces flaking and scalp irritation gently.",
+        "how_to_use": "Use on wet scalp & hair, massage, rinse.",
+        "ingredient": "Piroctone Olamine + mild surfactants.",
+        "buy_now_link": "https://www.amazon.in/Dandruff-irritation-Piroctone-Phthalates-reduction/dp/B01LZTOHBF"
+      },
+      "Conditioner": {
+        "name": "Arata Anti‑Dandruff Hair Conditioner",
+        "image": "Arata_Dandruff_Conditioner.jpg",
+        "benefits": "Botanical-based formula that comforts scalp and controls flakes.",
+        "how_to_use": "On damp hair after shampooing, apply conditioner, leave ~1-2 minutes, rinse off.",
+        "ingredient": "Neem + Tea Tree Extract.",
+        "buy_now_link": "https://www.amazon.in/Arata-Dandruff-Conditioner-Fenugreek-Moisturizes/dp/B0B7WB352B"
+      },
+      "Oil": {
+        "name": "Brillare Tea Tree Hair Oil (Dandruff)",
+        "image": "Brillare_Dandruff_Oil.jpg",
+        "benefits": "Natural oil blend to reduce dandruff and relieve itching from roots. ",
+        "how_to_use": "Apply to scalp and lengths, leave 30+ minutes (or overnight), then shampoo.",
+        "ingredient": "Tea Tree Oil + Lemon + Neem.",
+        "buy_now_link": "https://www.amazon.in/Dandruff-Removes-Natural-Preservative-Free-Cleans/dp/B0C4FJBF42"
+      },
+      "Serum": {
+        "name": "Minimalist Anti‑Dandruff Serum",
+        "image": "Minimalist_Dandruff_Serum.jpg",
+        "benefits": "Pre-shampoo treatment that targets dandruff-causing fungus and oiliness to give clearer scalp.",
+        "how_to_use": "Massage on dry or damp scalp before shampooing, leave for specified time, then wash.",
+        "ingredient": "CPH Complex + Oligopeptide 0.8% + Climbazole + Salicylic Acid.",
+        "buy_now_link": "https://www.amazon.in/Minimalist-Anti-Dandruff-Treatment-Oligopeptide-Advanced/dp/B0CH8HYZQV"
+      },
+      "Mask": {
+       "name": "Bare Anatomy Damage Repair Hair Mask",
+        "image": "Bare_Anatomy_Dandruff_Mask.jpg",
+        "benefits": "While primarily a damage-repair mask, it supports scalp health and may reduce flakiness for dandruff prone hair.",
+        "how_to_use": "Use after shampoo on damp hair, leave 3-5 minutes, rinse.",
+        "ingredient": "Ceramide A2 + Coconut Milk Protein (for repair)",
+        "buy_now_link": "https://www.amazon.in/Bare-Anatomy-Ceramide-Prevents-Strengthens/dp/B09SB23VT2"
+      }
+    }
+  },
+  {
+    "Age": "25",
+    "Gender": "Male",
+    "Sleep_Hours": "8",
+    "Water_Intake": "Medium",
+    "Scalp_Type": "Oily",
+    "Oil_Scalp": "Yes",
+    "Chemical_Treatment": "No",
+    "Remedies": "1. Apple Cider Vinegar (ACV) rinse: Use diluted ACV after shampooing to control oil and balance pH. 2. Clay mask: Apply once a week to detoxify and absorb excess oil. 3. Tea tree oil: Add few drops to clarifying shampoo to fight fungus.",
+    "Routine": "1. Wash scalp 3-4 times a week using a clarifying or balancing shampoo. 2. Avoid heavy conditioners on the scalp. 3. Rinse thoroughly to prevent product buildup. 4. Maintain an active lifestyle to manage stress.",
+    "AmazonProducts": {
+      "Shampoo": {
+        "name": "Mamaearth Lemon Anti‑Dandruff Shampoo",
+        "image": "Mamaearth_Dandruff_Shampoo.jpg",
+        "benefits": "Natural cleanser that helps soothe scalp and reduce visible flakes.",
+        "how_to_use": "On damp hair, apply shampoo, massage scalp, leave briefly, rinse.",
+        "ingredient": "Lemon + Ginger Oil + Tea Tree Oil.",
+        "buy_now_link": "https://www.amazon.in/Mamaearth-Lemon-Anti-Dandruff-Shampoo-Ginger/dp/B0BPJ3VNXF"
+      },
+      "Conditioner": {
+        "name": "Mamaearth Lemon Anti‑Dandruff Conditioner",
+        "image": "Mamaearth_Dandruff_Conditioner.jpg",
+        "benefits": "Soothes flaky, itchy scalp and supports dandruff control with natural actives.",
+        "how_to_use": "Post-shampoo, apply to damp hair, leave for ~2 minutes, then rinse.",
+        "ingredient": "Lemon + Ginger Oil + Tea Tree Oil.",
+        "buy_now_link": "https://www.amazon.in/Mamaearth-Anti-Dandruff-Conditioner-Ginger-Smooth/dp/B0BPJWGHRD"
+      },
+      "Oil": {
+        "name": "Khadi Organique Anti‑Dandruff Hair Oil",
+        "image": "Khadi_Dandruff_Oil.jpg",
+        "benefits": "Ayurvedic heritage formula to fight flakes and support scalp health.",
+        "how_to_use": "Use 2-3× weekly: warm a little oil, massage scalp, leave 15-30 minutes, then rinse.",
+        "ingredient": "Indian herbs (ex: Neem, Bhringraj, Amla) as listed by brand.",
+        "buy_now_link": "https://www.amazon.in/Khadi-Organique-Dandruff-Women-Parabeen/dp/B08T1S135J"
+      },
+      "Serum": {
+        "name": "Brillare Scalp Serum (Anti‑Dandruff)",
+        "image": "Brillare_Serum.jpg",
+        "benefits": "Mid-range serum that targets dandruff and aids in maintaining a calm, clear scalp.",
+        "how_to_use": "On damp or dry scalp, apply serum to roots, leave for recommended time, then style or rinse per instructions.",
+        "ingredient": "Tea Tree Oil + other natural extracts.",
+        "buy_now_link": "https://www.amazon.in/Brillare-Natural-Lactylate-Dandruff-Strengthens/dp/B0DCZQ3VLX"
+      },
+      "Mask": {
+       "name": "Brillare Dandruff Control Mask for Itchy Flaky Scalp",
+        "image": "Brillare_Dandruff_Mask.jpg",
+        "benefits": "Targets itchy, flaky scalp and helps reduce visible dandruff signs.",
+        "how_to_use": "Apply to scalp and hair, leave 20-30 mins (or overnight if allowed), then shampoo.",
+        "ingredient": "Tea Tree Oil + Lemon + Neem extracts.",
+        "buy_now_link": "https://www.amazon.in/Professional-Salicylic-Irritation-Itchiness-Production/dp/B00NA0PE30"
+      }
+    }
+  },
+  {
+    "Age": "40",
+    "Gender": "Female",
+    "Sleep_Hours": "7",
+    "Water_Intake": "Low",
+    "Scalp_Type": "Sensitive",
+    "Oil_Scalp": "No",
+    "Chemical_Treatment": "Yes (Coloring)",
+    "Remedies": "1. Oatmeal bath/paste: Apply colloidal oatmeal to a very itchy or inflamed scalp for instant soothing. 2. Jojoba oil: Use as a pre-wash mask for gentle moisture. 3. No fragrance/dye: Use only products explicitly labeled as free of common irritants.",
+    "Routine": "1. Wash scalp no more than once a week using ultra-mild, fragrance-free shampoos. 2. Always use lukewarm water. 3. **Increase daily water intake to 8+ glasses.** 4. Avoid scratching and aggressive drying with towels.",
+    "AmazonProducts": {
+      "Shampoo": {
+        "name": "Naturali Anti‑Dandruff Shampoo",
+        "image": "Naturali_Dandruff_Shampoo.jpg",
+        "benefits": "Botanical, sulphate-free anti-dandruff formula for sensitive scalps.",
+        "how_to_use": "Apply to wet hair, massage gently, leave momentarily, rinse.",
+        "ingredient": "Sage + Salicylic Acid + Plant Actives.",
+        "buy_now_link": "https://www.amazon.in/Naturali-Dandruff-Salicylic-Exfoliates-Inflammation/dp/B0FHKQJBHF"
+      },
+      "Conditioner": {
+       "name": "BBlunt Anti‑Dandruff Conditioner For Smooth Hair",
+        "image": "BBlunt_Dandruff_Conditioner.jpg",
+        "benefits": "Salon-brand conditioner that reduces dandruff and smooths hair shaft.",
+        "how_to_use": "Post-shampoo, apply to lengths & scalp, leave 3-5 minutes, then rinse.",
+        "ingredient": "Pea Protein + Caffeine (anti-dandruff supportive).",
+        "buy_now_link": "https://www.amazon.in/BBlunt-Anti-Dandruff-Conditioner-Smooth-Nourished/dp/B0BN877JFP"
+      },
+      "Oil": {
+        "name": "Indulekha Svetakutaja Dandruff Treatment Hair Oil",
+        "image": "Indulekha_Dandruff_Oil.jpg",
+        "benefits": "Ayurvedic specialist oil for dandruff-prone scalps with comb applicator for precision.",
+        "how_to_use": "Use the comb-applicator to apply oil directly on scalp, leave 30-60 minutes, then wash.",
+        "ingredient": "Svetakutaja + Indian herbs.",
+        "buy_now_link": "https://www.amazon.in/Indulekha-Svetakutaja-Ayurvedic-Medicinal-treatment/dp/B0C46G3LP6"
+      },
+      "Serum": {
+        "name": "The Skin Story Anti‑Dandruff Scalp Serum",
+        "image": "The_Skin_Dandruff_Serum.jpg",
+        "benefits": "Eliminates dandruff, relieves itchiness, promotes overall scalp health; lightweight daily use for all hair types.",
+        "how_to_use": "Use as leave-in daily or as specified; apply on scalp, no rinse needed and suitable for all hair types. ",
+        "ingredient": "Features Saniscalp, Kale, and Thyme as actives (brand highlight) though detailed list not fully given in source. ",
+        "buy_now_link": "https://www.amazon.in/Skin-Story-Anti-Dandruff-Dandruff-Free-Irritation/dp/B0DQ7XZW3S"
+      },
+      "Mask": {
+       "name": "Himalaya Herbals Anti‑Dandruff Hair Cream",
+        "image": "Himalaya_Dandruff_Mask.jpg",
+        "benefits": "Herbal budget formula that combats dandruff and soothes scalp irritation. ",
+        "how_to_use": "On washed hair, apply cream/mask to scalp, leave ~5-10 minutes, rinse.",
+        "ingredient": "Tea Tree Oil + other herbal extracts.",
+        "buy_now_link": "https://www.amazon.in/Himalaya-Herbals-Anti-Dandruff-Hair-Cream/dp/B006G84KR4"
+      }
+    }
+  },
+  {
+    "Age": "22",
+    "Gender": "Female",
+    "Sleep_Hours": "8",
+    "Water_Intake": "High",
+    "Scalp_Type": "Normal",
+    "Oil_Scalp": "No",
+    "Chemical_Treatment": "No",
+    "Remedies": "1. Clarifying Scrub: Use a sugar or salt scrub once a month to remove product buildup. 2. Green Tea rinse: Cool brewed green tea as a final rinse to improve hair shine. 3. Scalp Massager: Use a silicone massager during shampooing to ensure deep clean. 4. Rosemary oil: Mix a few drops with carrier oil for a weekly pre-shampoo treatment to stimulate growth.",
+    "Routine": "1. Wash scalp 2-3 times a week with a gentle, moisturizing shampoo. 2. Use a clarifying shampoo once a month. 3. Focus on a well-rounded diet with essential fatty acids (Omega-3s).",
+    "AmazonProducts": {
+      "Shampoo": {
+        "name": "Minimalist Anti‑Dandruff Shampoo",
+        "image": "Minimalist_Dandruff_Shampoo.jpg",
+        "benefits": "High-strength actives clear flakes and calm the scalp.",
+        "how_to_use": "Use on wet hair, apply to scalp focusing on roots, rinse.",
+        "ingredient": "Salicylic Acid + Climbazole + Piroctone Olamine.",
+        "buy_now_link": "https://www.amazon.in/Minimalist-Anti-Dandruff-Clarifying-Sulphate-Free-Fragrance-Free/dp/B0DT76HL84"
+      },
+      "Conditioner": {
+        "name": "Head & Shoulders Smooth & Silky Anti‑Dandruff Conditioner",
+        "image": "Head_Shoulders_Dandruff_Conditioner.jpg",
+        "benefits": "From a trusted mass-market brand; helps fight flakes and dry scalp while smoothing hair. ",
+        "how_to_use": "Use after anti-dandruff shampoo, apply to lengths & scalp, leave ~1-2 minutes, rinse.",
+        "ingredient": "Pyrithione Zinc / Piroctone Olamine + moisturisers.",
+        "buy_now_link": "https://www.amazon.in/Head-Shoulders-Smooth-Silky-Conditioner/dp/B012RBB148"
+      },
+      "Oil": {
+        "name": "Vilvah Anti‑Dandruff Hair Oil",
+        "image": "Vilvah_Dandruff_Oil.jpg",
+        "benefits": "Plant-based blend aimed at clearing visible flakes and calming irritated scalp.",
+        "how_to_use": "Massage into scalp, leave at least 30 minutes (or overnight for deep effect), rinse.",
+        "ingredient": "Botanical oils such as Neem, Tea Tree, etc.",
+        "buy_now_link": "https://www.amazon.in/gp/aw/d/B09T35SDYH/"
+      },
+      "Serum": {
+        "name": "Minimalist Anti‑Dandruff Hair Serum",
+        "image": "Minimalist_Dandruff_Serum.jpg",
+        "benefits": "Helps reduce flakes and soothe itchy scalp with high-potency actives.",
+        "how_to_use": "Apply on clean damp scalp, massage lightly, leave in (no rinse)",
+        "ingredient": "CPH Complex & Oligopeptide 0.8% + Elestab (anti-dandruff molecules).",
+        "buy_now_link": "https://www.amazon.in/Minimalist-Anti-Dandruff-Treatment-Oligopeptide-Advanced/dp/B0CH8HYZQ"
+      },
+      "Mask": {
+       "name": "Naturali Anti‑Dandruff Hair Mask",
+        "image": "Naturali_Dandruff_Mask.jpg",
+        "benefits": "Clarifies scalp, reduces itchiness and flaking with gentle botanicals.",
+        "how_to_use": "Use after shampoo, apply mask, leave for a few minutes, then rinse.",
+        "ingredient": "Sage + Salicylic Acid + Plant actives.",
+        "buy_now_link": "https://www.amazon.in/Naturali-Anti-Dandruff-Salicylic-Clarifies-Moisturises/dp/B0DRSVMN1J"
+      }
+    }
+  },
+  {
+    "Age": "35",
+    "Gender": "Male",
+    "Sleep_Hours": "5",
+    "Water_Intake": "Medium",
+    "Scalp_Type": "Flaky/Dermatitis Prone",
+    "Oil_Scalp": "No",
+    "Chemical_Treatment": "Yes",
+    "Remedies": "1. Medicated Ointment: Consult a dermatologist for a topical treatment (Ketoconazole/Ciclopirox) during flare-ups. 2. Stress Management: Implement daily meditation/light exercise to improve sleep and manage inflammation. 3. Change pillowcases/hats frequently.",
+    "Routine": "1. Wash scalp 2-3 times a week using an anti-fungal/medicated shampoo. 2. Ensure shampoo is left on the scalp for 5 minutes before rinsing. 3. **Prioritize 7-9 hours of sleep.** 4. Avoid heavy styling products that can trap yeast/oil.",
+    "AmazonProducts": {
+      "Shampoo": {
+        "name": "Pilgrim Australian Tea Tree Anti‑Dandruff Shampoo",
+        "image": "Pilgrim_Dandruff_Shampoo.jpg",
+        "benefits": "Targets dandruff source, reduces itching & irritation with tea tree.",
+        "how_to_use": "Use on wet hair, apply shampoo especially to scalp, leave ~1-2 minutes, rinse.",
+        "ingredient": "Tea Tree Oil + soothing botanicals.",
+        "buy_now_link": "https://www.amazon.in/Pilgrim-Australian-Non-Drying-Anti-Dandruff-Irritation/dp/B0D6G1JFZ2/"
+      },
+      "Conditioner": {
+       "name": "Pilgrim Australian Tea Tree Anti‑Dandruff Conditioner",
+        "image": "Pilgrim_Anti‑Dandruff_Conditioner.jpg",
+        "benefits": "Helps eliminate flakes and soothe itchy scalp while detangling.",
+        "how_to_use": "How to Use: After shampooing, apply on wet hair focused on scalp & lengths, leave ~1-2 minutes, then rinse.",
+        "ingredient": "Ingredient: Tea Tree Oil + soothing botanical extracts.",
+        "buy_now_link": "https://www.amazon.in/Pilgrim-Australian-Anti-Dandruff-Conditioner-millilitre/dp/B0D5D9BF3Q"
+      },
+      "Oil": {
+        "name": "Blue Nectar Anti‑Dandruff Hair Oil",
+        "image": "Blue_Nectar_Dandruff_Oil.jpg",
+        "benefits": "Herbal, fragrant oil for reducing dandruff and soothing scalp discomfort.",
+        "how_to_use": "Apply to scalp and hair, leave for 20-30 minutes, then shampoo.",
+        "ingredient": "Tea Tree Oil + other botanical extracts.",
+        "buy_now_link": "https://www.amazon.in/Blue-Nectar-Healthy-Dandruff-Ayurvedic/dp/B078811WLK"
+      },
+      "Serum": {
+        "name": "The Skin Story Anti‑Dandruff Scalp Serum",
+        "image": "The_Skin_Dandruff_Serum.jpg",
+        "benefits": "Eliminates dandruff, relieves itchiness, promotes overall scalp health; lightweight daily use for all hair types.",
+        "how_to_use": "Use as leave-in daily or as specified; apply on scalp, no rinse needed and suitable for all hair types. ",
+        "ingredient": "Features Saniscalp, Kale, and Thyme as actives (brand highlight) though detailed list not fully given in source. ",
+        "buy_now_link": "https://www.amazon.in/Skin-Story-Anti-Dandruff-Dandruff-Free-Irritation/dp/B0DQ7XZW3S"
+      },
+      "Mask": {
+       "name": "HASK Tea Tree Oil & Rosemary Hair & Scalp Treatment Mask",
+        "image": "HASK_Tea_Dandruff_Mask.jpg",
+        "benefits": "Soothes dry, itchy scalp and helps control dandruff using tea tree & rosemary. ",
+        "how_to_use": "On freshly washed or damp hair, apply mask to scalp + lengths, leave ~5-10 mins, then rinse.",
+        "ingredient": "Tea Tree Oil + Rosemary Oil.",
+        "buy_now_link": "https://www.amazon.in/Rosemary-Dandruff-Treatment-Conditioner-Sulfate/dp/B09B9FRQ4J"
+      }
+    }
+  },
+  {
+    "Age": "28",
+    "Gender": "Female",
+    "Sleep_Hours": "7",
+    "Water_Intake": "Medium",
+    "Scalp_Type": "Dry and Itchy",
+    "Oil_Scalp": "No",
+    "Chemical_Treatment": "No",
+    "Remedies": "1. Warm Olive Oil massage: Deeply moisturize and soothe the scalp before washing. 2. Glycerin + Rosewater mix: Apply to itchy spots for immediate relief. 3. Avoid hard water: Consider using a shower filter if possible. 4. Weekly hydrating mask.",
+    "Routine": "1. Wash scalp 1-2 times a week with a sulphate-free, hydrating shampoo. 2. Use a scalp brush gently to lift dry flakes before shampooing. 3. Avoid excessive heat styling. 4. Increase intake of Vitamin D and Omega-3s.",
+    "AmazonProducts": {
+      "Shampoo": {
+        "name": "WishCare AHA BHA Anti‑Dandruff Shampoo",
+        "image": "WishCare_Dandruff_Shampoo.jpg",
+        "benefits": "Scalp-exfoliating formula that reduces flakes and helps smooth hair.",
+        "how_to_use": "On damp scalp, apply, leave briefly, rinse thoroughly.",
+        "ingredient": "AHA/BHA actives + anti-dandruff agents.",
+        "buy_now_link": "https://www.amazon.in/WishCare-Hydrating-Climbazole-Probiotics-Hyaluronic/dp/B0DK52134S"
+      },
+      "Conditioner": {
+        "name": "WishCare Ceramide Anti‑Dandruff Conditioner",
+        "image": "WishCare_Dandruff_Conditioner.jpg",
+        "benefits": "Strengthens hair fibres while assisting dandruff control and scalp comfort.",
+        "how_to_use": "Apply to damp scalp/hair after washing, leave briefly, rinse.",
+        "ingredient": "Ceramide complex + anti-dandruff actives.",
+        "buy_now_link": "https://www.amazon.in/WishCare-Ceramide-Dandruff-Conditioner-Frizzy/dp/B0DK6XZR1K"
+      },
+      "Oil": {
+        "name": "Indulekha Svetakutaja Dandruff Treatment Hair Oil",
+        "image": "Indulekha_Dandruff_Oil.jpg",
+        "benefits": "Ayurvedic specialist oil for dandruff-prone scalps with comb applicator for precision.",
+        "how_to_use": "Use the comb-applicator to apply oil directly on scalp, leave 30-60 minutes, then wash.",
+        "ingredient": "Svetakutaja + Indian herbs.",
+        "buy_now_link": "https://www.amazon.in/Indulekha-Svetakutaja-Ayurvedic-Medicinal-treatment/dp/B0C46G3LP6"
+      },
+      "Serum": {
+        "name": "Brillare Scalp Serum (Anti‑Dandruff)",
+        "image": "Brillare_Serum.jpg",
+        "benefits": "Mid-range serum that targets dandruff and aids in maintaining a calm, clear scalp.",
+        "how_to_use": "On damp or dry scalp, apply serum to roots, leave for recommended time, then style or rinse per instructions.",
+        "ingredient": "Tea Tree Oil + other natural extracts.",
+        "buy_now_link": "https://www.amazon.in/Brillare-Natural-Lactylate-Dandruff-Strengthens/dp/B0DCZQ3VLX"
+      },
+      "Mask": {
+       "name": "HASK Tea Tree Oil & Rosemary Hair & Scalp Treatment Mask",
+        "image": "HASK_Tea_Dandruff_Mask.jpg",
+        "benefits": "Soothes dry, itchy scalp and helps control dandruff using tea tree & rosemary. ",
+        "how_to_use": "On freshly washed or damp hair, apply mask to scalp + lengths, leave ~5-10 mins, then rinse.",
+        "ingredient": "Tea Tree Oil + Rosemary Oil.",
+        "buy_now_link": "https://www.amazon.in/Rosemary-Dandruff-Treatment-Conditioner-Sulfate/dp/B09B9FRQ4J"
+      }
+    }
+  },
+  {
+    "Age": "45",
+    "Gender": "Male",
+    "Sleep_Hours": "6",
+    "Water_Intake": "High",
+    "Scalp_Type": "Thinning Hair/Oily",
+    "Oil_Scalp": "Yes",
+    "Chemical_Treatment": "No",
+    "Remedies": "1. Onion juice mask: Apply to scalp once a week to stimulate growth (due to sulfur content). 2. Caffeine rinse: Use cool, strong coffee/tea rinse after shampooing to block DHT. 3. Scalp exfoliation: Use a mild scrub once every two weeks to clear follicles.",
+    "Routine": "1. Wash daily or every other day with a hair-thickening shampoo to control oil. 2. Use a lightweight, volumizing conditioner only on hair ends. 3. Avoid heavy oils and pomades that can clog follicles. 4. Gently massage scalp for 5 minutes daily to boost circulation.",
+    "AmazonProducts": {
+      "Shampoo": {
+        "name": "Mamaearth Lemon Anti‑Dandruff Shampoo",
+        "image": "Mamaearth_Dandruff_Shampoo.jpg",
+        "benefits": "Natural cleanser that helps soothe scalp and reduce visible flakes.",
+        "how_to_use": "On damp hair, apply shampoo, massage scalp, leave briefly, rinse.",
+        "ingredient": "Lemon + Ginger Oil + Tea Tree Oil.",
+        "buy_now_link": "https://www.amazon.in/Mamaearth-Lemon-Anti-Dandruff-Shampoo-Ginger/dp/B0BPJ3VNXF"
+      },
+      "Conditioner": {
+        "name": "Mamaearth Lemon Anti‑Dandruff Conditioner",
+        "image": "Mamaearth_Dandruff_Conditioner.jpg",
+        "benefits": "Soothes flaky, itchy scalp and supports dandruff control with natural actives.",
+        "how_to_use": "Post-shampoo, apply to damp hair, leave for ~2 minutes, then rinse.",
+        "ingredient": "Lemon + Ginger Oil + Tea Tree Oil.",
+        "buy_now_link": "https://www.amazon.in/Mamaearth-Anti-Dandruff-Conditioner-Ginger-Smooth/dp/B0BPJWGHRD"
+      },
+      "Oil": {
+        "name": "Khadi Organique Anti‑Dandruff Hair Oil",
+        "image": "Khadi_Dandruff_Oil.jpg",
+        "benefits": "Ayurvedic heritage formula to fight flakes and support scalp health.",
+        "how_to_use": "Use 2-3× weekly: warm a little oil, massage scalp, leave 15-30 minutes, then rinse.",
+        "ingredient": "Indian herbs (ex: Neem, Bhringraj, Amla) as listed by brand.",
+        "buy_now_link": "https://www.amazon.in/Khadi-Organique-Dandruff-Women-Parabeen/dp/B08T1S135J"
+      },
+      "Serum": {
+        "name": "The Skin Story Anti‑Dandruff Scalp Serum",
+        "image": "The_Skin_Dandruff_Serum.jpg",
+        "benefits": "Eliminates dandruff, relieves itchiness, promotes overall scalp health; lightweight daily use for all hair types.",
+        "how_to_use": "Use as leave-in daily or as specified; apply on scalp, no rinse needed and suitable for all hair types. ",
+        "ingredient": "Features Saniscalp, Kale, and Thyme as actives (brand highlight) though detailed list not fully given in source. ",
+        "buy_now_link": "https://www.amazon.in/Skin-Story-Anti-Dandruff-Dandruff-Free-Irritation/dp/B0DQ7XZW3S"
+      },
+      "Mask": {
+       "name": "Naturali Anti‑Dandruff Hair Mask",
+        "image": "Naturali_Dandruff_Mask.jpg",
+        "benefits": "Clarifies scalp, reduces itchiness and flaking with gentle botanicals.",
+        "how_to_use": "Use after shampoo, apply mask, leave for a few minutes, then rinse.",
+        "ingredient": "Sage + Salicylic Acid + Plant actives.",
+        "buy_now_link": "https://www.amazon.in/Naturali-Anti-Dandruff-Salicylic-Clarifies-Moisturises/dp/B0DRSVMN1J"
+      }
+    }
+  },
+  {
+    "Age": "19",
+    "Gender": "Female",
+    "Sleep_Hours": "9",
+    "Water_Intake": "Medium",
+    "Scalp_Type": "Normal/Heavy Product Use",
+    "Oil_Scalp": "No",
+    "Chemical_Treatment": "No",
+    "Remedies": "1. Baking Soda paste: Mild, occasional scrub to remove heavy wax/gel buildup. 2. ACV rinse: Use weekly as a clarifying rinse. 3. Detox bath: Soak hair/scalp in diluted ACV to remove mineral buildup from hard water.",
+    "Routine": "1. Wash scalp 3 times a week, alternating between a clarifying and a moisturizing shampoo. 2. Always double-cleanse (two rounds of shampoo) when heavy styling products are used. 3. Clean styling tools (combs/brushes) weekly.",
+    "AmazonProducts": {
+      "Shampoo": {
+       "name": "Naturali Anti‑Dandruff Shampoo",
+        "image": "Naturali_Dandruff_Shampoo.jpg",
+        "benefits": "Botanical, sulphate-free anti-dandruff formula for sensitive scalps.",
+        "how_to_use": "Apply to wet hair, massage gently, leave momentarily, rinse.",
+        "ingredient": "Sage + Salicylic Acid + Plant Actives.",
+        "buy_now_link": "https://www.amazon.in/Naturali-Dandruff-Salicylic-Exfoliates-Inflammation/dp/B0FHKQJBHF"
+      },
+      "Conditioner": {
+        "name": "Himalaya Anti‑Dandruff Tea‑Tree Conditioner",
+        "image": "Himalaya_Dandruff_Conditioner.jpg",
+        "benefits": "Herbal formula that helps fight dandruff and condition hair.",
+        "how_to_use": "Use after shampooing, apply to damp hair, leave ~1 minute, rinse.",
+        "ingredient": "Tea Tree Oil + other herbal extracts.",
+        "buy_now_link": "https://www.amazon.in/Himalaya-Anti-Dandruff-Conditioner-100ml/dp/B074M2LHN5"
+      },
+      "Oil": {
+        "name": "Khadi Organique Anti‑Dandruff Hair Oil",
+        "image": "Khadi_Dandruff_Oil.jpg",
+        "benefits": "Ayurvedic heritage formula to fight flakes and support scalp health.",
+        "how_to_use": "Use 2-3× weekly: warm a little oil, massage scalp, leave 15-30 minutes, then rinse.",
+        "ingredient": "Indian herbs (ex: Neem, Bhringraj, Amla) as listed by brand.",
+        "buy_now_link": "https://www.amazon.in/Khadi-Organique-Dandruff-Women-Parabeen/dp/B08T1S135J"
+      },
+      "Serum": {
+        "name": "Minimalist Anti‑Dandruff Hair Serum",
+        "image": "Minimalist_Dandruff_Serum.jpg",
+        "benefits": "Helps reduce flakes and soothe itchy scalp with high-potency actives.",
+        "how_to_use": "Apply on clean damp scalp, massage lightly, leave in (no rinse)",
+        "ingredient": "CPH Complex & Oligopeptide 0.8% + Elestab (anti-dandruff molecules).",
+        "buy_now_link": "https://www.amazon.in/Minimalist-Anti-Dandruff-Treatment-Oligopeptide-Advanced/dp/B0CH8HYZQ"
+      },
+      "Mask": {
+       "name": "Brillare Dandruff Control Mask for Itchy Flaky Scalp",
+        "image": "Brillare_Dandruff_Mask.jpg",
+        "benefits": "Targets itchy, flaky scalp and helps reduce visible dandruff signs.",
+        "how_to_use": "Apply to scalp and hair, leave 20-30 mins (or overnight if allowed), then shampoo.",
+        "ingredient": "Tea Tree Oil + Lemon + Neem extracts.",
+        "buy_now_link": "https://www.amazon.in/Professional-Salicylic-Irritation-Itchiness-Production/dp/B00NA0PE30"
+      }
+    }
+  },
+  {
+    "Age": "50",
+    "Gender": "Female",
+    "Sleep_Hours": "7",
+    "Water_Intake": "Low",
+    "Scalp_Type": "Aging/Thinning/Dry",
+    "Oil_Scalp": "No",
+    "Chemical_Treatment": "Yes (Perimenopausal coloring)",
+    "Remedies": "1. Fenugreek (Methi) soak: Soak seeds overnight, grind into a paste, apply as a mask for thickness. 2. Vitamin E Oil: Gently massage into the scalp to improve elasticity and reduce dryness. 3. Focus on Iron and B-vitamin supplements (consult doctor).",
+    "Routine": "1. Wash scalp 1-2 times a week with a gentle, moisturizing, color-safe shampoo. 2. Use a silk pillowcase to prevent hair breakage overnight. 3. Avoid tightly pulled hairstyles. 4. Weekly scalp massage with a nourishing oil.",
+    "AmazonProducts": {
+      "Shampoo": {
+        "name": "Pilgrim Australian Tea Tree Anti‑Dandruff Shampoo",
+        "image": "Pilgrim_Dandruff_Shampoo.jpg",
+        "benefits": "Targets dandruff source, reduces itching & irritation with tea tree.",
+        "how_to_use": "Use on wet hair, apply shampoo especially to scalp, leave ~1-2 minutes, rinse.",
+        "ingredient": "Tea Tree Oil + soothing botanicals.",
+        "buy_now_link": "https://www.amazon.in/Pilgrim-Australian-Non-Drying-Anti-Dandruff-Irritation/dp/B0D6G1JFZ2/"
+      },
+      "Conditioner": {
+        "name": "Pilgrim Australian Tea Tree Anti‑Dandruff Conditioner",
+        "image": "Pilgrim_Anti‑Dandruff_Conditioner.jpg",
+        "benefits": "Helps eliminate flakes and soothe itchy scalp while detangling.",
+        "how_to_use": "How to Use: After shampooing, apply on wet hair focused on scalp & lengths, leave ~1-2 minutes, then rinse.",
+        "ingredient": "Ingredient: Tea Tree Oil + soothing botanical extracts.",
+        "buy_now_link": "https://www.amazon.in/Pilgrim-Australian-Anti-Dandruff-Conditioner-millilitre/dp/B0D5D9BF3Q"
+      },
+      "Oil": {
+        "name": "Mamaearth Lemon Anti‑Dandruff Shampoo",
+        "image": "Mamaearth_Dandruff_Shampoo.jpg",
+        "benefits": "Natural cleanser that helps soothe scalp and reduce visible flakes.",
+        "how_to_use": "On damp hair, apply shampoo, massage scalp, leave briefly, rinse.",
+        "ingredient": "Lemon + Ginger Oil + Tea Tree Oil.",
+        "buy_now_link": "https://www.amazon.in/Mamaearth-Lemon-Anti-Dandruff-Shampoo-Ginger/dp/B0BPJ3VNXF"
+      },
+      "Serum": {
+        "name": "Brillare Scalp Serum (Anti‑Dandruff)",
+        "image": "Brillare_Serum.jpg",
+        "benefits": "Mid-range serum that targets dandruff and aids in maintaining a calm, clear scalp.",
+        "how_to_use": "On damp or dry scalp, apply serum to roots, leave for recommended time, then style or rinse per instructions.",
+        "ingredient": "Tea Tree Oil + other natural extracts.",
+        "buy_now_link": "https://www.amazon.in/Brillare-Natural-Lactylate-Dandruff-Strengthens/dp/B0DCZQ3VLX"
+      },
+      "Mask": {
+       "name": "Bare Anatomy Damage Repair Hair Mask",
+        "image": "Bare_Anatomy_Dandruff_Mask.jpg",
+        "benefits": "While primarily a damage-repair mask, it supports scalp health and may reduce flakiness for dandruff prone hair.",
+        "how_to_use": "Use after shampoo on damp hair, leave 3-5 minutes, rinse.",
+        "ingredient": "Ceramide A2 + Coconut Milk Protein (for repair)",
+        "buy_now_link": "https://www.amazon.in/Bare-Anatomy-Ceramide-Prevents-Strengthens/dp/B09SB23VT2"
+      }
+    }
+  },
+  {
+    "Age": "20",
+    "Gender": "Male",
+    "Sleep_Hours": "8",
+    "Water_Intake": "High",
+    "Scalp_Type": "Oily/Acne Prone",
+    "Oil_Scalp": "Yes",
+    "Chemical_Treatment": "No",
+    "Remedies": "1. Witch Hazel: Apply to scalp after washing to reduce oil and calm inflammation (spot treatment). 2. Mint tea rinse: Cooling rinse to soothe and slightly reduce oil production. 3. Diet control: Reduce intake of high-glycemic foods and dairy.",
+    "Routine": "1. Wash daily with a lightweight, non-comedogenic shampoo. 2. Use a clean, cotton t-shirt instead of a towel to dry hair. 3. Change pillowcases every 2-3 days. 4. Avoid hats/helmets that trap sweat and oil.",
+    "AmazonProducts": {
+      "Shampoo": {
+        "name": "Sebamed Anti‑Dandruff Shampoo",
+        "image": "Sebamed_Dandruff_Shampoo.jpg",
+        "benefits": "pH 5.5 formula reduces flaking and scalp irritation gently.",
+        "how_to_use": "Use on wet scalp & hair, massage, rinse.",
+        "ingredient": "Piroctone Olamine + mild surfactants.",
+        "buy_now_link": "https://www.amazon.in/Dandruff-irritation-Piroctone-Phthalates-reduction/dp/B01LZTOHBF"
+      },
+      "Conditioner": {
+        "name": "Bare Anatomy Anti‑Dandruff Hair Conditioner",
+        "image": "Bare_Dandruff_Conditioner.jpg",
+        "benefits": "Helps remove flaky buildup and moisturises while reducing dandruff.",
+        "how_to_use": "After shampooing, apply on wet hair, leave ~1-2 minutes, then rinse.",
+        "ingredient": "Biotin + Rosemary.",
+        "buy_now_link": "https://www.amazon.in/Bare-Anatomy-Anti-Dandruff-Conditioner-Moisturizes/dp/B0FFHGXKW4"
+      },
+      "Oil": {
+        "name": "Arata Anti‑Dandruff Hair Conditioner",
+        "image": "Arata_Dandruff_Conditioner.jpg",
+        "benefits": "Botanical-based formula that comforts scalp and controls flakes.",
+        "how_to_use": "On damp hair after shampooing, apply conditioner, leave ~1-2 minutes, rinse off.",
+        "ingredient": "Neem + Tea Tree Extract.",
+        "buy_now_link": "https://www.amazon.in/Arata-Dandruff-Conditioner-Fenugreek-Moisturizes/dp/B0B7WB352B"
+      },
+      "Serum": {
+        "name": "Minimalist Anti‑Dandruff Serum",
+        "image": "Minimalist_Dandruff_Serum.jpg",
+        "benefits": "Pre-shampoo treatment that targets dandruff-causing fungus and oiliness to give clearer scalp.",
+        "how_to_use": "Massage on dry or damp scalp before shampooing, leave for specified time, then wash.",
+        "ingredient": "CPH Complex + Oligopeptide 0.8% + Climbazole + Salicylic Acid.",
+        "buy_now_link": "https://www.amazon.in/Minimalist-Anti-Dandruff-Treatment-Oligopeptide-Advanced/dp/B0CH8HYZQV"
+      },
+      "Mask": {
+       "name": "Lissymoco Anti‑Dandruff Hair Mask",
+        "image": "Lissymoco_Dandruff_Mask.jpg",
+        "benefits": "Balances scalp pH and helps prevent dandruff production while conditioning hair.",
+        "how_to_use": "After shampoo, apply mask on scalp + lengths, leave for ~5-7 minutes, rinse.",
+        "ingredient": "Scalp-balancing actives + conditioners.",
+        "buy_now_link": "https://www.amazon.in/LISSYMOCO-Anti-Dandruff-Dandruff-Production-Balances/dp/B0CYPT4WJ8"
+      }
+    }
+  },
+  {
+    "Age": "33",
+    "Gender": "Female",
+    "Sleep_Hours": "6",
+    "Water_Intake": "Medium",
+    "Scalp_Type": "Normal/Stress-Related Shedding",
+    "Oil_Scalp": "No",
+    "Chemical_Treatment": "No",
+    "Remedies": "1. Daily Scalp Massage: Use fingertips to massage the scalp for 5-10 minutes to improve blood flow. 2. Ashwagandha/Biotin supplements: To manage stress and support hair growth (consult doctor). 3. Essential oils: Lavender or Rosemary mixed with a carrier oil for soothing and growth.",
+    "Routine": "1. Wash scalp 2-3 times a week with a strengthening shampoo. 2. Implement stress-reduction techniques (e.g., yoga, deep breathing). 3. Handle hair gently, especially when wet, to prevent breakage.",
+    "AmazonProducts": {
+      "Shampoo": {
+        "name": "Bare Anatomy Expert Anti‑Dandruff Shampoo",
+        "image": "Bare_Dandruff_Shampoo.jpg",
+        "benefits": "Strengthens hair while targeting flakes and dandruff for healthier scalp.",
+        "how_to_use": "Apply on wet hair, massage scalp & lengths, rinse thoroughly.",
+        "ingredient": "Salicylic Acid + Biotin + Derma-approved actives.",
+        "buy_now_link": "https://www.amazon.in/Bare-Anatomy-Anti-Dandruff-Shampoo-Targets/dp/B0BJZXKH12"
+      },
+      "Conditioner": {
+        "name": "Head & Shoulders Smooth & Silky Anti‑Dandruff Conditioner",
+        "image": "Head_Shoulders_Dandruff_Conditioner.jpg",
+        "benefits": "From a trusted mass-market brand; helps fight flakes and dry scalp while smoothing hair. ",
+        "how_to_use": "Use after anti-dandruff shampoo, apply to lengths & scalp, leave ~1-2 minutes, rinse.",
+        "ingredient": "Pyrithione Zinc / Piroctone Olamine + moisturisers.",
+        "buy_now_link": "https://www.amazon.in/Head-Shoulders-Smooth-Silky-Conditioner/dp/B012RBB148"
+      },
+      "Oil": {
+        "name": "Soulflower Tea Tree Anti‑Dandruff Hair Oil",
+        "image": "Soulflower_Dandruff_Oil.jpg",
+        "benefits": "Targets flakes & oily scalp with tea tree goodness for clearer, calmer scalp.",
+        "how_to_use": "Massage into scalp before washing, leave for 20-30 minutes or overnight, then wash off.",
+        "ingredient": "Tea Tree Oil (and lemon/neem in some blends).",
+        "buy_now_link": "https://www.amazon.in/Soulflower-Tree-Scalp-Dandruff-225ml/dp/B06XFMPYWD"
+      },
+      "Serum": {
+        "name": "Soulflower Salicylic Acid Tea‑Tree Anti Dandruff Hair Serum",
+        "image": "Soulflower_Salicylic_Dandruff_Serum.jpg",
+        "benefits": "Provides natural-oil blend to reduce flakes, soothe itch and refresh scalp.",
+        "how_to_use": "Apply a few drops to scalp, massage gently, leave in; may rinse if instructed.",
+        "ingredient": "Tea Tree Oil + Salicylic Acid.",
+        "buy_now_link": "https://www.amazon.in/Soulflower-Dandruff-Rosemary-Salicylic-Essential/dp/B0D4VHLPTC"
+      },
+      "Mask": {
+       "name": "Pilgrim Australian Tea Tree Anti‑Dandruff Hair Mask",
+        "image": "Pilgrim_Australian_Dandruff_Mask.jpg",
+        "benefits": "Helps reduce dandruff while deeply moisturising and smoothing hair.",
+        "how_to_use": "After shampoo, apply to damp hair, leave ~5-10 minutes, then rinse.",
+        "ingredient": "Australian Tea Tree Oil + antifungal actives.",
+        "buy_now_link": "https://www.amazon.in/Pilgrim-Australian-Anti-Dandruff-Moisturizes-Strengthens/dp/B0D5D9PHK5"
+      }
+    }
+  },
+  {
+    "Age": "27",
+    "Gender": "Male",
+    "Sleep_Hours": "7",
+    "Water_Intake": "High",
+    "Scalp_Type": "Dry/Dandruff-Prone",
+    "Oil_Scalp": "No",
+    "Chemical_Treatment": "No",
+    "Remedies": "1. Curd/Yogurt mask: Apply 30 minutes before washing to restore scalp health. 2. Tea tree oil: Use diluted in a carrier oil for overnight treatment. 3. Diet modification: Increase fermented foods and healthy fats.",
+    "Routine": "1. Wash scalp 2 times a week with an anti-dandruff shampoo containing a moisturizing base. 2. Use a dandruff treatment specifically designed for dry flakes (e.g., salicylic acid). 3. Avoid prolonged exposure to direct sun and chlorine.",
+    "AmazonProducts": {
+      "Shampoo": {
+        "name": "Himalaya Anti‑Dandruff Shampoo",
+        "image": "Himalaya_Anti_Dandruff_Shampoo.jpg",
+        "benefits": "Helps remove up to 100% dandruff and soothes itchy, flaky scalp.",
+        "how_to_use": "Massage into wet scalp and hair, leave ~1-2 minutes, rinse.",
+        "ingredient": "Tea Tree Oil + Aloe Vera.",
+        "buy_now_link": "https://www.amazon.in/Himalaya-Herbals-Anti-Dandruff-Shampoo-Dandruff/dp/B002YOUJFG"
+      },
+      "Conditioner": {
+        "name": "Himalaya Anti‑Dandruff Tea‑Tree Conditioner",
+        "image": "Himalaya_Dandruff_Conditioner.jpg",
+        "benefits": "Herbal formula that helps fight dandruff and condition hair.",
+        "how_to_use": "Use after shampooing, apply to damp hair, leave ~1 minute, rinse.",
+        "ingredient": "Tea Tree Oil + other herbal extracts.",
+        "buy_now_link": "https://www.amazon.in/Himalaya-Anti-Dandruff-Conditioner-100ml/dp/B074M2LHN5"
+      },
+      "Oil": {
+        "name": "Himalaya Anti‑Dandruff Hair Oil",
+        "image": "Himalaya_Dandruff_Oil.jpg",
+        "benefits": "Helps combat scalp dandruff and soothes itchiness using herbal actives. ",
+        "how_to_use": "Apply to dry or damp scalp, massage thoroughly, leave 30-60 minutes then shampoo.",
+        "ingredient": "Tea Tree Oil + Rosemary + Neem.",
+        "buy_now_link": "https://www.amazon.in/Himalaya-Herbals-Anti-Dandruff-Hair-Oil/dp/B005EMV3FU"
+      },
+      "Serum": {
+        "name": "Deconstruct Anti‑Dandruff Scalp Serum",
+        "image": "Deconstruct_Dandruff_Serum.jpg",
+        "benefits": "Helps clear flaky, itchy scalp by combining fungal-control and exfoliating actives.",
+        "how_to_use": "Apply on clean scalp section-wise, leave in and style as usual (no rinse) or as pre-wash depending on instruction.",
+        "ingredient": "0.5% Piroctone Olamine + 2% Salicylic Acid + Prebiotic 1%.",
+        "buy_now_link": "https://www.amazon.in/Anti-Dandruff-Piroctone-Salicylic-Prebiotic-treatment/dp/B0BNC3SM1K"
+      },
+      "Mask": {
+       "name": "Himalaya Herbals Anti‑Dandruff Hair Cream",
+        "image": "Himalaya_Dandruff_Mask.jpg",
+        "benefits": "Herbal budget formula that combats dandruff and soothes scalp irritation. ",
+        "how_to_use": "On washed hair, apply cream/mask to scalp, leave ~5-10 minutes, rinse.",
+        "ingredient": "Tea Tree Oil + other herbal extracts.",
+        "buy_now_link": "https://www.amazon.in/Himalaya-Herbals-Anti-Dandruff-Hair-Cream/dp/B006G84KR4"
+      }
+    }
+  }
+]

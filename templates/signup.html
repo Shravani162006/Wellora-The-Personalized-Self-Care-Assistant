@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup - Wellora</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* CSS Variables for Color Palette */
+        :root {
+            --primary: #A87676;
+            --primary-dark: #8C5E5E;
+            --primary-light: #CA8787;
+            --accent: #E1ACAC;
+            --accent-light: #F5D1D1;
+            --light: #FFD0D0;
+            --white: #ffffff;
+            --text: #5A4A4A;
+            --text-dark: #3A2A2A;
+            --text-light: #8A7A7A;
+            --background: #FFF9F9;
+            --background-light: #FFFDFD;
+            --foreground: #ffffff;
+            --border: #F0E0E0;
+            --success: #8BC34A;
+            --error: #f44336;
+            --radius: 16px;
+            --radius-large: 24px;
+            --shadow: 0 8px 25px rgba(168, 118, 118, 0.12);
+            --shadow-hover: 0 15px 35px rgba(168, 118, 118, 0.2);
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text);
+            background: linear-gradient(135deg, var(--background) 0%, var(--accent-light) 100%);
+            line-height: 1.7;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        /* Signup Container */
+        .signup-container {
+            width: 100%;
+            max-width: 450px;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .signup-card {
+            background: var(--white);
+            border-radius: var(--radius-large);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: var(--transition);
+            border-top: 4px solid var(--primary);
+        }
+
+        .signup-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        /* Signup Header */
+        .signup-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            padding: 2.5rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .signup-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+            opacity: 0.1;
+        }
+
+        .signup-header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            position: relative;
+            z-index: 1;
+        }
+
+        .signup-header p {
+            opacity: 0.9;
+            font-size: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Signup Body */
+        .signup-body {
+            padding: 2.5rem 2rem;
+        }
+
+        /* Flash Messages */
+        .flash {
+            padding: 1rem 1.5rem;
+            border-radius: var(--radius);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            font-weight: 500;
+            animation: slideIn 0.5s ease;
+        }
+
+        .flash.success {
+            background: rgba(139, 195, 74, 0.1);
+            color: var(--success);
+            border-left: 4px solid var(--success);
+        }
+
+        .flash.error {
+            background: rgba(244, 67, 54, 0.1);
+            color: var(--error);
+            border-left: 4px solid var(--error);
+        }
+
+        .flash i {
+            font-size: 1.2rem;
+        }
+
+        /* Form Styles */
+        .signup-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            color: var(--text-dark);
+            font-size: 0.95rem;
+        }
+
+        .input-with-icon {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .input-with-icon i {
+            position: absolute;
+            left: 1.2rem;
+            color: var(--primary);
+            font-size: 1.1rem;
+            z-index: 1;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 1rem 1.2rem 1rem 3rem;
+            border: 2px solid var(--border);
+            border-radius: var(--radius);
+            font-size: 1rem;
+            font-family: 'Poppins', sans-serif;
+            background: var(--background-light);
+            transition: var(--transition);
+            color: var(--text);
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            background: var(--white);
+            box-shadow: 0 0 0 4px rgba(168, 118, 118, 0.1);
+        }
+
+        .form-input::placeholder {
+            color: var(--text-light);
+        }
+
+        /* Signup Button */
+        .signup-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.7rem;
+            width: 100%;
+            padding: 1.2rem 2rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            border: none;
+            border-radius: var(--radius);
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: 'Poppins', sans-serif;
+            margin-top: 0.5rem;
+        }
+
+        .signup-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(168, 118, 118, 0.3);
+        }
+
+        .signup-button:active {
+            transform: translateY(-1px);
+        }
+
+        /* Signup Footer */
+        .signup-footer {
+            padding: 1.5rem 2rem;
+            text-align: center;
+            background: var(--background-light);
+            border-top: 1px solid var(--border);
+        }
+
+        .signup-footer p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        .signup-footer a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .signup-footer a:hover {
+            color: var(--primary-dark);
+            text-decoration: underline;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 480px) {
+            body {
+                padding: 1rem;
+            }
+
+            .signup-container {
+                max-width: 100%;
+            }
+
+            .signup-header {
+                padding: 2rem 1.5rem;
+            }
+
+            .signup-header h1 {
+                font-size: 1.8rem;
+            }
+
+            .signup-body {
+                padding: 2rem 1.5rem;
+            }
+
+            .signup-footer {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="signup-container">
+        <div class="signup-card">
+            <div class="signup-header">
+                <h1>Join Wellora</h1>
+                <p>Start your health journey today</p>
+            </div>
+           
+            <div class="signup-body">
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                      {% for category, message in messages %}
+                        <div class="flash {{ category }}">
+                            <i class="fas fa-{% if category == 'success' %}check-circle{% else %}exclamation-circle{% endif %}"></i>
+                            {{ message }}
+                        </div>
+                      {% endfor %}
+                    {% endif %}
+                {% endwith %}
+               
+                <form class="signup-form" method="POST" action="/signup">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-user"></i>
+                            <input type="text" id="username" name="username" class="form-input" placeholder="Choose a username" required>
+                        </div>
+                    </div>
+                   
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-envelope"></i>
+                            <input type="email" id="email" name="email" class="form-input" placeholder="Enter your email" required>
+                        </div>
+                    </div>
+                   
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" id="password" name="password" class="form-input" placeholder="Create a strong password" required>
+                        </div>
+                    </div>
+                   
+                    <button type="submit" class="signup-button">
+                        <i class="fas fa-user-plus"></i> Create Account
+                    </button>
+                </form>
+            </div>
+           
+            <div class="signup-footer">
+                <p>Already have an account? <a href="/login">Login Now</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add form interaction effects
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.querySelector('.signup-form');
+            const inputs = document.querySelectorAll('.form-input');
+            const submitButton = document.querySelector('.signup-button');
+
+            // Add focus effects
+            inputs.forEach(input => {
+                input.addEventListener('focus', function() {
+                    this.parentElement.parentElement.classList.add('focused');
+                });
+
+                input.addEventListener('blur', function() {
+                    this.parentElement.parentElement.classList.remove('focused');
+                });
+            });
+
+            // Form submission loading state
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    const submitBtn = this.querySelector('.signup-button');
+                    if (this.checkValidity()) {
+                        // Change button state to "Creating Account..."
+                        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Creating Account...';
+                        submitBtn.disabled = true;
+                    }
+                });
+            }
+
+            // Auto-hide flash messages after 5 seconds
+            const flashMessages = document.querySelectorAll('.flash');
+            flashMessages.forEach(flash => {
+                setTimeout(() => {
+                    flash.style.opacity = '0';
+                    flash.style.transform = 'translateX(-20px)';
+                    setTimeout(() => {
+                        flash.remove();
+                    }, 500);
+                }, 5000);
+            });
+        });
+    </script>
+</body>
+</html>

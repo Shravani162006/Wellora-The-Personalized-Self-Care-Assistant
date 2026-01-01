@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Treatment Preference</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+    <!-- ===== YOUR COMPLETE CSS APPLIED HERE ===== -->
+    <style>
+        /* CSS Variables for Color Palette */
+        :root {
+          --primary: #A87676;
+          --primary-dark: #8C5E5E;
+          --primary-light: #CA8787;
+          --accent: #E1ACAC;
+          --accent-light: #F5D1D1;
+          --light: #FFD0D0;
+          --white: #ffffff;
+          --text: #5A4A4A;
+          --text-dark: #3A2A2A;
+          --text-light: #8A7A7A;
+          --background: #FFF9F9;
+          --background-light: #FFFDFD;
+          --foreground: #ffffff;
+          --border: #F0E0E0;
+          --radius: 16px;
+          --radius-large: 24px;
+          --shadow: 0 8px 25px rgba(168, 118, 118, 0.12);
+          --shadow-hover: 0 15px 35px rgba(168, 118, 118, 0.2);
+          --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+          font-family: 'Poppins', sans-serif;
+          color: var(--text);
+          background-color: var(--background);
+          line-height: 1.7;
+          overflow-x: hidden;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            background: var(--white);
+            padding: 1rem 2rem;
+            box-shadow: var(--shadow);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .navbar-logo i {
+            color: var(--accent);
+            font-size: 1.8rem;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a.active {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .nav-links a.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--primary);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .container {
+          max-width: 600px;
+          margin: 3rem auto;
+          padding: 2rem;
+          background: var(--white);
+          border-radius: var(--radius-large);
+          box-shadow: var(--shadow);
+          animation: fadeIn 0.8s ease-in-out;
+        }
+
+        h2 {
+          text-align: center;
+          color: var(--primary-dark);
+          margin-bottom: 2rem;
+          font-size: 1.8rem;
+        }
+
+        .radio-question-group {
+          margin-bottom: 1.8rem;
+        }
+
+        .question-text {
+          font-size: 1.1rem;
+          color: var(--text-dark);
+          font-weight: 600;
+          margin-bottom: 0.8rem;
+          display: block;
+        }
+
+        .radio-options {
+          background: var(--background-light);
+          padding: 1rem;
+          border-radius: var(--radius);
+          border: 1px solid var(--border);
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          gap: 1.5rem;
+        }
+
+        .radio-options label {
+          font-size: 1rem;
+          color: var(--text);
+          cursor: pointer;
+        }
+
+        button {
+          width: 100%;
+          padding: 1rem;
+          background: linear-gradient(135deg, var(--primary), var(--primary-light));
+          color: var(--white);
+          font-size: 1.1rem;
+          border: none;
+          border-radius: var(--radius);
+          cursor: pointer;
+          font-weight: 600;
+          transition: var(--transition);
+          margin-top: 1rem;
+        }
+
+        button:hover {
+          transform: translateY(-3px);
+          box-shadow: var(--shadow-hover);
+        }
+
+        .results-footer {
+          text-align: center;
+          margin-top: 2rem;
+        }
+
+        .footer-btn {
+          text-decoration: none;
+          padding: 0.8rem 1.5rem;
+          background: var(--accent);
+          color: var(--white);
+          border-radius: var(--radius);
+          font-weight: 600;
+          transition: var(--transition);
+        }
+
+        .footer-btn:hover {
+          background: var(--primary);
+          transform: translateY(-2px);
+          box-shadow: var(--shadow-hover);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            color: var(--text-light);
+            border-top: 1px solid var(--border);
+            margin-top: 3rem;
+        }
+
+        /* Smooth Fade Animation */
+        @keyframes fadeIn {
+          from { opacity: 0; transform: translateY(20px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .container {
+                margin: 2rem 1rem;
+                padding: 1.5rem;
+            }
+
+            .radio-options {
+                flex-direction: column;
+                gap: 1rem;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <a href="/dashboard" class="navbar-logo">
+            <i class="fas fa-heartbeat"></i> Wellora
+        </a>
+        <ul class="nav-links">
+            <li><a href="/dashboard">Home</a></li>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/contact">Contact Us</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h2>Treatment Preferences for {{ problem_display_name }}</h2>
+
+        <form action="{{ url_for('treatment') }}" method="POST">
+
+            <input type="hidden" name="problem_url_safe" value="{{ problem_url_safe }}">
+            <input type="hidden" name="age" value="{{ age }}">
+            <input type="hidden" name="gender" value="{{ gender }}">
+            <input type="hidden" name="skin_type" value="{{ skin_type }}">
+            <input type="hidden" name="water_intake" value="{{ water_intake }}">
+            <input type="hidden" name="sleep_hours" value="{{ sleep_hours }}">
+
+            <div class="radio-question-group">
+                <label class="question-text">Do you use chemical treatment?</label>
+                <div class="radio-options">
+                    <input type="radio" id="chemical-yes" name="chemical_treatment" value="Yes" required>
+                    <label for="chemical-yes">Yes</label>
+
+                    <input type="radio" id="chemical-no" name="chemical_treatment" value="No">
+                    <label for="chemical-no">No</label>
+                </div>
+            </div>
+
+            <div class="radio-question-group">
+                <label class="question-text">Do you use makeup?</label>
+                <div class="radio-options">
+                    <input type="radio" id="makeup-yes" name="makeup" value="Yes" required>
+                    <label for="makeup-yes">Yes</label>
+
+                    <input type="radio" id="makeup-no" name="makeup" value="No">
+                    <label for="makeup-no">No</label>
+                </div>
+            </div>
+
+            <button type="submit">See Results</button>
+        </form>
+
+        <div class="results-footer">
+            <a href="{{ url_for('problem_form', problem=problem_url_safe) }}" class="footer-btn">← Back to Details</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 Wellora | Your Trusted Health Companion</p>
+    </footer>
+
+    <script>
+        // Add active state to current page in navigation
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentPage = window.location.pathname;
+            const navLinks = document.querySelectorAll('.nav-links a');
+            navLinks.forEach(link => {
+                if (link.getAttribute('href') === currentPage) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

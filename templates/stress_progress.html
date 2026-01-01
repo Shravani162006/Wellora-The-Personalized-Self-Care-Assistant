@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stress Management Hub</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        /* CSS Variables for Color Palette */
+        :root {
+            --primary: #A87676;
+            --primary-dark: #8C5E5E;
+            --primary-light: #CA8787;
+            --accent: #E1ACAC;
+            --accent-light: #F5D1D1;
+            --light: #FFD0D0;
+            --white: #ffffff;
+            --text: #5A4A4A;
+            --text-dark: #3A2A2A;
+            --text-light: #8A7A7A;
+            --background: #FFF9F9;
+            --background-light: #FFFDFD;
+            --foreground: #ffffff;
+            --border: #F0E0E0;
+            --radius: 16px;
+            --radius-large: 24px;
+            --shadow: 0 8px 25px rgba(168, 118, 118, 0.12);
+            --shadow-hover: 0 15px 35px rgba(168, 118, 118, 0.2);
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text);
+            background-color: var(--background);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            background: var(--white);
+            padding: 1rem 2rem;
+            box-shadow: var(--shadow);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .navbar-logo i {
+            color: var(--accent);
+            font-size: 1.8rem;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a.active {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .nav-links a.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--primary);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Progress Container */
+        .progress-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            min-height: calc(100vh - 120px);
+        }
+
+        /* Progress Header */
+        .progress-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem 0;
+        }
+
+        .progress-header h1 {
+            font-size: 3rem;
+            color: var(--text-dark);
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Stress Tabs */
+        .stress-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .stress-tab {
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            background: var(--white);
+            color: var(--text);
+            padding: 1rem 2rem;
+            border-radius: var(--radius);
+            font-weight: 600;
+            transition: var(--transition);
+            border: 2px solid var(--border);
+            cursor: pointer;
+            box-shadow: var(--shadow);
+        }
+
+        .stress-tab:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .stress-tab.active {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            border-color: var(--primary);
+        }
+
+        .stress-tab i {
+            font-size: 1.2rem;
+        }
+
+        /* Loading Indicator */
+        #loadingIndicator {
+            text-align: center;
+            padding: 3rem;
+            color: var(--text);
+            font-size: 1.2rem;
+            background: var(--white);
+            border-radius: var(--radius-large);
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
+        }
+
+        #loadingIndicator i {
+            color: var(--primary);
+            margin-right: 0.5rem;
+        }
+
+        /* Progress History */
+        .progress-history {
+            background: var(--white);
+            border-radius: var(--radius-large);
+            box-shadow: var(--shadow);
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            transition: var(--transition);
+        }
+
+        .progress-history h3 {
+            font-size: 1.8rem;
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+        }
+
+        .progress-history h3 i {
+            color: var(--primary);
+        }
+
+        .history-table {
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(168, 118, 118, 0.1);
+        }
+
+        .table-header {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            padding: 1.2rem 1.5rem;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .table-body {
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .table-row {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+
+            padding: 1.2rem 1.5rem;
+            border-bottom: 1px solid var(--border);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .table-row:hover {
+            background-color: var(--background);
+        }
+
+        .table-row:last-child {
+            border-bottom: none;
+        }
+
+        /* Chart Section */
+        .chart-section {
+            background: var(--white);
+            border-radius: var(--radius-large);
+            box-shadow: var(--shadow);
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            transition: var(--transition);
+        }
+
+        .chart-section h3 {
+            font-size: 1.8rem;
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+        }
+
+        .chart-section h3 i {
+            color: var(--primary);
+        }
+
+        .chart-wrapper {
+            position: relative;
+            height: 400px;
+            padding: 1rem;
+            background: var(--background-light);
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+        }
+
+        /* Action Buttons */
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .btn-primary {
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            padding: 1rem 2rem;
+            border-radius: var(--radius);
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            box-shadow: var(--shadow);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            color: var(--text-light);
+            border-top: 1px solid var(--border);
+            margin-top: 3rem;
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 0.8s ease forwards;
+        }
+
+        .delay-1 {
+            animation-delay: 0.2s;
+        }
+
+        .delay-2 {
+            animation-delay: 0.4s;
+        }
+
+        .delay-3 {
+            animation-delay: 0.6s;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .stress-tabs {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .stress-tab {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .progress-container {
+                padding: 1rem;
+            }
+
+            .progress-header h1 {
+                font-size: 2.2rem;
+            }
+
+            .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .progress-history, .chart-section {
+                padding: 1.5rem;
+            }
+
+            .table-header, .table-row {
+                grid-template-columns: 1fr 1fr;
+                padding: 1rem;
+            }
+
+            .table-header div:nth-child(3),
+            .table-header div:nth-child(4),
+            .table-row div:nth-child(3),
+            .table-row div:nth-child(4) {
+                display: none;
+            }
+
+            .chart-wrapper {
+                height: 300px;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn-primary {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <a href="/dashboard" class="navbar-logo">
+            <i class="fas fa-heartbeat"></i> Wellora
+        </a>
+        <ul class="nav-links">
+            <li><a href="/dashboard">Home</a></li>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/contact">Contact Us</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+    </nav>
+
+    <div class="progress-container">
+        <div class="progress-header fade-in">
+            <h1>Your Stress Progress Dashboard</h1>
+            <p class="subtitle">Track your improvement across different stress areas</p>
+        </div>
+
+        <!-- Stress Type Tabs -->
+        <div class="stress-tabs fade-in delay-1">
+            <button class="stress-tab" data-type="work"><i class="fas fa-briefcase"></i> Work</button>
+            <button class="stress-tab" data-type="academic"><i class="fas fa-book"></i> Academic</button>
+            <button class="stress-tab" data-type="relationship"><i class="fas fa-heart"></i> Relationship</button>
+            
+        </div>
+
+        <!-- Loading indicator -->
+        <div id="loadingIndicator" class="fade-in delay-2">
+            <i class="fas fa-spinner fa-spin"></i> Loading your progress data...
+        </div>
+
+        <!-- Progress History Table -->
+        <div class="progress-history fade-in delay-2" id="progressHistory" style="display: none;">
+            <h3><i class="fas fa-history"></i> Progress History</h3>
+            <div class="history-table">
+                <div class="table-header" id="tableHeader"></div>
+                <div class="table-body" id="historyBody"></div>
+            </div>
+        </div>
+
+        <!-- Progress Chart -->
+        <div class="chart-section fade-in delay-3" id="chartSection" style="display: none;">
+            <h3><i class="fas fa-chart-bar"></i> Progress Over Time</h3>
+            <div class="chart-wrapper">
+                <canvas id="progressChart"></canvas>
+            </div>
+        </div>
+
+        <div class="action-buttons fade-in delay-3">
+            <button class="btn-primary" onclick="window.location.href='/stress'">
+                <i class="fas fa-home"></i> Back to Home
+            </button>
+        </div>
+        
+        <footer class="fade-in delay-3">
+            <p>© 2025 Wellora | Your Trusted Health Companion</p>
+        </footer>
+    </div>
+
+    <!-- Your existing JavaScript file -->
+    <script src="{{ url_for('static', filename='js/stress_progress.js') }}"></script>
+
+    <script>
+        // Add active state to current page in navigation
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentPage = window.location.pathname;
+            const navLinks = document.querySelectorAll('.nav-links a');
+            navLinks.forEach(link => {
+                if (link.getAttribute('href') === currentPage) {
+                    link.classList.add('active');
+                }
+            });
+
+            // Basic tab functionality (your actual JS will handle this)
+            const tabs = document.querySelectorAll('.stress-tab');
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    tabs.forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                    // Your actual tab switching logic from stress_progress.js will handle the rest
+                });
+            });
+
+            // Set first tab as active by default
+            if (tabs.length > 0) {
+                tabs[0].classList.add('active');
+            }
+        });
+    </script>
+</body>
+</html>

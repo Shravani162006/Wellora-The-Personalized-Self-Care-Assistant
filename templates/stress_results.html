@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stress Management Hub</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* CSS Variables for Color Palette */
+        :root {
+            --primary: #A87676;
+            --primary-dark: #8C5E5E;
+            --primary-light: #CA8787;
+            --accent: #E1ACAC;
+            --accent-light: #F5D1D1;
+            --light: #FFD0D0;
+            --white: #ffffff;
+            --text: #5A4A4A;
+            --text-dark: #3A2A2A;
+            --text-light: #8A7A7A;
+            --background: #FFF9F9;
+            --background-light: #FFFDFD;
+            --foreground: #ffffff;
+            --border: #F0E0E0;
+            --radius: 16px;
+            --radius-large: 24px;
+            --shadow: 0 8px 25px rgba(168, 118, 118, 0.12);
+            --shadow-hover: 0 15px 35px rgba(168, 118, 118, 0.2);
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text);
+            background-color: var(--background);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            background: var(--white);
+            padding: 1rem 2rem;
+            box-shadow: var(--shadow);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .navbar-logo i {
+            color: var(--accent);
+            font-size: 1.8rem;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a.active {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .nav-links a.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--primary);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            min-height: calc(100vh - 120px);
+        }
+
+        /* Results Header */
+        .results-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem 0;
+        }
+
+        .results-header h2 {
+            font-size: 2.5rem;
+            color: var(--text-dark);
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .results-header p {
+            font-size: 1.3rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Results Grid */
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .recommendation-section {
+            background: var(--white);
+            border-radius: var(--radius-large);
+            box-shadow: var(--shadow);
+            padding: 2.5rem;
+            transition: var(--transition);
+            border-top: 4px solid var(--accent);
+        }
+
+        .recommendation-section:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .recommendation-section h3 {
+            font-size: 1.5rem;
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+        }
+
+        .recommendation-section h3 i {
+            color: var(--primary);
+        }
+
+        .tips-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .tip-card {
+            background: var(--background-light);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            transition: var(--transition);
+            border-left: 4px solid var(--accent);
+        }
+
+        .tip-card:hover {
+            transform: translateX(5px);
+            background: var(--white);
+            box-shadow: var(--shadow);
+        }
+
+        .tip-number {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+        }
+
+        .tip-card p {
+            color: var(--text);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Videos Section */
+        .videos-section {
+            background: var(--white);
+            border-radius: var(--radius-large);
+            box-shadow: var(--shadow);
+            padding: 2.5rem;
+            margin-bottom: 3rem;
+            transition: var(--transition);
+        }
+
+        .videos-section:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .videos-section h3 {
+            font-size: 1.5rem;
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+        }
+
+        .videos-section h3 i {
+            color: var(--primary);
+        }
+
+        .videos-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .video-item {
+            background: var(--background-light);
+            border-radius: var(--radius);
+            overflow: hidden;
+            transition: var(--transition);
+            border: 1px solid var(--border);
+        }
+
+        .video-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .video-wrapper iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .video-info {
+            padding: 1.5rem;
+        }
+
+        .video-info h4 {
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .video-info p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .video-actions {
+            padding: 0 1.5rem 1.5rem;
+        }
+
+        .btn-watch {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            width: 100%;
+            padding: 0.8rem;
+            background: var(--white);
+            color: var(--primary);
+            border: 2px solid var(--primary);
+            border-radius: var(--radius);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 0.9rem;
+        }
+
+        .btn-watch:hover {
+            background: var(--primary);
+            color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        /* Action Buttons */
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            padding: 1rem 2rem;
+            border-radius: var(--radius);
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            box-shadow: var(--shadow);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .btn-secondary {
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            background: var(--white);
+            color: var(--primary);
+            padding: 1rem 2rem;
+            border-radius: var(--radius);
+            font-weight: 600;
+            transition: var(--transition);
+            border: 2px solid var(--primary);
+            cursor: pointer;
+            text-decoration: none;
+            box-shadow: var(--shadow);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: var(--white);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            color: var(--text-light);
+            border-top: 1px solid var(--border);
+            margin-top: 3rem;
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 0.8s ease forwards;
+        }
+
+        .delay-1 {
+            animation-delay: 0.2s;
+        }
+
+        .delay-2 {
+            animation-delay: 0.4s;
+        }
+
+        .delay-3 {
+            animation-delay: 0.6s;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .results-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .container {
+                padding: 1rem;
+            }
+
+            .results-header h2 {
+                font-size: 2rem;
+            }
+
+            .results-header p {
+                font-size: 1.1rem;
+            }
+
+            .recommendation-section,
+            .videos-section {
+                padding: 1.5rem;
+            }
+
+            .videos-container {
+                grid-template-columns: 1fr;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn-primary,
+            .btn-secondary {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <a href="/dashboard" class="navbar-logo">
+            <i class="fas fa-heartbeat"></i> Wellora
+        </a>
+        <ul class="nav-links">
+            <li><a href="/dashboard">Home</a></li>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/contact">Contact Us</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="results-header fade-in">
+            <h2>Personalized Recommendations for {{ stress_type.title() }} Stress</h2>
+            <p>Here are your customized tips and remedies</p>
+        </div>
+        
+        <div class="results-grid">
+            <div class="recommendation-section fade-in delay-1">
+                <h3><i class="fas fa-heartbeat"></i> Lifestyle Tips</h3>
+                <div class="tips-container">
+                    {% for tip in lifestyle_tips %}
+                    <div class="tip-card">
+                        <span class="tip-number">{{ loop.index }}</span>
+                        <p>{{ tip }}</p>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            
+            <div class="recommendation-section fade-in delay-2">
+                <h3><i class="fas fa-home"></i> Home Remedies</h3>
+                <div class="tips-container">
+                    {% for tip in home_remedies %}
+                    <div class="tip-card">
+                        <span class="tip-number">{{ loop.index }}</span>
+                        <p>{{ tip }}</p>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            
+            <div class="recommendation-section fade-in delay-1">
+                <h3><i class="fas fa-running"></i> Exercise Tips</h3>
+                <div class="tips-container">
+                    {% for tip in exercise_tips %}
+                    <div class="tip-card">
+                        <span class="tip-number">{{ loop.index }}</span>
+                        <p>{{ tip }}</p>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        
+        <!-- Videos Section -->
+        <div class="videos-section fade-in delay-3">
+            <h3><i class="fas fa-video"></i> Helpful Videos</h3>
+            
+            <div class="videos-container">
+                {% for video in videos %}
+                <div class="video-item">
+                    <div class="video-wrapper">
+                        <iframe 
+                            src="{{ video.embed_url }}&modestbranding=1"
+                            frameborder="0" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <div class="video-info">
+                        <h4>{{ video.title }}</h4>
+                        <p>{{ video.description }}</p>
+                    </div>
+                    <div class="video-actions">
+                        <button class="btn-watch" onclick="playVideo(this)">
+                            <i class="fas fa-play"></i> Watch Now
+                        </button>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="action-buttons fade-in delay-3">
+            <button class="btn-primary" onclick="window.location.href='/stress'">
+                <i class="fas fa-home"></i> Back to Home
+            </button>
+
+            <a href="/stress/feedback/{{ stress_type }}" class="btn-secondary">
+                <i class="fas fa-comment-alt"></i> Give Feedback
+            </a>
+
+            <button class="btn-secondary" onclick="window.location.href='/stress/{{ stress_type }}'">
+                <i class="fas fa-redo"></i> Retake Assessment
+            </button>
+        </div>
+        
+        <footer class="fade-in delay-3">
+            <p>© 2025 Wellora | Your Trusted Health Companion</p>
+        </footer>
+    </div>
+
+    <!-- Your existing JavaScript file -->
+    <script src="{{ url_for('static', filename='js/stress_results.js') }}"></script>
+
+    <script>
+        // Add active state to current page in navigation
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentPage = window.location.pathname;
+            const navLinks = document.querySelectorAll('.nav-links a');
+            navLinks.forEach(link => {
+                if (link.getAttribute('href') === currentPage) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Video play function (placeholder - your actual function from stress_results.js)
+        function playVideo(button) {
+            const videoItem = button.closest('.video-item');
+            const iframe = videoItem.querySelector('iframe');
+            // Your video play logic here
+            console.log('Playing video...');
+        }
+    </script>
+</body>
+</html>

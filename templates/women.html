@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Women's Health Portal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* CSS Variables for Color Palette */
+        :root {
+            --primary: #A87676;
+            --primary-dark: #8C5E5E;
+            --primary-light: #CA8787;
+            --accent: #E1ACAC;
+            --accent-light: #F5D1D1;
+            --light: #FFD0D0;
+            --white: #ffffff;
+            --text: #5A4A4A;
+            --text-dark: #3A2A2A;
+            --text-light: #8A7A7A;
+            --background: #FFF9F9;
+            --background-light: #FFFDFD;
+            --foreground: #ffffff;
+            --border: #F0E0E0;
+            --radius: 16px;
+            --radius-large: 24px;
+            --shadow: 0 8px 25px rgba(168, 118, 118, 0.12);
+            --shadow-hover: 0 15px 35px rgba(168, 118, 118, 0.2);
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text);
+            background-color: var(--background);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            background: var(--white);
+            padding: 1rem 2rem;
+            box-shadow: var(--shadow);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .navbar-logo i {
+            color: var(--accent);
+            font-size: 1.8rem;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a.active {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .nav-links a.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--primary);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .back-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--primary);
+            color: var(--white);
+            padding: 0.7rem 1.5rem;
+            border-radius: var(--radius);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .back-btn:hover {
+            background: var(--primary-light);
+            transform: translateY(-2px);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            min-height: calc(100vh - 120px);
+        }
+
+        /* Header Section */
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem 0;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            color: var(--text-dark);
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .header-subtitle {
+            font-size: 1.3rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Back Links */
+        .back-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .back-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--white);
+            color: var(--primary);
+            padding: 0.8rem 1.5rem;
+            border-radius: var(--radius);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: 2px solid var(--primary);
+        }
+
+        .back-link:hover {
+            background: var(--primary);
+            color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        /* Intro Text */
+        .intro-text {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--text-light);
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            line-height: 1.8;
+            padding: 0 1rem;
+        }
+
+        /* Categories Grid */
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: var(--radius-large);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            overflow: hidden;
+            border-top: 4px solid var(--accent);
+            position: relative;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: var(--transition);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .card-content {
+            padding: 2.5rem;
+            text-align: center;
+        }
+
+        .card-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--primary);
+            transition: var(--transition);
+            margin: 0 auto 1.5rem;
+        }
+
+        .card:hover .card-icon {
+            transform: scale(1.1);
+            background: linear-gradient(135deg, var(--light) 0%, var(--accent) 100%);
+        }
+
+        .card h2 {
+            font-size: 1.8rem;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+
+        .card p {
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+
+        .card-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            padding: 0.8rem 1.5rem;
+            border-radius: var(--radius);
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .card:hover .card-btn {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(168, 118, 118, 0.3);
+        }
+
+        /* Card Specific Styles */
+        .card:nth-child(1) {
+            border-top-color: var(--primary);
+        }
+
+        .card:nth-child(1) .card-icon {
+            background: rgba(168, 118, 118, 0.1);
+            color: var(--primary);
+        }
+
+        .card:nth-child(2) {
+            border-top-color: var(--accent);
+        }
+
+        .card:nth-child(2) .card-icon {
+            background: rgba(225, 172, 172, 0.1);
+            color: var(--accent);
+        }
+
+        /* Footer */
+
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            color: var(--text-light);
+            border-top: 1px solid var(--border);
+            margin-top: 3rem;
+        }
+
+        footer p {
+            margin-bottom: 0;
+        }
+
+            /* Animations */
+            .fade-in {
+                opacity: 0;
+                transform: translateY(20px);
+                animation: fadeIn 0.8s ease forwards;
+            }
+
+            .delay-1 {
+                animation-delay: 0.2s;
+            }
+
+            .delay-2 {
+                animation-delay: 0.4s;
+            }
+
+            .delay-3 {
+                animation-delay: 0.6s;
+            }
+
+            @keyframes fadeIn {
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            /* Responsive Design */
+            @media (max-width: 1024px) {
+                .categories {
+                    grid-template-columns: 1fr;
+                    gap: 1.5rem;
+                }
+            }
+
+            @media (max-width: 768px) {
+                .navbar {
+                    flex-direction: column;
+                    gap: 1rem;
+                    padding: 1rem;
+                }
+
+                .nav-links {
+                    gap: 1rem;
+                }
+
+                .container {
+                    padding: 1rem;
+                }
+
+                header h1 {
+                    font-size: 2.2rem;
+                }
+
+                .header-subtitle {
+                    font-size: 1.1rem;
+                }
+
+                .intro-text {
+                    font-size: 1rem;
+                }
+
+                .back-links {
+                    flex-direction: column;
+                    align-items: center;
+                }
+
+                .back-link {
+                    width: 100%;
+                    max-width: 300px;
+                    justify-content: center;
+                }
+
+                .card-content {
+                    padding: 2rem 1.5rem;
+                }
+
+                .card-icon {
+                    width: 70px;
+                    height: 70px;
+                    font-size: 1.8rem;
+                }
+
+                .card h2 {
+                    font-size: 1.5rem;
+                }
+            }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <a href="/dashboard" class="navbar-logo">
+            <i class="fas fa-heartbeat"></i> Wellora
+        </a>
+        <ul class="nav-links">
+            <li><a href="/dashboard">Home</a></li>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/contact">Contact Us</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+
+    </nav>
+
+    <div class="container">
+        <header class="fade-in">
+            <h1>Women's Health Care</h1>
+            <p class="header-subtitle">Comprehensive care for every stage of life</p>
+        </header>
+
+        <!-- Back Links -->
+        <div class="back-links fade-in delay-1">
+
+            <a href="/women_dashboard" class="back-link">
+                <i class="fas fa-chart-line"></i>
+                View My Progress
+            </a>
+        </div>
+
+
+        <div class="categories">
+            <a href="/menstrual" class="card fade-in delay-2">
+                <div class="card-content">
+                    <div class="card-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h2>Menstrual Health</h2>
+                    <p>Track cycles, understand symptoms, and find solutions for menstrual health concerns and patterns.
+                    </p>
+                    <span class="card-btn">Explore Resources</span>
+                </div>
+            </a>
+
+            <a href="/pregnancy_form" class="card fade-in delay-2">
+                <div class="card-content">
+                    <div class="card-icon">
+                        <i class="fas fa-baby"></i>
+                    </div>
+                    <h2>Pregnancy Care</h2>
+                    <p>Resources for expecting mothers, from conception to postpartum care and newborn guidance.</p>
+                    <span class="card-btn">Learn More</span>
+                </div>
+            </a>
+        </div>
+
+        <footer class="fade-in delay-3">
+            <p>© 2025 Wellora | Your Trusted Health Companion</p>
+        </footer>
+    </div>
+
+    <script>
+        // Add interactive hover effects
+        document.addEventListener('DOMContentLoaded', function () {
+            const cards = document.querySelectorAll('.card');
+
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function () {
+                    const icon = this.querySelector('.card-icon i');
+                    icon.style.transform = 'scale(1.2)';
+                    icon.style.transition = 'transform 0.3s ease';
+                });
+
+                card.addEventListener('mouseleave', function () {
+                    const icon = this.querySelector('.card-icon i');
+                    icon.style.transform = 'scale(1)';
+                });
+            });
+
+            // Add active state to current page in navigation
+            const currentPage = window.location.pathname;
+            const navLinks = document.querySelectorAll('.nav-links a');
+            navLinks.forEach(link => {
+                if (link.getAttribute('href') === currentPage) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

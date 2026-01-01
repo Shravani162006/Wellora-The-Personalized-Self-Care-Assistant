@@ -1,0 +1,355 @@
+{
+  "lifestyle": {
+    "sleep": {
+      "0-5": "You are not getting enough sleep. Aim for 7-8 hours per night. Avoid caffeine late in the day and try meditation before bed.",
+      "6-7": "Sleep is okay. Keep a consistent bedtime routine, reduce screen time before bed, and maintain a calm environment.",
+      "8-10": "Great! Maintain your current sleep schedule and continue with balanced meals to support hormonal health."
+    },
+    "diet": {
+      "Cramps": [
+        "Include magnesium-rich foods: spinach, almonds, pumpkin seeds.",
+        "Eat anti-inflammatory foods: turmeric, ginger, fatty fish.",
+        "Drink herbal teas: chamomile or peppermint.",
+        "Avoid excessive sugar and processed foods.",
+        "Include complex carbs like oats and quinoa for steady energy."
+      ],
+      "Bloating": [
+        "Avoid salty and processed foods.",
+        "Include fiber-rich foods: oats, beans, lentils.",
+        "Stay hydrated to reduce water retention.",
+        "Eat small meals more frequently.",
+        "Include natural diuretics: cucumber, watermelon."
+      ],
+      "Mood Swings": [
+        "Eat complex carbs: brown rice, oats, quinoa.",
+        "Include omega-3 fatty acids: walnuts, chia seeds, fish.",
+        "Avoid excessive sugar and caffeine.",
+        "Practice mindfulness or journaling to manage stress.",
+        "Drink herbal teas: chamomile, lemon balm."
+      ],
+      "Fatigue": [
+        "Increase iron-rich foods: spinach, beans, red meat.",
+        "Include vitamin C to enhance absorption: citrus fruits.",
+        "Snack on nuts and seeds for energy.",
+        "Drink enough water to prevent dehydration.",
+        "Avoid skipping meals and maintain a balanced diet."
+      ],
+      "Acne": [
+        "Avoid dairy and sugar-heavy foods.",
+        "Eat zinc-rich foods: pumpkin seeds, chickpeas.",
+        "Stay hydrated and include leafy greens.",
+        "Use non-comedogenic skincare products.",
+        "Avoid touching your face frequently."
+      ],
+      "Headache": [
+        "Reduce caffeine and processed foods.",
+        "Eat magnesium-rich foods: almonds, dark chocolate.",
+        "Drink plenty of water.",
+        "Practice gentle neck and shoulder stretches.",
+        "Take breaks from screens and bright lights."
+      ],
+      "Back Pain": [
+        "Perform light stretching and yoga for lower back.",
+        "Apply heat packs for relief.",
+        "Avoid lifting heavy weights during periods."
+      ],
+      "Breast Tenderness": [
+        "Wear supportive bras and avoid tight clothing.",
+        "Apply warm compresses for discomfort.",
+        "Include vitamin E-rich foods: almonds, sunflower seeds."
+      ]
+    }
+  },
+  "precautions": {
+    "Severe": [
+      "Consult a gynecologist if pain is severe or cycles are irregular.",
+      "Track your cycle for 3 months to observe patterns.",
+      "Avoid self-medicating with strong painkillers frequently.",
+      "Note any unusual bleeding and inform your doctor."
+    ],
+    "Medication": [
+      "Check interactions with any ongoing medications.",
+      "Inform your doctor about supplements or herbal remedies.",
+      "Avoid taking new medication without consulting a doctor."
+    ],
+    "Irregular Cycle": [
+      "Consider hormonal evaluation if cycles are less than 21 or more than 35 days.",
+      "Maintain a healthy lifestyle and track period symptoms.",
+      "Consult a gynecologist for PCOS or thyroid-related issues."
+    ]
+  },
+  "exercise": {
+    "Never": [
+      {
+        "title": "Beginner Yoga for Menstrual Health",
+        "url": "https://www.youtube.com/watch?v=v7AYKMP6rOE",
+        "thumbnail": "images/yoga1.png"
+      },
+      {
+        "title": "Light Stretching Exercises",
+        "url": "https://www.youtube.com/watch?v=2X78NWuRfJU",
+        "thumbnail": "images/stretching.png"
+      },
+      {
+        "title": "Simple Pilates at Home",
+        "url": "https://www.youtube.com/watch?v=lCg_gh_fppI",
+        "thumbnail": "images/pilates.png"
+      },
+      {
+        "title": "Gentle Walking Routine",
+        "url": "https://www.youtube.com/watch?v=fz-eI1U7SP4",
+        "thumbnail": "images/walking.png"
+      }
+    ],
+    "Occasionally": [
+      {
+        "title": "Cardio & Yoga Combo",
+        "url": "https://www.youtube.com/watch?v=ptC6gK3QbLg",
+        "thumbnail": "images/cardio_yoga.png"
+      },
+      {
+        "title": "Low Impact Aerobics",
+        "url": "https://www.youtube.com/watch?v=FtQb7XLBYBY",
+        "thumbnail": "images/aerobics.png"
+      },
+      {
+        "title": "Core Strength Yoga",
+        "url": "https://www.youtube.com/watch?v=yB6DFubjzq0",
+        "thumbnail": "images/core_yoga.png"
+      },
+      {
+        "title": "Pilates for Flexibility",
+        "url": "https://www.youtube.com/watch?v=psuChd7aamY",
+        "thumbnail": "images/pilates_flex.png"
+      }
+    ],
+    "Regularly": [
+      {
+        "title": "Advanced Yoga Flow",
+        "url": "https://www.youtube.com/watch?v=4pKly2JojMw",
+        "thumbnail": "images/advanced_yoga.png"
+      },
+      {
+        "title": "Pilates for Strength",
+        "url": "https://www.youtube.com/watch?v=lCg_gh_fppI",
+        "thumbnail": "images/pilates.png"
+      },
+      {
+        "title": "HIIT for Women",
+        "url": "https://www.youtube.com/watch?v=ml6cT4AZdqI",
+        "thumbnail": "images/hiit.png"
+      },
+      {
+        "title": "Strength & Conditioning",
+        "url": "https://www.youtube.com/watch?v=UBMk30rjy0o",
+        "thumbnail": "images/strength.png"
+      }
+    ]
+  },
+
+ 
+  "products": {
+    "Cramps": [
+      {
+        "name": "Heat Pad",
+        "image": "images/heat_pad.png",
+        "description": "Provides gentle warmth to relax uterine muscles and relieve period cramps naturally.",
+        "benefits": "Reduces abdominal pain, improves blood flow, and helps ease tension.",
+        "usage": "Place on your lower abdomen for 15–20 minutes as needed.",
+        "url": "https://www.amazon.com/Heating-Relief-KOT-Settings-Electric/dp/B0C9XFGBS1"
+      },
+      {
+        "name": "Magnesium Supplement",
+        "image": "images/magnesium.png",
+        "description": "Supports muscle relaxation and helps reduce menstrual cramps and fatigue.",
+        "benefits": "Relieves cramps, supports hormonal balance, and promotes relaxation.",
+        "usage": "Take one tablet daily with water, preferably after a meal.",
+        "url": "https://www.unichemkerikeri.co.nz/ethical-nutrients-megazorb-mega-magnesium-120-tabl"
+      },
+      {
+        "name": "Herbal Tea",
+        "image": "images/herbal_tea.png",
+        "description": "Natural tea blend to soothe discomfort and reduce inflammation during menstruation.",
+        "benefits": "Calms nerves, relieves pain, and promotes better sleep.",
+        "usage": "Brew one cup daily during your period for best results.",
+        "url": "https://www.amazon.com/Celestial-Seasonings-Herbal-Fruit-Sampler/dp/B000E63LME?th=1"
+      },
+      
+      {
+        "name": "Acupressure Band",
+        "image": "images/acupressure.png",
+        "description": "Applies gentle pressure on key points to help relieve cramps without medication.",
+        "benefits": "Natural pain relief method without side effects.",
+        "usage": "Wear around the wrist or abdomen as per product instruction.",
+        "url": "https://www.amazon.co.uk/MEIYYJ-Adjustable-Acupressure-Wristbands-Headaches-Black/dp/B0D2QVHBND?th=1"
+      }
+    ],
+
+"Headache": [
+  {
+    "name": "Ibuprofen Tablets",
+    "image": "images/ibuprofen.png",
+    "description": "Pain reliever for mild to moderate headaches during menstruation.",
+    "benefits": "Reduces pain and inflammation quickly.",
+    "usage": "Take one tablet with water as needed, not exceeding the recommended dose.",
+    "url": "https://www.heb.com/product-detail/h-e-b-ibuprofen-fever-pain-relief-tablets/2045366"
+  },
+  {
+    "name": "Peppermint Essential Oil",
+    "image": "images/peppermint_oil.png",
+    "description": "Soothes tension headaches with cooling effect when applied topically.",
+    "benefits": "Relieves headache pain and calms nerves.",
+    "usage": "Dilute a few drops in carrier oil and apply to temples and forehead.",
+    "url": "https://www.firstcry.com/nat-habit/nat-habit-pure-peppermint-essential-oil-with-mentha-piperita-steam-distilled-for-hair-and-skin-aromatherapy-diffuser-oil-therapeutic-grade-15-ml/16150217/product-detail?ref=BSN_Shopping_78_Body-care!BSN-Standard_All_Search_Ads!&msclkid=94f5ee924d3b141f1b69879d322d333c&utm_source=bing&utm_medium=cpc&utm_campaign=BSN-Standard_All_Search_Ads&utm_term=4586337882898975&utm_content=Ad%20group%20%231"
+  },
+  {
+    "name": "Cooling Gel Eye Mask",
+    "image": "images/cooling_eye_mask.png",
+    "description": "Provides gentle cold therapy to reduce headache discomfort.",
+    "benefits": "Eases tension headaches and relaxes eyes.",
+    "usage": "Place over eyes for 10–15 minutes whenever needed.",
+    "url": "https://www.firstcry.com/jenna/jenna-sleeping-eye-mask-with-cooling-gel-goodnight-print-black/11180846/product-detail?ref=BSN_Shopping_4_Medical-Care!BSN-Standard_All_Search_Ads!&msclkid=eca5909448b31f645d31f99bc8c5d3d6&utm_source=bing&utm_medium=cpc&utm_campaign=BSN-Standard_All_Search_Ads&utm_term=4586337882898968&utm_content=Ad%20group%20%231"
+  },
+  {
+    "name": "Chamomile Tea",
+    "image": "images/chamomile_tea.png",
+    "description": "Natural tea to relax and reduce headache intensity.",
+    "benefits": "Calms nerves and reduces stress-related headaches.",
+    "usage": "Brew one cup daily or during headache episodes.",
+    "url": "https://ca.traditionalmedicinals.com/products/chamomile/"
+  }
+],
+
+
+
+    "Bloating": [
+      {
+        "name": "Probiotics",
+        "image": "images/probiotics.png",
+        "description": "Improves digestion and maintains gut health, reducing bloating and gas.",
+        "benefits": "Enhances digestion, reduces water retention, and improves metabolism.",
+        "usage": "Take one capsule daily after meals.",
+        "url": "https://www.walmart.com/ip/Probiotic-Supplement-Ultra-Strength-Probiotics-50-Billion-CFU-11-Strains-No-Refrigeration-Needed-30-Capsules/286204577"
+      },
+      {
+        "name": "Peppermint Tea",
+        "image": "images/peppermint_tea.png",
+        "description": "A soothing tea that relaxes the digestive tract and reduces bloating.",
+        "benefits": "Eases digestion, prevents gas buildup, and freshens breath.",
+        "usage": "Drink a cup after meals during bloating discomfort.",
+        "url": "https://trungnguyentea.com/product/peppermint-tea/"
+      },
+      {
+        "name": "Digestive Enzyme Supplement",
+        "image": "images/enzymes.png",
+        "description": "Helps your body break down food and prevents indigestion-related bloating.",
+        "benefits": "Improves digestion and nutrient absorption.",
+        "usage": "Take before heavy meals as per dosage instructions.",
+        "url": "https://www.amazon.co.uk/Digestive-Enzyme-Supplement-Multi-enzyme-Indigestion/dp/B0776MKNQG"
+      }
+    ],
+    "Mood Swings": [
+      {
+        "name": "Omega-3 Supplements",
+        "image": "images/omega3.png",
+        "description": "Supports brain health and emotional stability during hormonal changes.",
+        "benefits": "Reduces mood swings, boosts mental clarity, and lowers inflammation.",
+        "usage": "Consume one capsule daily with food.",
+        "url": "https://www.firstcry.com/dr-morepen/dr-morepen-cod-liver-oil-capsules-with-natural-omega-3-vitamin-a-and-d-for-healthy-heart-brain-eyes-and-joints-100-softgels-pack-of-2/16234658/product-detail?ref=BSN_Shopping_78_Health-and-Well-being!BSN-Standard_All_Search_Ads!&msclkid=107f5927ca8018b49e6e30284008bd47&utm_source=bing&utm_medium=cpc&utm_campaign=BSN-Standard_All_Search_Ads&utm_term=4586337882898975&utm_content=Ad%20group%20%231"
+      },
+      {
+        "name": "Vitamin B Complex",
+        "image": "images/vitamin_b.png",
+        "description": "Regulates hormones and helps the body cope with stress.",
+        "benefits": "Enhances mood, reduces fatigue, and maintains energy levels.",
+        "usage": "Take one tablet daily after breakfast.",
+        "url": "https://www.firstcry.com/simply-herbal/simply-herbal-plant-based-vitamin-b-complex-capsules-b-complex-vitamin-b1-b2-b3-b5-b6-b7-b9-and-b12-supports-healthy-blood-cells-metabolism-and-improve-body-energy-level-60-capsules/13877890/product-detail?ref=BSN_Shopping_78_Health-and-Well-being!BSN-Standard_All_Search_Ads!&msclkid=842caccfc6031f0020adc5c04f7be6aa&utm_source=bing&utm_medium=cpc&utm_campaign=BSN-Standard_All_Search_Ads&utm_term=4586337882898975&utm_content=Ad%20group%20%231"
+      },
+      {
+        "name": "Chamomile Tea",
+        "image": "images/chamomile_tea.png",
+        "description": "Calming tea that relaxes the body and reduces anxiety.",
+        "benefits": "Soothes mood, promotes sleep, and relieves tension.",
+        "usage": "Drink before bedtime or during stress.",
+        "url": "https://ca.traditionalmedicinals.com/products/chamomile/"
+      }
+    ],
+    "Fatigue": [
+      {
+        "name": "Iron Supplements",
+        "image": "images/iron.png",
+        "description": "Restores iron levels lost during menstruation to fight fatigue.",
+        "benefits": "Prevents anemia and improves overall energy levels.",
+        "usage": "Take one tablet daily after food with vitamin C-rich juice.",
+        "url": "https://www.walmart.com/ip/NATURELO-Vegan-Iron-Supplement-Vitamin-C-Organic-Whole-Foods-Gentle-Pills-Women-Men-w-Iron-Deficiency-Including-Pregnancy-Anemia-Diets-90-Mini-Capsul/849347742?classType=REGULAR&adsRedirect=true"
+      },
+      {
+        "name": "Energy Bars",
+        "image": "images/energy_bars.png",
+        "description": "Nutritious snack that provides instant energy during period weakness.",
+        "benefits": "Boosts stamina, prevents dizziness, and keeps you active.",
+        "usage": "Eat one bar when feeling low on energy.",
+        "url": "https://www.amazon.com/Verb-Energy-Macchiato-Caffeinated-90-Calorie/dp/B0C4RBSVWH"
+      },
+      {
+        "name": "Vitamin D Supplements",
+        "image": "images/vitamin_d.png",
+        "description": "Supports energy production and immune health.",
+        "benefits": "Reduces tiredness and supports hormonal balance.",
+        "usage": "Take one softgel weekly or as prescribed.",
+        "url": "https://www.amazon.in/Carbamide-Forte-Vitamin-Supplements-Menaquinone/dp/B097DFLDB8/ref=sr_1_1_sspa?dib=eyJ2IjoiMSJ9.sakwnzilZ9K1NbQeQ85Wei31luDWzB4x_fz0dA0XPEk1HpqrfwAD4CFllat52x410N60oF0NxIMFmAO8G65X8DEDRLBMhXZVcQ8z_V1UN-VXfFP2kWPPgpy-9AcB1okGJZ9yrlzkGt9pG1IXy7Ut1sJFZPETkvOin39We20yHce7zowdGxSjzwlTxBYGnPP0ghIQ5GmNNcjsuONnVGsEilo9lSyfYCRCBxB5Yu7BNz9J9inhLOMAGPt4ZXbQPVvGdVnqy3ttC8xCWlWRJWlenXY621t6L3asNzILizEhR3w.Lwy_nctvHdKCNdoYHdl_lzszWSP1Ykhdj5L8oPP1eEk&dib_tag=se&keywords=vitamin%2Bd%2Bsupplement&qid=1762694568&sr=8-1-spons&aref=HaPer4NShV&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&th=1"
+      }
+    ],
+    "Acne": [
+      {
+        "name": "Vitamin A Supplements",
+        "image": "images/vitamin_a.png",
+        "description": "Supports skin regeneration and reduces hormonal acne.",
+        "benefits": "Improves skin texture and prevents acne outbreaks.",
+        "usage": "Take as directed by a healthcare provider.",
+        "url": "https://www.amazon.in/Himalayan-Organics-Plant-Based-Supplement-Anti-Oxidant/dp/B0C9WMRSSR/ref=sr_1_2_sspa?dib=eyJ2IjoiMSJ9.-Vmhu8V04Afv5YPYpNWsIpAaIcDnrxASRnKiBg6TNXjPE61vIqM0ZSb37l-fVjC6Y4v-GAapwr-MO2mcWNacGjvtQxzEYrrV5CUYAP7Q58FBX_zqDL_xeyOwZQkJMZNWkoVWr-J_9FA6sYJbgkTH52rr97_Wpxb7r6D8EORqhmSSFJ7LTht9m35y4WwFMW40GA0ahnX8PXJIfjEEm7ilQJFMDvuHXw6n4ftaE7OWOntOjM-XbNMv0mcSYWmFRZjiNGG5cdWpfKlffF5W41VQfPc9xJ4XOMrST05QI7FhhoE.5CGoX85KAU6iVFoS6sg3gNhmmJXT7t5bSMndhJeVe2w&dib_tag=se&keywords=vitamin+a+supplement&qid=1762694731&sr=8-2-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1"
+      },
+      {
+        "name": "Non-comedogenic Skincare",
+        "image": "images/skincare.png",
+        "description": "Prevents pore blockage and keeps skin oil-free during hormonal changes.",
+        "benefits": "Reduces acne and maintains clear skin.",
+        "usage": "Apply twice daily after cleansing your face.",
+        "url": "https://www.firstcry.com/cetaphil/cetaphil-bhr-brightness-refresh-toner-150ml/8931806/product-detail?ref=BSN_Shopping_78_Facial-Care!BSN-Standard_All_Search_Ads!&msclkid=b4ea3082d9841cbf317559924ed0fe4d&utm_source=bing&utm_medium=cpc&utm_campaign=BSN-Standard_All_Search_Ads&utm_term=4586337882898975&utm_content=Ad%20group%20%231"
+      },
+      {
+        "name": "Tea Tree Oil",
+        "image": "images/tea_tree.png",
+        "description": "Natural antibacterial oil that treats acne and reduces inflammation.",
+        "benefits": "Kills acne-causing bacteria and soothes skin.",
+        "usage": "Dilute with a carrier oil and apply on affected area.",
+        "url": "https://www.amazon.in/Parachute-Advansed-Essential-Dandruff-Moisturises/dp/B0F3XMTZG6/ref=sr_1_2_sspa?dib=eyJ2IjoiMSJ9.jzgB7KclSeJYKmLNyrURNlCE9aA-TmzOlItBOQ0uVVDXvw3T1BmdnJugXrG-1L-N0pFwFspVT-qVtH8lNpqPaV_8SMAlTwgq5O93uZ3m5zBQggDyvnKRBNkBQG4NYEUJcr-RESWhKZN8JrTonZb7GF7f9OacQaFCln14lwPIaN0pBeJFFT__kHSSV-ILjAYqbwQGIMqB56fq1TCu1jCmNAmtSI7hjluoHdcodLOJY01h8pTadpajIitdCwQqIzAyKfm0cW0wYaaBbzkuS6uKzM6t7kNu5xz222jRHk5CVxg.0DlBfsQMbOtgYSXsTG-m2EgCRZf4xHRATVQo7KJ7_ss&dib_tag=se&keywords=tea+tree+oil&qid=1762695280&sr=8-2-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1"
+      }
+    ]
+  },
+  "images": [
+    {
+      "title": "Healthy Diet Tips",
+      "src": "images/diet_tips.png"
+    },
+    {
+      "title": "Menstrual Yoga",
+      "src": "images/menstrual_yoga.png"
+    },
+    {
+      "title": "Hydration Reminder",
+      "src": "images/hydration.png"
+    },
+    {
+      "title": "Pain Relief Tips",
+      "src": "images/pain_relief.png"
+    },
+    {
+      "title": "Exercise Guidance",
+      "src": "images/exercise.png"
+    }
+  ]
+}
+
+
+

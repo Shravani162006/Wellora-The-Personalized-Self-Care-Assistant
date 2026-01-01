@@ -1,0 +1,6 @@
+Flask==2.3.3
+flask-sqlalchemy
+pymysql
+flask-login
+python-dotenv
+mysql-connector-python  # You need this for your specific database connection logic

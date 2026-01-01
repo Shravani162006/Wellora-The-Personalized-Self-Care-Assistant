@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Academic Stress Feedback | Wellora</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* CSS Variables for Color Palette */
+    :root {
+        --primary: #A87676;
+        --primary-dark: #8C5E5E;
+        --primary-light: #CA8787;
+        --accent: #E1ACAC;
+        --accent-light: #F5D1D1;
+        --light: #FFD0D0;
+        --white: #ffffff;
+        --text: #5A4A4A;
+        --text-dark: #3A2A2A;
+        --text-light: #8A7A7A;
+        --background: #FFF9F9;
+        --background-light: #FFFDFD;
+        --foreground: #ffffff;
+        --border: #F0E0E0;
+        --radius: 16px;
+        --radius-large: 24px;
+        --shadow: 0 8px 25px rgba(168, 118, 118, 0.12);
+        --shadow-hover: 0 15px 35px rgba(168, 118, 118, 0.2);
+        --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Poppins', sans-serif;
+        color: var(--text);
+        background-color: var(--background);
+        line-height: 1.7;
+        overflow-x: hidden;
+    }
+
+    /* Navigation Bar */
+    .navbar {
+        background: var(--white);
+        padding: 1rem 2rem;
+        box-shadow: var(--shadow);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+
+    .navbar-logo {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--primary);
+        text-decoration: none;
+    }
+
+    .navbar-logo i {
+        color: var(--accent);
+        font-size: 1.8rem;
+    }
+
+    .nav-links {
+        display: flex;
+        list-style: none;
+        gap: 2rem;
+        align-items: center;
+    }
+
+    .nav-links a {
+        text-decoration: none;
+        color: var(--text);
+        font-weight: 500;
+        transition: var(--transition);
+        position: relative;
+        padding: 0.5rem 0;
+    }
+
+    .nav-links a:hover {
+        color: var(--primary);
+    }
+
+    .nav-links a.active {
+        color: var(--primary);
+        font-weight: 600;
+    }
+
+    .nav-links a.active::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: var(--primary);
+    }
+
+    .nav-links a::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--primary);
+        transition: var(--transition);
+    }
+
+    .nav-links a:hover::after {
+        width: 100%;
+    }
+
+    /* Container */
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem;
+        min-height: calc(100vh - 120px);
+    }
+
+    /* Feedback Container */
+    .feedback-container {
+        max-width: 700px;
+        margin: 0 auto;
+        background: var(--white);
+        border-radius: var(--radius-large);
+        box-shadow: var(--shadow);
+        padding: 3rem;
+        border-top: 4px solid var(--primary);
+    }
+
+    .feedback-container h2 {
+        font-size: 2.2rem;
+        color: var(--text-dark);
+        text-align: center;
+        margin-bottom: 1rem;
+        font-weight: 600;
+        background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .feedback-container > p {
+        text-align: center;
+        color: var(--text-light);
+        font-size: 1.1rem;
+        margin-bottom: 2.5rem;
+        line-height: 1.6;
+    }
+
+    /* Form Styles */
+    #feedbackForm {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .question {
+        background: var(--background-light);
+        border-radius: var(--radius);
+        padding: 2rem;
+        border-left: 4px solid var(--accent);
+        transition: var(--transition);
+    }
+
+    .question:hover {
+        background: var(--white);
+        box-shadow: var(--shadow);
+        transform: translateX(5px);
+    }
+
+    .question label {
+        display: block;
+        font-weight: 600;
+        color: var(--text-dark);
+        margin-bottom: 1.2rem;
+        font-size: 1.1rem;
+        line-height: 1.5;
+    }
+
+    /* Radio Button Styles */
+    .radio-group {
+        display: flex;
+        gap: 2rem;
+        flex-wrap: wrap;
+    }
+
+    .radio-option {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        cursor: pointer;
+        padding: 0.75rem 1.5rem;
+        background: var(--white);
+        border: 2px solid var(--border);
+        border-radius: var(--radius);
+        transition: var(--transition);
+        font-weight: 500;
+    }
+
+    .radio-option:hover {
+        border-color: var(--accent);
+        transform: translateY(-2px);
+    }
+
+    .radio-option input[type="radio"] {
+        display: none;
+    }
+
+    .radio-custom {
+        width: 20px;
+        height: 20px;
+        border: 2px solid var(--border);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: var(--transition);
+        position: relative;
+    }
+
+    .radio-custom::after {
+        content: '';
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: var(--primary);
+        opacity: 0;
+        transition: var(--transition);
+    }
+
+    .radio-option input[type="radio"]:checked + .radio-custom {
+        border-color: var(--primary);
+    }
+
+    .radio-option input[type="radio"]:checked + .radio-custom::after {
+        opacity: 1;
+    }
+
+    .radio-option input[type="radio"]:checked ~ span {
+        color: var(--primary);
+        font-weight: 600;
+    }
+
+    /* Number Input Styles */
+    .number-input {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-top: 0.5rem;
+    }
+
+    .number-input input[type="number"] {
+        width: 80px;
+        padding: 0.75rem 1rem;
+        border: 2px solid var(--border);
+        border-radius: var(--radius);
+        font-size: 1rem;
+        font-family: 'Poppins', sans-serif;
+        background: var(--white);
+        color: var(--text);
+        transition: var(--transition);
+        text-align: center;
+    }
+
+    .number-input input[type="number"]:focus {
+        outline: none;
+        border-color: var(--primary);
+        box-shadow: 0 0 0 3px rgba(168, 118, 118, 0.1);
+    }
+
+    .rating-labels {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 0.5rem;
+        font-size: 0.9rem;
+        color: var(--text-light);
+    }
+
+    /* Submit Button */
+    .submit-btn {
+        display: block;
+        width: 100%;
+        background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+        color: var(--white);
+        padding: 1.2rem 2rem;
+        border-radius: var(--radius);
+        font-weight: 600;
+        font-size: 1.1rem;
+        transition: var(--transition);
+        border: none;
+        cursor: pointer;
+        margin-top: 1rem;
+        text-decoration: none;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.75rem;
+    }
+
+    .submit-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 12px 25px rgba(168, 118, 118, 0.3);
+    }
+
+    /* Footer */
+    footer {
+        text-align: center;
+        padding: 2rem 0;
+        color: var(--text-light);
+        border-top: 1px solid var(--border);
+        margin-top: 3rem;
+    }
+
+    /* Animations */
+    .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeIn 0.8s ease forwards;
+    }
+
+    .delay-1 {
+        animation-delay: 0.2s;
+    }
+
+    .delay-2 {
+        animation-delay: 0.4s;
+    }
+
+    .delay-3 {
+        animation-delay: 0.6s;
+    }
+
+    @keyframes fadeIn {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .navbar {
+            flex-direction: column;
+            gap: 1rem;
+            padding: 1rem;
+        }
+
+        .nav-links {
+            gap: 1rem;
+        }
+
+        .container {
+            padding: 1rem;
+        }
+
+        .feedback-container {
+            padding: 2rem 1.5rem;
+        }
+
+        .feedback-container h2 {
+            font-size: 1.8rem;
+        }
+
+        .question {
+            padding: 1.5rem;
+        }
+
+        .radio-group {
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .radio-option {
+            justify-content: center;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .feedback-container {
+            padding: 1.5rem 1rem;
+        }
+
+        .feedback-container h2 {
+            font-size: 1.6rem;
+        }
+
+        .question {
+            padding: 1.25rem;
+        }
+
+        .submit-btn {
+            padding: 1rem 1.5rem;
+            font-size: 1rem;
+        }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <a href="/dashboard" class="navbar-logo">
+      <i class="fas fa-heartbeat"></i> Wellora
+    </a>
+    <ul class="nav-links">
+      <li><a href="/dashboard">Home</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/contact">Contact Us</a></li>
+      <li><a href="/logout">Logout</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <div class="feedback-container fade-in">
+      <h2>Academic Stress Feedback</h2>
+      <p>Share your experience after your academic stress assessment.</p>
+
+      <form id="feedbackForm" class="space-y-4">
+        <input type="hidden" name="stress_type" value="academic">
+
+        <!-- Sleep Hours Question -->
+        <div class="question fade-in delay-1">
+          <label>Did you get 7–8 hours of sleep while studying or preparing for exams?</label>
+          <div class="radio-group">
+            <label class="radio-option">
+              <input type="radio" name="sleep_hours" value="Yes">
+              <div class="radio-custom"></div>
+              <span>Yes</span>
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="sleep_hours" value="No">
+              <div class="radio-custom"></div>
+              <span>No</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Task Completion Question -->
+        <div class="question fade-in delay-2">
+          <label>Were you able to complete your study tasks on time?</label>
+          <div class="radio-group">
+            <label class="radio-option">
+              <input type="radio" name="task_completion" value="Yes">
+              <div class="radio-custom"></div>
+              <span>Yes</span>
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="task_completion" value="No">
+              <div class="radio-custom"></div>
+              <span>No</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Academic Confidence Question -->
+        <div class="question fade-in delay-1">
+          <label>Did you feel confident about your academic progress?</label>
+          <div class="radio-group">
+            <label class="radio-option">
+              <input type="radio" name="academic_confidence" value="Yes">
+              <div class="radio-custom"></div>
+              <span>Yes</span>
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="academic_confidence" value="No">
+              <div class="radio-custom"></div>
+              <span>No</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Study Breaks Question -->
+        <div class="question fade-in delay-2">
+          <label>Did you take regular breaks while studying?</label>
+          <div class="radio-group">
+            <label class="radio-option">
+              <input type="radio" name="study_breaks" value="Yes">
+              <div class="radio-custom"></div>
+              <span>Yes</span>
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="study_breaks" value="No">
+              <div class="radio-custom"></div>
+              <span>No</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Stress Reduction Question -->
+        <div class="question fade-in delay-1">
+          <label>Did your academic stress reduce this week?</label>
+          <div class="radio-group">
+            <label class="radio-option">
+              <input type="radio" name="stress_reduce" value="Yes">
+              <div class="radio-custom"></div>
+              <span>Yes</span>
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="stress_reduce" value="No">
+              <div class="radio-custom"></div>
+              <span>No</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Rating Question -->
+        <div class="question fade-in delay-2">
+          <label>Rate your overall stress experience (1–5):</label>
+          <div class="number-input">
+            <input type="number" name="rating" min="1" max="5" required>
+            <span class="text-sm text-gray-600">(1 = Very Stressed, 5 = Very Relaxed)</span>
+          </div>
+          <div class="rating-labels">
+            <span>1 - Very Stressed</span>
+            <span>5 - Very Relaxed</span>
+          </div>
+        </div>
+
+        <button type="submit" class="submit-btn fade-in delay-3">
+          <i class="fas fa-chart-line"></i>
+          Submit & View Progress
+        </button>
+      </form>
+    </div>
+    
+    <footer class="fade-in delay-3">
+      <p>© 2025 Wellora | Your Trusted Health Companion</p>
+    </footer>
+  </div>
+
+  <!-- Your JavaScript link kept exactly as is -->
+  <script src="{{ url_for('static', filename='js/stress_feedback.js') }}"></script>
+
+  <script>
+    // Add interactive effects
+    document.addEventListener('DOMContentLoaded', function() {
+      // Add active state to current page in navigation
+      const currentPage = window.location.pathname;
+      const navLinks = document.querySelectorAll('.nav-links a');
+      navLinks.forEach(link => {
+        if (link.getAttribute('href') === currentPage) {
+          link.classList.add('active');
+        }
+      });
+
+      // Enhanced radio button interactions
+      const radioOptions = document.querySelectorAll('.radio-option');
+      radioOptions.forEach(option => {
+        option.addEventListener('click', function() {
+          const radioInput = this.querySelector('input[type="radio"]');
+          radioInput.checked = true;
+          
+          // Remove active class from all options in the same group
+          const groupName = radioInput.name;
+          const allOptions = document.querySelectorAll(`input[name="${groupName}"]`);
+          allOptions.forEach(input => {
+            input.closest('.radio-option').classList.remove('active');
+          });
+          
+          // Add active class to current option
+          this.classList.add('active');
+        });
+      });
+
+      // Form submission handling
+      const form = document.getElementById('feedbackForm');
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        // Add your form submission logic here
+        console.log('Form submitted with data:', new FormData(form));
+      });
+    });
+  </script>
+</body>
+</html>

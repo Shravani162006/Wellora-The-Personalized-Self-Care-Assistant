@@ -1,0 +1,363 @@
+{
+  "1": {
+    "general": {
+      "lifestyle": [
+        "Get 8 hours of sleep daily and take short naps during the day.",
+        "Stay hydrated — drink at least 2–3 liters of water per day.",
+        "Avoid stress — practice meditation or deep breathing.",
+        "Start taking prenatal vitamins and folic acid supplements."
+      ],
+      "diet": [
+        "Eat folate-rich foods like spinach, beans, and citrus fruits.",
+        "Avoid caffeine, raw fish, and unpasteurized dairy.",
+        "Include iron and calcium-rich foods like milk, almonds, and dates.",
+        "Eat small, frequent meals to reduce nausea."
+      ],
+      "precautions": [
+        "Avoid heavy lifting or high-intensity workouts.",
+        "Do not take any medicine without consulting a doctor.",
+        "Avoid exposure to chemical fumes and cigarette smoke."
+      ],
+      "exercise": [
+        {
+          "name": "Light Walking",
+          "photo": "images/walking.png",
+          "video": "https://www.youtube.com/watch?v=enYITYwvPAQ"
+        },
+        {
+          "name": "Pelvic Tilt",
+          "photo": "images/pelvic_tilt.png",
+          "video": "https://www.youtube.com/watch?v=lfyZrRIOmCk"
+        },
+        {
+          "name": "Cat-Cow Stretch",
+          "photo": "images/cat_cow.png",
+          "video": "https://www.youtube.com/watch?v=LIVJZZyZ2qM"
+        }
+      ]
+    }
+  },
+  "2": {
+    "general": {
+      "lifestyle": [
+        "Sleep for 8–9 hours and rest during the afternoon.",
+        "Avoid standing for long periods to reduce swelling.",
+        "Continue light walks or prenatal yoga 4–5 times a week.",
+        "Stay positive and maintain emotional balance."
+      ],
+      "diet": [
+        "Include lean proteins like eggs, lentils, and paneer.",
+        "Eat omega-3 rich foods like walnuts and flaxseeds.",
+        "Add fruits like bananas, apples, and oranges.",
+        "Limit fried or spicy foods to prevent acidity."
+      ],
+      "precautions": [
+        "Avoid traveling long distances.",
+        "Stay away from strong perfumes or chemicals.",
+        "Avoid raw sprouts and undercooked meat."
+      ],
+      "exercise": [
+        {
+          "name": "Butterfly Stretch",
+          "photo": "images/butterfly_stretch.png",
+          "video": "https://www.youtube.com/watch?v=amblBIOKniA"
+        },
+        {
+          "name": "Side-Lying Stretch",
+          "photo": "images/stretching.png",
+          "video": "https://www.youtube.com/watch?v=g9FtnmsIYgI"
+        },
+        {
+          "name": "Prenatal Yoga (Gentle Flow)",
+          "photo": "images/prenatal_yoga.png",
+          "video": "https://www.youtube.com/watch?v=-3bvlFKeLRE"
+        }
+      ]
+    }
+  },
+  "3": {
+    "general": {
+      "lifestyle": [
+        "Avoid standing for long hours.",
+        "Wear comfortable cotton clothes.",
+        "Sleep on your left side for better blood circulation.",
+        "Continue light prenatal yoga under supervision."
+      ],
+      "diet": [
+        "Eat iron-rich foods like beets, spinach, and jaggery.",
+        "Add fiber-rich foods like oats and vegetables.",
+        "Include dairy or soy milk for calcium.",
+        "Eat smaller meals more often to prevent acidity."
+      ],
+      "precautions": [
+        "Avoid high heels to reduce back strain.",
+        "Do not skip meals or stay hungry for long periods.",
+        "Avoid lifting heavy weights or bending suddenly."
+      ],
+      "exercise": [
+        {
+          "name": "Seated Forward Bend (Modified)",
+          "photo": "images/seated_forward_bend.png",
+          "video": "https://www.youtube.com/watch?v=t15nG-gf2Ow"
+        },
+        {
+          "name": "Child’s Pose",
+          "photo": "images/child_pose.png",
+          "video": "https://www.youtube.com/watch?v=eqVMAPM00DM"
+        },
+        {
+          "name": "Neck and Shoulder Rolls",
+          "photo": "images/neck_shoulder_rolls.png",
+          "video": "https://www.youtube.com/watch?v=6FyHoo4Vfxg"
+        }
+      ]
+    }
+  },
+  "4": {
+    "general": {
+      "lifestyle": [
+        "Start light stretching to ease body stiffness.",
+        "Sleep on your left side with a pillow between your legs.",
+        "Stay active with gentle movements to avoid back pain.",
+        "Keep yourself hydrated throughout the day."
+      ],
+      "diet": [
+        "Increase calcium intake — milk, curd, sesame seeds.",
+        "Include protein-rich foods like dals, tofu, and cheese.",
+        "Consume fruits high in Vitamin C like oranges and guavas.",
+        "Avoid deep-fried and high-sodium foods."
+      ],
+      "precautions": [
+        "Avoid sleeping on your back for long hours.",
+        "Avoid spicy food that triggers heartburn.",
+        "Stay away from raw seafood."
+      ],
+      "exercise": [
+        {
+          "name": "Standing Hip Circles",
+          "photo": "images/standing_hip_circles.png",
+          "video": "https://www.youtube.com/watch?v=yFi1FDOFXq0"
+        },
+        {
+          "name": "Prenatal Yoga (Hip Opening)",
+          "photo": "images/hip_opening_yoga.png",
+          "video": "https://www.youtube.com/watch?v=-3bvlFKeLRE"
+        },
+        {
+          "name": "Wall Squats (Gentle)",
+          "photo": "images/wall_squats.png",
+          "video": "https://www.youtube.com/watch?v=ZkmzqMoQ8T4"
+        }
+      ]
+    }
+  },
+  "5": {
+    "general": {
+      "lifestyle": [
+        "Practice good posture to reduce back strain.",
+        "Take short breaks when sitting for long hours.",
+        "Avoid wearing tight clothes.",
+        "Spend time outdoors in fresh air."
+      ],
+      "diet": [
+        "Increase intake of leafy greens for iron.",
+        "Add fresh fruits and dry fruits for energy.",
+        "Include omega-3 sources like flaxseed and chia seeds.",
+        "Drink buttermilk and coconut water regularly."
+      ],
+      "precautions": [
+        "Avoid lying flat on your back.",
+        "Do not skip prenatal doctor visits.",
+        "Avoid excess sugar and processed food."
+      ],
+      "exercise": [
+        {
+          "name": "Tailor Sitting",
+          "photo": "images/tailor_sitting.png",
+          "video": "https://www.youtube.com/watch?v=MVUXLCdTFlY"
+        },
+        {
+          "name": "Side Leg Lifts",
+          "photo": "images/side_leg_lifts.png",
+          "video": "https://www.youtube.com/watch?v=a5uFPRLSXjo"
+        },
+        {
+          "name": "Bridge Pose (Modified)",
+          "photo": "images/bridge_pose.png",
+          "video": "https://www.youtube.com/shorts/8jGsJ6bfLDg"
+        }
+      ]
+    }
+  },
+  "6": {
+    "general": {
+      "lifestyle": [
+        "Use a pregnancy pillow for sleeping comfort.",
+        "Avoid sudden movements to reduce dizziness.",
+        "Wear flat, supportive footwear.",
+        "Stay relaxed and do deep breathing exercises."
+      ],
+      "diet": [
+        "Consume fiber-rich foods to avoid constipation.",
+        "Eat whole grains, fresh fruits, and vegetables.",
+        "Add iron and calcium supplements if advised.",
+        "Drink plenty of fluids throughout the day."
+      ],
+      "precautions": [
+        "Avoid standing too long or sitting without movement.",
+        "Do not overeat; eat smaller, balanced meals.",
+        "Stay away from unpasteurized products."
+      ],
+      "exercise": [
+        {
+          "name": "Pelvic Rocking",
+          "photo": "images/pelvic_rocking.png",
+          "video": "https://www.youtube.com/watch?v=0m99BRwzfJo"
+        },
+        {
+          "name": "Wall Push-Ups",
+          "photo": "images/wall_pushups.png",
+          "video": "https://www.youtube.com/watch?v=8-9JUbuLM3s"
+        },
+        {
+          "name": "Prenatal Stretch Routine",
+          "photo": "images/prenatal_stretch.png",
+          "video": "https://www.youtube.com/watch?v=BpkYg2EclBA"
+        }
+      ]
+    }
+  },
+  "7": {
+    "general": {
+      "lifestyle": [
+        "Take frequent breaks while walking or working.",
+        "Practice controlled breathing for relaxation.",
+        "Avoid standing for more than 15–20 minutes at once.",
+        "Do gentle back and leg stretches."
+      ],
+      "diet": [
+        "Increase intake of calcium and magnesium.",
+        "Eat bananas and avocados for potassium.",
+        "Have light dinners to prevent heartburn.",
+        "Drink warm milk before bed for better sleep."
+      ],
+      "precautions": [
+        "Avoid climbing stairs frequently.",
+        "Do not sit cross-legged for long periods.",
+        "Avoid high-intensity exercises."
+      ],
+      "exercise": [
+        {
+          "name": "Seated Pelvic Tilt",
+          "photo": "images/seated_pelvic_tilt.png",
+          "video": "https://www.youtube.com/shorts/9fxB13xLrOM"
+        },
+        {
+          "name": "Kegel Exercises",
+          "photo": "images/kegel_exercises.png",
+          "video": "https://www.youtube.com/watch?v=EJoITIziOKk"
+        },
+        {
+          "name": "Prenatal Breathing Yoga",
+          "photo": "images/prenatal_breathing.png",
+          "video": "https://www.youtube.com/watch?v=-3bvlFKeLRE"
+        }
+      ]
+    }
+  },
+  "8": {
+    "general": {
+      "lifestyle": [
+        "Sleep with head elevated to ease breathing.",
+        "Take frequent rest and avoid standing too long.",
+        "Prepare mentally for childbirth with relaxation techniques.",
+        "Avoid traveling long distances."
+      ],
+      "diet": [
+        "Consume light, easily digestible meals.",
+        "Add iron, calcium, and protein-rich foods.",
+        "Avoid too much salt to prevent water retention.",
+        "Eat fruits like ripe banana, apples instead of papaya."
+      ],
+      "precautions": [
+        "Avoid sleeping on your back.",
+        "Stay hydrated but avoid excess caffeine.",
+        "Do not skip prenatal checkups."
+      ],
+      "exercise": [
+        {
+          "name": "Squat with Support",
+          "photo": "images/squat_support.png",
+          "video": "https://www.youtube.com/shorts/-YpzdF649VM"
+        },
+        {
+          "name": "Side-Lying Leg Raise",
+          "photo": "images/side_lying_leg_raise.png",
+          "video": "https://www.youtube.com/shorts/q3MzUoFjqjg"
+        },
+        {
+          "name": "Cat-Cow Stretch",
+          "photo": "images/cat_cow.png",
+          "video": "https://www.youtube.com/watch?v=8VzhoBKGbLQ"
+        }
+      ]
+    }
+  },
+  "9": {
+    "general": {
+      "lifestyle": [
+        "Get plenty of rest and avoid overexertion.",
+        "Stay calm and mentally prepare for delivery.",
+        "Do light stretching and breathing exercises daily.",
+        "Keep your hospital bag ready."
+      ],
+      "diet": [
+        "Eat high-fiber foods to aid digestion.",
+        "Have small frequent meals.",
+        "Include foods rich in Vitamin B and calcium.",
+        "Avoid fried and processed foods."
+      ],
+      "precautions": [
+        "Avoid unnecessary travel.",
+        "Report any unusual pain or bleeding to your doctor.",
+        "Do not engage in strenuous activities."
+      ],
+      "exercise": [
+        {
+          "name": "Deep Breathing",
+          "photo": "images/breathing.png",
+          "video": "https://www.youtube.com/shorts/_1NHA9kFsrc"
+        },
+        {
+          "name": "Butterfly Stretch",
+          "photo": "images/butterfly_stretch.png",
+          "video": "https://www.youtube.com/watch?v=2DxSIR6ne90"
+        },
+        {
+          "name": "Pelvic Floor Exercise",
+          "photo": "images/pelvic_floor.png",
+          "video": "https://www.youtube.com/watch?v=Ilg-gQY2Rxc"
+        }
+      ]
+    }
+  },
+  "conditions": {
+    "PCOS": {
+      "diet": ["Reduce sugar intake", "Eat high-fiber foods", "Avoid processed carbs"],
+      "precautions": ["Maintain healthy weight", "Regular light exercise"]
+    },
+    "Diabetes": {
+      "diet": ["Low-sugar fruits", "Avoid fried foods", "Use brown rice instead of white"],
+      "precautions": ["Check sugar levels regularly", "Eat on time"]
+    },
+    "Hypertension": {
+      "diet": ["Reduce salt", "Eat potassium-rich foods", "Avoid caffeine"],
+      "precautions": ["Manage stress", "Avoid junk food", "Stay hydrated"]
+    }
+  },
+  "sleep": {
+    "Good": ["Maintain regular sleep schedule", "Go to bed and wake up at the same time daily"],
+    "Average": ["Avoid screens 1 hour before sleep", "Take short naps during the day if needed"],
+    "Poor": ["Meditate before bedtime", "Avoid caffeine in the evening", "Listen to calming music"]
+  }
+}

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SelfCure Dashboard</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style1.css') }}">
+
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">
+      <i class="fas fa-heartbeat"></i> Wellora
+    </div>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/contact">Contact Us</a></li>
+      <li><a href="/logout">Logout</a></li>
+    </ul>
+
+  </nav>
+
+  <!-- Welcome Section -->
+  <div class="welcome">
+    <h1 class="typing-text">Welcome to <span>Wellora</span> Dashboard</h1>
+    <p class="welcome-subtitle">✨ Your personalized health companion for holistic wellness ✨</p>
+    <div class="welcome-buttons">
+      <a href="#features" class="explore-btn">
+        <i class="fas fa-rocket"></i> Explore Features
+      </a>
+    </div>
+  </div>
+
+  <!-- Dashboard Container -->
+  <div class="dashboard-container">
+    <!-- AI Assistant Banner -->
+    <div class="ai-banner">
+      <h2><i class="fas fa-robot"></i> AI Health Assistant</h2>
+      <p>Get instant personalized health advice and recommendations from our intelligent assistant</p>
+      <a href="{{ url_for('bot') }}" class="ai-btn">
+        <i class="fas fa-comments"></i> Start Conversation
+      </a>
+    </div>
+
+    <!-- Features Section -->
+    <div id="features" class="features-section">
+      <h2>Health Management Categories</h2>
+      <div class="features-grid">
+        <!-- Hair Health -->
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-spa"></i>
+          </div>
+          <div class="feature-content">
+            <h3>Hair Health</h3>
+            <p>Track hair fall patterns, growth cycles, and get personalized treatment recommendations for healthy hair.
+            </p>
+          </div>
+          <a href="/hair_dashboard" class="feature-btn">
+            <i class="fas fa-chart-line"></i> Open Dashboard
+          </a>
+        </div>
+
+        <!-- Skin Health -->
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-seedling"></i>
+          </div>
+          <div class="feature-content">
+            <h3>Skin Health</h3>
+            <p>Monitor skin conditions, track improvements, and discover perfect skincare routines for your skin type.
+            </p>
+          </div>
+          <a href="/skin" class="feature-btn">
+            <i class="fas fa-chart-line"></i> Open Dashboard
+          </a>
+        </div>
+
+        <!-- Women's Health -->
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-female"></i>
+          </div>
+          <div class="feature-content">
+            <h3>Women's Health</h3>
+            <p>Comprehensive tracking for menstrual cycles, hormonal balance, nutrition, and wellness tips.</p>
+          </div>
+          <a href="/women" class="feature-btn">
+            <i class="fas fa-chart-line"></i> Open Dashboard
+          </a>
+        </div>
+
+        <!-- Stress Management -->
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-brain"></i>
+          </div>
+          <div class="feature-content">
+            <h3>Stress Management</h3>
+            <p>Identify stress triggers and learn effective relaxation techniques, mindfulness, and coping strategies.
+            </p>
+          </div>
+          <a href="/stress" class="feature-btn">
+            <i class="fas fa-chart-line"></i> Open Dashboard
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>© 2025 SelfCure | Your Trusted Health Companion</p>
+      <div class="footer-links">
+        <a href="/">Home</a> |
+        <a href="/about">About Us</a> |
+        <a href="/contact">Contact</a>
+      </div>
+    </footer>
+  </div>
+</body>
+
+</html>

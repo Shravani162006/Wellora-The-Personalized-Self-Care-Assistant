@@ -1,0 +1,93 @@
+{% extends "stress_layout.html" %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/stress_videos.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="hero-section">
+        <h2>Stress Relief Video Library</h2>
+        <p>Browse our collection of therapeutic videos for different stress types</p>
+    </div>
+
+    <!-- Video Categories Navigation -->
+    <div class="video-categories-nav">
+        <h3>Browse by Stress Type</h3>
+        <div class="categories-grid">
+            {% for stress_type in stress_types %}
+            <a href="#{{ stress_type }}" class="category-link">
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-{% if stress_type == 'work' %}briefcase{% elif stress_type == 'relationship' %}heart{% elif stress_type == 'academic' %}graduation-cap{% elif stress_type == 'financial' %}money-bill-wave{% elif stress_type == 'health' %}heartbeat{% elif stress_type == 'parenting' %}baby{% elif stress_type == 'social' %}users{% elif stress_type == 'tech' %}laptop{% elif stress_type == 'career' %}chart-line{% else %}calendar{% endif %}"></i>
+                    </div>
+                    <span>{{ stress_type.title() }}</span>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- Video Sections -->
+    <div class="video-sections">
+        {% for stress_type in stress_types %}
+        <section id="{{ stress_type }}" class="video-section">
+            <div class="section-header">
+                <h3>
+                    <i class="fas fa-{% if stress_type == 'work' %}briefcase{% elif stress_type == 'relationship' %}heart{% elif stress_type == 'academic' %}graduation-cap{% elif stress_type == 'financial' %}money-bill-wave{% elif stress_type == 'health' %}heartbeat{% elif stress_type == 'parenting' %}baby{% elif stress_type == 'social' %}users{% elif stress_type == 'tech' %}laptop{% elif stress_type == 'career' %}chart-line{% else %}calendar{% endif %}"></i>
+                    {{ stress_type.title() }} Stress Videos
+                </h3>
+                <p>Helpful videos for managing {{ stress_type }} related stress</p>
+            </div>
+
+            <div class="videos-grid">
+                {% for video in videos_data.get(stress_type, []) %}
+                <div class="video-card">
+                    <div class="video-wrapper">
+                        <iframe 
+                            src="{{ video.embed_url }}?rel=0" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen
+                            loading="lazy">
+                        </iframe>
+                        <div class="video-overlay">
+                            <div class="video-duration">{{ video.duration }}</div>
+                            <div class="video-category">{{ video.category }}</div>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h4>{{ video.title }}</h4>
+                        <p>{{ video.description }}</p>
+                        <div class="video-meta">
+                            <span class="video-type">{{ video.category.title() }}</span>
+                            <button class="watch-btn" onclick="openVideo('{{ video.embed_url }}', '{{ video.title }}')">
+                                <i class="fas fa-play"></i> Watch Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+        {% endfor %}
+    </div>
+
+    <!-- Video Modal -->
+    <div id="videoModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeVideo()">&times;</span>
+            <div class="modal-video-container">
+                <iframe id="modalVideo" src="" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="modal-video-info">
+                <h3 id="modalVideoTitle"></h3>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/stress_videos.js') }}"></script>
+{% endblock %}

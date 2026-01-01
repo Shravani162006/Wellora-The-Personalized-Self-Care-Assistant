@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hairfall Feedback - Wellora</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* CSS Variables for Color Palette (Consistency) */
+        :root {
+            --primary: #A87676;
+            --primary-dark: #8C5E5E;
+            --primary-light: #CA8787;
+            --accent: #E1ACAC;
+            --accent-light: #F5D1D1;
+            --light: #FFD0D0;
+            --white: #ffffff;
+            --text: #5A4A4A;
+            --text-dark: #3A2A2A;
+            --text-light: #8A7A7A;
+            --background: #FFF9F9;
+            --background-light: #FFFDFD;
+            --foreground: #ffffff;
+            --border: #F0E0E0;
+            --success: #8BC34A; /* Used for success messages */
+            --info: #007bff; /* Used for view progress button */
+            --radius: 16px;
+            --radius-large: 24px;
+            --shadow: 0 8px 25px rgba(168, 118, 118, 0.12);
+            --shadow-hover: 0 15px 35px rgba(168, 118, 118, 0.2);
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text);
+            background-color: var(--background);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        /* Navigation Bar (Copied from Analysis Forms) */
+        .navbar {
+            background: var(--white);
+            padding: 1rem 2rem;
+            box-shadow: var(--shadow);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .navbar-logo i {
+            color: var(--accent);
+            font-size: 1.8rem;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Main Container (Styled as a Form Card) */
+        .container {
+            width: 90%;
+            max-width: 650px;
+            margin: 3rem auto;
+            background-color: var(--white);
+            padding: 2.5rem 3rem;
+            border-radius: var(--radius-large);
+            box-shadow: var(--shadow);
+            animation: fadeIn 0.8s ease forwards;
+        }
+
+        /* Header Styles */
+        h2 {
+            text-align: center;
+            font-size: 2rem;
+            color: var(--text-dark);
+            margin-bottom: 2rem;
+            /* Gradient Title for consistency */
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Form Group Styles */
+        label {
+            display: block;
+            margin: 1.5rem 0 0.5rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            font-size: 1rem;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 1rem 1.2rem;
+            border: 2px solid var(--border);
+            border-radius: var(--radius);
+            font-size: 1rem;
+            font-family: 'Poppins', sans-serif;
+            background: var(--background-light);
+            transition: var(--transition);
+            color: var(--text);
+            box-sizing: border-box;
+        }
+
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: var(--primary);
+            background: var(--white);
+            box-shadow: 0 0 0 4px rgba(168, 118, 118, 0.1);
+        }
+
+        /* Radio Group Styling */
+        .radio-group {
+            margin: 5px 0 1.5rem;
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+       
+        .radio-group label {
+            display: inline-block;
+            margin: 0;
+            font-weight: 500;
+            color: var(--text);
+            cursor: pointer;
+        }
+
+        input[type="radio"] {
+            /* Reset default radio styling and apply custom size/color */
+            appearance: none;
+            width: 18px;
+            height: 18px;
+            border: 2px solid var(--primary);
+            border-radius: 50%;
+            transition: var(--transition);
+            position: relative;
+            cursor: pointer;
+        }
+
+        input[type="radio"]:checked {
+            background-color: var(--primary);
+            border-color: var(--primary);
+        }
+
+        input[type="radio"]:checked::after {
+            content: '';
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            width: 6px;
+            height: 6px;
+            background: var(--white);
+            border-radius: 50%;
+        }
+
+        /* Submit Button (Primary Style) */
+        button[type="submit"], button[type="button"] { /* Apply style to both button types */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.8rem;
+            width: 100%;
+            padding: 1.2rem 2rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            border: none;
+            border-radius: var(--radius);
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 2rem;
+            transition: var(--transition);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        button[type="submit"]:hover, button[type="button"]:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(168, 118, 118, 0.3);
+        }
+       
+        /* Success Message Styling (Jinja 'if message' block) */
+        .message-box {
+            background: #d4edda;
+            color: #155724;
+            padding: 20px;
+            border-radius: var(--radius);
+            margin-bottom: 25px;
+            border-left: 6px solid var(--success);
+            font-size: 1.1rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+       
+        .message-box i {
+            color: var(--success);
+            font-size: 1.5rem;
+        }
+
+        /* Action Links/Buttons (Post-Submission) */
+        .action-link {
+            display: block;
+            width: 100%;
+            padding: 1rem;
+            border-radius: var(--radius);
+            text-align: center;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            margin-top: 1rem;
+            transition: var(--transition);
+        }
+        /* Overriding the default button style for the post-submission links */
+        .action-link.btn-progress {
+            background-color: var(--info); /* Blue for viewing progress */
+            color: var(--white);
+            box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .action-link.btn-progress:hover {
+            background-color: #0069d9;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0, 123, 255, 0.3);
+        }
+       
+        /* Style for the Go Back button/link after submission */
+        .action-link.btn-back {
+            background-color: var(--text-light);
+            color: var(--white);
+            margin-top: 0.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+       
+        .action-link.btn-back:hover {
+            background-color: var(--text);
+            transform: translateY(-2px);
+        }
+       
+        /* Custom Select Arrow */
+        select {
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23A87676' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            background-size: 1em;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            .container {
+                margin: 20px auto;
+                padding: 1.5rem;
+                border-radius: var(--radius);
+            }
+            h2 {
+                font-size: 1.7rem;
+            }
+            .navbar {
+                padding: 1rem;
+            }
+           
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="/dashboard" class="navbar-logo">
+            <i class="fas fa-heartbeat"></i> Wellora
+        </a>
+        <ul class="nav-links">
+            <li><a href="/dashboard">Home</a></li>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/contact">Contact Us</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+    </nav>
+
+
+<div class="container">
+    <h2><i class="fas fa-clipboard-list" style="margin-right: 10px;"></i> Hairfall Feedback</h2>
+        <form method="POST">
+            <input type="hidden" name="user_id" value="{{ user_id }}">
+
+            <label for="satisfaction_level">Satisfaction Level:</label>
+            <select name="satisfaction_level" id="satisfaction_level" required>
+                <option value="">--Select--</option>
+                <option value="Very Satisfied">Very Satisfied</option>
+                <option value="Satisfied">Satisfied</option>
+                <option value="Neutral">Neutral</option>
+                <option value="Dissatisfied">Dissatisfied</option>
+                <option value="Very Dissatisfied">Very Dissatisfied</option>
+            </select>
+
+            <label for="ease_of_use">How easy is it to use? (Rate from 1 to 5)</label>
+            <input type="number" id="ease_of_use" name="ease_of_use" min="1" max="5" required placeholder="Enter a rating from 1 to 5">
+
+            <label>Was the product helpful?</label>
+            <div class="radio-group">
+                <input type="radio" id="product_yes" name="product_helpful" value="Yes" required>
+                <label for="product_yes">Yes</label>
+                <input type="radio" id="product_no" name="product_helpful" value="No">
+                <label for="product_no">No</label>
+            </div>
+
+            <label>Were the home remedies helpful?</label>
+            <div class="radio-group">
+                <input type="radio" id="remedies_yes" name="remedies_helpful" value="Yes" required>
+                <label for="remedies_yes">Yes</label>
+                <input type="radio" id="remedies_no" name="remedies_helpful" value="No">
+                <label for="remedies_no">No</label>
+            </div>
+
+            <label>Did you follow the daily routine activities?</label>
+            <div class="radio-group">
+                <input type="radio" id="routine_yes" name="followed_routine" value="Yes" required>
+                <label for="routine_yes">Yes</label>
+                <input type="radio" id="routine_no" name="followed_routine" value="No">
+                <label for="routine_no">No</label>
+            </div>
+
+            <label>Would you recommend this app to Wellora website?</label>
+            <div class="radio-group">
+                <input type="radio" id="recommend_yes" name="recommend_wellora" value="Yes" required>
+                <label for="recommend_yes">Yes</label>
+                <input type="radio" id="recommend_no" name="recommend_wellora" value="No">
+                <label for="recommend_no">No</label>
+            </div>
+
+            <label for="comments">Additional Comments</label>
+            <textarea id="comments" name="comments" rows="4" placeholder="Share your thoughts..."></textarea>
+
+            <button type="submit">
+                <i class="fas fa-paper-plane"></i> Submit Feedback
+            </button>
+        </form>
+</div>
+
+
+<script>
+    // Simple script for form submission feedback (optional)
+    document.addEventListener('DOMContentLoaded', function() {
+        const form = document.querySelector('form');
+        if (form) {
+            form.addEventListener('submit', function(e) {
+                const submitBtn = form.querySelector('button[type="submit"]');
+                if (form.checkValidity()) {
+                    // Change button state to "Submitting"
+                    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting...';
+                    submitBtn.disabled = true;
+                }
+            });
+        }
+    });
+</script>
+
+</body>
+</html>

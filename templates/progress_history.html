@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Progress History for {{ problem_display_name }}</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+ 
+  <style>
+    /* CSS Variables for Color Palette */
+    :root {
+      --primary: #A87676;
+      --primary-dark: #8C5E5E;
+      --primary-light: #CA8787;
+      --accent: #E1ACAC;
+      --accent-light: #F5D1D1;
+      --light: #FFD0D0;
+      --white: #ffffff;
+      --text: #5A4A4A;
+      --text-dark: #3A2A2A;
+      --text-light: #8A7A7A;
+      --background: #FFF9F9;
+      --background-light: #FFFDFD;
+      --foreground: #ffffff;
+      --border: #F0E0E0;
+      --success: #8BC34A;
+      --radius: 16px;
+      --radius-large: 24px;
+      --shadow: 0 8px 25px rgba(168, 118, 118, 0.12);
+      --shadow-hover: 0 15px 35px rgba(168, 118, 118, 0.2);
+      --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: var(--text);
+      background-color: var(--background);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* Navigation Bar */
+    .navbar {
+      background: var(--white);
+      padding: 1rem 2rem;
+      box-shadow: var(--shadow);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .navbar-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .navbar-logo i {
+      color: var(--accent);
+      font-size: 1.8rem;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 500;
+      transition: var(--transition);
+      position: relative;
+      padding: 0.5rem 0;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .nav-links a.active {
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    .nav-links a.active::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: var(--primary);
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--primary);
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    /* Main Container */
+    .container {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: var(--white);
+      border-radius: var(--radius-large);
+      box-shadow: var(--shadow);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: var(--text-dark);
+      font-size: 2rem;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Average Progress Box */
+    .avg-box {
+      text-align: center;
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: var(--primary-dark);
+      margin: 2rem 0;
+      padding: 1.5rem;
+      background: linear-gradient(135deg, var(--accent-light) 0%, var(--light) 100%);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .avg-box i {
+      font-size: 1.5rem;
+      color: var(--primary);
+    }
+
+    /* Progress Chart */
+    #progressChartContainer {
+      width: 90%;
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 2rem;
+      background: var(--background-light);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    #progressChartContainer h3 {
+      text-align: center;
+      color: var(--text-dark);
+      margin-bottom: 1.5rem;
+      font-size: 1.3rem;
+    }
+
+    /* History Table */
+    .history-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 2rem 0;
+      box-shadow: var(--shadow);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    .history-table th, .history-table td {
+      padding: 1rem;
+      border: 1px solid var(--border);
+      text-align: center;
+    }
+
+    .history-table th {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      color: var(--white);
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .history-table tr:nth-child(even) {
+      background-color: var(--background-light);
+    }
+
+    .history-table tr:hover {
+      background-color: var(--accent-light);
+      transition: var(--transition);
+    }
+
+    .history-table td strong {
+      color: var(--primary-dark);
+      font-size: 1.1rem;
+    }
+
+    /* Footer Buttons */
+    .results-footer {
+      text-align: center;
+      margin-top: 3rem;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      padding: 1rem 2rem;
+      border-radius: var(--radius);
+      text-decoration: none;
+      transition: var(--transition);
+      font-weight: 600;
+      box-shadow: var(--shadow);
+    }
+
+    .feedback-btn {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      color: white;
+    }
+
+    .back-to-skin-btn {
+      background: var(--text-light);
+      color: white;
+    }
+
+    .footer-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .feedback-btn:hover {
+      background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+    }
+
+    .back-to-skin-btn:hover {
+      background: var(--text);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 2rem 0;
+      color: var(--text-light);
+      border-top: 1px solid var(--border);
+      margin-top: 3rem;
+    }
+
+    /* No History Message */
+    .no-history {
+      text-align: center;
+      margin: 3rem 0;
+      padding: 2rem;
+      color: var(--text-light);
+      font-size: 1.1rem;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+      }
+
+      .nav-links {
+        gap: 1rem;
+      }
+
+      .container {
+        padding: 1.5rem;
+        margin: 1rem;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      .history-table {
+        font-size: 0.8rem;
+      }
+
+      .history-table th, .history-table td {
+        padding: 0.5rem;
+      }
+
+      .results-footer {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .footer-btn {
+        width: 100%;
+        max-width: 250px;
+        justify-content: center;
+      }
+
+      #progressChartContainer {
+        width: 95%;
+        padding: 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .history-table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+     
+      .avg-box {
+        font-size: 1.1rem;
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <a href="/dashboard" class="navbar-logo">
+      <i class="fas fa-heartbeat"></i> Wellora
+    </a>
+    <ul class="nav-links">
+      <li><a href="/dashboard">Home</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/contact">Contact Us</a></li>
+      <li><a href="/logout">Logout</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <h2>Progress History for {{ problem_display_name }}</h2>
+
+    {% if history %}
+      <div class="avg-box">
+        <i class="fas fa-star"></i>
+        <span>Average Progress Score: <strong>{{ avg_progress }}/10</strong></span>
+      </div>
+
+      <table class="history-table">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Satisfaction Level</th>
+            <th>Rate (1–10)</th>
+            <th>Problem Solved?</th>
+            <th>Progress (Final Score)</th>
+            <th>Sleep Hrs</th>
+            <th>Water Intake</th>
+            <th>Suggestions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for record in history %}
+          <tr>
+            <td>{{ record.date_submitted or 'N/A' }}</td>
+            <td>{{ record.satisfaction_level or 'N/A' }}</td>
+            <td>{{ record.effectiveness_rating or 'N/A' }}</td>
+            <td>{{ 'Yes' if record.problem_solved else 'No' }}</td>
+            <td><strong>{{ "%.1f"|format(record.progress|float) }}</strong></td>
+            <td>{{ record.sleep_hours or 'N/A' }}</td>
+            <td>{{ record.water_intake or 'N/A' }}</td>
+            <td>{{ record.suggestions or '—' }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+
+      <div id="progressChartContainer">
+        <h3>Progress Over Time (Combined Score out of 10)</h3>
+        <canvas id="progressChart"></canvas>
+      </div>
+
+      <script>
+        const ctx = document.getElementById('progressChart').getContext('2d');
+        const historyData = JSON.parse('{{ history | tojson | safe }}');
+
+        const labels = historyData.map(r => r.date_submitted || "Unknown");
+        const dataValues = historyData.map(r => parseFloat(r.progress || 0));
+
+        new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: labels,
+            datasets: [{
+              label: 'Progress (out of 10)',
+              data: dataValues,
+              backgroundColor: 'rgba(168, 118, 118, 0.8)',
+              borderColor: 'rgba(168, 118, 118, 1)',
+              borderWidth: 2,
+              borderRadius: 8,
+              borderSkipped: false,
+            }]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: true,
+            scales: {
+              y: {
+                beginAtZero: true,
+                max: 10,
+                title: {
+                  display: true,
+                  text: 'Progress Score',
+                  color: '#5A4A4A',
+                  font: {
+                    family: 'Poppins',
+                    size: 14,
+                    weight: '600'
+                  }
+                },
+                grid: {
+                  color: 'rgba(168, 118, 118, 0.1)'
+                },
+                ticks: {
+                  color: '#5A4A4A',
+                  font: {
+                    family: 'Poppins'
+                  }
+                }
+              },
+              x: {
+                title: {
+                  display: true,
+                  text: 'Date',
+                  color: '#5A4A4A',
+                  font: {
+                    family: 'Poppins',
+                    size: 14,
+                    weight: '600'
+                  }
+                },
+                grid: {
+                  display: false
+                },
+                ticks: {
+                  color: '#5A4A4A',
+                  font: {
+                    family: 'Poppins'
+                  }
+                }
+              }
+            },
+            plugins: {
+              legend: {
+                display: true,
+                position: 'top',
+                labels: {
+                  color: '#5A4A4A',
+                  font: {
+                    family: 'Poppins',
+                    size: 12,
+                    weight: '600'
+                  }
+                }
+              },
+              tooltip: {
+                backgroundColor: 'rgba(255, 255, 255, 0.95)',
+                titleColor: '#5A4A4A',
+                bodyColor: '#5A4A4A',
+                borderColor: '#A87676',
+                borderWidth: 1,
+                cornerRadius: 8,
+                callbacks: {
+                  title: function(context) {
+                    return 'Date: ' + context[0].label;
+                  },
+                  label: function(context) {
+                    return 'Progress: ' + context.parsed.y + '/10';
+                  }
+                }
+              }
+            }
+          }
+        });
+      </script>
+
+    {% else %}
+      <div class="no-history">
+        <i class="fas fa-chart-line" style="font-size: 3rem; color: var(--accent); margin-bottom: 1rem;"></i>
+        <p>No history found yet. Submit your first feedback!</p>
+      </div>
+    {% endif %}
+
+    <div class="results-footer">
+      <a href="{{ url_for('feedback_form', problem_url_safe=problem_url_safe) }}" class="footer-btn feedback-btn">
+        <i class="fas fa-plus-circle"></i> Submit New Feedback
+      </a>
+      <a href="{{ url_for('skin_advice') }}" class="footer-btn back-to-skin-btn">
+        <i class="fas fa-arrow-left"></i> Back to Skin Section
+      </a>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Wellora | Your Trusted Health Companion</p>
+  </footer>
+</body>
+</html>

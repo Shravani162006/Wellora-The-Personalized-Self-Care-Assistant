@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Comprehensive AI Skin Analyzer</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+    /* CSS Variables for Color Palette */
+    :root {
+        --primary: #A87676;
+        --primary-dark: #8C5E5E;
+        --primary-light: #CA8787;
+        --accent: #E1ACAC;
+        --accent-light: #F5D1D1;
+        --light: #FFD0D0;
+        --white: #ffffff;
+        --text: #5A4A4A;
+        --text-dark: #3A2A2A;
+        --text-light: #8A7A7A;
+        --background: #FFF9F9;
+        --background-light: #FFFDFD;
+        --foreground: #ffffff;
+        --border: #F0E0E0;
+        --success: #8BC34A;
+        --warning: #FFC107;
+        --error: #F44336;
+        --radius: 16px;
+        --radius-large: 24px;
+        --shadow: 0 8px 25px rgba(168, 118, 118, 0.12);
+        --shadow-hover: 0 15px 35px rgba(168, 118, 118, 0.2);
+        --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Poppins', sans-serif;
+        color: var(--text);
+        background-color: var(--background);
+        line-height: 1.7;
+        overflow-x: hidden;
+    }
+
+    /* Navigation Bar */
+    .navbar {
+        background: var(--white);
+        padding: 1rem 2rem;
+        box-shadow: var(--shadow);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+
+    .navbar-logo {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--primary);
+        text-decoration: none;
+    }
+
+    .navbar-logo i {
+        color: var(--accent);
+        font-size: 1.8rem;
+    }
+
+    .nav-links {
+        display: flex;
+        list-style: none;
+        gap: 2rem;
+        align-items: center;
+    }
+
+    .nav-links a {
+        text-decoration: none;
+        color: var(--text);
+        font-weight: 500;
+        transition: var(--transition);
+        position: relative;
+        padding: 0.5rem 0;
+    }
+
+    .nav-links a:hover {
+        color: var(--primary);
+    }
+
+    .nav-links a.active {
+        color: var(--primary);
+        font-weight: 600;
+    }
+
+    .nav-links a.active::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: var(--primary);
+    }
+
+    .nav-links a::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--primary);
+        transition: var(--transition);
+    }
+
+    .nav-links a:hover::after {
+        width: 100%;
+    }
+
+    /* Main Container */
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem;
+        min-height: calc(100vh - 120px);
+    }
+
+    /* Header Section */
+    .page-header {
+        text-align: center;
+        margin-bottom: 3rem;
+        padding: 2rem 0;
+    }
+
+    .page-logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .page-logo-icon {
+        font-size: 3rem;
+        color: var(--primary);
+        background: var(--light);
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: var(--shadow);
+    }
+
+    .page-header h1 {
+        font-size: 2.5rem;
+        color: var(--text-dark);
+        background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+        background-clip: text;
+       -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .page-subtitle {
+        font-size: 1.2rem;
+        color: var(--text-light);
+        max-width: 600px;
+        margin: 0 auto;
+        line-height: 1.6;
+    }
+
+    /* Button Styles */
+    .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 16px 32px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 600;
+        text-align: center;
+        transition: var(--transition);
+        cursor: pointer;
+        border: none;
+        font-size: 1.05rem;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .btn::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+        transition: left 0.7s;
+    }
+
+    .btn:hover::before {
+        left: 100%;
+    }
+
+    .btn-primary {
+        background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+        color: var(--white);
+        box-shadow: 0 6px 20px rgba(168, 118, 118, 0.4);
+    }
+
+    .btn-primary:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 25px rgba(168, 118, 118, 0.5);
+    }
+
+    .btn-outline {
+        background: transparent;
+        color: var(--primary);
+        border: 2px solid var(--primary);
+        position: relative;
+        z-index: 1;
+    }
+
+    .btn-outline::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 100%;
+        background: var(--primary);
+        transition: var(--transition);
+        z-index: -1;
+        border-radius: 50px;
+    }
+
+    .btn-outline:hover {
+        color: var(--white);
+        transform: translateY(-5px);
+    }
+
+    .btn-outline:hover::after {
+        width: 100%;
+    }
+
+    .btn:disabled {
+        background: var(--text-light);
+        color: var(--white);
+        cursor: not-allowed;
+        transform: none;
+        box-shadow: none;
+    }
+
+    .btn:disabled:hover {
+        transform: none;
+        box-shadow: none;
+    }
+
+    .btn:disabled::before {
+        display: none;
+    }
+
+    /* Webcam Section */
+    .webcam-section {
+        text-align: center;
+        padding: 60px 0;
+    }
+
+    .webcam-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        margin-bottom: 40px;
+    }
+
+    video {
+        width: 500px;
+        max-width: 90%;
+        border-radius: var(--radius-large);
+        border: 3px solid var(--accent);
+        box-shadow: var(--shadow);
+        transition: var(--transition);
+        background: var(--background-light);
+    }
+
+    video:hover {
+        transform: scale(1.02);
+        box-shadow: var(--shadow-hover);
+    }
+
+    .button-group {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .camera-status {
+        margin-top: 10px;
+        padding: 10px 20px;
+        border-radius: var(--radius);
+        background: var(--light);
+        color: var(--text);
+        font-size: 0.9rem;
+    }
+
+    .camera-status.error {
+        background: var(--error);
+        color: var(--white);
+    }
+
+    .camera-status.success {
+        background: var(--success);
+        color: var(--white);
+    }
+
+    /* Results Section */
+    .results-section {
+        padding: 60px 0;
+    }
+
+    #result {
+        width: 90%;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    .card {
+        background: var(--white);
+        padding: 35px;
+        border-radius: var(--radius-large);
+        box-shadow: var(--shadow);
+        margin-bottom: 30px;
+        text-align: left;
+        transition: var(--transition);
+        border-left: 5px solid var(--accent);
+    }
+
+    .card:hover {
+        transform: translateY(-8px);
+        box-shadow: var(--shadow-hover);
+    }
+
+    .card h3 {
+        margin-top: 0;
+        color: var(--primary-dark);
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+
+    .card h3 i {
+        color: var(--primary);
+        font-size: 1.8rem;
+    }
+
+    .card ol, .card ul {
+        margin-left: 25px;
+        color: var(--text);
+    }
+
+    .card li {
+        margin-bottom: 10px;
+        line-height: 1.6;
+    }
+
+    .card p {
+        color: var(--text);
+        line-height: 1.7;
+        font-size: 1.05rem;
+    }
+
+    /* Loading Animation */
+    .loading {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        border: 3px solid rgba(255,255,255,.3);
+        border-radius: 50%;
+        border-top-color: var(--white);
+        animation: spin 1s ease-in-out infinite;
+    }
+
+    @keyframes spin {
+        to { transform: rotate(360deg); }
+    }
+
+    /* Footer */
+    footer {
+        text-align: center;
+        padding: 2rem 0;
+        color: var(--text-light);
+        border-top: 1px solid var(--border);
+        margin-top: 3rem;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 1024px) {
+        .ai-card {
+            width: 90%;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .navbar {
+            flex-direction: column;
+            gap: 1rem;
+            padding: 1rem;
+        }
+
+        .nav-links {
+            gap: 1rem;
+        }
+
+        .container {
+            padding: 1rem;
+        }
+
+        .page-header h1 {
+            font-size: 2rem;
+        }
+
+        .page-logo-icon {
+            width: 60px;
+            height: 60px;
+            font-size: 2rem;
+        }
+
+        .page-subtitle {
+            font-size: 1rem;
+            padding: 0 1rem;
+        }
+
+        .ai-card {
+            padding: 1.5rem;
+            width: 95%;
+        }
+
+        .ai-card h2 {
+            font-size: 1.5rem;
+        }
+
+        .ai-card p {
+            font-size: 1rem;
+        }
+
+        .btn {
+            padding: 14px 28px;
+            font-size: 1rem;
+        }
+       
+        video {
+            width: 90%;
+        }
+       
+        .button-group {
+            flex-direction: column;
+            align-items: center;
+        }
+       
+        .card {
+            padding: 25px;
+        }
+    }
+
+    @media (max-width: 576px) {
+        .card {
+            padding: 20px;
+        }
+       
+        .card h3 {
+            font-size: 1.3rem;
+        }
+    }
+</style>
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<nav class="navbar">
+    <a href="/dashboard" class="navbar-logo">
+        <i class="fas fa-heartbeat"></i> Wellora
+    </a>
+    <ul class="nav-links">
+        <li><a href="/dashboard">Home</a></li>
+        <li><a href="/about">About Us</a></li>
+        <li><a href="/contact">Contact Us</a></li>
+        <li><a href="/logout">Logout</a></li>
+    </ul>
+</nav>
+
+<!-- Main Container -->
+<div class="container">
+    <!-- Page Header -->
+    <div class="page-header fade-in">
+        <div class="page-logo">
+            <div class="page-logo-icon">
+                <i class="fas fa-seedling"></i>
+            </div>
+            <h1>AI Skin Analyzer</h1>
+        </div>
+        <p class="page-subtitle fade-in delay-1">Capture your face to get a detailed skin analysis with personalized routines and home remedies</p>
+    </div>
+
+    <!-- Webcam Section -->
+    <div class="webcam-section">
+        <div class="webcam-container">
+            <video id="webcam" autoplay playsinline></video>
+            <canvas id="snapshot" style="display: none;"></canvas>
+           
+            <div class="button-group">
+                <button id="captureBtn" class="btn btn-primary">
+                    <i class="fa fa-camera"></i> Capture Front
+                </button>
+                <button id="analyzeBtn" disabled class="btn btn-outline">
+                    <i class="fa fa-magnifying-glass"></i> Analyze Skin
+                </button>
+            </div>
+           
+            <div id="cameraStatus" class="camera-status">
+                <i class="fas fa-info-circle"></i> Click "Allow" when prompted for camera access
+            </div>
+        </div>
+    </div>
+
+    <!-- Results Section -->
+    <div class="results-section">
+        <div id="result">
+            <div class="card" style="text-align: center;">
+                <h3><i class="fas fa-camera"></i> Ready to Start</h3>
+                <p>Click "Capture Front" to take a picture, then "Analyze Skin" to get your personalized skin analysis.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer>
+    <p>© 2025 Wellora | Your Trusted Health Companion</p>
+</footer>
+
+<script>
+// API Configuration
+const API_KEY = "";
+const API_URL = "https://openrouter.ai/api/v1/chat/completions";
+
+// DOM Elements
+const video = document.getElementById('webcam');
+const canvas = document.getElementById('snapshot');
+const ctx = canvas.getContext('2d');
+const captureBtn = document.getElementById('captureBtn');
+const analyzeBtn = document.getElementById('analyzeBtn');
+const resultBox = document.getElementById('result');
+const cameraStatus = document.getElementById('cameraStatus');
+
+// State
+let frontImageData = null;
+let isCameraActive = false;
+
+// Initialize camera
+async function initializeCamera() {
+    try {
+        cameraStatus.innerHTML = '<i class="fas fa-sync fa-spin"></i> Starting camera...';
+        cameraStatus.className = 'camera-status';
+       
+        const stream = await navigator.mediaDevices.getUserMedia({
+            video: {
+                width: { ideal: 1280 },
+                height: { ideal: 720 },
+                facingMode: 'user'
+            }
+        });
+       
+        video.srcObject = stream;
+        isCameraActive = true;
+       
+        cameraStatus.innerHTML = '<i class="fas fa-check-circle"></i> Camera ready! Click "Capture Front" to take a picture';
+        cameraStatus.className = 'camera-status success';
+       
+        // Enable capture button
+        captureBtn.disabled = false;
+       
+    } catch (error) {
+        console.error('Camera error:', error);
+        cameraStatus.innerHTML = `<i class="fas fa-exclamation-triangle"></i> Camera error: ${error.message}`;
+        cameraStatus.className = 'camera-status error';
+        captureBtn.disabled = true;
+        analyzeBtn.disabled = true;
+    }
+}
+
+// Capture front image
+function captureImage() {
+    try {
+        if (!isCameraActive) {
+            throw new Error('Camera not active');
+        }
+       
+        // Set canvas dimensions to match video
+        canvas.width = video.videoWidth;
+        canvas.height = video.videoHeight;
+       
+        // Draw current video frame to canvas
+        ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+       
+        // Get image data
+        frontImageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+       
+        // Update UI
+        resultBox.innerHTML = `
+            <div class="card" style="text-align: center;">
+                <h3><i class="fas fa-check-circle" style="color: var(--success);"></i> Image Captured!</h3>
+                <p>Front image successfully captured. Click "Analyze Skin" to get your personalized skin analysis.</p>
+            </div>
+        `;
+       
+        analyzeBtn.disabled = false;
+        cameraStatus.innerHTML = '<i class="fas fa-check-circle"></i> Image captured! Ready for analysis';
+        cameraStatus.className = 'camera-status success';
+       
+    } catch (error) {
+        console.error('Capture error:', error);
+        resultBox.innerHTML = `
+            <div class="card" style="text-align: center;">
+                <h3><i class="fas fa-exclamation-triangle" style="color: var(--error);"></i> Capture Failed</h3>
+                <p>Unable to capture image: ${error.message}</p>
+            </div>
+        `;
+        cameraStatus.innerHTML = `<i class="fas fa-exclamation-triangle"></i> Capture failed: ${error.message}`;
+        cameraStatus.className = 'camera-status error';
+    }
+}
+
+// Analyze skin
+async function analyzeSkin() {
+    if (!frontImageData) {
+        showError('No image captured. Please capture an image first.');
+        return;
+    }
+
+    try {
+        // Show loading state
+        analyzeBtn.innerHTML = '<div class="loading"></div> Analyzing...';
+        analyzeBtn.disabled = true;
+       
+        resultBox.innerHTML = `
+            <div class="card" style="text-align: center;">
+                <h3><i class="fas fa-spinner fa-spin"></i> Analyzing Your Skin</h3>
+                <p>Generating detailed skin report... This may take a few moments.</p>
+            </div>
+        `;
+
+        // Simple skin analysis (you can enhance this)
+        const features = analyzeSkinFeatures(frontImageData);
+       
+        // Create prompt for AI
+        const prompt = createAnalysisPrompt(features);
+
+        // Call AI API
+        const response = await callAIAPI(prompt);
+       
+        // Process and display results
+        displayResults(response);
+       
+    } catch (error) {
+        console.error('Analysis error:', error);
+        showError(`Analysis failed: ${error.message}`);
+    } finally {
+        // Reset button state
+        analyzeBtn.innerHTML = '<i class="fa fa-magnifying-glass"></i> Analyze Skin';
+        analyzeBtn.disabled = false;
+    }
+}
+
+// Simple skin feature analysis
+function analyzeSkinFeatures(imageData) {
+    const data = imageData.data;
+    let totalBrightness = 0;
+    let redSum = 0;
+    let smoothness = 0;
+
+    for (let i = 0; i < data.length; i += 4) {
+        const r = data[i], g = data[i+1], b = data[i+2];
+        const brightness = (r + g + b) / 3;
+        totalBrightness += brightness;
+        redSum += r;
+    }
+
+    const numPixels = data.length / 4;
+   
+    return {
+        brightness: (totalBrightness / numPixels).toFixed(1),
+        redness: (redSum / numPixels).toFixed(1),
+        overallTone: totalBrightness / numPixels > 150 ? 'Bright' : 'Normal'
+    };
+}
+
+// Create analysis prompt
+function createAnalysisPrompt(features) {
+    return `
+You are a professional dermatologist AI. Provide a detailed skin analysis report including:
+
+1. Skin Problems (identify potential issues based on skin tone and features)
+2. Complete Morning Skincare Routine (step by step, numbered)
+3. Complete Night Skincare Routine (step by step, numbered)
+4. Home Remedies (at least 5 natural remedies, bullet points)
+
+Skin features detected:
+- Brightness: ${features.brightness}
+- Redness level: ${features.redness}
+- Overall tone: ${features.overallTone}
+
+Format output clearly with headers:
+"### 1. Skin Problems"
+"### 2. Complete Morning Skincare Routine"
+"### 3. Complete Night Skincare Routine"
+"### 4. Home Remedies"
+`;
+}
+
+// Call AI API
+async function callAIAPI(prompt) {
+    try {
+        const response = await fetch(API_URL, {
+            method: "POST",
+            headers: {
+                "Authorization": `Bearer ${API_KEY}`,
+                "Content-Type": "application/json",
+                "HTTP-Referer": window.location.origin,
+                "X-Title": "Wellora Skin Analyzer"
+            },
+            body: JSON.stringify({
+                model: "gpt-3.5-turbo",
+                messages: [
+                    {
+                        role: "system",
+                        content: "You are a professional dermatologist with 20 years of experience. Provide accurate, helpful, and safe skincare advice."
+                    },
+                    { role: "user", content: prompt }
+                ],
+                max_tokens: 1500,
+                temperature: 0.7
+            })
+        });
+
+        if (!response.ok) {
+            throw new Error(`API request failed: ${response.status} ${response.statusText}`);
+        }
+
+        const data = await response.json();
+       
+        if (!data.choices || !data.choices[0] || !data.choices[0].message) {
+            throw new Error('Invalid API response format');
+        }
+
+        return data.choices[0].message.content;
+       
+    } catch (error) {
+        console.error('API Error:', error);
+        throw new Error(`AI analysis unavailable: ${error.message}`);
+    }
+}
+
+// Display results
+function displayResults(aiReply) {
+    try {
+        // Parse the AI response
+        const sections = parseAIResponse(aiReply);
+       
+        // Create result cards
+        resultBox.innerHTML = '';
+       
+        // Skin Problems
+        if (sections.problems) {
+            const cardProblems = document.createElement('div');
+            cardProblems.className = 'card';
+            cardProblems.innerHTML = `<h3><i class="fa fa-circle-exclamation"></i> Skin Analysis</h3><p>${sections.problems}</p>`;
+            resultBox.appendChild(cardProblems);
+        }
+
+        // Morning Routine
+        if (sections.morning) {
+            const cardMorning = document.createElement('div');
+            cardMorning.className = 'card';
+            cardMorning.innerHTML = `<h3><i class="fa fa-sun"></i> Morning Routine</h3>`;
+            cardMorning.appendChild(toOrderedList(sections.morning));
+            resultBox.appendChild(cardMorning);
+        }
+
+        // Night Routine
+        if (sections.night) {
+            const cardNight = document.createElement('div');
+            cardNight.className = 'card';
+            cardNight.innerHTML = `<h3><i class="fa fa-moon"></i> Night Routine</h3>`;
+            cardNight.appendChild(toOrderedList(sections.night));
+            resultBox.appendChild(cardNight);
+        }
+
+        // Home Remedies
+        if (sections.home) {
+            const cardHome = document.createElement('div');
+            cardHome.className = 'card';
+            cardHome.innerHTML = `<h3><i class="fa fa-leaf"></i> Home Remedies</h3>`;
+            cardHome.appendChild(toUnorderedList(sections.home));
+            resultBox.appendChild(cardHome);
+        }
+       
+    } catch (error) {
+        console.error('Display error:', error);
+        showError('Failed to process analysis results');
+    }
+}
+
+// Parse AI response
+function parseAIResponse(aiReply) {
+    const sections = {};
+    const regexes = {
+        problems: /### 1\. Skin Problems([\s\S]*?)(?=### 2\.|$)/,
+        morning: /### 2\. Complete Morning Skincare Routine([\s\S]*?)(?=### 3\.|$)/,
+        night: /### 3\. Complete Night Skincare Routine([\s\S]*?)(?=### 4\.|$)/,
+        home: /### 4\. Home Remedies([\s\S]*)/
+    };
+   
+    for (let key in regexes) {
+        const match = aiReply.match(regexes[key]);
+        if (match && match[1]) {
+            sections[key] = match[1].trim();
+        } else {
+            sections[key] = "Analysis not available for this section.";
+        }
+    }
+   
+    return sections;
+}
+
+// Helper functions
+function toOrderedList(text) {
+    const lines = text.split('\n').filter(l => l.trim().length > 0);
+    const ol = document.createElement('ol');
+    lines.forEach(line => {
+        const li = document.createElement('li');
+        li.innerHTML = line.replace(/^\d+\.\s*/, '').trim();
+        ol.appendChild(li);
+    });
+    return ol;
+}
+
+function toUnorderedList(text) {
+    const lines = text.split('\n').filter(l => l.trim().startsWith('-'));
+    const ul = document.createElement('ul');
+    lines.forEach(line => {
+        const li = document.createElement('li');
+        li.innerHTML = line.replace(/^-+\s*/, '').trim();
+        ul.appendChild(li);
+    });
+    return ul;
+}
+
+function showError(message) {
+    resultBox.innerHTML = `
+        <div class="card" style="text-align: center;">
+            <h3><i class="fas fa-exclamation-triangle" style="color: var(--error);"></i> Error</h3>
+            <p>${message}</p>
+        </div>
+    `;
+}
+
+// Event Listeners
+captureBtn.addEventListener('click', captureImage);
+analyzeBtn.addEventListener('click', analyzeSkin);
+
+// Initialize when page loads
+document.addEventListener('DOMContentLoaded', function() {
+    initializeCamera();
+});
+
+// Add scroll effect for header
+window.addEventListener('scroll', function() {
+    const header = document.querySelector('header');
+    if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+    } else {
+        header.classList.remove('scrolled');
+    }
+});
+</script>
+</body>
+</html>

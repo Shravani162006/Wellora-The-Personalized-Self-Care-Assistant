@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hairfall Progress - Wellora</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+        /* CSS Variables for Color Palette (Consistency) */
+        /* Feedback Table */
+  .feedback-table-container {
+    width: 100%;
+    margin: 20px auto 40px auto;
+    border-radius: var(--radius-large);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.feedback-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--white);
+}
+
+.feedback-table thead {
+    background: var(--accent);
+    color: var(--white);
+}
+
+.feedback-table th,
+.feedback-table td {
+    padding: 12px 14px;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+    font-size: 14px;
+}
+
+.feedback-table tbody tr:hover {
+    background: var(--background-light);
+}
+
+        :root {
+            --primary: #A87676;
+            --primary-dark: #8C5E5E;
+            --primary-light: #CA8787;
+            --accent: #E1ACAC;
+            --accent-light: #F5D1D1;
+            --light: #FFD0D0;
+            --white: #ffffff;
+            --text: #5A4A4A;
+            --text-dark: #3A2A2A;
+            --text-light: #8A7A7A;
+            --background: #FFF9F9;
+            --background-light: #FFFDFD;
+            --foreground: #ffffff;
+            --border: #F0E0E0;
+            --success: #8BC34A;
+            --info: #007bff;
+            --radius: 16px;
+            --radius-large: 24px;
+            --shadow: 0 8px 25px rgba(168, 118, 118, 0.12);
+            --shadow-hover: 0 15px 35px rgba(168, 118, 118, 0.2);
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text);
+            background-color: var(--background);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            background: var(--white);
+            padding: 1rem 2rem;
+            box-shadow: var(--shadow);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .navbar-logo i {
+            color: var(--accent);
+            font-size: 1.8rem;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Main Container (Styled as a Card) */
+        .container {
+            width: 90%;
+            max-width: 900px;
+            margin: 3rem auto;
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: var(--radius-large);
+            box-shadow: var(--shadow);
+            animation: fadeIn 0.8s ease forwards;
+        }
+
+        /* Header Styles */
+        h2 {
+            text-align: center;
+            font-size: 2rem;
+            color: var(--text-dark);
+            margin-bottom: 2rem;
+            /* Gradient Title for consistency */
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.7rem;
+        }
+       
+        /* Chart Canvas Styling */
+        canvas {
+            margin-top: 30px;
+            background: var(--background-light);
+            padding: 15px;
+            border-radius: var(--radius);
+        }
+
+        /* No Data Message Styling */
+        .no-data {
+            text-align: center;
+            padding: 40px;
+            color: var(--text-light);
+            font-size: 1.1rem;
+            background: var(--accent-light);
+            border-radius: var(--radius);
+            border: 2px dashed var(--accent);
+            margin: 2rem 0;
+        }
+       
+        .no-data i {
+            font-size: 1.5rem;
+            display: block;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+
+        /* Action Link/Button (Go Back) */
+        .action-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.8rem;
+            width: 90%;
+            max-width: 650px; /* Match form max width */
+            margin: 2rem auto 3rem;
+            padding: 1rem;
+            background-color: var(--text-light);
+            color: var(--white);
+            border: none;
+            border-radius: var(--radius);
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .action-link:hover {
+            background-color: var(--text-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        }
+       
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            .container {
+                margin: 20px auto;
+                padding: 1.5rem;
+                border-radius: var(--radius);
+            }
+            h2 {
+                font-size: 1.7rem;
+            }
+        }
+    </style>
+</head>
+<body>
+  <nav class="navbar">
+        <a href="/dashboard" class="navbar-logo">
+            <i class="fas fa-heartbeat"></i> Wellora
+        </a>
+        <ul class="nav-links">
+            <li><a href="/dashboard">Home</a></li>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/contact">Contact Us</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+    </nav>
+  <div class="container">
+    <h2>Your Dandruff Progress</h2>
+
+    {% if progress|length == 0 %}
+<div class="no-data">
+    No progress data found. Try submitting your dandruff analysis and feedback first.
+</div>
+{% else %}
+
+<!-- FEEDBACK TABLE -->
+{% if feedback_list %}
+<div class="feedback-table-container">
+    <table class="feedback-table">
+        <thead>
+            <tr>
+                <th>Satisfaction</th>
+                <th>Ease of Use</th>
+                <th>Product Helpful</th>
+                <th>Remedies Helpful</th>
+                <th>Followed Routine</th>
+                <th>Recommend</th>
+                <th>Comments</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for f in feedback_list %}
+            <tr>
+                <td>{{ f.satisfaction_level }}</td>
+                <td>{{ f.ease_of_use }}</td>
+                <td>{{ f.product_helpful }}</td>
+                <td>{{ f.remedies_helpful }}</td>
+                <td>{{ f.followed_routine }}</td>
+                <td>{{ f.recommend_wellora }}</td>
+                <td>{{ f.comments }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endif %}
+
+<!-- CHART -->
+<canvas id="progressChart"></canvas>
+
+<script type="application/json" id="progress-data">
+  {{ progress | tojson }}
+</script>
+
+<script>
+  const data = JSON.parse(document.getElementById("progress-data").textContent);
+  const labels = data.map(d => d.analysis_date);
+  const values = data.map(d => d.improvement_percent);
+
+  const ctx = document.getElementById("progressChart").getContext("2d");
+
+  const chart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: labels,
+      datasets: [{
+        label: 'Progress (%)',
+        data: values,
+        backgroundColor: '#E1ACAC',
+        borderColor: '#A87676',
+        borderWidth: 2
+      }]
+    },
+    options: {
+      responsive: true,
+      scales: {
+        y: { beginAtZero: true, max: 100 },
+        x: { }
+      }
+    }
+  });
+</script>
+
+{% endif %}
+
+  <a href="{{ url_for('feedback_dandruff') }}" class="action-link">
+              <i class="fas fa-comment-dots"></i> Give Another Feedback
+            </a>
+  <a href="{{ url_for('hair_dashboard') }}" class="action-link">
+        <i class="fas fa-arrow-left"></i> Go Back to Dashboard
+    </a>
+</body>
+</html>
+
+
