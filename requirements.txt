@@ -6,3 +6,6 @@ python-dotenv
 mysql-connector-python  # You need this for your specific database connection logic
 requests
 gunicorn
+pandas>=2.2
+
+
