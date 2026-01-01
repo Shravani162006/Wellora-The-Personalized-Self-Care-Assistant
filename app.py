@@ -2,9 +2,12 @@ import os
 import json
 import uuid
 import random
+import pandas as pd
 import requests
 from flask import Flask, render_template, request, redirect, session, url_for, jsonify
 from datetime import timedelta, date, datetime
+from sklearn.preprocessing import LabelEncoder
+from sklearn.neighbors import NearestNeighbors
 from dotenv import load_dotenv
 
 # ==================================================
@@ -17,18 +20,20 @@ app.permanent_session_lifetime = timedelta(minutes=60)
 load_dotenv()
 OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
 
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
 # ==================================================
-#           IN-MEMORY STORAGE (NO DB)
+#            IN-MEMORY STORAGE (NO DB)
 # ==================================================
 USERS = {}
 ANALYSIS_HISTORY = []
 FEEDBACK_HISTORY = []
-STRESS_HISTORY = []
 HAIRFALL_PROGRESS = []
 DANDRUFF_PROGRESS = []
+STRESS_HISTORY = []
 
 # ==================================================
-#              SESSION HANDLING
+#              SESSION MANAGEMENT
 # ==================================================
 @app.before_request
 def make_session_permanent():
@@ -39,8 +44,6 @@ def make_session_permanent():
 # ==================================================
 #                LOAD JSON DATA
 # ==================================================
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-
 with open(os.path.join(BASE_DIR, "updated_products.json"), "r", encoding="utf-8") as f:
     SKIN_DATA = json.load(f)
 
@@ -48,7 +51,7 @@ with open(os.path.join(BASE_DIR, "women.json"), "r", encoding="utf-8") as f:
     WOMEN_DATA = json.load(f)
 
 # ==================================================
-#               CONSTANTS / MAPS
+#                CONSTANTS
 # ==================================================
 PROBLEM_MAP = {
     "whiteheads": "Black/White Heads",
@@ -58,7 +61,7 @@ PROBLEM_MAP = {
 }
 
 # ==================================================
-#                 BASIC ROUTES
+#                BASIC ROUTES
 # ==================================================
 @app.route("/")
 def landing():
@@ -78,7 +81,7 @@ def logout():
     return redirect(url_for("landing"))
 
 # ==================================================
-#                 AUTH ROUTES
+#                AUTH (IN-MEMORY)
 # ==================================================
 @app.route("/signup", methods=["GET", "POST"])
 def signup():
@@ -88,7 +91,7 @@ def signup():
         password = request.form["password"]
 
         if username in USERS:
-            return render_template("signup.html", error="Username already exists")
+            return render_template("signup.html", error="Username exists")
 
         USERS[username] = {"email": email, "password": password}
         session["username"] = username
@@ -118,7 +121,7 @@ def dashboard():
     return render_template("dashboard.html")
 
 # ==================================================
-#                  AI CHATBOT
+#                AI CHATBOT
 # ==================================================
 @app.route("/bot")
 def bot():
@@ -129,24 +132,17 @@ def chat():
     data = request.get_json()
     message = data.get("message")
 
-    if not message:
-        return jsonify({"reply": "Message required"}), 400
-
     payload = {
-        "model": "openai/gpt-3.5-turbo",   # ✅ stable on Render
+        "model": "openai/gpt-3.5-turbo",
         "messages": [
             {"role": "system", "content": "You are Wellora, a caring AI self-care assistant."},
             {"role": "user", "content": message}
-        ],
-        "temperature": 0.7,
-        "max_tokens": 400
+        ]
     }
 
     headers = {
         "Authorization": f"Bearer {OPENROUTER_API_KEY}",
-        "Content-Type": "application/json",
-        "HTTP-Referer": "https://wellora-the-personalized-self-care.onrender.com",
-        "X-Title": "Wellora"
+        "Content-Type": "application/json"
     }
 
     try:
@@ -159,12 +155,11 @@ def chat():
         res.raise_for_status()
         reply = res.json()["choices"][0]["message"]["content"]
         return jsonify({"reply": reply})
-    except Exception as e:
-        print("AI Error:", e)
-        return jsonify({"reply": "AI temporarily unavailable"}), 500
+    except:
+        return jsonify({"reply": "AI unavailable"}), 500
 
 # ==================================================
-#                SKIN CARE
+#                SKIN MODULE
 # ==================================================
 @app.route("/skin")
 def skin_advice():
@@ -173,58 +168,55 @@ def skin_advice():
 
 @app.route("/skin/<problem>")
 def problem_form(problem):
-    problem_display_name = PROBLEM_MAP.get(problem, problem)
     return render_template(
         "problem_form.html",
         problem_url_safe=problem,
-        problem_display_name=problem_display_name
+        problem_display_name=PROBLEM_MAP.get(problem, problem)
     )
 
 @app.route("/treatment", methods=["POST"])
 def treatment():
-    problem_url_safe = request.form.get("problem_url_safe")
-    mapped_problem = PROBLEM_MAP.get(problem_url_safe, problem_url_safe)
-
     result = random.choice(SKIN_DATA)
-
-    ANALYSIS_HISTORY.append({
-        "user": session.get("username"),
-        "problem": mapped_problem,
-        "result": result,
-        "date": datetime.now().isoformat()
-    })
-
     return render_template(
         "results.html",
-        problem_display_name=mapped_problem,
-        problem_url_safe=problem_url_safe,
+        problem_display_name=request.form.get("problem_url_safe"),
+        problem_url_safe=request.form.get("problem_url_safe"),
         result=result
     )
 
 # ==================================================
-#                  FEEDBACK
+#                HAIR MODULE
 # ==================================================
-@app.route("/feedback/<problem_url_safe>")
-def feedback_form(problem_url_safe):
+@app.route("/hairfall", methods=["GET", "POST"])
+def hairfall_form():
+    if request.method == "POST":
+        HAIRFALL_PROGRESS.append({
+            "date": datetime.now().strftime("%Y-%m-%d"),
+            "progress": random.randint(60, 90)
+        })
+        return render_template("hairfall_result.html")
+    return render_template("hairfall_form.html")
+
+@app.route("/dandruff", methods=["GET", "POST"])
+def dandruff_form():
+    if request.method == "POST":
+        DANDRUFF_PROGRESS.append({
+            "date": datetime.now().strftime("%Y-%m-%d"),
+            "progress": random.randint(50, 85)
+        })
+        return render_template("dandruff_result.html")
+    return render_template("dandruff_form.html")
+
+@app.route("/hair_dashboard")
+def hair_dashboard():
     return render_template(
-        "feedback_form.html",
-        problem_url_safe=problem_url_safe,
-        problem_display_name=PROBLEM_MAP.get(problem_url_safe, problem_url_safe)
+        "hair_dashboard.html",
+        hairfall_history=HAIRFALL_PROGRESS,
+        dandruff_history=DANDRUFF_PROGRESS
     )
 
-@app.route("/feedback/submit", methods=["POST"])
-def submit_feedback():
-    FEEDBACK_HISTORY.append({
-        "user": session.get("username"),
-        "skin_issue": request.form.get("skin_issue"),
-        "rating": request.form.get("effectiveness_rating"),
-        "suggestions": request.form.get("suggestions"),
-        "date": date.today().isoformat()
-    })
-    return redirect(url_for("skin_advice"))
-
 # ==================================================
-#                WOMEN / PREGNANCY
+#                WOMEN MODULE
 # ==================================================
 @app.route("/women")
 def women_home():
@@ -236,67 +228,8 @@ def menstrual():
         return render_template("menstrual_result.html", **request.form)
     return render_template("menstrual_form.html")
 
-@app.route("/pregnancy_form")
-def pregnancy_form():
-    return render_template("pregnancy_form.html")
-
-@app.route("/pregnancy_result", methods=["POST"])
-def pregnancy_result():
-    return render_template("pregnancy_result.html", **request.form)
-
 # ==================================================
-#                HAIR MODULE
-# ==================================================
-def analyze_dandruff(user_data):
-    return {
-        "Routine": "Anti-dandruff shampoo twice a week",
-        "Remedies": ["Neem rinse", "Tea tree oil", "Aloe vera"]
-    }
-
-@app.route("/hairfall", methods=["GET", "POST"])
-def hairfall_form():
-    if request.method == "POST":
-        HAIRFALL_PROGRESS.append({
-            "user": session.get("username"),
-            "analysis_date": datetime.now().strftime("%Y-%m-%d"),
-            "improvement_percent": random.randint(60, 90)
-        })
-        return render_template(
-            "hairfall_result.html",
-            result={
-                "Routine": "Mild shampoo twice a week",
-                "Remedies": ["Onion juice", "Aloe vera", "Oil massage"]
-            }
-        )
-    return render_template("hairfall_form.html")
-
-@app.route("/dandruff", methods=["GET", "POST"])
-def dandruff_form():
-    if request.method == "POST":
-        result = analyze_dandruff(request.form)
-        DANDRUFF_PROGRESS.append({
-            "user": session.get("username"),
-            "analysis_date": datetime.now().strftime("%Y-%m-%d"),
-            "improvement_percent": random.randint(50, 85)
-        })
-        return render_template("dandruff_result.html", result=result)
-    return render_template("dandruff_form.html")
-
-@app.route("/hair_dashboard")
-def hair_dashboard():
-    if "username" not in session:
-        return redirect(url_for("login"))
-
-    user = session.get("username")
-
-    return render_template(
-        "hair_dashboard.html",
-        hairfall_history=[h for h in HAIRFALL_PROGRESS if h["user"] == user],
-        dandruff_history=[d for d in DANDRUFF_PROGRESS if d["user"] == user]
-    )
-
-# ==================================================
-#                STRESS MANAGEMENT
+#                STRESS MODULE
 # ==================================================
 @app.route("/stress")
 def stress_index():
@@ -313,22 +246,22 @@ def stress_results(stress_type):
     return render_template("stress_results.html", stress_type=stress_type)
 
 @app.route("/stress/progress")
-def stress_progress_page():
+def stress_progress():
     return render_template("stress_progress.html", progress_data=session.get("stress_progress", {}))
 
 @app.route("/stress/music")
-def stress_music_player():
+def stress_music():
     return render_template("stress_music.html", music_videos=[])
 
 # ==================================================
-#                 ERROR HANDLER
+#                ERROR HANDLER
 # ==================================================
 @app.errorhandler(404)
 def not_found(e):
     return render_template("404.html"), 404
 
 # ==================================================
-#                   RUN
+#                RUN
 # ==================================================
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 10000))
