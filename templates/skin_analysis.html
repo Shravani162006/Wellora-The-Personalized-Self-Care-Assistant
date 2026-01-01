@@ -2,11 +2,12 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Comprehensive AI Skin Analyzer</title>
+<title>AI Skin Analyzer</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
 <style>
-    /* CSS Variables for Color Palette */
+   /* CSS Variables for Color Palette */
     :root {
         --primary: #A87676;
         --primary-dark: #8C5E5E;
@@ -486,6 +487,7 @@
     }
 </style>
 </head>
+
 <body>
 
 <!-- Navigation Bar -->
@@ -501,47 +503,25 @@
     </ul>
 </nav>
 
-<!-- Main Container -->
 <div class="container">
-    <!-- Page Header -->
-    <div class="page-header fade-in">
-        <div class="page-logo">
-            <div class="page-logo-icon">
-                <i class="fas fa-seedling"></i>
-            </div>
-            <h1>AI Skin Analyzer</h1>
-        </div>
-        <p class="page-subtitle fade-in delay-1">Capture your face to get a detailed skin analysis with personalized routines and home remedies</p>
+    <h1>AI Skin Analyzer</h1>
+    <p>Capture your face and receive a personalized skincare routine</p>
+
+    <video id="webcam" autoplay playsinline></video>
+    <canvas id="snapshot" style="display:none;"></canvas>
+
+    <div>
+        <button class="btn btn-primary" id="captureBtn">
+            <i class="fa fa-camera"></i> Capture
+        </button>
+        <button class="btn btn-outline" id="analyzeBtn" disabled>
+            <i class="fa fa-magnifying-glass"></i> Analyze
+        </button>
     </div>
 
-    <!-- Webcam Section -->
-    <div class="webcam-section">
-        <div class="webcam-container">
-            <video id="webcam" autoplay playsinline></video>
-            <canvas id="snapshot" style="display: none;"></canvas>
-           
-            <div class="button-group">
-                <button id="captureBtn" class="btn btn-primary">
-                    <i class="fa fa-camera"></i> Capture Front
-                </button>
-                <button id="analyzeBtn" disabled class="btn btn-outline">
-                    <i class="fa fa-magnifying-glass"></i> Analyze Skin
-                </button>
-            </div>
-           
-            <div id="cameraStatus" class="camera-status">
-                <i class="fas fa-info-circle"></i> Click "Allow" when prompted for camera access
-            </div>
-        </div>
-    </div>
-
-    <!-- Results Section -->
-    <div class="results-section">
-        <div id="result">
-            <div class="card" style="text-align: center;">
-                <h3><i class="fas fa-camera"></i> Ready to Start</h3>
-                <p>Click "Capture Front" to take a picture, then "Analyze Skin" to get your personalized skin analysis.</p>
-            </div>
+    <div id="result">
+        <div class="card">
+            Click capture to begin skin analysis.
         </div>
     </div>
 </div>
@@ -552,349 +532,81 @@
 </footer>
 
 <script>
-// API Configuration
-const API_KEY = "";
-const API_URL = "https://openrouter.ai/api/v1/chat/completions";
+// DOM
+const video = document.getElementById("webcam");
+const canvas = document.getElementById("snapshot");
+const ctx = canvas.getContext("2d");
+const captureBtn = document.getElementById("captureBtn");
+const analyzeBtn = document.getElementById("analyzeBtn");
+const resultBox = document.getElementById("result");
 
-// DOM Elements
-const video = document.getElementById('webcam');
-const canvas = document.getElementById('snapshot');
-const ctx = canvas.getContext('2d');
-const captureBtn = document.getElementById('captureBtn');
-const analyzeBtn = document.getElementById('analyzeBtn');
-const resultBox = document.getElementById('result');
-const cameraStatus = document.getElementById('cameraStatus');
+let imageData = null;
 
-// State
-let frontImageData = null;
-let isCameraActive = false;
+// Start camera
+navigator.mediaDevices.getUserMedia({ video: true })
+.then(stream => video.srcObject = stream)
+.catch(() => alert("Camera access denied"));
 
-// Initialize camera
-async function initializeCamera() {
-    try {
-        cameraStatus.innerHTML = '<i class="fas fa-sync fa-spin"></i> Starting camera...';
-        cameraStatus.className = 'camera-status';
-       
-        const stream = await navigator.mediaDevices.getUserMedia({
-            video: {
-                width: { ideal: 1280 },
-                height: { ideal: 720 },
-                facingMode: 'user'
-            }
-        });
-       
-        video.srcObject = stream;
-        isCameraActive = true;
-       
-        cameraStatus.innerHTML = '<i class="fas fa-check-circle"></i> Camera ready! Click "Capture Front" to take a picture';
-        cameraStatus.className = 'camera-status success';
-       
-        // Enable capture button
-        captureBtn.disabled = false;
-       
-    } catch (error) {
-        console.error('Camera error:', error);
-        cameraStatus.innerHTML = `<i class="fas fa-exclamation-triangle"></i> Camera error: ${error.message}`;
-        cameraStatus.className = 'camera-status error';
-        captureBtn.disabled = true;
-        analyzeBtn.disabled = true;
-    }
-}
+// Capture image
+captureBtn.onclick = () => {
+    canvas.width = video.videoWidth;
+    canvas.height = video.videoHeight;
+    ctx.drawImage(video, 0, 0);
+    imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
 
-// Capture front image
-function captureImage() {
-    try {
-        if (!isCameraActive) {
-            throw new Error('Camera not active');
-        }
-       
-        // Set canvas dimensions to match video
-        canvas.width = video.videoWidth;
-        canvas.height = video.videoHeight;
-       
-        // Draw current video frame to canvas
-        ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
-       
-        // Get image data
-        frontImageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-       
-        // Update UI
-        resultBox.innerHTML = `
-            <div class="card" style="text-align: center;">
-                <h3><i class="fas fa-check-circle" style="color: var(--success);"></i> Image Captured!</h3>
-                <p>Front image successfully captured. Click "Analyze Skin" to get your personalized skin analysis.</p>
-            </div>
-        `;
-       
-        analyzeBtn.disabled = false;
-        cameraStatus.innerHTML = '<i class="fas fa-check-circle"></i> Image captured! Ready for analysis';
-        cameraStatus.className = 'camera-status success';
-       
-    } catch (error) {
-        console.error('Capture error:', error);
-        resultBox.innerHTML = `
-            <div class="card" style="text-align: center;">
-                <h3><i class="fas fa-exclamation-triangle" style="color: var(--error);"></i> Capture Failed</h3>
-                <p>Unable to capture image: ${error.message}</p>
-            </div>
-        `;
-        cameraStatus.innerHTML = `<i class="fas fa-exclamation-triangle"></i> Capture failed: ${error.message}`;
-        cameraStatus.className = 'camera-status error';
-    }
-}
+    analyzeBtn.disabled = false;
+    resultBox.innerHTML = `<div class="card">Image captured. Click Analyze.</div>`;
+};
 
 // Analyze skin
-async function analyzeSkin() {
-    if (!frontImageData) {
-        showError('No image captured. Please capture an image first.');
-        return;
-    }
+analyzeBtn.onclick = async () => {
+    analyzeBtn.disabled = true;
+    resultBox.innerHTML = `<div class="card">Analyzing skin...</div>`;
+
+    const features = analyzeSkinFeatures(imageData);
 
     try {
-        // Show loading state
-        analyzeBtn.innerHTML = '<div class="loading"></div> Analyzing...';
-        analyzeBtn.disabled = true;
-       
-        resultBox.innerHTML = `
-            <div class="card" style="text-align: center;">
-                <h3><i class="fas fa-spinner fa-spin"></i> Analyzing Your Skin</h3>
-                <p>Generating detailed skin report... This may take a few moments.</p>
-            </div>
-        `;
-
-        // Simple skin analysis (you can enhance this)
-        const features = analyzeSkinFeatures(frontImageData);
-       
-        // Create prompt for AI
-        const prompt = createAnalysisPrompt(features);
-
-        // Call AI API
-        const response = await callAIAPI(prompt);
-       
-        // Process and display results
-        displayResults(response);
-       
-    } catch (error) {
-        console.error('Analysis error:', error);
-        showError(`Analysis failed: ${error.message}`);
-    } finally {
-        // Reset button state
-        analyzeBtn.innerHTML = '<i class="fa fa-magnifying-glass"></i> Analyze Skin';
-        analyzeBtn.disabled = false;
-    }
-}
-
-// Simple skin feature analysis
-function analyzeSkinFeatures(imageData) {
-    const data = imageData.data;
-    let totalBrightness = 0;
-    let redSum = 0;
-    let smoothness = 0;
-
-    for (let i = 0; i < data.length; i += 4) {
-        const r = data[i], g = data[i+1], b = data[i+2];
-        const brightness = (r + g + b) / 3;
-        totalBrightness += brightness;
-        redSum += r;
-    }
-
-    const numPixels = data.length / 4;
-   
-    return {
-        brightness: (totalBrightness / numPixels).toFixed(1),
-        redness: (redSum / numPixels).toFixed(1),
-        overallTone: totalBrightness / numPixels > 150 ? 'Bright' : 'Normal'
-    };
-}
-
-// Create analysis prompt
-function createAnalysisPrompt(features) {
-    return `
-You are a professional dermatologist AI. Provide a detailed skin analysis report including:
-
-1. Skin Problems (identify potential issues based on skin tone and features)
-2. Complete Morning Skincare Routine (step by step, numbered)
-3. Complete Night Skincare Routine (step by step, numbered)
-4. Home Remedies (at least 5 natural remedies, bullet points)
-
-Skin features detected:
-- Brightness: ${features.brightness}
-- Redness level: ${features.redness}
-- Overall tone: ${features.overallTone}
-
-Format output clearly with headers:
-"### 1. Skin Problems"
-"### 2. Complete Morning Skincare Routine"
-"### 3. Complete Night Skincare Routine"
-"### 4. Home Remedies"
-`;
-}
-
-// Call AI API
-async function callAIAPI(prompt) {
-    try {
-        const response = await fetch(API_URL, {
+        const response = await fetch("/analyze_skin", {
             method: "POST",
-            headers: {
-                "Authorization": `Bearer ${API_KEY}`,
-                "Content-Type": "application/json",
-                "HTTP-Referer": window.location.origin,
-                "X-Title": "Wellora Skin Analyzer"
-            },
-            body: JSON.stringify({
-                model: "gpt-3.5-turbo",
-                messages: [
-                    {
-                        role: "system",
-                        content: "You are a professional dermatologist with 20 years of experience. Provide accurate, helpful, and safe skincare advice."
-                    },
-                    { role: "user", content: prompt }
-                ],
-                max_tokens: 1500,
-                temperature: 0.7
-            })
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ features })
         });
 
-        if (!response.ok) {
-            throw new Error(`API request failed: ${response.status} ${response.statusText}`);
-        }
-
         const data = await response.json();
-       
-        if (!data.choices || !data.choices[0] || !data.choices[0].message) {
-            throw new Error('Invalid API response format');
-        }
-
-        return data.choices[0].message.content;
-       
-    } catch (error) {
-        console.error('API Error:', error);
-        throw new Error(`AI analysis unavailable: ${error.message}`);
+        displayResult(data.reply);
+    } catch (e) {
+        resultBox.innerHTML = `<div class="card">Analysis failed</div>`;
     }
-}
+};
 
-// Display results
-function displayResults(aiReply) {
-    try {
-        // Parse the AI response
-        const sections = parseAIResponse(aiReply);
-       
-        // Create result cards
-        resultBox.innerHTML = '';
-       
-        // Skin Problems
-        if (sections.problems) {
-            const cardProblems = document.createElement('div');
-            cardProblems.className = 'card';
-            cardProblems.innerHTML = `<h3><i class="fa fa-circle-exclamation"></i> Skin Analysis</h3><p>${sections.problems}</p>`;
-            resultBox.appendChild(cardProblems);
-        }
-
-        // Morning Routine
-        if (sections.morning) {
-            const cardMorning = document.createElement('div');
-            cardMorning.className = 'card';
-            cardMorning.innerHTML = `<h3><i class="fa fa-sun"></i> Morning Routine</h3>`;
-            cardMorning.appendChild(toOrderedList(sections.morning));
-            resultBox.appendChild(cardMorning);
-        }
-
-        // Night Routine
-        if (sections.night) {
-            const cardNight = document.createElement('div');
-            cardNight.className = 'card';
-            cardNight.innerHTML = `<h3><i class="fa fa-moon"></i> Night Routine</h3>`;
-            cardNight.appendChild(toOrderedList(sections.night));
-            resultBox.appendChild(cardNight);
-        }
-
-        // Home Remedies
-        if (sections.home) {
-            const cardHome = document.createElement('div');
-            cardHome.className = 'card';
-            cardHome.innerHTML = `<h3><i class="fa fa-leaf"></i> Home Remedies</h3>`;
-            cardHome.appendChild(toUnorderedList(sections.home));
-            resultBox.appendChild(cardHome);
-        }
-       
-    } catch (error) {
-        console.error('Display error:', error);
-        showError('Failed to process analysis results');
+// Simple feature extraction
+function analyzeSkinFeatures(img) {
+    let brightness = 0, redness = 0;
+    for (let i = 0; i < img.data.length; i += 4) {
+        const r = img.data[i];
+        const g = img.data[i+1];
+        const b = img.data[i+2];
+        brightness += (r + g + b) / 3;
+        redness += r;
     }
-}
-
-// Parse AI response
-function parseAIResponse(aiReply) {
-    const sections = {};
-    const regexes = {
-        problems: /### 1\. Skin Problems([\s\S]*?)(?=### 2\.|$)/,
-        morning: /### 2\. Complete Morning Skincare Routine([\s\S]*?)(?=### 3\.|$)/,
-        night: /### 3\. Complete Night Skincare Routine([\s\S]*?)(?=### 4\.|$)/,
-        home: /### 4\. Home Remedies([\s\S]*)/
+    const pixels = img.data.length / 4;
+    return {
+        brightness: (brightness / pixels).toFixed(1),
+        redness: (redness / pixels).toFixed(1),
+        overallTone: brightness / pixels > 150 ? "Bright" : "Normal"
     };
-   
-    for (let key in regexes) {
-        const match = aiReply.match(regexes[key]);
-        if (match && match[1]) {
-            sections[key] = match[1].trim();
-        } else {
-            sections[key] = "Analysis not available for this section.";
-        }
-    }
-   
-    return sections;
 }
 
-// Helper functions
-function toOrderedList(text) {
-    const lines = text.split('\n').filter(l => l.trim().length > 0);
-    const ol = document.createElement('ol');
-    lines.forEach(line => {
-        const li = document.createElement('li');
-        li.innerHTML = line.replace(/^\d+\.\s*/, '').trim();
-        ol.appendChild(li);
-    });
-    return ol;
+// Display AI result
+function displayResult(text) {
+    const formatted = text
+        .replace(/###/g, "<h3>")
+        .replace(/\n/g, "<br>");
+
+    resultBox.innerHTML = `<div class="card">${formatted}</div>`;
 }
-
-function toUnorderedList(text) {
-    const lines = text.split('\n').filter(l => l.trim().startsWith('-'));
-    const ul = document.createElement('ul');
-    lines.forEach(line => {
-        const li = document.createElement('li');
-        li.innerHTML = line.replace(/^-+\s*/, '').trim();
-        ul.appendChild(li);
-    });
-    return ul;
-}
-
-function showError(message) {
-    resultBox.innerHTML = `
-        <div class="card" style="text-align: center;">
-            <h3><i class="fas fa-exclamation-triangle" style="color: var(--error);"></i> Error</h3>
-            <p>${message}</p>
-        </div>
-    `;
-}
-
-// Event Listeners
-captureBtn.addEventListener('click', captureImage);
-analyzeBtn.addEventListener('click', analyzeSkin);
-
-// Initialize when page loads
-document.addEventListener('DOMContentLoaded', function() {
-    initializeCamera();
-});
-
-// Add scroll effect for header
-window.addEventListener('scroll', function() {
-    const header = document.querySelector('header');
-    if (window.scrollY > 50) {
-        header.classList.add('scrolled');
-    } else {
-        header.classList.remove('scrolled');
-    }
-});
 </script>
+
 </body>
 </html>
+
